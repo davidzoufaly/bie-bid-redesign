@@ -1,0 +1,2 @@
+- mít yarn jako výchozí node install module
+- "npm install"
