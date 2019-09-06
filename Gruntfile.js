@@ -50,8 +50,7 @@ module.exports = function(grunt) {
       sass: {
         //? 5) SCSS -> mimified CSS - vem komplet.scss, převeď ho na css a zmimifikuj
         options: {
-          style: "compressed",
-          sourcemap: "none"
+          style: "compressed"
         },
         my: {
           files: {
