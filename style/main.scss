@@ -1,1 +1,44 @@
-.asdf {ahoj: davide;}
+
+
+
+@font-face {
+    font-family: 'BwMitga-Regular';
+    src: url('../../../fonts/BwMitga/BwMitga-Regular.eot') format('embedded-opentype'),  url('../../../fonts/BwMitga/BwMitga-Regular.otf')  format('opentype'),
+    url('../../../fonts/BwMitga/BwMitga-Regular.woff') format('woff'), url('../../../fonts/BwMitga/BwMitga-Regular.ttf')  format('truetype'), url('../../../fonts/BwMitga/BwMitga-Regular.svg#BwMitga-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BwMitga-Bold';
+    src: url('../../../fonts/BwMitga/BwMitga-Bold.eot') format('embedded-opentype'),  url('../../../fonts/BwMitga/BwMitga-Bold.otf')  format('opentype'),
+    url('../../../fonts/BwMitga/BwMitga-Bold.woff') format('woff'), url('../../../fonts/BwMitga/BwMitga-Bold.ttf')  format('truetype'), url('../../../fonts/BwMitga/BwMitga-Bold.svg#BwMitga-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url('../../../fonts/Open_Sans/OpenSans-Bold.ttf')  format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+$font: 'BwMitga-Regular';
+$font-bold: 'BwMitga-Bold';
+$font-secondary-bold: 'OpenSans-Bold';
+
+
+
+
+
+
+
+
+
+
