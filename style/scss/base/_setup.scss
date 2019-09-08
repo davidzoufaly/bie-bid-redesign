@@ -1,0 +1,29 @@
+html, body {
+    font-size: 10px;
+    position: relative;
+    height: 100%;
+    font-family: $font;
+    min-width: $screen-xs-min;
+    color: $color-blue-dark;
+
+}
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+    @include sm {
+        width: 80%;
+    }
+    @include md {
+        width: 90%;
+    }
+    @include xl {
+        width: 70%;
+    }
+    @include uw {
+        width: 60%;
+    }
+
+
+
+}

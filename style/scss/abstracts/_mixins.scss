@@ -1,0 +1,55 @@
+@mixin xs {
+    @media only screen
+    and (min-width: $screen-xs-min) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media only screen
+    and (min-width: $screen-sm-min) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media only screen
+    and (min-width: $screen-md-min) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media only screen
+    and (min-width: $screen-lg-min) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media only screen
+    and (min-width: $screen-xl-min) {
+        @content;
+    }
+}
+
+@mixin ex {
+    @media only screen
+    and (min-width: $screen-ex-min) {
+        @content;
+    }
+}
+
+@mixin uw {
+    @media only screen
+    and (min-width: $screen-uw-min) {
+        @content;
+    }
+}
+
+// custom viewport
+@mixin rwd($screen) {
+    @media (min-width: $screen + 'px') {
+        @content;
+    }
+}

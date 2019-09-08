@@ -1,10 +1,92 @@
 
+@mixin xs {
+    @media only screen
+    and (min-width: $screen-xs-min) {
+        @content;
+    }
+}
 
+@mixin sm {
+    @media only screen
+    and (min-width: $screen-sm-min) {
+        @content;
+    }
+}
 
+@mixin md {
+    @media only screen
+    and (min-width: $screen-md-min) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media only screen
+    and (min-width: $screen-lg-min) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media only screen
+    and (min-width: $screen-xl-min) {
+        @content;
+    }
+}
+
+@mixin ex {
+    @media only screen
+    and (min-width: $screen-ex-min) {
+        @content;
+    }
+}
+
+@mixin uw {
+    @media only screen
+    and (min-width: $screen-uw-min) {
+        @content;
+    }
+}
+
+// custom viewport
+@mixin rwd($screen) {
+    @media (min-width: $screen + 'px') {
+        @content;
+    }
+}
+/* fonty */
+$font: 'BwMitga-Regular';
+$font-bold: 'BwMitga-Bold';
+$font-light: 'BwMitga-Light';
+$font-secondary-bold: 'OpenSans-Bold';
+
+/* barvy */
+$color-white: #ffffff;
+$color-white-light: #feffff;
+$color-white-lighter:#fefeff;
+
+$color-blue: #5ab4cf;
+$color-blue-medium: #79c3d9;
+$color-blue-medium-lighter: #7DC5DA;
+$color-blue-light: #ebf6f9;
+$color-blue-dark: #303e42;
+
+$color-gray: #2E2E2E;
+
+$color-red: #d25d54;
+
+/* viewporty */
+$screen-xs-min: 319px;  //320
+$screen-sm-min: 575px;  //576
+$screen-md-min: 767px;  //768
+$screen-lg-min: 991px;  //992
+$screen-xl-min: 1199px; //1200
+$screen-ex-min: 1399px; //1400
+$screen-uw-min: 1599px; //1600
 @font-face {
     font-family: 'BwMitga-Regular';
-    src: url('../../../fonts/BwMitga/BwMitga-Regular.eot') format('embedded-opentype'),  url('../../../fonts/BwMitga/BwMitga-Regular.otf')  format('opentype'),
-    url('../../../fonts/BwMitga/BwMitga-Regular.woff') format('woff'), url('../../../fonts/BwMitga/BwMitga-Regular.ttf')  format('truetype'), url('../../../fonts/BwMitga/BwMitga-Regular.svg#BwMitga-Regular') format('svg');
+    src: url('../fonts/BwMitga/BwMitga-Regular.eot') format('embedded-opentype'),  url('../fonts/BwMitga/BwMitga-Regular.otf')  format('opentype'),
+    url('../fonts/BwMitga/BwMitga-Regular.woff') format('woff'), url('../fonts/BwMitga/BwMitga-Regular.ttf')  format('truetype'), url('../fonts/BwMitga/BwMitga-Regular.svg#BwMitga-Regular') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -12,8 +94,17 @@
 
 @font-face {
     font-family: 'BwMitga-Bold';
-    src: url('../../../fonts/BwMitga/BwMitga-Bold.eot') format('embedded-opentype'),  url('../../../fonts/BwMitga/BwMitga-Bold.otf')  format('opentype'),
-    url('../../../fonts/BwMitga/BwMitga-Bold.woff') format('woff'), url('../../../fonts/BwMitga/BwMitga-Bold.ttf')  format('truetype'), url('../../../fonts/BwMitga/BwMitga-Bold.svg#BwMitga-Bold') format('svg');
+    src: url('../fonts/BwMitga/BwMitga-Bold.eot') format('embedded-opentype'),  url('../fonts/BwMitga/BwMitga-Bold.otf')  format('opentype'),
+    url('../fonts/BwMitga/BwMitga-Bold.woff') format('woff'), url('../fonts/BwMitga/BwMitga-Bold.ttf')  format('truetype'), url('../fonts/BwMitga/BwMitga-Bold.svg#BwMitga-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BwMitga-Light';
+    src: url('../fonts/BwMitga/BwMitga-Light.eot') format('embedded-opentype'),  url('../fonts/BwMitga/BwMitga-Light.otf')  format('opentype'),
+    url('../fonts/BwMitga/BwMitga-Light.woff') format('woff'), url('../fonts/BwMitga/BwMitga-Light.ttf')  format('truetype'), url('../fonts/BwMitga/BwMitga-Light.svg#BwMitga-Light') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -21,17 +112,95 @@
 
 @font-face {
     font-family: 'OpenSans-Bold';
-    src: url('../../../fonts/Open_Sans/OpenSans-Bold.ttf')  format('truetype');
+    src: url('../fonts/Open_Sans/OpenSans-Bold.ttf')  format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, menu {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+html, body {
+    font-size: 10px;
+    position: relative;
+    height: 100%;
+    font-family: $font;
+    min-width: $screen-xs-min;
+    color: $color-blue-dark;
+
+}
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+    @include sm {
+        width: 80%;
+    }
+    @include md {
+        width: 90%;
+    }
+    @include xl {
+        width: 70%;
+    }
+    @include uw {
+        width: 60%;
+    }
 
 
 
-$font: 'BwMitga-Regular';
-$font-bold: 'BwMitga-Bold';
-$font-secondary-bold: 'OpenSans-Bold';
+}
+h1 {
+    font-family: $font;
+}
+
+h2, h3, h4 {
+    font-family: $font-bold;
+}
+.btn {
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    width: 20rem;
+    line-height: 4.5rem;
+    text-decoration: none;
+    margin: 0 auto;
+    cursor: pointer;
+
+    &.btn--white {
+        background: $color-white;
+        color: $color-blue-medium;
+    }
+    
+    &.btn--red {
+        background: $color-red;
+        color: #fefefe;
+    }
+    
+    &.btn--blue {
+        background: $color-blue-medium;
+        color: $color-white;
+    }
+    
+    &.btn--link {
+        background: rgba(0,0,0,0);
+        color: $color-white;
+        text-decoration: underline;
+    }
+}
 
 
 
@@ -40,5 +209,188 @@ $font-secondary-bold: 'OpenSans-Bold';
 
 
 
+/*-- subheader --*/
+.--bold {
+    font-family: $font-bold;
+}
+
+#subheader {
+    background: radial-gradient(circle, rgba(94,197,220,0.52) 0%, rgba(94,197,220,1) 100%),url('../img/subheader.jpg');
+    background-size: cover;
+    background-position: bottom;
+    padding: 10rem 0;
+    padding-bottom: 1rem;
+
+    ._title {
+        font-family: $font-bold;
+        font-size: 2.3rem;
+        text-align: center;
+        padding: 1.2rem .8rem;
+        margin: 0 auto;
+        background: $color-white-lighter;
+        color: #29B7D2;
+        width: 270px;
+
+        @include lg {
+            font-size: 3.3rem;
+            width: 390px;
+            padding: 1.4rem 1rem;
+        }
+
+        @include xl {
+            font-size: 4.3rem;
+            width: 500px;
+            padding: 2rem 1.6rem 
+        }
+
+        @include uw {
+            font-size: 5rem;
+            width: 580px;
+            padding: 2.4rem 2rem;
+        }
+        .--red {
+            color: $color-red;
+        }
+
+        .--light {
+            font-family: $font-light;
+        }
+    }
+    
+    ._js-timer {
+        background: rgba(0,0,0,0);
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(4,1fr);
+        gap: 2.5rem;
+        margin: 1rem .5rem;
+
+        ._box {
+            
+        }
+        ._num {
+            font-family: $font-secondary-bold;
+            font-size: 4rem;
+            color: $color-white;
+            text-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        ._text {
+            color: $color-blue-dark;
+            text-align: center;
+            font-family: $font-bold;
+            letter-spacing: 0.2rem;
+            font-size: 1rem;
+        }
+
+        @include md {
+            width: 70%;
+            margin: 3rem auto;
+            
+            ._num {
+                font-size: 5rem;
+            }
+            ._text {
+                font-size: 1.3rem;
+            }
+        }
+
+        @include ex {
+            margin: 5rem auto;
+
+            ._num {
+                font-size: 6rem;
+            }
+        }
+    }
+    
+    .--order-swap {
+        display: flex;
+        flex-flow: column nowrap;
+
+    }
 
 
+    ._buttons-row {
+        display: grid;
+        grid-template-columns: 200px;
+        grid-template-rows: repeat(3,1fr);
+        grid-template-areas: 'btn-red' 'btn-white' 'btn-link';
+        justify-content: center;
+        grid-gap: 18px;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        :nth-child(1) { grid-area: btn-red}
+        :nth-child(2) { grid-area: btn-white}
+        :nth-child(3) { grid-area: btn-link}
+        @include lg {
+            order: 1;
+            grid-template-columns: repeat(3,200px);
+            grid-template-rows: 1fr;
+            grid-template-areas: 'btn-link btn-red btn-white';
+            grid-gap: 25px;
+            justify-content: center;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+
+        }
+        @include xl {
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+            grid-gap: 35px;
+        }
+
+        .btn--white {
+            font-size: 13px;
+        }
+    }
+
+    ._subheader-boxes {
+        display: grid;
+        justify-items: stretch;
+        align-items: center;
+        grid-template-columns: minmax(288px, 1fr);
+        margin: 0 auto;
+        grid-gap: 16px;
+        
+        @include lg {
+            grid-template-rows: 1fr;
+            grid-template-columns: repeat(3, minmax(288px, 1fr));
+            grid-gap: 24px;
+            align-items: stretch;
+            margin: initial;
+        }
+
+        @include xl {
+            grid-gap: 30px;
+        }
+
+        ._box {
+            background: $color-white;
+            padding: 3rem 2.6rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-top: 1.6rem;
+            margin-bottom: 1.8rem;
+            position: relative;
+
+            &:before {
+                content: "";
+                position: absolute;
+                width: 25px;
+                height: 3px;
+                top: -1.8rem;
+                background: $color-red;
+            }
+        }
+
+        p {
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+        }
+
+    }
+}
