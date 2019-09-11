@@ -65,6 +65,14 @@ function html5blank_header_scripts()
     }
 }
 
+function html5blank_footer_scripts()
+{
+    if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
+        wp_register_script('mw_footer_scripts', get_template_directory_uri() . '/js/scripts.footer.min.js', '', '1.0.0', true); // Custom scripts
+        wp_enqueue_script('mw_footer_scripts'); // Enqueue it!
+    }
+}
+
 // Load HTML5 Blank styles
 function html5blank_styles()
 {
@@ -214,6 +222,7 @@ function html5blankgravatar ($avatar_defaults)
 
 // Add Actions
 add_action('init', 'html5blank_header_scripts'); // Add Custom Scripts to wp_head
+add_action('init', 'html5blank_footer_scripts'); // Add Custom Scripts to wp_head
 // add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
