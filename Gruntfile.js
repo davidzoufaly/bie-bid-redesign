@@ -4,7 +4,6 @@ module.exports = function(grunt) {
       pkg: grunt.file.readJSON("package.json"),
       concat: {
         //? 1) COMPILE JS - vem všechny scripty
-        outsourced: {
           // moje
           header: {
             src: ["./js/header/*.js"],
@@ -14,7 +13,6 @@ module.exports = function(grunt) {
             src: ["./js/footer/*.js"],
             dest: "./js/scripts.footer.min.js"
           }
-        }
       },
       babel: {
         //? 2) JS ES5 - vem MOJE spojené scripty v ESNext a převěď je na ES5.
