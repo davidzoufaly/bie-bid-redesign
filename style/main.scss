@@ -284,8 +284,21 @@ ol {
 
 /* wrapper pro button center */
 
+<<<<<<< HEAD
 .btn-wrap-center {
     display: flex;
+=======
+<<<<<<< HEAD
+#footer {
+    background: $color-gray;
+    padding: 4rem 0 2.2rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'menu'
+                        'loga'
+                        'copy';
+    grid-gap: 4rem;
+>>>>>>> js scripts footer / header
     justify-content: center;
     align-items: center;
 }
@@ -301,6 +314,7 @@ ol {
         padding-bottom: 16rem;
     }
 
+<<<<<<< HEAD
     @include uw {
         padding-top: 20rem;
         padding-bottom: 20rem;
@@ -318,6 +332,16 @@ ol {
         align-items: center;
         justify-items: stretch;    
         gap: 2.5rem;
+=======
+        a:hover, a:focus {
+            color: $color-blue;
+        }
+=======
+.ff {
+    color: #fff;
+}
+>>>>>>> js scripts footer / header
+>>>>>>> js scripts footer / header
 
         @include lg {
             grid-template-columns: repeat(4, minmax(200px, 350px));
