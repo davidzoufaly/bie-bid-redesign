@@ -60,7 +60,7 @@ function html5blank_nav()
 function html5blank_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-        wp_register_script('zb_scripts', get_template_directory_uri() . '/js/scripts.min.js', '1.0.0', '',$in_footer = true); // Custom scripts
+        wp_register_script('zb_scripts', get_template_directory_uri() . '/js/scripts.header.min.js', '', '1.0.0'); // Custom scripts
         wp_enqueue_script('zb_scripts'); // Enqueue it!
     }
 }
