@@ -243,6 +243,7 @@ h4 {
 }
 
 
+<<<<<<< HEAD
 #footer {
     background: $color-gray;
     padding: 4rem 0 2.2rem 0;
@@ -272,6 +273,11 @@ h4 {
         a:hover, a:focus {
             color: $color-blue;
         }
+=======
+.ff {
+    color: #fff;
+}
+>>>>>>> js scripts footer / header
 
         @include lg {
             flex-flow: row nowrap;
