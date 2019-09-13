@@ -1,0 +1,75 @@
+#footer {
+    background: $color-gray;
+    padding: 4rem 0 2.2rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'menu'
+                        'loga'
+                        'copy';
+    grid-gap: 4rem;
+    justify-content: center;
+    color: $color-white;
+    text-align: center;
+
+    ._footer-menu {
+        display: flex;
+        flex-flow: column;
+        align-items: space-around;
+        font-size: 15px;
+        grid-area: menu;
+
+        a {
+            text-decoration: none;
+            color: $color-white;
+            line-height: 2.4rem;
+        }
+
+        a:hover, a:focus {
+            color: $color-blue;
+        }
+
+        @include lg {
+            flex-flow: row nowrap;
+            margin-bottom: 0;
+            justify-content: space-around; 
+        }
+    }
+
+    ._loga {
+        grid-area: loga;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+
+        img {
+            height: 28px;
+
+            &:nth-child(1) {
+                width: 72.79px;
+                margin-bottom: 2rem;
+
+                @include lg {margin: 0 2rem 0 0;}
+            }
+
+            &:nth-child(2) {
+                width: 117.13px;
+            }
+
+        }
+
+        @include lg {
+            flex-flow: row;
+        }
+    }
+
+    ._copy{
+        grid-area: copy;
+    }
+
+
+    @include lg {
+        grid-template-columns: repeat(3, minmax(200px, 320px));
+        grid-template-areas: 'menu copy loga';
+
+    }
+}
