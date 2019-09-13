@@ -264,4 +264,3 @@ get_header();
             }
         }, 1000);
     </script>
-
