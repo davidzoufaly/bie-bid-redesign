@@ -244,6 +244,7 @@ h4 {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #footer {
     background: $color-gray;
     padding: 4rem 0 2.2rem 0;
@@ -298,6 +299,11 @@ h4 {
             &:nth-child(1) {
                 width: 72.79px;
                 margin-bottom: 2rem;
+=======
+.ff {
+    color: #fff;
+}
+>>>>>>> cd2f7e5961f1410d30914026574db3dcbe651814
 
                 @include lg {margin: 0 2rem 0 0;}
             }
