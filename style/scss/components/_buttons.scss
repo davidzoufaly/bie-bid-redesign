@@ -14,7 +14,7 @@
         color: $color-blue-medium;
 
         &:hover, &:focus {
-            background: darken($color-white, 20%);
+            background: darken($color-white, 6%);
         }
     }
     
@@ -23,7 +23,7 @@
         color: #fefefe;
         
         &:hover, &:focus {
-            background: darken($color-red, 20%);
+            background: darken($color-red, 10%);
         }
     }
     
@@ -38,11 +38,13 @@
     
     &.btn--link {
         background: rgba(0,0,0,0);
-        color: $color-white;
-        text-decoration: underline;
+        color: $color-red;
+        text-decoration: none;
+        transition: all 0.3 ease-out;
         
         &:hover, &:focus {
-            color: darken($color-white, 20%);
+            color: darken($color-red, 10%);
+            text-decoration: underline;
         }
     }
 }

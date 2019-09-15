@@ -1,0 +1,32 @@
+table {
+    width: 100%;
+    caption {
+        text-align: left;
+        padding: 1.5rem 0;
+    }
+}
+
+table, th, td {
+    border: 1px solid #E0E1E2;
+    border-collapse: collapse;
+    font-size: 1.6rem;
+}
+
+th, td {
+    padding: 1rem 1.8rem;
+    text-align: left;
+}
+
+table th:last-child {
+    border-right-color: $color-blue-medium;
+}
+
+th {
+    background: $color-blue-medium;
+    color: $color-white;
+    border-left-color: $color-blue-medium;
+    border-top-color: $color-blue-medium;
+    border-bottom-color: $color-blue-medium;
+
+}
+

@@ -217,14 +217,12 @@ get_header();
     <div id="kontaktujte-nas">
         <div class="container">
             <h3>KONTAKTUJTE NÁS</h3>
-            <div class="formular">
-                <form action="" method="post">
-                    <input class="_jmeno" type="text" name="jmeno" placeholder="Jméno*">
-                    <input class="_email" type="email" name="email" placeholder="Email*">
-                    <input class="_text" type="text" name="text" placeholder="Text*">
-                    <input class="btn btn--blue" type="submit" name="odeslat" value="ODESLAT">
-                </form>
-            </div>
+            <form class="_formular-kontaktujte-nas" action="" method="post">
+                <input class="_jmeno" type="text" name="jmeno" placeholder="Jméno*">
+                <input class="_email" type="email" name="email" placeholder="Email*">
+                <input class="_text" type="text" name="text" placeholder="Text*">
+                <input class="btn btn--blue" type="submit" name="odeslat" value="ODESLAT">
+            </form>
         </div>
     </div>
 

@@ -1,0 +1,36 @@
+#libi-se {
+    background: $color-red;
+    background-image: linear-gradient(180deg, rgba(210, 93, 84, 0.96) 0%, $color-red 90%, $color-red 100%),url('../img/pattern-bie-white.svg');
+    background-size: 38%;
+    color: $color-white;
+    text-align: center;
+    padding-top: 6.8rem;
+    padding-bottom: 4.6rem;
+
+    h2 { 
+        position: relative;
+        margin-bottom: 2.2rem;
+    }
+
+    h2:before {
+        content: "";
+        width: 25px;
+        height: 3px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -1.8rem;
+        background: $color-white;
+    }
+
+    .btn {
+        display: block;
+        margin: 0 auto;
+        color: $color-red;
+        margin-bottom: 1rem;
+    }
+
+    .btn--link {
+        color: $color-white;
+    }
+}

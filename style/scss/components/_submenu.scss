@@ -1,0 +1,39 @@
+.submenu {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.4rem;
+    padding-bottom: 3.6rem;
+    line-height: 3rem;
+
+    &__item {
+        display: inline-block;
+        text-decoration: underline;
+        color: $color-blue-dark;
+        transition: color 250ms ease-out;
+
+        &:hover {
+            color: lighten($color-blue-dark, 20)
+        }
+    }
+
+    &__item:after {
+        content: '\003e';
+        display: inline-block;
+        margin: 0 0.7rem;
+        text-decoration: none;
+        color: $color-blue-dark;
+    }
+
+    & &__item:last-child {
+        text-decoration: none;
+        &:hover {
+            color: $color-blue-dark;
+        }
+    }
+
+    & &__item:last-child:after {
+        content: none;
+        text-decoration: none;
+    }
+}
+

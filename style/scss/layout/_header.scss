@@ -9,6 +9,7 @@
         flex-flow: row nowrap;
         padding: 0 1.6rem;
         position: fixed;
+        top: 0;
         background: $color-white;
         z-index: 4;
     
@@ -84,7 +85,7 @@
                 text-decoration: none;
             }
 
-            &:hover a {
+            &:hover a, &:focus a {
                 color: $color-blue;
             }
         }

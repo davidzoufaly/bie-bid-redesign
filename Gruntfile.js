@@ -4,11 +4,15 @@ module.exports = function(grunt) {
       pkg: grunt.file.readJSON("package.json"),
       concat: {
         //? 1) COMPILE JS - vem všechny scripty
-        outsourced: {
           // moje
-          src: "./js/esnext/*.js",
-          dest: "./js/scripts.min.js"
-        }
+          header: {
+            src: ["./js/header/*.js"],
+            dest: "./js/scripts.header.min.js"
+          },
+          footer: {
+            src: ["./js/footer/*.js"],
+            dest: "./js/scripts.footer.min.js"
+          }
       },
       babel: {
         //? 2) JS ES5 - vem MOJE spojené scripty v ESNext a převěď je na ES5.
@@ -19,7 +23,8 @@ module.exports = function(grunt) {
         dist: {
           files: {
             // vlevo dest, vpravo source
-            "./js/scripts.min.js": "./js/scripts.min.js"
+            "./js/scripts.footer.min.js" : ["./js/scripts.footer.min.js"],
+            "./js/scripts.header.min.js" : ["./js/scripts.header.min.js"]
           }
         }
       },
@@ -32,7 +37,8 @@ module.exports = function(grunt) {
         my_target: {
           files: {
             // vlevo dest, vpravo source
-            "./js/scripts.min.js": ["./js/scripts.min.js"]
+            "./js/scripts.footer.min.js" : "./js/scripts.footer.min.js",
+            "./js/scripts.header.min.js" : "./js/scripts.header.min.js"
           }
         }
       },

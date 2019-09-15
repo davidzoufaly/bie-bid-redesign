@@ -38,6 +38,7 @@
             font-size: 5rem;
             width: 580px;
         }
+        
         .--red {
             color: $color-red;
         }
@@ -55,9 +56,8 @@
         gap: 2.5rem;
         margin: 1rem .5rem;
 
-        ._box {
+        ._box { }
 
-        }
         ._num {
             font-family: $font-secondary-bold;
             font-size: 4rem;
@@ -110,9 +110,11 @@
         grid-gap: 18px;
         margin-top: 2rem;
         margin-bottom: 1rem;
+
         :nth-child(1) { grid-area: btn-red}
         :nth-child(2) { grid-area: btn-white}
         :nth-child(3) { grid-area: btn-link}
+
         @include lg {
             order: 1;
             grid-template-columns: repeat(3,200px);
@@ -122,8 +124,8 @@
             justify-content: center;
             margin-top: 3rem;
             margin-bottom: 3rem;
-
         }
+
         @include xl {
             margin-top: 5rem;
             margin-bottom: 5rem;
@@ -133,54 +135,10 @@
         .btn--white {
             font-size: 13px;
         }
-    }
 
-    ._subheader-boxes {
-        display: grid;
-        justify-items: stretch;
-        align-items: center;
-        grid-template-columns: minmax(288px, 1fr);
-        margin: 0 auto;
-        grid-gap: 16px;
-        
-        @include lg {
-            grid-template-rows: 1fr;
-            grid-template-columns: repeat(3, minmax(288px, 1fr));
-            grid-gap: 24px;
-            align-items: stretch;
-            margin: initial;
+        .btn--link {
+            color: $color-white;
         }
-
-        @include xl {
-            grid-gap: 30px;
-        }
-
-        ._box {
-            background: white;
-            background-image: linear-gradient(135deg, white 0%, white 25%, rgba(255, 255, 255, 0.92) 100%),url("../img/pattern-bie.svg");
-            background-size: 109%;
-            padding: 3rem 3.6rem;
-        }
-
-        h3 {
-            font-size: 1.8rem;
-            position: relative;
-
-            &:before {
-                content: "";
-                position: absolute;
-                width: 25px;
-                height: 3px;
-                top: -1.8rem;
-                background: $color-red;
-            }
-        }
-
-        p {
-            font-size: 1.6rem;
-            line-height: 2.4rem;
-        }
-
     }
 }
 
@@ -208,533 +166,6 @@
     z-index: 1;
 }
 
-// boxes sekce
-
-#boxes-section {
-    background: $color-blue-light;
-    padding-top: 5rem;
-    padding-bottom: 6rem;
-    position: relative;
-
-    @include lg {
-        padding-top: 16rem;
-        padding-bottom: 16rem;
-    }
-
-    @include uw {
-        padding-top: 20rem;
-        padding-bottom: 20rem;
-    }
-
-    .container {
-        display: grid;
-        grid-template-columns: minmax(288px, 350px);
-        grid-template-rows: 1fr;
-        justify-content: center;
-        grid-template-areas: "what-is" 
-                        "aktuality" 
-                        "pro-media" 
-                        "pro-partnery" ;
-        align-items: center;
-        justify-items: stretch;    
-        gap: 2.5rem;
-
-        @include lg {
-            grid-template-columns: repeat(4, minmax(200px, 350px));
-            grid-template-rows: 2fr;
-            grid-template-areas: "what-is what-is what-is what-is"
-                                "aktuality aktuality pro-media pro-partnery";
-            align-items: stretch;
-            gap: 3rem;
-        }
- 
-        & > div {
-            h2:before, h3:before {
-                content: "";
-                position: absolute;
-                width: 25px;
-                height: 3px;
-                top: -1.8rem;
-                background: $color-red;
-            }
-            padding: 3rem 3.6rem;
-            background: $color-white;
-        }
-    }
-
-    ._what-is {
-        position: relative;
-        margin-bottom: 3rem;
-        grid-area: what-is;
-
-        h2 {
-            font-size: 3rem;
-            @include xl { font-size: 3.4rem;}
-        }
-
-        p {
-            font-size: 14px;
-            line-height: 22px;
-            @include xl {
-                font-size: 16px;
-                line-height: 24px;
-            }
-        }
-
-        :nth-child(3) { margin-top: 2.8rem; }
-        
-        ._video {
-            background: #7fc3d7;
-            min-width: 220px;
-            height: 170px;
-            margin: 0 auto;
-            margin-top: 1.6rem;
-            margin-bottom: -6rem;
-            position: relative;
-
-            .icon-button_blue {
-                font-size: 48px;
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                cursor: pointer;
-            }
-        }
-
-        @include lg {
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-between;
-            width: calc(100% - 10.2rem);
-
-            .--flex-lg-helper {
-                width: 45%;
-                margin-right: 4rem;
-            }
-
-            .--flex-lg-video-helper {
-                width: 45%;
-                position: relative;
-
-                ._video {
-                    position: absolute;
-                    margin: 0;
-                    height: 100%;
-                    width: 100%;
-                    right: -6.8rem;
-                    top: -6rem;
-                }
-            }
-        }
-    }
-
-    ._aktuality {
-        grid-area: aktuality;
-
-        ._vsechny {
-            position: relative;
-
-            .btn {
-                display: block;
-                margin: 0 auto;
-                font-size: 1.3rem;
-                margin-top: 2rem;
-            }
-        }
-
-        ._vsechny:before {
-            content:"";
-            position: absolute;
-            height: 1px;
-            width: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            top: -2rem;
-            background: rgba(40,40,40,.1);
-        }
-
-        @include lg {
-            .--grid-lg-helper {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-gap: 3rem;
-            }
-        }
-    }
-
-    ._pro-media { grid-area: pro-media; }
-    ._pro-partnery { grid-area: pro-partnery;}
-
-    ._prispevek {
-        margin-top: 1rem;
-        margin-bottom: 3rem;
-
-        h4 {padding-top: 1.4rem; padding-bottom: 0.5rem;}
-
-        ._cover {
-            position: relative;
-        }
-
-        ._cover:before {
-            content: "";
-            background: #d0eaf2;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 3px;
-            left: 3px;
-        }
-
-        ._cover-img { width: 100%; z-index: 1; }
-
-
-        ._date {
-            font-size: 1.2rem;
-            padding-bottom: 1rem;
-            color: #a9a9a9;
-        }
-
-        ._text {
-            font-size: 1.2rem;
-            padding-bottom: 1rem; 
-        }
-
-        ._vice-info {
-            font-size: 12px;
-            color: $color-red;
-            text-decoration: underline;         
-            cursor: pointer;              
-        }
-
-        div {
-            display: flex;
-            align-items: center;
-        }
-
-        .icon-arrow_link {
-            padding-left: 1rem;
-            font-size: 14px;
-
-            &::before {
-                color: $color-red;    
-            }
-        }
-    }
-
-    &:after {
-        content: "";
-        width: 1px;
-        height: 2.6rem;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 0;
-        background: $color-blue;
-    }
-
-    &:before {
-        content: "";
-        width: 1px;
-        height: 1.5rem;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -15px;
-        background: $color-blue-light;
-        z-index: 1;
-    }
-}
-
-// reference
-
-#reference {
-    background: $color-blue;
-    padding-top: 8rem;
-    padding-bottom: 6rem;
-    position: relative;
-
-    h2 {
-        text-align: center;
-        position: relative;
-        color: $color-white;
-        
-        @include lg { margin-bottom: 4rem; }
-        @include uw { margin-bottom: 6rem; }
-
-    }
-
-    h2:before {
-        content: "";
-        width: 25px;
-        height: 3px;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: -1.8rem;
-        background: $color-red;
-    }
-
-    ._grid-reference {
-        display: grid;
-        grid-template-columns: minmax(200px, 350px);
-        justify-content: center;
-        grid-gap: 3rem;
-        font-size: 1.4rem;
-
-        & ._box:not(:first-child) {
-            display: none;
-        }
-
-        @include lg {
-            grid-template-columns: repeat(3, minmax(200px, 350px));
-
-            & ._box:not(:first-child) {
-                display: initial;
-            }
-        }
-
-        ._box {
-            background: white;
-            background-image: linear-gradient(135deg, white 0%, white 45%, rgba(255, 255, 255, 0.92) 100%),url("../img/pattern-bie.svg");
-            background-size: 109%;
-            padding: 3rem 3.6rem;
-        }
-
-        ._avatar img {
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-        }
-
-        ._name, ._ref-text {line-height: 2.4rem;}
-
-        ._name { margin-top: 1rem; }
-
-        ._ref-text {
-            padding-top: 1.8rem;
-
-            @include lg {
-                font-size: 1.6rem;
-            }
-        }
-
-    }
-
-    .btn {
-        display: block;
-        margin: 0 auto;
-        margin-top: 2.6rem;
-        @include lg {margin-top: 4rem;}
-    }
-
-    &:after {
-        content: "";
-        width: 1px;
-        height: 2.6rem;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 0;
-        background: #EBF6F9;
-    }
-
-    &:before {
-        content: "";
-        width: 1px;
-        height: 1.5rem;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -15px;
-        background: #5AB4CF;
-    }
-
-}
-
-// partneri
-
-#partneri {
-    padding: 5.5rem 0;
-
-    h2 {
-        position: relative;
-        text-align: center;
-    }
-
-    h2:before {
-        content: "";
-        width: 25px;
-        height: 3px;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: -1.8rem;
-        background: $color-red;
-    }
-
-    ._partneri-box {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas: 'spol-org'
-                            'org'
-                            'gen-part'
-                            'hl-part'
-                            'med-part';
-        justify-content: center;
-
-        & ._partner:nth-child(1) { 
-            grid-area: org;
-            position: relative;
-
-            @include lg {
-                &:after {
-                    content: '';
-                    width: 1px;
-                    height: 100px;
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    right: 0;
-                    background: rgba(40,40,40,.1);
-                }
-            }
-        }
-        & ._partner:nth-child(2) { 
-            grid-area: spol-org;
-            position: relative;
-
-            @include lg {
-                &:after {
-                    content: '';
-                    width: 1px;
-                    height: 100px;
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    right: 0;
-                    background: rgba(40,40,40,.1);
-                }
-            }
-             
-        }
-        & ._partner:nth-child(3) { grid-area: gen-part;}
-        & div:nth-child(4) { grid-area: hl-part;}
-        & div:nth-child(5) { grid-area: med-part;}
-
-        h3, p, h4 { text-align: center; }
-
-        p {
-            font-size: 1.2rem;
-        }
-
-        ._partner {
-            padding: 0 3rem;
-
-            h3 { margin-top: 3.4rem;}
-
-            h4 {
-                margin-top: 1rem;
-                margin-bottom: 1.8rem;
-            }
-
-            p {
-                margin-bottom: 3rem;
-            }
-
-            ._partner-logo {
-                
-                img {
-                    width: 200px;
-                    margin: 0 auto;
-                    display: block;
-                }
-            }
-
-            @include lg {
-                padding-bottom: 2rem;
-
-                h3 { margin-bottom: 4.4rem;}
-            }
-        }
-
-        ._hl-partneri, ._med-partneri {
-            padding: 0 3rem;
-
-            h4 { 
-                margin-top: 4.6rem; 
-                margin-bottom: 2.5rem;
-            }
-
-            ._loga {
-                display: flex;
-                flex-flow: row wrap;
-                justify-content: space-between;
-            }
-
-            img {
-                width: 100px;
-            }
-
-            @include lg {
-                border-top: 1px solid rgba(40,40,40,.1);
-
-                h4 {
-                    text-align: left;
-                }
-            }
-        }
-
-        ._hl-partneri {
-            border-top: 1px solid rgba(40,40,40,.1);
-        }
-
-        @include lg {
-            grid-template-columns: repeat(6,1fr);
-            grid-template-rows: 1fr 1fr;
-            grid-template-areas: "org org spol-org spol-org gen-part gen-part"
-                                 "hl-part hl-part hl-part hl-part med-part med-part";
-            margin-top: 8rem;
-        }
-    }
-
-}
-
-#libi-se {
-    background: $color-red;
-    color: $color-white;
-    text-align: center;
-    padding-top: 6.8rem;
-    padding-bottom: 4.6rem;
-
-    h2 { 
-        position: relative;
-        margin-bottom: 2.2rem;
-    }
-
-    h2:before {
-        content: "";
-        width: 25px;
-        height: 3px;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: -1.8rem;
-        background: $color-white;
-    }
-
-    .btn {
-        display: block;
-        margin: 0 auto;
-        color: $color-red;
-        margin-bottom: 1rem;
-    }
-
-    .btn--link {
-        color: $color-white;
-    }
-}
-
 #kontaktujte-nas {
     background: $color-blue-light;
     padding-top: 5rem;
@@ -743,71 +174,16 @@
     h3 { 
         position: relative;
         text-align: center;
-    }
 
-    h3:before {
-        content: "";
-        width: 25px;
-        height: 3px;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: -1.8rem;
-        background: $color-red;
-    }
-
-    form {
-        padding: 4rem 3rem;
-        background: $color-white;
-        display: flex;
-        flex-flow: row wrap;
-        box-shadow: 4px 4px 14px -4px rgba(0,0,0,0.15);
-
-        input {
-            width: 100%;
-            border: none;
-            border-bottom: 1px solid #A9A9A9;
-            padding-bottom: 1rem;
-            margin-bottom: 2rem;
-            font-size: 1.4rem;
-    
-            &.btn {
-                display: block;
-                width: 20rem;
-                margin: 0 auto;
-                margin-top: 1rem;
-                padding-bottom: 0;
-            }
-
-            @include lg {
-                margin-bottom: 3rem;
-            }
-        }
-    
-        input:focus {
-            outline: none;
-            border-bottom: 1px solid $color-red;
-        }
-
-        @include sm {
-            margin: 0 auto;
-            width: 75%;
-        }
-
-        @include md {
-            width: 60%
-        }
-
-        @include lg {
-            justify-content: space-between;
-
-            ._jmeno { width: 45%; }
-            ._email { width: 45%; }
-        }
-
-        @include uw {
-            width: 50%;
-            max-width: 380px
+        &:before {
+            content: "";
+            width: 25px;
+            height: 3px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -1.8rem;
+            background: $color-red;
         }
     }
 

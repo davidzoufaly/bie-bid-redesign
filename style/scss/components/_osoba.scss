@@ -1,0 +1,58 @@
+.osoba {
+    max-width: 250px;
+    text-align: center;
+
+    &__avatar {
+        margin: 0 auto;
+        margin-bottom:1.2rem;
+        width: 105px;
+        position: relative;
+
+        &-img {            
+        width: 105px;
+        border-radius: 50%;
+        z-index:1;
+        
+        }
+    }
+
+    .osoba__avatar--bg {
+        display: block;
+        width: 105px;
+        height: 105px;
+        border-radius: 50%;
+        position:absolute;
+        right: -1px;
+        bottom: 0px;
+        background: $color-blue;
+        z-index: -1;
+    }
+
+
+    &__name {
+
+    }
+
+    &__position {
+        font-family: $font-bold;
+        font-size: 14px;
+        margin-bottom: 1rem;
+
+    }
+
+    &__tel {
+        color: $color-blue-dark;
+        text-decoration: none;
+        font-size: 14px;
+
+        
+    }
+
+    &__email {
+        color: $color-blue;
+        font-size: 14px;
+        &:hover {
+            color: darken($color-blue, 20%);
+        }
+    }
+}

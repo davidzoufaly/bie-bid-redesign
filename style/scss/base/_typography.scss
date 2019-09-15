@@ -28,3 +28,41 @@ h4 {
 .--bold {
     font-family: $font-bold;
 }
+
+p {
+    font-size: 16px;
+}
+
+ul {
+    list-style: none;
+    font-size: 16px;
+    line-height: 2.5rem;
+
+    & li:before {
+        content: '\2022';
+        color: $color-blue-medium;
+        display: inline-block;
+        width: 1rem;
+        padding-right: 0.75rem;
+    }
+}
+
+ol {
+    font-size: 16px;
+    counter-reset: item;
+    line-height: 2.5rem;
+
+    li {
+        list-style-type: none;
+        counter-increment: item;
+    }
+
+    li:before {
+        display: inline-block;
+        width: 1rem;
+        padding-right: 1rem;
+        font-family: $font-bold;
+        text-align: right;
+        content: counter(item) '.';
+    }
+}
