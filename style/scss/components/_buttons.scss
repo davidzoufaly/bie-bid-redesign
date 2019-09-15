@@ -2,10 +2,8 @@
     display: inline-block;
     text-align: center;
     font-size: 16px;
-    width: 20rem;
     line-height: 4.5rem;
     text-decoration: none;
-    margin: 0 auto;
     transition: all 300ms ease-out;
     cursor: pointer;
 
@@ -14,7 +12,7 @@
         color: $color-blue-medium;
 
         &:hover, &:focus {
-            background: darken($color-white, 6%);
+            background: darken($color-white, 8%);
         }
     }
     
@@ -49,3 +47,10 @@
     }
 }
 
+/* wrapper pro button center */
+
+.btn-wrap-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

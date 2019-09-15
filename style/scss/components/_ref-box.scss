@@ -1,0 +1,24 @@
+.ref-box {
+    background: white;
+    background-image: linear-gradient(135deg, white 0%, white 45%, rgba(255, 255, 255, 0.92) 100%),url("../img/pattern-bie.svg");
+    background-size: 109%;
+    padding: 3rem 3.6rem;
+    
+    &__avatar img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+    }
+
+    &__name, &__ref-text {line-height: 2.4rem;}
+
+    &__name { margin-top: 1rem; }
+
+    &__ref-text {
+        padding-top: 1.8rem;
+
+        @include lg {
+            font-size: 1.6rem;
+        }
+    }
+}

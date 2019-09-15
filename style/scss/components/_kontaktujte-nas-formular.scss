@@ -1,9 +1,15 @@
-._formular-kontaktujte-nas {
+.kontaktujte-nas-formular {
     padding: 4rem 3rem;
     background: $color-white;
     display: flex;
     flex-flow: row wrap;
     box-shadow: 4px 4px 14px -4px rgba(0,0,0,0.15);
+
+    div {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
 
     input {
         width: 100%;
@@ -15,10 +21,13 @@
 
         &.btn {
             display: block;
-            width: 20rem;
-            margin: 0 auto;
+            width: initial;
             margin-top: 1rem;
             padding-bottom: 0;
+            border-bottom: none;
+
+            padding: 0 2rem;
+            font-size: 16px;
         }
 
         @include lg {
@@ -43,8 +52,8 @@
     @include lg {
         justify-content: space-between;
 
-        ._jmeno { width: 45%; }
-        ._email { width: 45%; }
+        .kontaktujte-nas-formular__jmeno { width: 45%; }
+        .kontaktujte-nas-formular__email { width: 45%; }
     }
 
     @include uw {

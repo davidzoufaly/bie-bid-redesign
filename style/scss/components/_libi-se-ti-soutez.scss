@@ -23,9 +23,16 @@
         background: $color-white;
     }
 
+    div {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+    }
+
     .btn {
         display: block;
         margin: 0 auto;
+        padding: 0 2rem;
         color: $color-red;
         margin-bottom: 1rem;
     }

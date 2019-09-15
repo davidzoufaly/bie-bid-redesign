@@ -1,6 +1,6 @@
 /*-- subheader --*/
 
-#subheader_homepage {
+.subheader-homepage {
     background: radial-gradient(circle, rgba(94,197,220,0.52) 0%, rgba(94,197,220,1) 100%),url('../img/subheader.jpg');
     background-size: cover;
     background-position: bottom;
@@ -13,7 +13,7 @@
         padding-top: 20rem;
     }
 
-    ._title {
+    &__title {
         font-family: $font-bold;
         font-size: 2.3rem;
         text-align: center;
@@ -39,66 +39,18 @@
             width: 580px;
         }
         
-        .--red {
+        &--red {
             color: $color-red;
         }
 
-        .--light {
+        &--light {
             font-family: $font-light;
-        }
-    }
-    
-    ._js-timer {
-        background: rgba(0,0,0,0);
-        display: grid;
-        grid-template-rows: 1fr;
-        grid-template-columns: repeat(4,1fr);
-        gap: 2.5rem;
-        margin: 1rem .5rem;
-
-        ._box { }
-
-        ._num {
-            font-family: $font-secondary-bold;
-            font-size: 4rem;
-            color: $color-white;
-            text-shadow: 0px 0px 4px rgba(0,0,0,0.2);
-            text-align: center;
-        }
-
-        ._text {
-            color: $color-blue-dark;
-            text-align: center;
-            font-family: $font-bold;
-            letter-spacing: 0.2rem;
-            font-size: 1rem;
-        }
-
-        @include md {
-            width: 70%;
-            margin: 3rem auto;
-            
-            ._num {
-                font-size: 5rem;
-            }
-            ._text {
-                font-size: 1.3rem;
-            }
-        }
-
-        @include ex {
-            margin: 5rem auto;
-
-            ._num {
-                font-size: 6rem;
-            }
         }
     }
     
     .--order-swap {
         display: flex;
         flex-flow: column nowrap;
-
     }
 
     ._buttons-row {
@@ -107,6 +59,7 @@
         grid-template-rows: repeat(3,1fr);
         grid-template-areas: 'btn-red' 'btn-white' 'btn-link';
         justify-content: center;
+        justify-items: stretch;
         grid-gap: 18px;
         margin-top: 2rem;
         margin-bottom: 1rem;
@@ -114,6 +67,10 @@
         :nth-child(1) { grid-area: btn-red}
         :nth-child(2) { grid-area: btn-white}
         :nth-child(3) { grid-area: btn-link}
+
+        .btn--link {
+            color: $color-white;
+        }
 
         @include lg {
             order: 1;
@@ -131,64 +88,31 @@
             margin-bottom: 5rem;
             grid-gap: 35px;
         }
+    }
 
-        .btn--white {
-            font-size: 13px;
-        }
+    &:after {
+        content: "";
+        width: 1px;
+        height: 2.6rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        background: $color-blue-light;
+        z-index: 1;
+    }
 
-        .btn--link {
-            color: $color-white;
-        }
+    &:before {
+        content: "";
+        width: 1px;
+        height: 1.5rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -15px;
+        background: $color-blue;
+        z-index: 1;
     }
 }
 
-#subheader_homepage:after {
-    content: "";
-    width: 1px;
-    height: 2.6rem;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    background: $color-blue-light;
-    z-index: 1;
-}
-
-#subheader_homepage:before {
-    content: "";
-    width: 1px;
-    height: 1.5rem;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -15px;
-    background: $color-blue;
-    z-index: 1;
-}
-
-#kontaktujte-nas {
-    background: $color-blue-light;
-    padding-top: 5rem;
-    padding-bottom: 4rem;
-
-    h3 { 
-        position: relative;
-        text-align: center;
-
-        &:before {
-            content: "";
-            width: 25px;
-            height: 3px;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            top: -1.8rem;
-            background: $color-red;
-        }
-    }
-
-    @include lg {
-        padding-top: 9rem;
-    }
-}
 
