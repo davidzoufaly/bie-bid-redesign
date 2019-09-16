@@ -158,37 +158,37 @@ get_header();
         </div>
     </div>
 
-    <div id="partneri">
+    <div class="partneri-sekce">
         <div class="container">
             <h2>Partneři</h2>
-            <div class="_partneri-box">
-                <div class="_partner">
+            <div class="partneri">
+                <div class="partner">
                     <h3>ORGANIZÁTOR</h3>
-                    <div class="_partner-logo">
+                    <div class="partner__logo">
                         <img src="./wp-content/themes/bie/img/czech-us.jpg" alr="Czech-us logo">
                     </div>
-                    <h4 class="_nazev">Czech-us</h4>
-                    <p class="_about">Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem.</p>
+                    <h4 class="partner__nazev">Czech-us</h4>
+                    <p class="partner__about">Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem.</p>
                 </div>
-                <div class="_partner">
+                <div class="partner">
                     <h3>SPOLUORGANIZÁTOR</h3>
-                    <div class="_partner-logo" style="margin-bottom: 16px">
+                    <div class="partner__logo" style="margin-bottom: 16px">
                         <img src="./wp-content/themes/bie/img/institute.jpg" alr="Institute for competencies development logo">
                     </div>
-                    <h4 class="_nazev">Czech-us</h4>
-                    <p class="_about">Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem.</p>
+                    <h4 class="partner__nazev">Czech-us</h4>
+                    <p class="partner__about">Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem.</p>
                 </div>
-                <div class="_partner">
+                <div class="partner">
                     <h3>GENERÁLNÍ PARTNER</h3>
-                    <div class="_partner-logo">
+                    <div class="partner__logo">
                         <img src="./wp-content/themes/bie/img/kb.jpg" alr="Komercni banka logo">
                     </div>
-                    <h4 class="_nazev">Komerční banka</h4>
-                    <p class="_about">Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem.</p>
+                    <h4 class="partner__nazev">Komerční banka</h4>
+                    <p class="partner__about">Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem.</p>
                 </div>
-                <div class="_hl-partneri">
+                <div class="hl-partneri">
                     <h4>HLAVNÍ PARTNEŘI</h4>
-                    <div class="_loga">
+                    <div class="hl-partneri__loga">
                         <img src="./wp-content/themes/bie/img/stabilo.jpg" alt="Stabilo logo">
                         <img src="./wp-content/themes/bie/img/ilac.jpg" alt="ILAC logo">
                         <img src="./wp-content/themes/bie/img/akcent.jpg" alt="Akcent logo">
@@ -196,9 +196,9 @@ get_header();
                         <img src="./wp-content/themes/bie/img/injoy.jpg" alt="Injoy logo">
                     </div>
                 </div>
-                <div class="_med-partneri">
+                <div class="med-partneri">
                     <h4>MEDIALNÍ PARTNEŘI</h4>
-                    <div class="_loga">
+                    <div class="med-partneri__loga">
                         <img src="./wp-content/themes/bie/img/ess.jpg" alt="European summer school logo">  
                         <img src="./wp-content/themes/bie/img/brainstorm.jpg" alt="Brainstorm logo">
                     </div>
