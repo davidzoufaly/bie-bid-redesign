@@ -4,6 +4,7 @@ get_header();
 
 
 ?>
+
 <body>
 <<<<<<< HEAD
     <!-- subheader -->
@@ -67,6 +68,7 @@ get_header();
 >>>>>>> propis na homepage
     <!-- Boxes section -->
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div class="boxes-section">
         <div class="container">
             <div class="boxes-section__what-is">
@@ -87,24 +89,31 @@ get_header();
                     </div>
                 </div>
             </div>
+=======
+    <section class="boxes-section">
+        <div class="container">
+            <?php get_template_part('parts/video-homepage') ?>
+>>>>>>> pro media, partnery in progress
             <div class="boxes-section__aktuality">
                 <h3>AKTUALITY</h3>
                 <div class="--grid-lg-helper">
                     <div class="prispevek">
                         <div class="prispevek__cover">
-                            <img  class="prispevek__img" src="https://via.placeholder.com/240" alt="">
+                            <img class="prispevek__img" src="https://via.placeholder.com/240" alt="">
                         </div>
                         <h4>Tittle novinky na dva řádky lorem</h4>
                         <div class="prispevek__date">22. 7. 2019</div>
-                        <p class="prispevek__text">Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem...</p>
+                        <p class="prispevek__text">Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis
+                            quis, sem...</p>
                     </div>
                     <div class="prispevek">
                         <div class="prispevek__cover">
-                            <img  class="prispevek__img" src="https://via.placeholder.com/240" alt="">
+                            <img class="prispevek__img" src="https://via.placeholder.com/240" alt="">
                         </div>
                         <h4>Tittle novinky na dva řádky lorem</h4>
                         <div class="prispevek__date">22. 7. 2019</div>
-                        <p class="prispevek__text">Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem...</p>
+                        <p class="prispevek__text">Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis
+                            quis, sem...</p>
                     </div>
                 </div>
                 <div class="boxes-section__aktuality__vsechny">
@@ -138,6 +147,7 @@ get_header();
                     <a class="btn btn--blue" href="#">VŠECHNY AKTUALITY</a>
                 </div>
             </div>
+<<<<<<< HEAD
 
 <<<<<<< HEAD
             <div class="boxes-section__pro-media">
@@ -183,8 +193,11 @@ get_header();
 >>>>>>> idk update
                 </div>
             </div>
+=======
+            <?php get_template_part('parts/pro-media-partnery-homepage') ?>
+>>>>>>> pro media, partnery in progress
         </div>
-    </div>
+    </section>
 
     <div class="reference">
         <div class="container">
@@ -198,7 +211,8 @@ get_header();
                     <div class="ref-box__name --bold">Martina Kir Jambrek</div>
                     <div class="ref-box__school">Ekonomska škola</div>
                     <div class="ref-box__country">Požega, Croatia</div>
-                    <p class="ref-box__ref-text">Thank you! I'm truly happy that our student and school were successful this year and I'm looking forward to ourfuture participation in the Contest.</p>
+                    <p class="ref-box__ref-text">Thank you! I'm truly happy that our student and school were successful
+                        this year and I'm looking forward to ourfuture participation in the Contest.</p>
                 </div>
                 <div class="ref-box">
                     <div class="ref-box__avatar">
@@ -207,7 +221,8 @@ get_header();
                     <div class="ref-box__name --bold">Loreta Vainauskienė</div>
                     <div class="ref-box__school">Kruonis Gymnasium</div>
                     <div class="ref-box__country">Kruonis, Lithuania</div>
-                    <p class="ref-box__ref-text">Dear Andrea, Thank your for your help, it was a pleasure keeping in touch with you.</p>
+                    <p class="ref-box__ref-text">Dear Andrea, Thank your for your help, it was a pleasure keeping in
+                        touch with you.</p>
                 </div>
                 <div class="ref-box">
                     <div class="ref-box__avatar">
@@ -216,6 +231,7 @@ get_header();
                     <div class="ref-box__name --bold">Alessandra Baciga</div>
                     <div class="ref-box__school">Liceo Scientifico Enrico Fermi</div>
                     <div class="ref-box__country">Padova, Italy</div>
+<<<<<<< HEAD
                     <p class="ref-box__ref-text">Thank you to all the staff of BIE. Great organization and great fun for the students who enjoyed watching photos of their peers from far - and at the same time near - foreign countries</p>
 =======
                 <div class="_box">
@@ -245,9 +261,14 @@ get_header();
                     <p class="_country">Padova, Italy</p>
                     <p class="_ref-text">Thank you to all the staff of BIE. Great organization and great fun for the students who enjoyed watching photos of their peers from far - and at the same time near - foreign countries</p>
 >>>>>>> idk update
+=======
+                    <p class="ref-box__ref-text">Thank you to all the staff of BIE. Great organization and great fun for
+                        the students who enjoyed watching photos of their peers from far - and at the same time near -
+                        foreign countries</p>
+>>>>>>> pro media, partnery in progress
                 </div>
             </div>
-            <div class="btn-wrap-center"><a class="btn btn--white">VŠECHNY REFERENCE</a></div>    
+            <div class="btn-wrap-center"><a class="btn btn--white">VŠECHNY REFERENCE</a></div>
         </div>
     </div>
 
@@ -268,15 +289,18 @@ get_header();
                         <img src="./wp-content/themes/bie/img/czech-us.jpg" alr="Czech-us logo">
                     </div>
                     <h4 class="partner__nazev">Czech-us</h4>
-                    <p class="partner__about">Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem.</p>
+                    <p class="partner__about">Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis,
+                        sem.</p>
                 </div>
                 <div class="partner">
                     <h3>SPOLUORGANIZÁTOR</h3>
                     <div class="partner__logo" style="margin-bottom: 16px">
-                        <img src="./wp-content/themes/bie/img/institute.jpg" alr="Institute for competencies development logo">
+                        <img src="./wp-content/themes/bie/img/institute.jpg"
+                            alr="Institute for competencies development logo">
                     </div>
                     <h4 class="partner__nazev">Czech-us</h4>
-                    <p class="partner__about">Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem.</p>
+                    <p class="partner__about">Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis,
+                        sem.</p>
                 </div>
                 <div class="partner">
                     <h3>GENERÁLNÍ PARTNER</h3>
@@ -284,7 +308,8 @@ get_header();
                         <img src="./wp-content/themes/bie/img/kb.jpg" alr="Komercni banka logo">
                     </div>
                     <h4 class="partner__nazev">Komerční banka</h4>
-                    <p class="partner__about">Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis, sem.</p>
+                    <p class="partner__about">Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis quis,
+                        sem.</p>
                 </div>
                 <div class="hl-partneri">
                     <h4>HLAVNÍ PARTNEŘI</h4>
@@ -299,7 +324,7 @@ get_header();
                 <div class="med-partneri">
                     <h4>MEDIALNÍ PARTNEŘI</h4>
                     <div class="med-partneri__loga">
-                        <img src="./wp-content/themes/bie/img/ess.jpg" alt="European summer school logo">  
+                        <img src="./wp-content/themes/bie/img/ess.jpg" alt="European summer school logo">
                         <img src="./wp-content/themes/bie/img/brainstorm.jpg" alt="Brainstorm logo">
                     </div>
                 </div>
@@ -331,6 +356,7 @@ get_header();
 
     <?php 
         get_footer();
+<<<<<<< HEAD
     ?>
 
 <<<<<<< HEAD
@@ -367,3 +393,6 @@ get_header();
     </script>
 =======
 >>>>>>> propis na homepage
+=======
+    ?>
+>>>>>>> pro media, partnery in progress

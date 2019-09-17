@@ -416,9 +416,12 @@ ol {
         :nth-child(3) { margin-top: 2.8rem; }
         
         ._video {
+<<<<<<< HEAD
             background-image: url('../img/video-cover.jpg');
+=======
+>>>>>>> pro media, partnery in progress
             min-width: 220px;
-            height: 170px;
+            height: auto;
             margin: 0 auto;
             margin-top: 1.6rem;
             margin-bottom: -6rem;
@@ -464,7 +467,7 @@ ol {
             }
 
             .--flex-lg-video-helper {
-                width: 45%;
+                width: 50%;
                 position: relative;
 
                 ._video {
