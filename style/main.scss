@@ -197,6 +197,7 @@ h4 {
 
 p {
     font-size: 16px;
+    padding-bottom: 1rem;
 }
 
 ul {
@@ -694,6 +695,42 @@ ol {
         color: $color-white;
     }
 }
+.novinka-aktuality {
+    padding: 5rem 0;
+
+    .container {
+        position:relative;
+
+        h3 { position: relative;}
+
+        h3:before {
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 3px;
+            top: -1.8rem;
+            background: $color-red;
+        }
+
+        @include lg {
+            max-width: 700px;
+        }
+
+        @include uw {
+            max-width: 900px;
+        }
+    }
+    
+    .grid-aktuality {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+
+        @include md {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
 .novinka-body {
     background: $color-blue-light;
     padding-bottom: 2rem;
@@ -745,8 +782,6 @@ ol {
             transform: translateX(-50%);
             background: $color-white;
         }
-
-
     }
 
     .content {
@@ -784,8 +819,6 @@ ol {
             padding: 3rem 6rem 5rem 6rem;
         }
     }
-
-
 }
 .novinka-subheader {
     background: $color-blue-medium;
@@ -1274,6 +1307,45 @@ ol {
         background: #5AB4CF;
     }
 }
+/* Registrace sekce + registrace formular */
+
+.registrace {
+    background: $color-blue-light;
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+
+    h2 { 
+        position: relative;
+        text-align: center;
+        margin-bottom: 4rem;
+
+        &:before {
+            content: "";
+            width: 25px;
+            height: 3px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -1.8rem;
+            background: $color-red;
+        }
+    }
+
+    @include lg {
+        padding-top: 9rem;
+    }
+}
+
+.registrace__formular {
+
+    fieldset {
+        padding: 4rem 3rem;
+        background: $color-white;
+        display: flex;
+        flex-flow: row wrap;
+        box-shadow: 4px 4px 14px -4px rgba(0,0,0,0.15);
+    }
+}
 
 .submenu {
     margin: 0 auto;
@@ -1342,47 +1414,6 @@ th {
     border-left-color: $color-blue-medium;
     border-top-color: $color-blue-medium;
     border-bottom-color: $color-blue-medium;
-
-}
-.novinka-aktuality {
-    padding: 5rem 0;
-
-    .container {
-        position:relative;
-
-        h3 { position: relative;}
-
-        h3:before {
-            content: "";
-            position: absolute;
-            width: 25px;
-            height: 3px;
-            top: -1.8rem;
-            background: $color-red;
-        }
-
-        @include lg {
-            max-width: 700px;
-        }
-
-        @include uw {
-            max-width: 900px;
-        }
-    }
-    
-    .grid-aktuality {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-
-        @include md {
-            grid-template-columns: repeat(4, 1fr);
-        }
-    }
-
-    .prispevek {
-
-    }
 
 }
 #footer {
@@ -1464,7 +1495,10 @@ th {
 
 
 .header {
-
+    z-index: 18;
+    transition: all 250ms ease-in;
+    
+    
     ._header-wrapper {
         height: 60px;
         width: calc(100% - 3.2rem);
@@ -1475,8 +1509,9 @@ th {
         padding: 0 1.6rem;
         position: fixed;
         top: 0;
-        background: $color-white;
-        z-index: 4;
+        background: transparent;
+        z-index: 12;            
+        transition: all 250ms ease-in;
     
         .logo {
             position: relative;
@@ -1486,8 +1521,9 @@ th {
         ._show-menu {
             font-size: 15px;
             position: relative;
+            color: $color-white;
 
-            .icon-burger_menu {
+            .icon-burger_menu--white, .icon-burger_menu--dark {
                 width: 21px;
                 height: 16px;
                 position: absolute;
@@ -1501,8 +1537,9 @@ th {
             display: none;
             font-size: 15px;
             position: relative;
+            color: $color-white;
 
-            .icon-close_icon {
+            .icon-close_icon--white, .icon-close_icon--dark {
                 width: 21px;
                 height: 16px;
                 position: absolute;
@@ -1519,7 +1556,7 @@ th {
         visibility: hidden;
         z-index: -1;
 
-        &:checked + ._header-wrapper + .nav { top:60px; }
+        &:checked + ._header-wrapper + .nav { top:60px; transform:translateY(0); }
         &:checked + ._header-wrapper + .nav + .--mobile-dark-content { display: initial; }
         &:checked + ._header-wrapper ._show-menu {display: none;}
         &:checked + ._header-wrapper ._hide-menu {display: initial;}
@@ -1530,12 +1567,13 @@ th {
         flex-flow: column;
         width: 100vw;
         position: fixed;
-        top: -10000px;
+        top: 0;
         left: 0;
         background: $color-blue-light;
         transition: all 200ms ease-in-out;
-        z-index: 3;
+        z-index: 11;
         padding: 3.5rem 0;
+        transform: translateY(-100%);
 
         ul { 
         }
@@ -1549,6 +1587,9 @@ th {
                 font-size: 1.5rem;
                 color: $color-blue-dark;
                 text-decoration: none;
+                @include lg {
+                    color: $color-white;
+                }
             }
 
             &:hover a, &:focus a {
@@ -1563,6 +1604,10 @@ th {
         .btn {
             font-size: 1.5rem;
         }
+
+        @include lg {
+            transform: translateY(0);
+        }
     }
 
     .--mobile-dark-content {
@@ -1572,7 +1617,7 @@ th {
         top: 0;
         left: 0;
         background: rgba(0,0,0,0.5);
-        z-index:2;
+        z-index:10;
         display: none;
     }
 
@@ -1580,15 +1625,12 @@ th {
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 5;
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-around;
         align-items: center;
         width: 100%;
         height: 80px;
-
-        background: white;
 
         ._header-wrapper {
             height: initial;
@@ -1615,7 +1657,7 @@ th {
             left: initial;
             width: initial;
             padding: 0;
-            z-index: 4;
+            z-index: 11;
             align-items: baseline;
 
             li {

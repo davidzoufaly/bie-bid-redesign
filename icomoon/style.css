@@ -37,7 +37,23 @@
   content: "\e902";
   color: #565656;
 }
+.icon-burger_menu--white:before {
+  content: "\e902";
+  color: #FFF;
+}
+.icon-burger_menu--dark:before {
+  content: "\e902";
+  color: #565656;
+}
 .icon-close_icon:before {
+  content: "\e903";
+  color: #565656;
+}
+.icon-close_icon--white:before {
+  content: "\e903";
+  color: #FFF;
+}
+.icon-close_icon--dark:before {
   content: "\e903";
   color: #565656;
 }

@@ -1,0 +1,39 @@
+/* Registrace sekce + registrace formular */
+
+.registrace {
+    background: $color-blue-light;
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+
+    h2 { 
+        position: relative;
+        text-align: center;
+        margin-bottom: 4rem;
+
+        &:before {
+            content: "";
+            width: 25px;
+            height: 3px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -1.8rem;
+            background: $color-red;
+        }
+    }
+
+    @include lg {
+        padding-top: 9rem;
+    }
+}
+
+.registrace__formular {
+
+    fieldset {
+        padding: 4rem 3rem;
+        background: $color-white;
+        display: flex;
+        flex-flow: row wrap;
+        box-shadow: 4px 4px 14px -4px rgba(0,0,0,0.15);
+    }
+}

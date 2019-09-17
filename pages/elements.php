@@ -43,13 +43,18 @@ get_header();
         </table>
     </div>
 
-    <div class="container" style="margin-top: 30px">    
-        <form class="_formular-kontaktujte-nas" action="" method="post">
-            <input class="_jmeno" type="text" name="jmeno" placeholder="Jméno*">
-            <input class="_email" type="email" name="email" placeholder="Email*">
-            <input class="_text" type="text" name="text" placeholder="Text*">
-            <input class="btn btn--blue" type="submit" name="odeslat" value="ODESLAT">
-        </form>
+    <div class="kontaktujte-nas" style="margin-top: 30px;">
+        <div class="container">
+            <h2>KONTAKTUJTE NÁS</h2>
+            <form class="kontaktujte-nas-formular" action="" method="post">
+                <input class="kontaktujte-nas-formular__jmeno" type="text" name="jmeno" placeholder="Jméno*">
+                <input class="kontaktujte-nas-formular__email" type="email" name="email" placeholder="Email*">
+                <input class="kontaktujte-nas-formular__text" type="text" name="text" placeholder="Text*">
+                <div>
+                    <input class="btn btn--blue" type="submit" name="odeslat" value="ODESLAT">
+                </div>
+            </form>
+        </div>
     </div>
 
     <div class="container" style="margin-top: 30px">
@@ -81,6 +86,23 @@ get_header();
         </div>
     </div>
 
+    <div class="registrace" style="margin-top: 30px">
+        <div class="container">
+            <h2>Registrace</h2>
+            <form class="registrace__formular" action="" method="post">
+                <fieldset>
+                    <legend>School details</legend>
+                    <p>Please, provide the details about your school needed for statistical and practical purposes such as delivery of the contest certificate.</p>
+                    
+
+                </fieldset>
+                <fieldset>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
     <div class="page-subheader" style="margin-top: 30px">
         <h1 class="page-subheader__title">Partneři</h1>
     </div>
@@ -105,6 +127,8 @@ get_header();
             <a href="#" class="pagination__box">3</a>
         </div>
     </div>
+
+
     
 
 
