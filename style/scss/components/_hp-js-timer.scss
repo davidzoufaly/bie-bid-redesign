@@ -5,8 +5,15 @@
     grid-template-columns: repeat(4,1fr);
     gap: 2.5rem;
     margin: 1rem .5rem;
-
-    &__box { }
+    visibility: hidden;
+    opacity: 0;
+    &--show {
+        visibility: initial;
+        opacity: 1;
+    }
+    &__box {
+        min-height: 118px;
+     }
 
     &__num {
         font-family: $font-secondary-bold;

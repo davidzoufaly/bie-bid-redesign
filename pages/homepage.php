@@ -5,6 +5,7 @@ get_header();
 
 ?>
 <body>
+<<<<<<< HEAD
     <!-- subheader -->
 <<<<<<< HEAD
     <div class="subheader-homepage">
@@ -61,6 +62,9 @@ get_header();
             </div>
         </div>
     </div>
+=======
+    <?php get_template_part('parts/sub-header-homepage'); ?>
+>>>>>>> propis na homepage
     <!-- Boxes section -->
 <<<<<<< HEAD
     <div class="boxes-section">
@@ -329,6 +333,7 @@ get_header();
         get_footer();
     ?>
 
+<<<<<<< HEAD
     <script>
 
         /*                       \
@@ -360,3 +365,5 @@ get_header();
             }
         }, 1000);
     </script>
+=======
+>>>>>>> propis na homepage

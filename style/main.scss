@@ -286,6 +286,7 @@ ol {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .btn-wrap-center {
     display: flex;
 =======
@@ -302,6 +303,10 @@ ol {
                         'copy';
     grid-gap: 4rem;
 >>>>>>> js scripts footer / header
+=======
+.btn-wrap-center {
+    display: flex;
+>>>>>>> propis na homepage
     justify-content: center;
     align-items: center;
 }
@@ -318,6 +323,9 @@ ol {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> propis na homepage
     @include uw {
         padding-top: 20rem;
         padding-bottom: 20rem;
@@ -335,6 +343,7 @@ ol {
         align-items: center;
         justify-items: stretch;    
         gap: 2.5rem;
+<<<<<<< HEAD
 =======
         a:hover, a:focus {
             color: $color-blue;
@@ -348,6 +357,8 @@ ol {
 >>>>>>> js scripts footer / header
 =======
 >>>>>>> idk update
+=======
+>>>>>>> propis na homepage
 
         @include lg {
             grid-template-columns: repeat(4, minmax(200px, 350px));
@@ -532,8 +543,15 @@ ol {
     grid-template-columns: repeat(4,1fr);
     gap: 2.5rem;
     margin: 1rem .5rem;
-
-    &__box { }
+    visibility: hidden;
+    opacity: 0;
+    &--show {
+        visibility: initial;
+        opacity: 1;
+    }
+    &__box {
+        min-height: 118px;
+     }
 
     &__num {
         font-family: $font-secondary-bold;
@@ -1957,6 +1975,7 @@ th {
         background: $color-white-lighter;
         color: #29B7D2;
         width: 270px;
+        text-transform: uppercase;
 
         @include lg {
             font-size: 3.3rem;

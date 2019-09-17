@@ -81,6 +81,15 @@ function html5blank_styles()
     wp_enqueue_style('global-stylesheet', get_template_directory_uri() . './style.css', array(), false, all); // Enqueue it!
 }
 
+// Load HTML5 Blank conditional scripts
+function html5blank_conditional_scripts()
+{
+    if (is_page('!!!Homepage')) {
+        wp_register_script('bie_homepage_scripts', get_template_directory_uri() . '/js/scripts.homepage.min.js', '' , '1.0.0', true); // Conditional script(s)
+        wp_enqueue_script('bie_homepage_scripts'); // Enqueue it!
+    }
+}
+
 // Register HTML5 Blank Navigation
 function register_html5_menu()
 {
@@ -223,7 +232,7 @@ function html5blankgravatar ($avatar_defaults)
 // Add Actions
 add_action('init', 'html5blank_header_scripts'); // Add Custom Scripts to wp_head
 add_action('init', 'html5blank_footer_scripts'); // Add Custom Scripts to wp_head
-// add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
+add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
