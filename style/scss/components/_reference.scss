@@ -1,0 +1,79 @@
+.reference {
+    background: $color-blue;
+    background-image: linear-gradient(180deg, rgba(90, 180, 207, 0.92) 0%, #5ab4cf 50%, #5ab4cf 100%),url('../img/pattern-bie-white.svg');
+    background-size: 38%;
+    padding-top: 8rem;
+    padding-bottom: 6rem;
+    position: relative;
+
+    h2 {
+        text-align: center;
+        position: relative;
+        color: $color-white;
+        
+        @include lg { margin-bottom: 4rem; }
+        @include uw { margin-bottom: 6rem; }
+
+    }
+
+    h2:before {
+        content: "";
+        width: 25px;
+        height: 3px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -1.8rem;
+        background: $color-red;
+    }
+
+    ._grid-reference {
+        display: grid;
+        grid-template-columns: minmax(200px, 350px);
+        justify-content: center;
+        grid-gap: 3rem;
+        font-size: 1.4rem;
+
+        & ._box:not(:first-child) {
+            display: none;
+        }
+
+        @include lg {
+            grid-template-columns: repeat(3, minmax(200px, 350px));
+
+            & ._box:not(:first-child) {
+                display: initial;
+            }
+        }
+    }
+
+    .btn {
+        display: block;
+        margin: 0 auto;
+        margin-top: 2.6rem;
+        padding: 0 2rem;
+        @include lg {margin-top: 4rem;}
+    }
+
+    &:after {
+        content: "";
+        width: 1px;
+        height: 2.6rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        background: #EBF6F9;
+    }
+
+    &:before {
+        content: "";
+        width: 1px;
+        height: 1.5rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -15px;
+        background: #5AB4CF;
+    }
+}

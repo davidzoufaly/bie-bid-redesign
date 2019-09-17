@@ -1,0 +1,36 @@
+.novinka-aktuality {
+    padding: 5rem 0;
+
+    .container {
+        position:relative;
+
+        h3 { position: relative;}
+
+        h3:before {
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 3px;
+            top: -1.8rem;
+            background: $color-red;
+        }
+
+        @include lg {
+            max-width: 700px;
+        }
+
+        @include uw {
+            max-width: 900px;
+        }
+    }
+    
+    .grid-aktuality {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+
+        @include md {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}

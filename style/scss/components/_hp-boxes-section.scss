@@ -1,0 +1,181 @@
+.boxes-section {
+    background: $color-blue-light;
+    padding-top: 5rem;
+    padding-bottom: 6rem;
+    position: relative;
+
+    @include lg {
+        padding-top: 16rem;
+        padding-bottom: 16rem;
+    }
+
+    @include uw {
+        padding-top: 20rem;
+        padding-bottom: 20rem;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: minmax(288px, 350px);
+        grid-template-rows: 1fr;
+        justify-content: center;
+        grid-template-areas: "what-is" 
+                        "aktuality" 
+                        "pro-media" 
+                        "pro-partnery" ;
+        align-items: center;
+        justify-items: stretch;    
+        gap: 2.5rem;
+
+        @include lg {
+            grid-template-columns: repeat(4, minmax(200px, 350px));
+            grid-template-rows: 2fr;
+            grid-template-areas: "what-is what-is what-is what-is"
+                                "aktuality aktuality pro-media pro-partnery";
+            align-items: stretch;
+            gap: 3rem;
+        }
+ 
+        & > div {
+            h2:before, h3:before {
+                content: "";
+                position: absolute;
+                width: 25px;
+                height: 3px;
+                top: -1.8rem;
+                background: $color-red;
+            }
+            padding: 3rem 3.6rem;
+            background: $color-white;
+        }
+    }
+
+    &__what-is {
+        position: relative;
+        margin-bottom: 3rem;
+        grid-area: what-is;
+
+        h2 {
+            font-size: 3rem;
+            @include xl { font-size: 3.4rem;}
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 22px;
+            @include xl {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+
+        :nth-child(3) { margin-top: 2.8rem; }
+        
+        ._video {
+            background: #7fc3d7;
+            min-width: 220px;
+            height: 170px;
+            margin: 0 auto;
+            margin-top: 1.6rem;
+            margin-bottom: -6rem;
+            position: relative;
+
+            .icon-button_blue {
+                font-size: 48px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                cursor: pointer;
+            }
+        }
+
+        @include lg {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            width: calc(100% - 10.2rem);
+
+            .--flex-lg-helper {
+                width: 45%;
+                margin-right: 4rem;
+            }
+
+            .--flex-lg-video-helper {
+                width: 45%;
+                position: relative;
+
+                ._video {
+                    position: absolute;
+                    margin: 0;
+                    height: 100%;
+                    width: 100%;
+                    right: -6.8rem;
+                    top: -6rem;
+                }
+            }
+        }
+    }
+
+    &__aktuality {
+        grid-area: aktuality;
+
+        &__vsechny {
+            position: relative;
+            display: flex;
+            justify-content: center;
+
+            .btn {
+                display: block;
+                margin: 0 auto;
+                font-size: 1.3rem;
+                padding: 0 2rem;
+            }
+        }
+
+        &__vsechny:before {
+            content:"";
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -2rem;
+            background: rgba(40,40,40,.1);
+        }
+
+        @include lg {
+            .--grid-lg-helper {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 3rem;
+            }
+        }
+    }
+
+    &__pro-media { grid-area: pro-media; }
+    &__pro-partnery { grid-area: pro-partnery;}
+
+    &:after {
+        content: "";
+        width: 1px;
+        height: 2.6rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        background: $color-blue;
+    }
+
+    &:before {
+        content: "";
+        width: 1px;
+        height: 1.5rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -15px;
+        background: $color-blue-light;
+        z-index: 1;
+    }
+}

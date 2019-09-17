@@ -36,15 +36,15 @@
 					<div class="logo">
 						<a href="<?php echo home_url(); ?>">
 							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-							<img src="<?php echo get_template_directory_uri(); ?>/img/czech-us_transparent.png" alt="Logo" class="logo-img">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/czech-us_transparent_1.png" alt="Logo" class="logo-img">
 						</a>
 					</div>
 					
 					<label for="check" class="_show-menu">
-						<span class="icon-burger_menu"></span>Menu
+						<span id="burger-icon" class="icon-burger_menu--white"></span>Menu
 					</label>
 					<label for="check" class="_hide-menu">
-						<span class="icon-close_icon"></span>Menu
+						<span id="close-icon" class="icon-close_icon--white"></span>Menu
 					</label>
 				</div>
 				<!-- /logo -->
