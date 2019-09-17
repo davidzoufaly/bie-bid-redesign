@@ -243,8 +243,6 @@ h4 {
 }
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 #footer {
     background: $color-gray;
     padding: 4rem 0 2.2rem 0;
@@ -274,11 +272,6 @@ h4 {
         a:hover, a:focus {
             color: $color-blue;
         }
-=======
-.ff {
-    color: #fff;
-}
->>>>>>> js scripts footer / header
 
         @include lg {
             flex-flow: row nowrap;
@@ -299,11 +292,6 @@ h4 {
             &:nth-child(1) {
                 width: 72.79px;
                 margin-bottom: 2rem;
-=======
-.ff {
-    color: #fff;
-}
->>>>>>> cd2f7e5961f1410d30914026574db3dcbe651814
 
                 @include lg {margin: 0 2rem 0 0;}
             }
@@ -678,7 +666,7 @@ h4 {
 
         ._box {
             background: white;
-            background-image: linear-gradient(135deg, white 0%, white 45%, rgba(255, 255, 255, 0.92) 100%),url("../img/pattern-bie.svg");
+            background-image: linear-gradient(135deg, white 0%, white 25%, rgba(255, 255, 255, 0.92) 100%),url("../img/pattern-bie.svg");
             background-size: 109%;
             padding: 3rem 3.6rem;
         }
