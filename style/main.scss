@@ -285,10 +285,13 @@ ol {
 /* wrapper pro button center */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .btn-wrap-center {
     display: flex;
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> idk update
 #footer {
     background: $color-gray;
     padding: 4rem 0 2.2rem 0;
@@ -336,12 +339,15 @@ ol {
         a:hover, a:focus {
             color: $color-blue;
         }
+<<<<<<< HEAD
 =======
 .ff {
     color: #fff;
 }
 >>>>>>> js scripts footer / header
 >>>>>>> js scripts footer / header
+=======
+>>>>>>> idk update
 
         @include lg {
             grid-template-columns: repeat(4, minmax(200px, 350px));
@@ -371,10 +377,16 @@ ol {
         margin-bottom: 3rem;
         grid-area: what-is;
 
+<<<<<<< HEAD
         h2 {
             font-size: 3rem;
             @include xl { font-size: 3.4rem;}
         }
+=======
+            &:nth-child(1) {
+                width: 72.79px;
+                margin-bottom: 2rem;
+>>>>>>> idk update
 
         p {
             font-size: 14px;
@@ -822,9 +834,17 @@ ol {
         h2 { 
             font-size: 2.6rem;
 
+<<<<<<< HEAD
             @include lg {
                 font-size: 3.4rem;
             }
+=======
+        ._box {
+            background: white;
+            background-image: linear-gradient(135deg, white 0%, white 25%, rgba(255, 255, 255, 0.92) 100%),url("../img/pattern-bie.svg");
+            background-size: 109%;
+            padding: 3rem 3.6rem;
+>>>>>>> idk update
         }
         
         p {padding-bottom: 2rem;}
