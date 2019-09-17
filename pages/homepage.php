@@ -5,58 +5,7 @@ get_header();
 
 ?>
 <body>
-    <!-- subheader -->
-    <div class="subheader-homepage">
-        <div class="container">
-            <h1 class="subheader-homepage__title">BEST <span class="subheader-homepage__title--red subheader-homepage__title--light">IN</span> ENGLISH <span class="subheader-homepage__title--light">2019</span></h1>
-            <div class="js-timer">
-                <div class="js-timer__box">
-                    <p id="days" class="js-timer__num">30</p>
-                    <p class="js-timer__text">DNÍ</p>
-                </div>
-                <div class="js-timer__box">
-                    <p id="hours" class="js-timer__num">22</p>
-                    <p class="js-timer__text">HODIN</p>
-                </div>
-                <div class="js-timer__box">
-                    <p id="minutes" class="js-timer__num">11</p>
-                    <p class="js-timer__text">MINUT</p>
-                </div>
-                <div class="js-timer__box">
-                    <p id="seconds" class="js-timer__num">01</p>
-                    <p class="js-timer__text">SEKUND</p>
-                </div>
-            </div>
-            <div class="--order-swap">
-                <div class="_buttons-row">
-                    <a class="btn btn--red" href="#">REGISTRACE</a>
-                    <a class="btn btn--white" href="#">IMPORTANT BUTTON</a>
-                    <a class="btn btn--link" href="#">Results 2018</a>
-                </div>
-                <div class="subheader-boxes">
-                    <div class="subheader-boxes__box">
-                        <h3>GENERAL <br/>INFORMATION</h3>
-                        <p>Online <span class="--bold">language competition</span></p>
-                        <p>Secondary schools <span class="--bold">(age 15-19)</span></p>
-                        <p><span class="--bold">100% free</span> of any charge</p>
-                        <p><span class="--bold">9th</span> season</p>
-                    </div>
-                    <div class="subheader-boxes__box">
-                        <h3>LAST YEAR <br/>STATISTICS</h3>
-                        <p><span class="--bold">21 100</span> students</p>
-                        <p><span class="--bold">992</span> schools</p>
-                        <p><span class="--bold">30</span> countries</p>
-                    </div>
-                    <div class="subheader-boxes__box">
-                        <h3>DATE <br/>AND TIME</h3>
-                        <p><span class="--bold">30. 11. 2019</span></p>
-                        <p><span class="--bold">9-11</span> am</p>
-                        <p><span class="--bold">60</span> minutes</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php get_template_part('parts/sub-header-homepage'); ?>
     <!-- Boxes section -->
     <div class="boxes-section">
         <div class="container">
@@ -232,36 +181,4 @@ get_header();
     <?php 
         get_footer();
     ?>
-
-    <script>
-
-        /*                       \
-            TIMER V SUBHEADERU
-        \                       */
-
-        const countDownDate = new Date("Dec 30, 2019 09:00:00").getTime();
-
-        const x = setInterval(function() {
-            let now = new Date().getTime();
-            let distance = countDownDate - now;
-                
-            // Time calculations for days, hours, minutes and seconds
-            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                
-            // Output the result in an element with id="demo"
-            document.getElementById("days").innerHTML = days;
-            document.getElementById("hours").innerHTML = hours;
-            document.getElementById("minutes").innerHTML = minutes;
-            document.getElementById("seconds").innerHTML = seconds;
-                
-            // If the count down is over, write some text 
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("demo").innerHTML = "0";
-            }
-        }, 1000);
-    </script>
 

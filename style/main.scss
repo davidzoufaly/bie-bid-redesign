@@ -284,20 +284,8 @@ ol {
 
 /* wrapper pro button center */
 
-<<<<<<< HEAD
-#footer {
-    background: $color-gray;
-    padding: 4rem 0 2.2rem 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas: 'menu'
-                        'loga'
-                        'copy';
-    grid-gap: 4rem;
-=======
 .btn-wrap-center {
     display: flex;
->>>>>>> jakub
     justify-content: center;
     align-items: center;
 }
@@ -313,11 +301,6 @@ ol {
         padding-bottom: 16rem;
     }
 
-<<<<<<< HEAD
-        a:hover, a:focus {
-            color: $color-blue;
-        }
-=======
     @include uw {
         padding-top: 20rem;
         padding-bottom: 20rem;
@@ -335,7 +318,6 @@ ol {
         align-items: center;
         justify-items: stretch;    
         gap: 2.5rem;
->>>>>>> jakub
 
         @include lg {
             grid-template-columns: repeat(4, minmax(200px, 350px));
@@ -496,8 +478,15 @@ ol {
     grid-template-columns: repeat(4,1fr);
     gap: 2.5rem;
     margin: 1rem .5rem;
-
-    &__box { }
+    visibility: hidden;
+    opacity: 0;
+    &--show {
+        visibility: initial;
+        opacity: 1;
+    }
+    &__box {
+        min-height: 118px;
+     }
 
     &__num {
         font-family: $font-secondary-bold;
@@ -957,16 +946,8 @@ ol {
             font-size: 3.4rem;
         }
 
-<<<<<<< HEAD
-        ._box {
-            background: white;
-            background-image: linear-gradient(135deg, white 0%, white 25%, rgba(255, 255, 255, 0.92) 100%),url("../img/pattern-bie.svg");
-            background-size: 109%;
-            padding: 3rem 3.6rem;
-=======
         @include lg {
             font-size: 4.4rem;
->>>>>>> jakub
         }
     }
     &:after {
@@ -1748,6 +1729,7 @@ th {
         background: $color-white-lighter;
         color: #29B7D2;
         width: 270px;
+        text-transform: uppercase;
 
         @include lg {
             font-size: 3.3rem;

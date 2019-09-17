@@ -1,4 +1,20 @@
 <?php
+// datum veletrh
+function dateDifference($date_1 , $date_2 , $differenceFormat = '%a' )
+{
+    $datetime1 = date_create($date_1);
+    $datetime2 = date_create($date_2);
+    
+    $interval = date_diff($datetime1, $datetime2);
+    
+    return $interval->format($differenceFormat);
+}
+
+
+$array = (explode('-',str_replace('.','-',substr(get_field('datum_a_cas_zacatku_akce', 'options'), 0, -9)))); 
+
+$datum_veletrhu = $array[2].'-'.$array[1].'-'.$array[0];
+
 // unregister jquery
 add_filter( 'wp_default_scripts', 'remove_jquery_migrate' );
 function remove_jquery_migrate( &$scripts){
