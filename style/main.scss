@@ -195,6 +195,10 @@ h4 {
     font-family: $font-bold;
 }
 
+strong {
+    font-family: $font-bold;
+}
+
 p {
     font-size: 16px;
     padding-bottom: 1rem;
@@ -240,6 +244,7 @@ ol {
     line-height: 4.5rem;
     text-decoration: none;
     transition: all 300ms ease-out;
+    text-transform: uppercase;
     cursor: pointer;
 
     &.btn--white {
@@ -502,6 +507,7 @@ ol {
         font-family: $font-bold;
         letter-spacing: 0.2rem;
         font-size: 1rem;
+        text-transform: uppercase;
     }
 
     @include md {
@@ -551,7 +557,7 @@ ol {
         padding: 3rem 3.6rem;
     }
 
-    h3 {
+    &__title {
         font-size: 1.8rem;
         position: relative;
 
@@ -1504,8 +1510,6 @@ th {
 .header {
     z-index: 18;
     transition: all 250ms ease-in;
-    
-    
     ._header-wrapper {
         height: 60px;
         width: calc(100% - 3.2rem);
@@ -1708,9 +1712,6 @@ th {
 /*-- subheader --*/
 
 .subheader-homepage {
-    background: radial-gradient(circle, rgba(94,197,220,0.52) 0%, rgba(94,197,220,1) 100%),url('../img/subheader.jpg');
-    background-size: cover;
-    background-position: bottom;
     padding: 10rem 0;
     padding-bottom: 5rem;
     position: relative;

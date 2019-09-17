@@ -29,6 +29,7 @@
         font-family: $font-bold;
         letter-spacing: 0.2rem;
         font-size: 1rem;
+        text-transform: uppercase;
     }
 
     @include md {
