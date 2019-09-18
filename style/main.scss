@@ -298,29 +298,8 @@ ol {
 
 /* wrapper pro button center */
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 .btn-wrap-center {
     display: flex;
-=======
-<<<<<<< HEAD
-=======
->>>>>>> idk update
-#footer {
-    background: $color-gray;
-    padding: 4rem 0 2.2rem 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas: 'menu'
-                        'loga'
-                        'copy';
-    grid-gap: 4rem;
->>>>>>> js scripts footer / header
-=======
-.btn-wrap-center {
-    display: flex;
->>>>>>> propis na homepage
     justify-content: center;
     align-items: center;
 }
@@ -336,10 +315,6 @@ ol {
         padding-bottom: 16rem;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> propis na homepage
     @include uw {
         padding-top: 20rem;
         padding-bottom: 20rem;
@@ -357,22 +332,6 @@ ol {
         align-items: center;
         justify-items: stretch;    
         gap: 2.5rem;
-<<<<<<< HEAD
-=======
-        a:hover, a:focus {
-            color: $color-blue;
-        }
-<<<<<<< HEAD
-=======
-.ff {
-    color: #fff;
-}
->>>>>>> js scripts footer / header
->>>>>>> js scripts footer / header
-=======
->>>>>>> idk update
-=======
->>>>>>> propis na homepage
 
         @include lg {
             grid-template-columns: repeat(4, minmax(200px, 350px));
@@ -402,16 +361,10 @@ ol {
         margin-bottom: 3rem;
         grid-area: what-is;
 
-<<<<<<< HEAD
         h2 {
             font-size: 3rem;
             @include xl { font-size: 3.4rem;}
         }
-=======
-            &:nth-child(1) {
-                width: 72.79px;
-                margin-bottom: 2rem;
->>>>>>> idk update
 
         p {
             font-size: 14px;
@@ -425,10 +378,6 @@ ol {
         :nth-child(3) { margin-top: 2.8rem; }
         
         ._video {
-<<<<<<< HEAD
-            background-image: url('../img/video-cover.jpg');
-=======
->>>>>>> pro media, partnery in progress
             min-width: 220px;
             height: auto;
             margin: 0 auto;
@@ -919,17 +868,9 @@ ol {
         h2 { 
             font-size: 2.6rem;
 
-<<<<<<< HEAD
             @include lg {
                 font-size: 3.4rem;
             }
-=======
-        ._box {
-            background: white;
-            background-image: linear-gradient(135deg, white 0%, white 25%, rgba(255, 255, 255, 0.92) 100%),url("../img/pattern-bie.svg");
-            background-size: 109%;
-            padding: 3rem 3.6rem;
->>>>>>> idk update
         }
         
         p {padding-bottom: 2rem;}
@@ -1955,7 +1896,7 @@ th {
     background-image: url('../img/404.svg');
     background-size: 25%;
     background-repeat: no-repeat;
-    background-position: 50%;
+    background-position: center;
     padding-top: 30rem;
     padding-bottom: 20rem;
     
@@ -1971,7 +1912,6 @@ th {
     a {
         font-size: 3.4rem;
         padding: 1rem 2rem;
-        
     }
 }
 .archiv {
