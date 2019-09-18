@@ -6,7 +6,6 @@ $terms = get_terms(array(
 ));
 
 foreach ($terms as $term) {
-    $i = 0;
     switch ($term->slug) {
         case '1_organizator':
         case '2_spoluorganizator':
@@ -40,6 +39,8 @@ foreach ($terms as $term) {
     );
 
     $query = new WP_Query($args);
+
+    $i = 0;
 
     if($query->have_posts()) {
         while($query->have_posts()) {
