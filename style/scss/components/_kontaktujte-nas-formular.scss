@@ -1,76 +1,98 @@
 .kontaktujte-nas-formular {
-    padding: 4rem 3rem;
-    background: $color-white;
+  padding: 4rem 3rem;
+  background: $color-white;
+  display: flex;
+  flex-flow: row wrap;
+  box-shadow: 4px 4px 14px -4px rgba(0, 0, 0, 0.15);
+  &__jmeno,
+  &__email,
+  &__text {
     display: flex;
-    flex-flow: row wrap;
-    box-shadow: 4px 4px 14px -4px rgba(0,0,0,0.15);
+    flex-direction: column;
+  }
 
-    label {
-        font-size: 1.3rem;
-        display: inline-block;
-        transform: translateY(17px);
-        transition: .2s;
-    }
-    
-    .size-ani {
-        font-size: 1rem;
-        transition: .3s;
-        transform: translateY(0px);
-    }
+  label {
+    font-size: 1.3rem;
+    display: inline;
+    transform: translateY(20px);
+    transition: 0.2s;
+    color: $color-black;
+    transform-origin: top left;
+  }
 
-    div {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
+  textarea {
+      resize: none;
+      background-color: transparent;
+      border: 0;
+      border-bottom: 1px solid #a9a9a9;
+      width: 100%;
+      font-size: 1.4rem;
+      outline: none;
+      margin-bottom: 2rem;
+      height: 100px;
+  }
 
-    input {
-        width: 100%;
-        border: none;
-        border-bottom: 1px solid #A9A9A9;
-        padding-bottom: 1rem;
-        margin-bottom: 2rem;
-        font-size: 1.4rem;
+  .size-ani {
+    transform: translateY(0px) scale(0.9);
+  }
 
-        &.btn {
-            display: block;
-            width: initial;
-            margin-top: 1rem;
-            padding-bottom: 0;
-            border-bottom: none;
+  div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 
-            padding: 0 2rem;
-            font-size: 16px;
-        }
+  input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #a9a9a9;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    background-color: transparent;
 
-        @include lg {
-            margin-bottom: 3rem;
-        }
-    }
-
-    input:focus {
-        outline: none;
-        border-bottom: 1px solid $color-red;
-    }
-
-    @include sm {
-        margin: 0 auto;
-        width: 75%;
-    }
-
-    @include md {
-        width: 60%
+    &.btn {
+      display: block;
+      width: initial;
+      margin-top: 1rem;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+      padding: 0 4rem;
+      font-size: 16px;
     }
 
     @include lg {
-        justify-content: space-between;
-
-        .kontaktujte-nas-formular__jmeno { width: 45%; }
-        .kontaktujte-nas-formular__email { width: 45%; }
+      margin-bottom: 3rem;
     }
+  }
 
-    @include uw {
-        width: 50%;
-        max-width: 380px
+  input:focus, textarea:focus {
+    outline: none;
+    border-bottom: 1px solid $color-red;
+  }
+
+  @include sm {
+    margin: 0 auto;
+    width: 75%;
+  }
+
+  @include md {
+    width: 60%;
+  }
+
+  @include lg {
+    justify-content: space-between;
+
+    .kontaktujte-nas-formular__jmeno {
+      width: 45%;
     }
+    .kontaktujte-nas-formular__email {
+      width: 45%;
+    }
+  }
+
+  @include uw {
+    width: 700px;
+  }
 }
