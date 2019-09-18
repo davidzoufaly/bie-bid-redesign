@@ -9,5 +9,5 @@
         </div>
         <h4><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></h4>
         <div class="prispevek__date"><?php the_time('d.m.Y') ?></div>
-        <p class="prispevek__text"><?php the_excerpt() ?></p>
+        <p class="prispevek__text"><?php html5wp_excerpt('html5wp_index'); ?></p>
     </div>

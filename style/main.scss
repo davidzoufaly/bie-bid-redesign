@@ -71,6 +71,7 @@ $color-blue-light: #ebf6f9;
 $color-blue-dark: #303e42;
 
 $color-gray: #2E2E2E;
+$color-black: #000;
 
 $color-red: #d25d54;
 
@@ -484,6 +485,13 @@ ol {
 
     &__aktuality {
         grid-area: aktuality;
+        h4 a {
+            color: $color-black;
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
 
         &__vsechny {
             position: relative;
@@ -511,9 +519,16 @@ ol {
 
         @include lg {
             .--grid-lg-helper {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-gap: 3rem;
+                display: flex;
+                justify-content: space-between;
+                .prispevek {
+                    width: 48%;
+                }
+            }
+            .boxes-section__pro-media {
+                .prispevek {
+                    margin-bottom: 0;
+                }
             }
         }
     }
@@ -1233,6 +1248,9 @@ ol {
 
     &__cover {
         position: relative;
+        a img {
+            max-width: 100%;
+        }
     }
 
     &__cover:before {
