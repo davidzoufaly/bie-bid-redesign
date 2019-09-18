@@ -14,9 +14,9 @@ get_header();
         </div>
     </section>
 
-    //Reference
-
-    <div class="partneri-sekce">
+    <?php get_template_part('modules/module-reference') ?>
+    <?php get_template_part('parts/partneri-homepage') ?>
+    <!-- <div class="partneri-sekce">
         <div class="container">
             <h2>Partneři</h2>
             <div class="partneri">
@@ -67,7 +67,7 @@ get_header();
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <?php get_template_part('modules/module-libi-se') ?>
     <div class="kontaktujte-nas">
         <div class="container">
