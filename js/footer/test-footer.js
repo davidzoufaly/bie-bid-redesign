@@ -49,10 +49,6 @@ function scrollNav(scrollY) {
             for(let i = 0; i< menuItem.length; i++) {
                 menuItem[i].style.color = '#303E42';
             }
-        } else { menuMob.style.backgroundColor = 'white'; }
-        
-
-
-        
+        } else { menuMob.style.backgroundColor = 'white'; } 
     }
 }

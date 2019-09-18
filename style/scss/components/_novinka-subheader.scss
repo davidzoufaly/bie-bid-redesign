@@ -6,6 +6,9 @@
     padding-top: 10rem;
     padding-bottom: 5rem;
     
+    @include lg {
+        padding-top: 18rem;
+    }
 
     &__title {
         display: inline-block;

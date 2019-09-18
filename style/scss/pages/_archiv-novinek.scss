@@ -1,0 +1,69 @@
+.archiv {
+    background: $color-blue-light;
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+
+    .pagination {
+        margin: 2rem 0;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: minmax(200px, 1fr);
+        gap: 3rem;
+        
+        @include sm {
+            grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr);
+        }
+        
+        @include lg {
+            grid-template-columns: repeat(4,minmax(200px, 1fr));
+        }
+
+    }
+
+    .card {
+        background: $color-white;
+        img {
+
+        }
+
+        &__content {
+            padding: 0.5rem 1.6rem;
+        }
+
+        &__date {
+            font-size: 1.2rem;
+            padding-bottom: 1rem;
+            color: #a9a9a9;
+        }
+
+        &__text {
+            font-size: 1.2rem;
+            padding-bottom: 1rem; 
+        }
+
+        &__vice-info {
+            color: $color-red;
+            text-decoration: none;         
+            cursor: pointer;
+            
+            a {
+                font-size: 14px;
+            }
+             
+            &:hover, &:focus {
+                text-decoration: underline;
+            }
+        }
+
+        .icon-arrow_link {
+            padding-left: 1rem;
+            font-size: 14px;
+    
+            &::before {
+                color: $color-red;    
+            }
+        }
+    }
+}

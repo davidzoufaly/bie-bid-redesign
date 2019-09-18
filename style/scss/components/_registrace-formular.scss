@@ -27,13 +27,99 @@
     }
 }
 
-.registrace__formular {
+.registrace-formular {
 
     fieldset {
-        padding: 4rem 3rem;
+        margin-bottom: 3rem;
+        padding: 3rem;
         background: $color-white;
         display: flex;
         flex-flow: row wrap;
         box-shadow: 4px 4px 14px -4px rgba(0,0,0,0.15);
+    
+        legend {
+            box-shadow: 4px 4px 14px -4px rgba(0,0,0,.15);
+            background: #D25D54;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 2rem;
+        }
+
+        p {
+            padding-bottom: 3rem;
+            font-family: $font-light;
+        }
+
+        h4 {
+            font-family: $font;
+
+        }
+
+        .registrace-formular__row {
+            position: relative;
+            margin-bottom: 4rem;
+
+            label {
+                font-size: 1.6rem;
+                transition: 0.35s;
+                pointer-events: none;
+            }
+
+            .label--mod {
+                top: 0.5rem;
+                position: absolute;
+            }
+
+            .input-info {
+                font-family: $font-light;
+                font-style: italic;
+                font-size: 1.2rem;
+            }
+
+            input {
+                width: 100%;
+                border: none;
+                border-bottom: 1px solid #A9A9A9;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                font-size: 1.8rem;
+    
+                &[type=number]::-webkit-inner-spin-button, &[type=number]::-webkit-outer-spin-button { 
+                    -webkit-appearance: none; 
+                    margin: 0; 
+                }
+
+                
+                
+                &:focus {
+                    outline: none;
+                    border-bottom: 1px solid $color-red;
+                }
+            }
+
+            select {
+                padding: 1rem;
+                width: 200px;
+                option {
+                    padding: 0.2rem;
+
+                    &:hover, &:focus {
+                        color: white;
+                        background: $color-red;
+                    }
+                }
+
+                @include sm {
+                    width: initial;
+                }
+            }
+
+            input:focus ~ .label--mod, input:valid ~ .label--mod, textarea:focus ~ .label--mod, textarea:valid ~ .label--mod, select:focus ~ .label--mod, select:valid ~ .label--mod {
+                top: -12px;
+                color: $color-red;
+                font-size: 1.3rem;
+                font-family: $font-bold;
+            }
+        }
     }
 }

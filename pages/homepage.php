@@ -68,7 +68,7 @@ get_header();
                 </div>
                 <div class="--flex-lg-video-helper">
                     <div class="_video">
-                        <span class="icon-button_blue"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
+                        <div class="video-button"></div>
                     </div>
                 </div>
             </div>

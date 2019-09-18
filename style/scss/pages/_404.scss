@@ -1,0 +1,22 @@
+.page404 {
+    background-image: url('../img/404.svg');
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 30rem;
+    padding-bottom: 20rem;
+    
+    .page-subheader__title {
+        background: rgba(255,255,255,0.8);
+    }
+}
+
+.page-404__text {
+    margin: 8rem;
+    text-align:center;
+
+    a {
+        font-size: 3.4rem;
+        padding: 1rem 2rem;
+    }
+}

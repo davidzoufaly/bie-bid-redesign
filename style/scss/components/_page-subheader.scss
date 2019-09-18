@@ -8,6 +8,10 @@
     text-align: center;
     position: relative;
 
+    @include lg {
+        padding-top: 18rem;
+    }
+
     &__title {
         display: inline-block;
         text-align: center;
