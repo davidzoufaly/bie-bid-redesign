@@ -14,11 +14,11 @@
     </div>
 </div>
 <div class="boxes-section__pro-partnery">
-    <?php $pro_partnery = get_field('pro_media_homepage') ?>
+    <?php $pro_partnery = get_field('pro_partnery_homepage') ?>
     <h3><?php _e('PRO PARTNERY','bie')?></h3>
     <div class="prispevek">
         <div class="prispevek__cover">
-            <img class="prispevek__img" src="<?php echo $pro_partnery['obrazek_partneri']['url'] ?>"
+            <img class="prispevek__img" src="<?php echo $pro_partnery['obrazek_partneri']['url']; ?>"
                 alt="<?php echo $pro_partnery['obrazek_partneri']['alt'] ?>"/>
         </div>
         <h4><?php echo $pro_partnery['subtitle'] ?></h4>

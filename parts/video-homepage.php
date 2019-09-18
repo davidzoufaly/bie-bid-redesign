@@ -8,9 +8,10 @@
 <?php endif; ?>
     </div>
     <div class="--flex-lg-video-helper">
-        <div class="_video">
+        <div class="_video bie">
             <?php $video = $video_sekce["video_url_homepage"] ?>
             <?php echo do_shortcode('[lazyloadyoutube url="'.$video.'"]') ?>
         </div>
     </div>
 </div>
+

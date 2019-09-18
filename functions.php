@@ -76,9 +76,7 @@ function html5blank_footer_scripts()
 // Load HTML5 Blank styles
 function html5blank_styles()
 {
-    wp_register_style('zb_style', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
-    wp_enqueue_style('bie', get_template_directory_uri() . '/style/main.css', array(), false, all); // Enqueue it!   
-    wp_enqueue_style('global-stylesheet', get_template_directory_uri() . './style.css', array(), false, all); // Enqueue it!
+    wp_enqueue_style('global-stylesheet', get_template_directory_uri() . '/style.css', array(), false, all); // Enqueue it!
 }
 
 // Load HTML5 Blank conditional scripts
