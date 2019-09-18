@@ -11,32 +11,7 @@ get_header();
     <section class="boxes-section">
         <div class="container">
             <?php get_template_part('parts/video-homepage') ?>
-            <div class="boxes-section__aktuality">
-                <h3>AKTUALITY</h3>
-                <div class="--grid-lg-helper">
-                    <div class="prispevek">
-                        <div class="prispevek__cover">
-                            <img class="prispevek__img" src="https://via.placeholder.com/240" alt="">
-                        </div>
-                        <h4>Tittle novinky na dva řádky lorem</h4>
-                        <div class="prispevek__date">22. 7. 2019</div>
-                        <p class="prispevek__text">Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis
-                            quis, sem...</p>
-                    </div>
-                    <div class="prispevek">
-                        <div class="prispevek__cover">
-                            <img class="prispevek__img" src="https://via.placeholder.com/240" alt="">
-                        </div>
-                        <h4>Tittle novinky na dva řádky lorem</h4>
-                        <div class="prispevek__date">22. 7. 2019</div>
-                        <p class="prispevek__text">Sed vel lectus. Donec odio tempus molestie, porttitor ut, iaculis
-                            quis, sem...</p>
-                    </div>
-                </div>
-                <div class="boxes-section__aktuality__vsechny">
-                    <a class="btn btn--blue" href="#">VŠECHNY AKTUALITY</a>
-                </div>
-            </div>
+            <?php get_template_part('parts/novinky-homepage') ?>
             <?php get_template_part('parts/pro-media-partnery-homepage') ?>
         </div>
     </section>
@@ -133,15 +108,7 @@ get_header();
             </div>
         </div>
     </div>
-
-    <div id="libi-se">
-        <h2>Líbí se ti tato soutěž?</h2>
-        <div>
-            <a class="btn btn--white" href="#">REGISTRUJ SE</a>
-            <a class="btn btn--link">STAŇ SE PARTNEREM</a>
-        </div>
-    </div>
-
+    <?php get_template_part('modules/module-libi-se') ?>
     <div class="kontaktujte-nas">
         <div class="container">
             <h2>KONTAKTUJTE NÁS</h2>

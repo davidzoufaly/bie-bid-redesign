@@ -11,8 +11,11 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="<?php bloginfo('description'); ?>">
-
+	<meta name="description" content="<?php bloginfo('description'); ?>">
+	
+	<script>
+            let dateAndTimeEventStart = "<?php echo get_field('cas_konani_udalosti', 'options')?>";
+    </script>
     <?php wp_head(); ?>
 </head>
 
@@ -52,12 +55,6 @@
             <div class="--mobile-dark-content">
 
             </div>
-
-            <script>
-            let dateAndTimeEventStart = "<?php echo get_field('cas_konani_udalosti', 'options')?>";
-            </script>
-
-
             <!-- /nav -->
         </header>
         <!-- /header -->
