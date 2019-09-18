@@ -1,9 +1,8 @@
 <?php 
 $args = array(
-    'post_type' => 'reference',
-    'post_per_page' => '3',
-    'order' => 'DSC',
-    'orderby' => 'date'
+    'post_type' => 'references',
+    'posts_per_page' => 3,
+    'orderby' => 'rand'
 );
 
 $query = new WP_Query($args);

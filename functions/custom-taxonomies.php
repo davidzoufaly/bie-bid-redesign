@@ -23,7 +23,7 @@ function partners_type() {
         'show_in_quick_edit'=> false,
         'show_in_nav_menus' => false,
         'show_admin_column' => true,
-        'meta_box_cb'       => false,
+        'meta_box_cb'       => true,
         'query_var' => true,
         'rewrite' => false
     );
@@ -51,7 +51,7 @@ function member_importance() {
         'show_in_quick_edit'=> false,
         'show_in_nav_menus' => false,
         'show_admin_column' => true,
-        'meta_box_cb'       => false,
+        'meta_box_cb'       => true,
         'query_var' => true,
         'rewrite' => false
     );

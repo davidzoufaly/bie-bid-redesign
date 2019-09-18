@@ -76,7 +76,7 @@ function html5blank_footer_scripts()
 // Load HTML5 Blank styles
 function html5blank_styles()
 {
-    wp_enqueue_style('global-stylesheet', get_template_directory_uri() . '/style.css', array(), false, all); // Enqueue it!
+    wp_enqueue_style('global-stylesheet', get_template_directory_uri() . '/style.css', array(), false); // Enqueue it!
 }
 
 // Load HTML5 Blank conditional scripts
