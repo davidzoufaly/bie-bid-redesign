@@ -8,6 +8,11 @@ html, body {
 
 }
 
+button {
+    border: none;
+    outline: none;
+}
+
 .container {
     width: 95%;
     margin: 0 auto;
@@ -23,7 +28,4 @@ html, body {
     @include uw {
         width: 60%;
     }
-
-
-
 }

@@ -11,5 +11,5 @@ get_field('foto_reference') ? $foto_reference = get_field('foto_reference') : $f
     <div class="ref-box__name --bold"><?php the_field('jmeno_reference')?></div>
     <div class="ref-box__school"><?php the_field('nazev_skoly_reference') ?></div>
     <div class="ref-box__country"><?php the_field('mesto_skoly_reference') ?>, <?php the_field('zeme_skoly_reference') ?></div>
-    <p class="ref-box__ref-text"><?php the_field('text_reference') ?></p>
+    <p class="ref-box__ref-text" id="text-<?php the_id() ?>"><?php the_field('text_reference') ?></p>
 </div>

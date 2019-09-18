@@ -15,7 +15,7 @@
 </div>
 <div class="boxes-section__pro-partnery">
     <?php $pro_partnery = get_field('pro_partnery_homepage') ?>
-    <h2 class="h2--small h2--uppercase"><?php _e('for partner','bie')?></h2>
+    <h2 class="h2--small h2--uppercase"><?php _e('for partners','bie')?></h2>
     <div class="prispevek">
         <div class="prispevek__cover">
             <img class="prispevek__img" src="<?php echo $pro_partnery['obrazek_partneri']['url']; ?>"

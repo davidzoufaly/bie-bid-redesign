@@ -1,4 +1,4 @@
-#footer {
+.footer {
     background: $color-gray;
     padding: 4rem 0 2.2rem 0;
     display: grid;
@@ -6,26 +6,33 @@
     grid-template-areas: 'menu'
                         'loga'
                         'copy';
-    grid-gap: 4rem;
+    grid-gap: 1rem;
+    grid-row-gap: 4rem;
     justify-content: center;
     color: $color-white;
     text-align: center;
 
-    ._footer-menu {
+    &__menu {
         display: flex;
-        flex-flow: column;
+        justify-content: center;
         align-items: space-around;
-        font-size: 15px;
+        font-size: 1.4rem;
         grid-area: menu;
-
+        list-style-type: none;
+        li {
+            padding: 0 1rem;
+            &:before {
+                    content: none;
+            }
+        }
         a {
             text-decoration: none;
             color: $color-white;
             line-height: 2.4rem;
-        }
-
-        a:hover, a:focus {
-            color: $color-blue;
+            &:hover, 
+            &:focus {
+                color: $color-blue;
+            }
         }
 
         @include lg {
@@ -35,30 +42,23 @@
         }
     }
 
-    ._loga {
+    &__loga-wrapper {
         grid-area: loga;
         display: flex;
         flex-flow: column;
         align-items: center;
-
-        img {
-            height: 28px;
-
-            &:nth-child(1) {
-                width: 72.79px;
-                margin-bottom: 2rem;
-
-                @include lg {margin: 0 2rem 0 0;}
-            }
-
-            &:nth-child(2) {
-                width: 117.13px;
-            }
-
-        }
-
         @include lg {
             flex-flow: row;
+        }
+    }
+
+    &__logo {
+        width: 120px;
+        padding: 0 2rem;
+        svg {
+            max-width: 100%;
+            height: auto;
+            fill: $color-white;
         }
     }
 
