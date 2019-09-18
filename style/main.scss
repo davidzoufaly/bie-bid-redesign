@@ -178,6 +178,12 @@ h2 {
     font-size: 34px;
     margin-top: 1.6rem;
     margin-bottom: 1.8rem;
+    &.h2--small {
+        font-size: 20px;
+    }
+    &.h2--uppercase {
+        text-transform: uppercase;
+    }
 }
 
 h3 {
@@ -665,6 +671,19 @@ ol {
     display: flex;
     flex-flow: row wrap;
     box-shadow: 4px 4px 14px -4px rgba(0,0,0,0.15);
+
+    label {
+        font-size: 1.3rem;
+        display: inline-block;
+        transform: translateY(17px);
+        transition: .2s;
+    }
+    
+    .size-ani {
+        font-size: 1rem;
+        transition: .3s;
+        transform: translateY(0px);
+    }
 
     div {
         display: flex;

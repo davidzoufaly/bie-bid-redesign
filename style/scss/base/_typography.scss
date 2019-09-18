@@ -13,6 +13,12 @@ h2 {
     font-size: 34px;
     margin-top: 1.6rem;
     margin-bottom: 1.8rem;
+    &.h2--small {
+        font-size: 20px;
+    }
+    &.h2--uppercase {
+        text-transform: uppercase;
+    }
 }
 
 h3 {
