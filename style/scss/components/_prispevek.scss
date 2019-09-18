@@ -5,6 +5,9 @@
 
     &__cover {
         position: relative;
+        a img {
+            max-width: 100%;
+        }
     }
 
     &__cover:before {

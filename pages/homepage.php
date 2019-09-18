@@ -1,12 +1,10 @@
 <?php
 /* Template Name: homepage */
 get_header();
-
-
 ?>
 
 <body>
-    <?php get_template_part('parts/sub-header-homepage'); ?>
+    <?php get_template_part('parts/subheader-homepage'); ?>
     <!-- Boxes section -->
     <section class="boxes-section">
         <div class="container">
@@ -16,45 +14,7 @@ get_header();
         </div>
     </section>
 
-    <div class="reference">
-        <div class="container">
-            <h2>Reference</h2>
-            <div class="_grid-reference">
-                <div class="ref-box">
-                    <div class="ref-box__avatar">
-                        <img src="https://via.placeholder.com/100" alt="">
-                    </div>
-                    <div class="ref-box__name --bold">Martina Kir Jambrek</div>
-                    <div class="ref-box__school">Ekonomska škola</div>
-                    <div class="ref-box__country">Požega, Croatia</div>
-                    <p class="ref-box__ref-text">Thank you! I'm truly happy that our student and school were successful
-                        this year and I'm looking forward to ourfuture participation in the Contest.</p>
-                </div>
-                <div class="ref-box">
-                    <div class="ref-box__avatar">
-                        <img src="https://via.placeholder.com/100" alt="">
-                    </div>
-                    <div class="ref-box__name --bold">Loreta Vainauskienė</div>
-                    <div class="ref-box__school">Kruonis Gymnasium</div>
-                    <div class="ref-box__country">Kruonis, Lithuania</div>
-                    <p class="ref-box__ref-text">Dear Andrea, Thank your for your help, it was a pleasure keeping in
-                        touch with you.</p>
-                </div>
-                <div class="ref-box">
-                    <div class="ref-box__avatar">
-                        <img src="https://via.placeholder.com/100" alt="">
-                    </div>
-                    <div class="ref-box__name --bold">Alessandra Baciga</div>
-                    <div class="ref-box__school">Liceo Scientifico Enrico Fermi</div>
-                    <div class="ref-box__country">Padova, Italy</div>
-                    <p class="ref-box__ref-text">Thank you to all the staff of BIE. Great organization and great fun for
-                        the students who enjoyed watching photos of their peers from far - and at the same time near -
-                        foreign countries</p>
-                </div>
-            </div>
-            <div class="btn-wrap-center"><a class="btn btn--white">VŠECHNY REFERENCE</a></div>
-        </div>
-    </div>
+    //Reference
 
     <div class="partneri-sekce">
         <div class="container">
