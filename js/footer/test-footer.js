@@ -106,7 +106,6 @@ function whiteNav() {
 function transNav() {
     menu.style.backgroundColor = 'transparent';
     menu.classList.remove('header--shadow');
-    menu.style.backgroundColor = 'white';
     close.classList.remove('icon-close_icon--dark');
     close.classList.add('icon-close_icon--white');
     burger.classList.remove('icon-burger_menu--dark');
