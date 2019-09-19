@@ -13,6 +13,24 @@ h2 {
     font-size: 34px;
     margin-top: 1.6rem;
     margin-bottom: 1.8rem;
+    &.h2--before {
+        margin-top: 3rem;
+        &:before {
+            content: "";
+            width: 25px;
+            height: 3px;
+            position: absolute;
+            left: 50%;
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+            top: -1.8rem;
+            background: #d25d54;
+        }
+    }
+    &.h2 {
+        margin-block-start: 4rem;
+        margin-block-end: 4rem;
+    }
     &.h2--small {
         font-size: 20px;
     }
@@ -24,12 +42,28 @@ h2 {
             display: none;
         }
     }
+    &.h2--margin-top {
+        margin-top: 3rem;
+    }
 }
 
 h3 {
     font-size: 20px;
     margin-top: 1.6rem;
     margin-bottom: 1.8rem;
+    &.h3--small {
+        font-size: 16px;
+        margin-top: 1.4rem;
+        margin-bottom: 1.6rem;
+    }
+    &.h3--uppercase {
+        text-transform: uppercase;
+    }
+    &.h3--nobefore {
+        &:before {
+            display: none;
+        }
+    }
 }
 
 h4 {

@@ -53,6 +53,12 @@
     }
   }
 
+  .prispevek {
+    @include md {
+      margin-bottom: 0;
+    }
+  }
+
   &__what-is {
     position: relative;
     margin-bottom: 3rem;
@@ -60,6 +66,9 @@
 
     h2 {
       font-size: 3rem;
+      @include xl {
+        font-size: 3.4rem;
+      }
       @include xl {
         font-size: 3.4rem;
       }
@@ -154,6 +163,7 @@
       position: relative;
       display: flex;
       justify-content: center;
+      margin-top: 3rem;
 
       .btn {
         display: block;

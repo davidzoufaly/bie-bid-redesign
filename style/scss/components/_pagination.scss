@@ -4,7 +4,8 @@
     justify-content: center;
 
 
-    &__box {
+    a,
+    span {
         display: block;
         text-align: center;
         padding: 1rem 1.6rem;
@@ -20,7 +21,7 @@
         }
     }
 
-    &__box--active {
+    span.current {
         background: $color-blue;
         color: $color-white;
     }

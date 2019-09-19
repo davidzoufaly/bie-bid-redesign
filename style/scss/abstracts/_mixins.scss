@@ -53,3 +53,11 @@
         @content;
     }
 }
+
+//grid custom max and gap
+@mixin grid($repeat, $min, $gap, $value, $position: justify-items) {
+    display: grid;
+    #{$position}: $value;
+    grid-template-columns: repeat($repeat, minmax($min, 1fr));
+    grid-gap: $gap;
+}

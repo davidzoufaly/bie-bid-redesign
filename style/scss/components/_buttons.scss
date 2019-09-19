@@ -1,57 +1,80 @@
 .btn {
-    display: inline-block;
-    text-align: center;
-    font-size: 16px;
-    line-height: 4.5rem;
+  display: inline-block;
+  text-align: center;
+  font-size: 16px;
+  line-height: 4.5rem;
+  text-decoration: none;
+  transition: all 300ms ease-out;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &.btn--white {
+    background: $color-white;
+    color: $color-blue-medium;
+
+    &:hover,
+    &:focus {
+      background: darken($color-white, 8%);
+    }
+  }
+
+  &.btn--red {
+    background: $color-red;
+    color: #fefefe;
+
+    &:hover,
+    &:focus {
+      background: darken($color-red, 10%);
+    }
+  }
+
+  &.btn--blue {
+    background: $color-blue-medium;
+    color: $color-white;
+
+    &:hover,
+    &:focus {
+      background: darken($color-blue-medium, 20%);
+    }
+  }
+
+  &.btn--link {
+    background: rgba(0, 0, 0, 0);
+    color: $color-red;
     text-decoration: none;
-    transition: all 300ms ease-out;
-    text-transform: uppercase;
-    cursor: pointer;
-
-    &.btn--white {
-        background: $color-white;
-        color: $color-blue-medium;
-
-        &:hover, &:focus {
-            background: darken($color-white, 8%);
-        }
+    transition: all 0.3 ease-out;
+    &:hover,
+    &:focus {
+      color: darken($color-red, 10%);
+      text-decoration: underline;
     }
-    
-    &.btn--red {
-        background: $color-red;
-        color: #fefefe;
-        
-        &:hover, &:focus {
-            background: darken($color-red, 10%);
-        }
+  }
+  &.btn--icon {
+    &:hover {
+      text-decoration: none;
     }
-    
-    &.btn--blue {
-        background: $color-blue-medium;
-        color: $color-white;
-        
-        &:hover, &:focus {
-            background: darken($color-blue-medium, 20%);
-        }
+    &:hover span,
+    &:focus span {
+      color: darken($color-red, 10%);
+      text-decoration: underline;
     }
-    
-    &.btn--link {
-        background: rgba(0,0,0,0);
-        color: $color-red;
-        text-decoration: none;
-        transition: all 0.3 ease-out;
-        
-        &:hover, &:focus {
-            color: darken($color-red, 10%);
-            text-decoration: underline;
-        }
+    &:hover span:nth-child(2) {
+      text-decoration: none;
     }
+  }
+  &.btn--line-height-low {
+    line-height: 1em;
+  }
+  &.btn--small-text {
+    font-size: 14px;
+    text-transform: lowercase;
+  }
 }
 
 /* wrapper pro button center */
 
 .btn-wrap-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

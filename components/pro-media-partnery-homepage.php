@@ -8,8 +8,7 @@
         </div>
         <h4><?php echo $pro_media['subtitle'] ?></h4>
         <p class="prispevek__text"><?php echo $pro_media['text'] ?></p>
-        <div><a class="btn btn--link" href="#"><?php _e('Více informací','bie')?> <span
-                    class="icon-arrow_link"></span></a>
+        <div><a class="btn btn--link btn--icon" href="<?php echo $pro_media['url_pro_media']?>"><span><?php _e('More information','bie')?></span><span class="icon-arrow_link"></span></a>
         </div>
     </div>
 </div>
@@ -23,8 +22,7 @@
         </div>
         <h4><?php echo $pro_partnery['subtitle'] ?></h4>
         <p class="prispevek__text"><?php echo $pro_partnery['text'] ?></p>
-        <div><a class="btn btn--link" href="#"><?php _e('Více informací','bie')?> <span
-                    class="icon-arrow_link"></span></a>
+        <div><a class="btn btn--link btn--icon" href="<?php echo $pro_media['url_pro_media'] ?>"><span><?php _e('More information','bie')?></span><span class="icon-arrow_link"></span></a>
         </div>
     </div>
 </div>

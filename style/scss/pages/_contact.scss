@@ -1,0 +1,17 @@
+.team {
+    &__grid {
+        padding: 3rem 0;
+        @include grid(auto-fill, 250px, 3rem, center);
+    }
+    padding: 3rem;
+}
+
+.tel-email {
+    @include grid(auto-fill, 400px, 3rem, flex-start);
+    padding-top: 3rem;
+}
+
+.content-acf {
+    text-align: left;
+    padding-bottom: 3rem
+}
