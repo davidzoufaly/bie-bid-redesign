@@ -15,11 +15,7 @@ if (isTestimonial) {
   };
 
   var fullTexty = [];
-<<<<<<< HEAD
   var requiredLength = 200;
-=======
-  var requiredLength = 300;
->>>>>>> 978e684caa27869eea28e450325d9d809d51e7ec
   Array.from(document.getElementsByClassName("ref-box__ref-text"))
     .filter(function(e) {
       return e.textContent.length > requiredLength;
