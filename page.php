@@ -7,6 +7,7 @@
 		<?php get_template_part('parts/layout') ?>
 	</div>
 </main>
+<?php get_template_part('modules/module-reference') ?>
 <?php get_template_part('modules/module-libi-se') ?>
 <?php get_template_part('modules/module-kontakt') ?>
 <?php get_footer(); ?>
