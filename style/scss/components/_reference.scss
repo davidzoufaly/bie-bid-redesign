@@ -5,6 +5,10 @@
     padding-top: 8rem;
     padding-bottom: 6rem;
     position: relative;
+    &--page {
+        background-image: none;
+        background-color: $color-blue-light;
+    }
 
     h2 {
         text-align: center;

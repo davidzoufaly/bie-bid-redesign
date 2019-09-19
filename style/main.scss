@@ -78,6 +78,7 @@ $color-blue-medium: #79c3d9;
 $color-blue-light: #ebf6f9;
 $color-blue-dark: #303e42;
 
+$color-gray-light: #f3f3f3;
 $color-gray: #2E2E2E;
 $color-black: #000;
 
@@ -160,6 +161,7 @@ button {
 .page-line {
     width: 960px;
     max-width: 100%;
+    padding: 0 1rem;
     margin: auto;
 }
 
@@ -1024,7 +1026,6 @@ ol {
         padding: 1rem 4rem;
         margin-bottom: 2.5rem;
         max-width: 490px;
-        font-size: 2.2rem;
 
         @include sm {
             font-size: 3.4rem;
@@ -1110,7 +1111,6 @@ ol {
         // background: $color-blue;
         padding: 1rem 4rem;
         max-width: 490px;
-        font-size: 2.2rem;
 
         @include sm {
             font-size: 3.4rem;
@@ -1173,7 +1173,7 @@ ol {
     }
 }
 .partneri-sekce {
-  padding: 5.5rem 0;
+  padding: 5.5rem 0 0 0;
 
   h2 {
     position: relative;
@@ -1424,28 +1424,44 @@ ol {
   }
 }
 .ref-box {
-    background: white;
-    background-image: linear-gradient(135deg, white 0%, white 45%, rgba(255, 255, 255, 0.92) 100%),url("../img/pattern-bie.svg");
-    background-size: 109%;
-    padding: 3rem 3.6rem;
-    
-    &__avatar img {
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
+  background: white;
+  background-image: linear-gradient(
+      135deg,
+      white 0%,
+      white 45%,
+      rgba(255, 255, 255, 0.92) 100%
+    ),
+    url("../img/pattern-bie.svg");
+  background-size: 109%;
+  padding: 3rem 3.6rem;
+
+  &__avatar img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+
+  &__name,
+  &__ref-text {
+    line-height: 2.4rem;
+  }
+
+  &__ref-text {
+    padding-top: 1.8rem;
+
+    @include lg {
+      font-size: 1.6rem;
     }
-
-    &__name, &__ref-text {line-height: 2.4rem;}
-
-    &__name { margin-top: 1rem; }
-
-    &__ref-text {
-        padding-top: 1.8rem;
-
-        @include lg {
-            font-size: 1.6rem;
-        }
-    }
+  }
+  &__text {
+    padding-bottom: 0.3rem;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+  }
+  &__name {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
 }
 .reference {
     background: $color-blue;
@@ -1454,6 +1470,10 @@ ol {
     padding-top: 8rem;
     padding-bottom: 6rem;
     position: relative;
+    &--page {
+        background-image: none;
+        background-color: $color-blue-light;
+    }
 
     h2 {
         text-align: center;
@@ -1792,9 +1812,31 @@ th {
 }
 
 .flex-center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.py-5 {
+  padding: 5rem 0;
+}
+
+.layout {
     display: flex;
-    justify-content: center;
-    align-content: center;
+    flex-wrap: wrap;
+    &__section {
+        box-sizing: border-box;
+        padding: 0 0 5rem 0;
+        width: 100%;
+        @include lg {
+            padding: 0 2rem 5rem 2rem;
+        }
+        &--half {
+            @include lg {
+                width: 50%;
+            }
+        }
+    }
 }
 .header {
     z-index: 18;
@@ -1997,6 +2039,7 @@ th {
     }
 }
 
+
 .page404 {
     position: relative;
     min-height: 35vh;
@@ -2112,6 +2155,7 @@ th {
   }
 }
 .team {
+    background-color: $color-gray-light;
     &__grid {
         padding: 3rem 0;
         @include grid(auto-fill, 250px, 3rem, center);

@@ -1,4 +1,5 @@
 .team {
+    background-color: $color-gray-light;
     &__grid {
         padding: 3rem 0;
         @include grid(auto-fill, 250px, 3rem, center);

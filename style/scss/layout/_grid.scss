@@ -1,5 +1,27 @@
 .flex-center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.py-5 {
+  padding: 5rem 0;
+}
+
+.layout {
     display: flex;
-    justify-content: center;
-    align-content: center;
+    flex-wrap: wrap;
+    &__section {
+        box-sizing: border-box;
+        padding: 0 0 5rem 0;
+        width: 100%;
+        @include lg {
+            padding: 0 2rem 5rem 2rem;
+        }
+        &--half {
+            @include lg {
+                width: 50%;
+            }
+        }
+    }
 }

@@ -27,6 +27,22 @@ function insert_featured_image( $content ) {
 }
 //
 
+/* Unregister jquery and register jquery in footer */
+// add_filter( 'wp_default_scripts', 'remove_jquery_migrate' );
+// function remove_jquery_migrate( &$scripts){
+//     if(!is_admin()){
+//         $scripts->remove('jquery');
+//     }
+// }
+
+// function jquery_footer() {
+// 	wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
+// 	wp_enqueue_script( 'jquery' );
+// }
+
+// add_action( 'get_footer', 'jquery_footer' );
+/* end jquery */
+
 
 //remove block library
 function wpassist_remove_block_library_css(){
@@ -34,13 +50,6 @@ function wpassist_remove_block_library_css(){
 } 
 add_action( 'wp_enqueue_scripts', 'wpassist_remove_block_library_css' );
 
-// unregister jquery
-add_filter( 'wp_default_scripts', 'remove_jquery_migrate' );
-function remove_jquery_migrate( &$scripts){
-    if(!is_admin()){
-        $scripts->remove( 'jquery');
-    }
-}
 
 // vypni novej editor od WP5
 add_filter('use_block_editor_for_post', '__return_false');

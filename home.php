@@ -11,11 +11,6 @@
             <?php endif; ?>
         </div>
         <?php get_template_part('pagination'); ?>
-        <!-- <div class="pagination">
-            <a href="#" class="pagination__box pagination__box--active">1</a>
-            <a href="#" class="pagination__box">2</a>
-            <a href="#" class="pagination__box">3</a>
-        </div> -->
     </section>
 </main>
 <?php get_footer() ?>

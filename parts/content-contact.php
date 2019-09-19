@@ -1,5 +1,5 @@
-<section class="content-acf">
-    <div class="page-line">
+<div class="container">
+    <section class="content-acf">
         <?php 
 
 if(have_rows('info_o_firme_flex_content')) :
@@ -21,5 +21,5 @@ if(have_rows('info_o_firme_flex_content')) :
 endif;
 
 ?>
-    </div>
-</section>
+    </section>
+</div>
