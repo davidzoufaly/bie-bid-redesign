@@ -1,4 +1,33 @@
 <?php
+/* odpočet data */
+function dateDifference($differenceFormat = '%a' )
+{
+	$array = (explode('-',str_replace('.','-',substr(get_field('cas_konani_udalosti', 'options'), 0, -9))));
+	$date_1 = $array[2].'-'.$array[1].'-'.$array[0];
+
+	$date_2 = get_the_time('Y-m-d');
+
+    $datetime1 = date_create($date_1);
+    $datetime2 = date_create($date_2);
+    
+    $interval = date_diff($datetime1, $datetime2);
+    
+    return $interval->format($differenceFormat);
+}
+
+/* konec odpočet data */
+     
+//thumbnail po prvním odstavci novinky včetně popisku
+add_filter( 'the_content', 'insert_featured_image', 20 );
+
+function insert_featured_image( $content ) {
+    $id = get_the_ID();
+    $content = preg_replace( "/<\/p>/", "<figure></p>" . get_the_post_thumbnail($id, 'post-thumbnail')."<figcaption class='content__img-popis'>".get_post(get_post_thumbnail_id($id))->post_content."</figcaption></figure>", $content, 1 );
+    return $content;
+}
+//
+
+
 //remove block library
 function wpassist_remove_block_library_css(){
     wp_dequeue_style( 'wp-block-library' );

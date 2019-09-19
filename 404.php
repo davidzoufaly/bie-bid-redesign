@@ -1,24 +1,15 @@
 <?php get_header(); ?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
+<div class="page-subheader page404">
+	<div class="page404__img"></div>
+    <h1 class="page-subheader__title"><?php _e('Page not found - Code error 404','bie') ?></h1>
+</div>
 
-			<!-- article -->
-			<article id="post-404">
-
-				<h1><?php _e( 'Page not found', 'html5blank' ); ?></h1>
-				<h2>
-					<a href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'html5blank' ); ?></a>
-				</h2>
-
-			</article>
-			<!-- /article -->
-
-		</section>
-		<!-- /section -->
-	</main>
-
-<?php get_sidebar(); ?>
+<section class="page-404">
+    <div class="page-404__text">
+        <h2><?php _e("We can't seem to find the page you're looking for.", "bie") ?></h2>
+        <a class="btn btn--blue" href="<?php echo home_url() ?>">Return home</a>
+    </div>
+</section>
 
 <?php get_footer(); ?>

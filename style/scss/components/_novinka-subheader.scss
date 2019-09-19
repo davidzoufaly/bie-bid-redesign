@@ -7,7 +7,7 @@
     padding-bottom: 5rem;
     
     @include lg {
-        padding-top: 18rem;
+        padding-top: 15rem;
     }
 
     &__title {
@@ -32,6 +32,14 @@
     &__info {
         text-align:center;
         font-size: 1.4rem;
+        span {
+            &:first-child {
+                padding-right: 1rem;
+            }
+            &:last-child {
+                padding-left: 1rem;
+            }
+        }
 
         &__date {
             font-family: $font-bold;

@@ -15,7 +15,7 @@ if (isTestimonial) {
   };
 
   var fullTexty = [];
-  var requiredLength = 300;
+  var requiredLength = 200;
   Array.from(document.getElementsByClassName("ref-box__ref-text"))
     .filter(function(e) {
       return e.textContent.length > requiredLength;

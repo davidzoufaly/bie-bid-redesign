@@ -52,28 +52,30 @@
         margin: 0 auto;
         margin-top: 2.6rem;
         padding: 0 2rem;
+    }
+    .btn-wrap-center {
         @include lg {margin-top: 4rem;}
     }
 
-    &:after {
-        content: "";
-        width: 1px;
-        height: 2.6rem;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 0;
-        background: #EBF6F9;
-    }
+    // &:after {
+    //     content: "";
+    //     width: 1px;
+    //     height: 2.6rem;
+    //     position: absolute;
+    //     left: 50%;
+    //     transform: translateX(-50%);
+    //     bottom: 0;
+    //     background: #EBF6F9;
+    // }
 
-    &:before {
-        content: "";
-        width: 1px;
-        height: 1.5rem;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -15px;
-        background: #5AB4CF;
-    }
+    // &:before {
+    //     content: "";
+    //     width: 1px;
+    //     height: 1.5rem;
+    //     position: absolute;
+    //     left: 50%;
+    //     transform: translateX(-50%);
+    //     bottom: -15px;
+    //     background: #5AB4CF;
+    // }
 }

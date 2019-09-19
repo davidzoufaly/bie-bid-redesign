@@ -44,6 +44,16 @@
         background: $color-white;
         padding: 1rem 3rem 4rem 3rem;
 
+        p {
+            font-size: 1.4rem;
+            line-height: 2.5rem;
+            padding-bottom: 2rem;
+            &:first-child {
+                font-size: 1.7rem;
+                line-height: 2.8rem;
+            }
+        }
+
         h2 { 
             font-size: 2.6rem;
 
@@ -52,15 +62,15 @@
             }
         }
         
-        p {padding-bottom: 2rem;}
-        
         figure {
             margin: 0;
             margin-top: 2rem;
             margin-bottom: 3rem;
             
             img {
-                width: 100%;
+                max-width: 100%;
+                margin: 0 auto 2rem auto;
+                display: block;
             }
 
             figcaption {

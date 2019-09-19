@@ -9,7 +9,7 @@
     position: relative;
 
     @include lg {
-        padding-top: 18rem;
+        padding-top: 15rem;
     }
 
     &__title {
@@ -52,6 +52,4 @@
         background: $color-blue;
         z-index: 1;
     }
-
-
 }
