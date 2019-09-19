@@ -1,0 +1,119 @@
+<fieldset>
+        <legend>School details</legend>
+        <p>Please, provide the details about your school needed for statistical and practical purposes such as
+            delivery of the contest certificate.</p>
+        <div class="registrace-formular__row">
+            <label  for="reg-school-name">School name</label>
+            [text* reg-school-name class:animation-input id:reg-school-name]
+        </div>
+
+        <div class="registrace-formular__row">
+            <label  for="reg-street-name">Street (required)</label>
+            [text* reg-street-name class:animation-input id:reg-street-name]
+        </div>
+
+        <div class="registrace-formular__row">
+            <label  for="reg-city">City (required)</label>
+            [text* reg-city class:animation-input id:reg-city]
+        </div>
+
+        <div class="registrace-formular__row">
+            <label  for="reg-postal-code">Postal Code (required)</label>
+            [number* reg-postal-code class:animation-input id:reg-postal-code]
+        </div>
+
+        <div class="registrace-formular__row">
+            <h2 class="h2--small h2--nobefore">Country (required)</h2>
+            <p>No schools/students whose official language is English shall participate.</p>
+            [select* reg-countries "Afghanistan" "Akrotiri" "Albania" "Algeria" "American Samoa" "Andorra"
+            "Angola" "Anguilla" "Antarctica" "Antigua and Barbuda" "Argentina" "Armenia" "Aruba" "Ashmore and
+            Cartier Islands" "Australia" "Austria" "Azerbaijan" "Bahamas, The" "Bahrain" "Bangladesh" "Barbados"
+            "Bassas da India" "Belarus" "Belgium" "Belize" "Benin" "Bermuda" "Bhutan" "Bolivia" "Bosnia and
+            Herzegovina" "Botswana" "Bouvet Island" "Brazil" "British Indian Ocean Territory" "British Virgin
+            Islands" "Brunei" "Bulgaria" "Burkina Faso" "Burma" "Burundi" "Cambodia" "Cameroon" "Canada" "Cape
+            Verde" "Cayman Islands" "Central African Republic" "Chad" "Chile" "China" "Christmas Island"
+            "Clipperton Island" "Cocos (Keeling) Islands" "Colombia" "Comoros" "Congo, Democratic Republic of
+            the" "Congo, Republic of the" "Cook Islands" "Coral Sea Islands" "Costa Rica" "Cote d'Ivoire"
+            "Croatia" "Cuba" "Cyprus" "Czech Republic" "Denmark" "Dhekelia" "Djibouti" "Dominica" "Dominican
+            Republic" "Ecuador" "Egypt" "El Salvador" "Equatorial Guinea" "Eritrea" "Estonia" "Ethiopia" "Europa
+            Island" "Falkland Islands (Islas Malvinas)" "Faroe Islands" "Fiji" "Finland" "France" "French
+            Guiana" "French Polynesia" "French Southern and Antarctic Lands" "Gabon" "Gambia, The" "Gaza Strip"
+            "Georgia" "Germany" "Ghana" "Gibraltar" "Glorioso Islands" "Greece" "Greenland" "Grenada"
+            "Guadeloupe" "Guam" "Guatemala" "Guernsey" "Guinea" "Guinea-Bissau" "Guyana" "Haiti" "Heard Island
+            and McDonald Islands" "Holy See (Vatican City)" "Honduras" "Hong Kong" "Hungary" "Iceland" "India"
+            "Indonesia" "Iran" "Iraq" "Ireland" "Isle of Man" "Israel" "Italy" "Jamaica" "Jan Mayen" "Japan"
+            "Jersey" "Jordan" "Juan de Nova Island" "Kazakhstan" "Kenya" "Kiribati" "Korea, North" "Korea,
+            South" "Kuwait" "Kyrgyzstan" "Laos" "Latvia" "Lebanon" "Lesotho" "Liberia" "Libya" "Liechtenstein"
+            "Lithuania" "Luxembourg" "Macau" "Macedonia" "Madagascar" "Malawi" "Malaysia" "Maldives" "Mali"
+            "Malta" "Marshall Islands" "Martinique" "Mauritania" "Mauritius" "Mayotte" "Mexico" "Micronesia,
+            Federated States of" "Moldova" "Monaco" "Mongolia" "Montenegro" "Montserrat" "Morocco" "Mozambique"
+            "Namibia" "Nauru" "Navassa Island" "Nepal" "Netherlands" "Netherlands Antilles" "New Caledonia" "New
+            Zealand" "Nicaragua" "Niger" "Nigeria" "Niue" "Norfolk Island" "Northern Mariana Islands" "Norway"
+            "Oman" "Pakistan" "Palau" "Panama" "Papua New Guinea" "Paracel Islands" "Paraguay" "Peru"
+            "Philippines" "Pitcairn Islands" "Poland" "Portugal" "Puerto Rico" "Qatar" "Reunion" "Romania"
+            "Russia" "Rwanda" "Saint Helena" "Saint Kitts and Nevis" "Saint Lucia" "Saint Pierre and Miquelon"
+            "Saint Vincent and the Grenadines" "Samoa" "San Marino" "Sao Tome and Principe" "Saudi Arabia"
+            "Senegal" "Serbia " "Seychelles" "Sierra Leone" "Singapore" "Slovakia" "Slovenia" "Solomon Islands"
+            "Somalia" "South Africa" "South Georgia and the South Sandwich Islands" "Spain" "Spratly Islands"
+            "Sri Lanka" "Sudan" "Suriname" "Svalbard" "Swaziland" "Sweden" "Switzerland" "Syria" "Taiwan"
+            "Tajikistan" "Tanzania" "Thailand" "Timor-Leste" "Togo" "Tokelau" "Tonga" "Trinidad and Tobago"
+            "Tromelin Island" "Tunisia" "Turkey" "Turkmenistan" "Turks and Caicos Islands" "Tuvalu" "Uganda"
+            "Ukraine" "United Arab Emirates" "United Kingdom" "United States" "Uruguay" "Uzbekistan" "Vanuatu"
+            "Venezuela" "Vietnam" "Virgin Islands" "Wake Island" "Wallis and Futuna" "West Bank" "Western
+            Sahara" "Yemen" "Zambia" "Zimbabwe"]
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Student details</legend>
+        <div class="registrace-formular__row">
+            <h2 class="h2--small h2--nobefore">How many students will participate approximately</h2>
+            <p>Provided number of students is not mandatory and can be changed anytime without any notice.</p>
+            [select reg-students-number "10-20" "21-30" "31-40" "41-50" "51-60" "More than 61"]
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Details about teacher</legend>
+        <p>The contact person should be either you or your colleague. All important information regarding the
+            content will be sent to the provided email adress.</p>
+        <div class="registrace-formular__row">
+            <label  for="reg-first-name">First name (required)</label>
+            [text* reg-first-name class:animation-input id:reg-first-name]
+        </div>
+        <div class="registrace-formular__row">
+            <label  for="reg-second-name">Second name (required)</label>
+            [text* reg-second-name class:animation-input id:reg-second-name]
+        </div>
+        <div class="registrace-formular__row">
+            <label  for="reg-email">Email Address (required)</label>
+            [email* reg-email class:animation-input id:reg-email]
+        </div>
+        <div class="registrace-formular__row">
+            <label  for="reg-tel-number">Telephone Number (required)</label>
+            [text* reg-email class:animation-input id:reg-tel-number]
+            <p class="input-info">Will be used in emergency only. E.g +420111222111</p>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Additional section for Czech and Slovak participants</legend>
+        <p>Dear Czech and Slovak school teachers, please, provide us with information as asked below to be used for Czech and Slovak statistics</p>
+        <div class="registrace-formular__row">
+            <h2 class="h2--small h2--nobefore">Region of the Czech Republic</h2>
+            [select reg-cz-kraje class:select-style include_blank "Hlavní město Praha" "Jihočeský kraj" "Jihomoravský kraj"
+            "Karlovarský kraj" "Kraj Vysočina" "Královéhradecký kraj" "Liberecký kraj" "Moravskoslezský kraj"
+            "Olomoucký kraj" "Pardubický kraj" "Plzeňský kraj" "Středočeský kraj" "Ústecký kraj" "Zlínský kraj"]
+        </div>
+        <div class="registrace-formular__row">
+            <h2 class="h2--small h2--nobefore">Region of the Slovak Republic</h2>
+            [select reg-sk-kraje class:select-style include_blank class:select-style "Bratislavský" "Banskobystrický" "Košický" "Nitranský"
+            "Prešovský""Trenčínský" "Trnavský" "Žilinský"]
+        </div>
+        <div class="registrace-formular__row registrace-formular__row--checkboxes">
+            <h2 class="h2--small h2--nobefore">What type of school you are?</h2>
+            <p>You can choose one or more options at once</p>
+            [checkbox reg-school-type class:inp-cbx "Gymnázium" "SOU" "SOŠ" "Others"]
+        </div>
+    </fieldset>
+    <div class="btn-wrap-center">
+        [submit class:btn class:btn--red "Send"]
+    </div>

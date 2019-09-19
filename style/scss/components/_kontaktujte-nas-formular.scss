@@ -1,3 +1,16 @@
+label {
+  font-size: 1.4rem;
+  display: inline;
+  transform: translateY(20px);
+  transition: 0.2s;
+  color: $color-black;
+  transform-origin: top left;
+  &.size-ani {
+    transform: translateY(0px) scale(0.9);
+    color: $color-red;
+  }
+}
+
 .kontaktujte-nas-formular {
   padding: 4rem 3rem;
   background: $color-white;
@@ -11,15 +24,6 @@
     flex-direction: column;
   }
 
-  label {
-    font-size: 1.4rem;
-    display: inline;
-    transform: translateY(20px);
-    transition: 0.2s;
-    color: $color-black;
-    transform-origin: top left;
-  }
-
   textarea {
       resize: none;
       background-color: transparent;
@@ -30,11 +34,6 @@
       outline: none;
       margin-bottom: 2rem;
       height: 100px;
-  }
-
-  .size-ani {
-    transform: translateY(0px) scale(0.9);
-    color: $color-red;
   }
 
   div {

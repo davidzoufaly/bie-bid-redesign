@@ -49,7 +49,7 @@
 
             <nav class="nav" role="navigation">
                 <?php html5blank_nav(); ?>
-                <a class="btn btn--red" href="#">Registration</a>
+                <a class="btn btn--red" href="/registration">Registration</a>
             </nav>
 
             <div class="--mobile-dark-content">
