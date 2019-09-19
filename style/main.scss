@@ -1420,20 +1420,39 @@ ol {
                 }
             }
 
-            select {
-                padding: 1rem;
-                width: 200px;
-                option {
-                    padding: 0.2rem;
+            &--checkboxes label { pointer-events: all !important; }
 
-                    &:hover, &:focus {
-                        color: white;
-                        background: $color-red;
-                    }
+            .checkboxes-wrapper {
+                margin-left: 5rem;
+                div {
+                    padding-bottom: 1rem;
+                }
+            }
+
+            .select-style {
+                border: 1px solid #D25D54;
+                width: 120px;
+                border-radius: 3px;
+                overflow: hidden;
+                background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;
+                cursor: pointer;
+            
+                & select {
+                    padding: 5px 8px;
+                    width: 130%;
+                    border: none;
+                    box-shadow: none;
+                    background: transparent;
+                    background-image: none;
+                    -webkit-appearance: none;
+                }
+            
+                & select:focus {
+                    outline: 2px $color-red;
                 }
 
                 @include sm {
-                    width: initial;
+                    width: 150px;
                 }
             }
 
@@ -1445,7 +1464,86 @@ ol {
             }
         }
     }
+
+    input[type=submit] {
+        padding: 0 4rem;
+        border: 0;
+        text-transform: uppercase;
+    }
 }
+
+.cbx {
+    margin: auto;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+  }
+  .cbx span {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translate3d(0, 0, 0);
+  }
+  .cbx span:first-child {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    transform: scale(1);
+    vertical-align: middle;
+    border: 1px solid #9098A9;
+    transition: all 0.2s ease;
+  }
+  .cbx span:first-child svg {
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    fill: none;
+    stroke: #FFFFFF;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 16px;
+    stroke-dashoffset: 16px;
+    transition: all 0.3s ease;
+    transition-delay: 0.1s;
+    transform: translate3d(0, 0, 0);
+  }
+  .cbx span:first-child:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: $color-red;
+    display: block;
+    transform: scale(0);
+    opacity: 1;
+    border-radius: 50%;
+  }
+  .cbx span:last-child {
+    padding-left: 8px;
+  }
+  .cbx:hover span:first-child {
+    border-color: $color-red;
+  }
+  
+  .inp-cbx:checked + .cbx span:first-child {
+    background: $color-red;
+    border-color: $color-red;
+    animation: wave 0.4s ease;
+  }
+  .inp-cbx:checked + .cbx span:first-child svg {
+    stroke-dashoffset: 0;
+  }
+  .inp-cbx:checked + .cbx span:first-child:before {
+    transform: scale(3.5);
+    opacity: 0;
+    transition: all 0.6s ease;
+  }
+  
+  @keyframes wave {
+    50% {
+      transform: scale(0.9);
+    }
+  }
 
 .submenu {
     margin: 0 auto;
@@ -1596,7 +1694,11 @@ th {
 
 .header {
     z-index: 18;
-    transition: all 250ms ease-in;
+    transition: 0.2s;
+
+    &--shadow {
+        box-shadow: 0px 10px 7px -7px rgba(0,0,0,0.22);
+    }
     
     
     ._header-wrapper {
@@ -1607,7 +1709,7 @@ th {
         justify-content: space-between;
         flex-flow: row nowrap;
         padding: 0 1.6rem;
-        position: fixed;
+        position:fixed;
         top: 0;
         background: transparent;
         z-index: 12;            
@@ -1667,7 +1769,10 @@ th {
         flex-flow: column;
         width: 100vw;
         position: fixed;
+        overflow-y:scroll;
+        overflow-x:hidden;
         top: 0;
+        bottom: 20vh;
         left: 0;
         background: $color-blue-light;
         transition: all 200ms ease-in-out;
@@ -1682,6 +1787,7 @@ th {
             text-align: center;
             display: block;
             margin-bottom: 2.2rem;
+            position: relative;
             
             a {
                 font-size: 1.5rem;
@@ -1692,21 +1798,26 @@ th {
                 }
             }
 
-            &:hover a, &:focus a {
-                color: $color-blue;
-            }
         }
 
         li:before {
             content: '';
+            width: 0;
+            padding: 0;
+            display: none;
         }
 
         .btn {
             font-size: 1.5rem;
+            width: 120px;
+            display: block;
+            margin: 0 auto;
         }
 
         @include lg {
             transform: translateY(0);
+            overflow-y: visible;
+            overflow-x: visible;
         }
     }
 
@@ -1719,6 +1830,115 @@ th {
         background: rgba(0,0,0,0.5);
         z-index:10;
         display: none;
+    }
+
+    .menu-item-has-children {
+        cursor: pointer;
+
+        .arrow__up {
+            content: "";
+            border: solid $color-blue-dark;
+            border-width: 0 1.5px 1.5px 0;
+            display: inline-block;
+            padding: 4px;
+            margin-left: .5rem;
+            margin-bottom: 0.3rem;
+            transform: rotate(45deg);
+            transition: 0.3s;
+
+            @include lg {
+                border: solid $color-white;
+                border-width: 0 1.5px 1.5px 0;
+            }
+
+            &--dark {
+                content: "";
+                border: solid $color-blue-dark;
+                border-width: 0 1.5px 1.5px 0;
+                display: inline-block;
+                padding: 4px;
+                margin-left: .5rem;
+                margin-bottom: 0.3rem;
+                transform: rotate(45deg);
+            }
+
+            &--blue {
+                content: "";
+                border: solid $color-blue;
+                border-width: 0 1.5px 1.5px 0;
+                display: inline-block;
+                padding: 4px;
+                margin-left: .5rem;
+                margin-bottom: 0.3rem;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    .sub-menu {
+        background: darken($color-blue-light, 5);
+        text-align: left;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 100ms ease-out;
+
+        li {
+            display: block;
+            width: 100%;
+            background: #f8fdff;
+            margin:0;
+            margin-bottom: .2rem;
+
+            a {
+                color: $color-blue-dark !important;
+                font-size: 1.4rem;
+                display: block;
+                margin: 0;
+                padding: 1rem;
+                cursor: pointer;
+
+                &:hover, &:focus {
+                    background: darken($color-blue-light, 13);
+                }
+            }
+        }
+
+        @include lg {
+            max-height: 0;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 26px);
+            
+
+            li {
+                background: darken($color-blue-light, 5);
+                text-align: left;
+                padding:0;
+                margin: 0;
+                width: 100%;
+    
+                a {
+                    width: auto;
+                    display: block;
+                    padding: 0.5rem 1rem 0.5rem 3rem;
+                    transition: background 300ms ease-out;
+                    white-space: nowrap;
+                }
+
+                &:first-child {
+                    padding-top: .5rem;
+                }
+                
+                &:last-child {
+                    padding-bottom: .8rem;
+                }
+            }
+        }
+
+        &--revealed {
+            color: $color-blue !important;
+            font-family: $font-bold;
+        } 
     }
 
     @include lg {
@@ -1776,7 +1996,14 @@ th {
                 padding: .9rem 1.6rem;
                 width: initial;
             }
+        }
 
+        &:hover {
+            background: $color-white;
+            
+            li a {
+                color: $color-blue-dark;
+            }
         }
     }
 
@@ -1801,7 +2028,7 @@ th {
     background-image: url('../img/404.svg');
     background-size: 25%;
     background-repeat: no-repeat;
-    background-position: 50%;
+    background-position: center;
     padding-top: 30rem;
     padding-bottom: 20rem;
     
@@ -1817,7 +2044,6 @@ th {
     a {
         font-size: 3.4rem;
         padding: 1rem 2rem;
-        
     }
 }
 .archiv {

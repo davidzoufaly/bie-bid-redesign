@@ -1,6 +1,10 @@
 .header {
     z-index: 18;
-    transition: all 250ms ease-in;
+    transition: 0.2s;
+
+    &--shadow {
+        box-shadow: 0px 10px 7px -7px rgba(0,0,0,0.22);
+    }
     
     
     ._header-wrapper {
@@ -11,7 +15,7 @@
         justify-content: space-between;
         flex-flow: row nowrap;
         padding: 0 1.6rem;
-        position: fixed;
+        position:fixed;
         top: 0;
         background: transparent;
         z-index: 12;            
@@ -71,7 +75,10 @@
         flex-flow: column;
         width: 100vw;
         position: fixed;
+        overflow-y:scroll;
+        overflow-x:hidden;
         top: 0;
+        bottom: 20vh;
         left: 0;
         background: $color-blue-light;
         transition: all 200ms ease-in-out;
@@ -86,6 +93,7 @@
             text-align: center;
             display: block;
             margin-bottom: 2.2rem;
+            position: relative;
             
             a {
                 font-size: 1.5rem;
@@ -96,21 +104,26 @@
                 }
             }
 
-            &:hover a, &:focus a {
-                color: $color-blue;
-            }
         }
 
         li:before {
             content: '';
+            width: 0;
+            padding: 0;
+            display: none;
         }
 
         .btn {
             font-size: 1.5rem;
+            width: 120px;
+            display: block;
+            margin: 0 auto;
         }
 
         @include lg {
             transform: translateY(0);
+            overflow-y: visible;
+            overflow-x: visible;
         }
     }
 
@@ -123,6 +136,115 @@
         background: rgba(0,0,0,0.5);
         z-index:10;
         display: none;
+    }
+
+    .menu-item-has-children {
+        cursor: pointer;
+
+        .arrow__up {
+            content: "";
+            border: solid $color-blue-dark;
+            border-width: 0 1.5px 1.5px 0;
+            display: inline-block;
+            padding: 4px;
+            margin-left: .5rem;
+            margin-bottom: 0.3rem;
+            transform: rotate(45deg);
+            transition: 0.3s;
+
+            @include lg {
+                border: solid $color-white;
+                border-width: 0 1.5px 1.5px 0;
+            }
+
+            &--dark {
+                content: "";
+                border: solid $color-blue-dark;
+                border-width: 0 1.5px 1.5px 0;
+                display: inline-block;
+                padding: 4px;
+                margin-left: .5rem;
+                margin-bottom: 0.3rem;
+                transform: rotate(45deg);
+            }
+
+            &--blue {
+                content: "";
+                border: solid $color-blue;
+                border-width: 0 1.5px 1.5px 0;
+                display: inline-block;
+                padding: 4px;
+                margin-left: .5rem;
+                margin-bottom: 0.3rem;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    .sub-menu {
+        background: darken($color-blue-light, 5);
+        text-align: left;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 100ms ease-out;
+
+        li {
+            display: block;
+            width: 100%;
+            background: #f8fdff;
+            margin:0;
+            margin-bottom: .2rem;
+
+            a {
+                color: $color-blue-dark !important;
+                font-size: 1.4rem;
+                display: block;
+                margin: 0;
+                padding: 1rem;
+                cursor: pointer;
+
+                &:hover, &:focus {
+                    background: darken($color-blue-light, 13);
+                }
+            }
+        }
+
+        @include lg {
+            max-height: 0;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 26px);
+            
+
+            li {
+                background: darken($color-blue-light, 5);
+                text-align: left;
+                padding:0;
+                margin: 0;
+                width: 100%;
+    
+                a {
+                    width: auto;
+                    display: block;
+                    padding: 0.5rem 1rem 0.5rem 3rem;
+                    transition: background 300ms ease-out;
+                    white-space: nowrap;
+                }
+
+                &:first-child {
+                    padding-top: .5rem;
+                }
+                
+                &:last-child {
+                    padding-bottom: .8rem;
+                }
+            }
+        }
+
+        &--revealed {
+            color: $color-blue !important;
+            font-family: $font-bold;
+        } 
     }
 
     @include lg {
@@ -180,7 +302,14 @@
                 padding: .9rem 1.6rem;
                 width: initial;
             }
+        }
 
+        &:hover {
+            background: $color-white;
+            
+            li a {
+                color: $color-blue-dark;
+            }
         }
     }
 
@@ -200,3 +329,4 @@
         }
     }
 }
+
