@@ -47,6 +47,10 @@ function scrollNav(scrollY) {
             for(let i = 0; i< menuItem.length; i++) {
                 menuItem[i].style.color = '#303E42';
             }
+<<<<<<< HEAD:js/footer/countdown.js
         } else { menuMob.style.backgroundColor = 'white'; } 
+=======
+        } else { menuMob.style.backgroundColor = 'white'; }
+>>>>>>> 978e684caa27869eea28e450325d9d809d51e7ec:js/footer/countdown.js
     }
 }

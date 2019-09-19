@@ -8,6 +8,10 @@
             <?php endif; ?>
         </div>
         <h4><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></h4>
+<<<<<<< HEAD
         <p class="prispevek__date"><?php the_time('d.m.Y') ?> | <?php echo dateDifference()?></span> <?php _e('days until contest', 'bie') ?></p>
+=======
+        <div class="prispevek__date"><?php the_time('d.m.Y') ?></div>
+>>>>>>> 978e684caa27869eea28e450325d9d809d51e7ec
         <p class="prispevek__text"><?php html5wp_excerpt('html5wp_index'); ?></p>
     </div>

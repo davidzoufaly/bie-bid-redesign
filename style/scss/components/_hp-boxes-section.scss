@@ -128,6 +128,7 @@
         width: 50%;
         position: relative;
 
+<<<<<<< HEAD
         ._video {
           position: absolute;
           margin: 0;
@@ -135,6 +136,21 @@
           width: 120%;
           right: -6.8rem;
           top: -6rem;
+=======
+        @include lg {
+            .--grid-lg-helper {
+                display: flex;
+                justify-content: space-between;
+                .prispevek {
+                    width: 48%;
+                }
+            }
+            .boxes-section__pro-media {
+                .prispevek {
+                    margin-bottom: 0;
+                }
+            }
+>>>>>>> 978e684caa27869eea28e450325d9d809d51e7ec
         }
       }
     }

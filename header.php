@@ -32,7 +32,11 @@
                 <div class="logo">
                     <a href="<?php echo home_url(); ?>">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/czech-us_transparent_1.png" alt="Logo Best In English"
+<<<<<<< HEAD
                             class="logo-img" loading="lazy">
+=======
+                            class="logo-img">
+>>>>>>> 978e684caa27869eea28e450325d9d809d51e7ec
                     </a>
                 </div>
 
