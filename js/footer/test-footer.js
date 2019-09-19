@@ -1,10 +1,6 @@
-
-
 console.log('hi footer');
 
-
-
-
+/* zavolam FCI dropDownArrows() */
 dropDownArrows();
 
 // menu variables
@@ -21,57 +17,45 @@ const subM = document.getElementsByClassName('arrow__up');
 
 
 
+/****************************\
+    EVENTLISTENERY
+\****************************/
 
+/* pri scrollu vola FCI scrollNav() */
 window.addEventListener('scroll', (e) => {
     scrollNav(e.path[1].scrollY);
-
 })
 
+/* kdyz se klikne na 'menu-item-has-children' ukaz submenu */
 const submenu = document.querySelectorAll('.sub-menu');
-
-
-/* clik event listener */
 window.addEventListener('click', (e) => {
-    /* submenu listener */
+    /* submenu listener, pokud ma deti je z nej schovany dropdown */
     if(e.path[1].classList.contains('menu-item-has-children')) {
         dropDown(e);
     } else {
-        console.log('clicked elsewhere but revealed');
-        let subMenus = document.getElementsByClassName('sub-menu');
-
-        for(let j = 0; j<subM.length; j++) {
-            console.log(subM[j]);
-            if(subM[j].classList.contains('arrow__up--blue')) {
-                subM[j].classList.remove('arrow__up--blue');
-            }
-        }
-
-        for(let i = 0; i<subMenus.length; i++) {
-            let revealedMenu = subMenus[i];
-            console.log(revealedMenu.style.maxHeight);
-            if(revealedMenu.style.maxHeight != 0) {
-                revealedMenu.style.maxHeight = null;
-                let el = document.getElementsByClassName('sub-menu--revealed')[0];
-                el.classList.remove('sub-menu--revealed'); 
-            }
-        }
+        resetSubmenu(true);
     }
-
 })
 
+/* kdyz je kurzor na menu zmen ho na bilo */
 menu.addEventListener('mouseover', () => {
     whiteNav();
 })
 
+/* kdyz kurzor odejde z menu dej ho zpet na transparent pokud je uzivatel uplne na hore a submeny schovej */
 menu.addEventListener('mouseleave', () => {
     if(window.scrollY === 0) {
         transNav();
     }
+    resetSubmenu(true);
 })
 
 
+/****************************\
+    FUNKCE
+\****************************/
 
-/* On scroll change color of Menu to white, else remain transparent */
+/* FCE pokud je uzivatel nahore bude menu trasparentni, pokud jinde bude bile*/
 function scrollNav(scrollY) {
     if(scrollY === 0) {
         transNav();
@@ -80,6 +64,7 @@ function scrollNav(scrollY) {
     }
 }
 
+/* FCE pro bilou navigaci --upravit :\\ */
 function whiteNav() {
     menu.style.backgroundColor = 'white';
     menu.classList.add('header--shadow');
@@ -103,6 +88,7 @@ function whiteNav() {
     } else { menuMob.style.backgroundColor = 'white'; } 
 }
 
+/* FCE pro pruhlednou navigaci --upravit :\\ */
 function transNav() {
     menu.style.backgroundColor = 'transparent';
     menu.classList.remove('header--shadow');
@@ -127,6 +113,8 @@ function transNav() {
     } else { menuMob.style.backgroundColor = 'transparent'; }
 }
 
+
+/* FCE prida vsem 'menu-item-has-children' arrow down */
 function dropDownArrows() {
 
     let subMenuItems = document.getElementsByClassName('menu-item-has-children');
@@ -138,14 +126,15 @@ function dropDownArrows() {
     }
 }
 
+/* FCE vysouva dropdowny  */
 function dropDown(event) {
+    
     event.target.classList.toggle('sub-menu--revealed');
-    console.log(event.target.children[0]);
+    resetSubmenu(false);
     event.target.children[0].classList.toggle('arrow__up--blue');
     
-    let target = event.path[1].children[1];
-
     
+    let target = event.path[1].children[1];
 
     if(window.screen.width >= 991) {
         if(target.style.maxHeight) {
@@ -159,6 +148,28 @@ function dropDown(event) {
             target.style.maxHeight = null;
         } else {
             target.style.maxHeight = target.scrollHeight + 'px';
+        }
+    }
+}
+
+/* FCE resetuje submeny zpatky */
+function resetSubmenu(kombo) {
+    let subMenus = document.getElementsByClassName('sub-menu');
+
+    if(kombo) {
+        for(let j = 0; j<subM.length; j++) {
+            if(subM[j].classList.contains('arrow__up--blue')) {
+                subM[j].classList.remove('arrow__up--blue');
+            }
+        }
+    }
+
+    for(let i = 0; i<subMenus.length; i++) {
+        let revealedMenu = subMenus[i];
+        if(revealedMenu.style.maxHeight != 0) {
+            revealedMenu.style.maxHeight = null;
+            let el = document.getElementsByClassName('sub-menu--revealed')[0];
+            el.classList.remove('sub-menu--revealed'); 
         }
     }
 }

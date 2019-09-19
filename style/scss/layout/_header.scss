@@ -92,18 +92,24 @@
         li {
             text-align: center;
             display: block;
-            margin-bottom: 2.2rem;
+            margin-bottom: 1rem;
             position: relative;
+            transition: all 250ms ease-out;
             
             a {
                 font-size: 1.5rem;
                 color: $color-blue-dark;
                 text-decoration: none;
+                transition: all 250ms ease-out;
                 @include lg {
                     color: $color-white;
                 }
+                
             }
 
+            @include lg {
+                margin-bottom: 2.2rem;
+            }
         }
 
         li:before {
@@ -194,6 +200,7 @@
             background: #f8fdff;
             margin:0;
             margin-bottom: .2rem;
+            transition: all 250ms ease-out;
 
             a {
                 color: $color-blue-dark !important;
@@ -202,6 +209,7 @@
                 margin: 0;
                 padding: 1rem;
                 cursor: pointer;
+                transition: all 250ms ease-out;
 
                 &:hover, &:focus {
                     background: darken($color-blue-light, 13);
@@ -229,21 +237,13 @@
                     padding: 0.5rem 1rem 0.5rem 3rem;
                     transition: background 300ms ease-out;
                     white-space: nowrap;
-                }
-
-                &:first-child {
-                    padding-top: .5rem;
-                }
-                
-                &:last-child {
-                    padding-bottom: .8rem;
+                    min-width: 140px;
                 }
             }
         }
 
         &--revealed {
             color: $color-blue !important;
-            font-family: $font-bold;
         } 
     }
 
@@ -326,6 +326,21 @@
 
                 a { font-size: 1.5rem;}
             }
+        }
+    }
+
+    & li a:hover {
+        color: $color-blue !important;
+
+        .arrow__up {
+            content: "";
+            border: solid $color-blue;
+            border-width: 0 1.5px 1.5px 0;
+            display: inline-block;
+            padding: 4px;
+            margin-left: .5rem;
+            margin-bottom: 0.3rem;
+            transform: rotate(45deg);
         }
     }
 }
