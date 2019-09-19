@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 /* odpočet data */
 function dateDifference($differenceFormat = '%a' )
 {
@@ -29,8 +28,6 @@ function insert_featured_image( $content ) {
 //
 
 
-=======
->>>>>>> 978e684caa27869eea28e450325d9d809d51e7ec
 //remove block library
 function wpassist_remove_block_library_css(){
     wp_dequeue_style( 'wp-block-library' );
