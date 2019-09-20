@@ -1434,7 +1434,7 @@ ol {
                 width: 120px;
                 border-radius: 3px;
                 overflow: hidden;
-                background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;
+                background: #fafafa ;
                 cursor: pointer;
             
                 & select {
@@ -1711,7 +1711,7 @@ th {
         padding: 0 1.6rem;
         position:fixed;
         top: 0;
-        background: transparent;
+        background: white;
         z-index: 12;            
         transition: all 250ms ease-in;
     
@@ -1720,6 +1720,13 @@ th {
 
             img { width: 150px; }
         }
+
+
+        // 20.9
+        label {
+            transform: none;
+        }
+        //
         ._show-menu {
             font-size: 15px;
             position: relative;
@@ -1750,6 +1757,10 @@ th {
                 left: -2rem;
             }
         }
+
+        @include lg {
+            background: transparent;
+        }
     }
         
 
@@ -1758,10 +1769,12 @@ th {
         visibility: hidden;
         z-index: -1;
 
+        &:checked + ._header-wrapper { background: $color-white}
         &:checked + ._header-wrapper + .nav { top:60px; transform:translateY(0); }
         &:checked + ._header-wrapper + .nav + .--mobile-dark-content { display: initial; }
         &:checked + ._header-wrapper ._show-menu {display: none;}
         &:checked + ._header-wrapper ._hide-menu {display: initial;}
+        
     }
 
     .nav {
@@ -1815,7 +1828,7 @@ th {
 
         .btn {
             font-size: 1.5rem;
-            width: 120px;
+            padding: 0 4rem;
             display: block;
             margin: 0 auto;
         }
@@ -1878,6 +1891,11 @@ th {
                 margin-bottom: 0.3rem;
                 transform: rotate(45deg);
             }
+
+            &--animate {
+                transform: rotate(-135deg) translateY(-5px) translateX(-5px);
+
+            }
         }
     }
 
@@ -1928,7 +1946,7 @@ th {
                 a {
                     width: auto;
                     display: block;
-                    padding: 0.5rem 1rem 0.5rem 3rem;
+                    padding: 1rem 1rem 1rem 3rem;
                     transition: background 300ms ease-out;
                     white-space: nowrap;
                     min-width: 140px;
@@ -1993,7 +2011,7 @@ th {
             .btn {
                 display: inline-block;
                 line-height: initial;
-                padding: .9rem 1.6rem;
+                padding: .9rem 1.6rem;  
                 width: initial;
             }
         }
@@ -2034,7 +2052,6 @@ th {
             padding: 4px;
             margin-left: .5rem;
             margin-bottom: 0.3rem;
-            transform: rotate(45deg);
         }
     }
 }
