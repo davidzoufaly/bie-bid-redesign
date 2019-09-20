@@ -9,3 +9,7 @@
 @import './icomoon/style.css';
 @import "style/main.css";
 
+.cc-revoke,
+.grecaptcha-badge {
+	display: none;
+}

@@ -34,10 +34,10 @@ const generateRandomId = (a, b) => {
   const inner = () => {
     while (schoolId.length < delkaId) {
       if (Math.floor(Math.random() * 2) > 0) {
-        // write letter
+        // push letter
         schoolId.push(a[Math.floor(Math.random() * a.length)]);
       } else {
-        // write number
+        // push number
         schoolId.push(b[Math.floor(Math.random() * b.length)]);
       }
     }
@@ -46,10 +46,20 @@ const generateRandomId = (a, b) => {
   return inner();
 };
 
-const finalID = generateRandomId(alphabet, number).join("");
+// propis do inputu
+const schoolIDInput = document.querySelector("#school-id");
+const regDate = document.querySelector("#reg-date");
 
-schoolIDInput = document.querySelector('#school-id') ;
+let today = new Date();
+let date = `${today.getDate()}.${(today.getMonth()+1)}.${today.getFullYear()}`;
+let time = `${today.getHours()}:${today.getMinutes()}`;
+let dateTime = `${date} ${time}`;
 
 if (schoolIDInput) {
-    schoolIDInput.value = finalID;
+  document.querySelector(
+    "#register-submit"
+  ).addEventListener('click', () => {
+    schoolIDInput.value = generateRandomId(alphabet, number).join("");
+    regDate.value = dateTime;
+  });
 }

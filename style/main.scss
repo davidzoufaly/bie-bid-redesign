@@ -266,13 +266,15 @@ strong {
 
 p {
     font-size: 16px;
-    padding-bottom: 1rem;
+    line-height: 1.6em;
+    padding-bottom: 2em;
 }
 
 ul {
     list-style: none;
     font-size: 16px;
     line-height: 2.5rem;
+    padding-bottom: 2em;
 
     & li:before {
         content: '\2022';
@@ -287,6 +289,7 @@ ol {
     font-size: 16px;
     counter-reset: item;
     line-height: 2.5rem;
+    padding-bottom: 2em;
 
     li {
         list-style-type: none;
@@ -612,6 +615,7 @@ ol {
         color: $color-white;
         text-shadow: 0px 0px 4px rgba(0,0,0,0.2);
         text-align: center;
+        padding-bottom: 0;
     }
 
     &__text {
@@ -668,6 +672,9 @@ ol {
         background-image: linear-gradient(135deg, white 0%, white 25%, rgba(255, 255, 255, 0.92) 100%),url("../img/pattern-bie.svg");
         background-size: 109%;
         padding: 3rem 3.6rem;
+        p {
+            padding-bottom: 1rem;
+        }
     }
 
     &__title {
@@ -1597,41 +1604,16 @@ label {
           margin: 0;
         }
 
-<<<<<<< HEAD
         &:focus {
           outline: none;
           border-bottom: 1px solid $color-red;
         }
       }
-=======
-            .select-style {
-                border: 1px solid #D25D54;
-                width: 120px;
-                border-radius: 3px;
-                overflow: hidden;
-                background: #fafafa ;
-                cursor: pointer;
-            
-                & select {
-                    padding: 5px 8px;
-                    width: 130%;
-                    border: none;
-                    box-shadow: none;
-                    background: transparent;
-                    background-image: none;
-                    -webkit-appearance: none;
-                }
-            
-                & select:focus {
-                    outline: 2px $color-red;
-                }
->>>>>>> jakub
 
       .wpcf7-list-item {
         display: block;
         input[type="checkbox"] {
-          width: 2.5rem;
-          height: 2.5rem;
+          display: inline;
         }
         .wpcf7-list-item-label {
           vertical-align: super;
@@ -2037,6 +2019,7 @@ label {
         transform: translateY(-100%);
 
         ul { 
+            padding-bottom: 0;
         }
 
         li {

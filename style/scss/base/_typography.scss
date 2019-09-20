@@ -82,13 +82,15 @@ strong {
 
 p {
     font-size: 16px;
-    padding-bottom: 1rem;
+    line-height: 1.6em;
+    padding-bottom: 2em;
 }
 
 ul {
     list-style: none;
     font-size: 16px;
     line-height: 2.5rem;
+    padding-bottom: 2em;
 
     & li:before {
         content: '\2022';
@@ -103,6 +105,7 @@ ol {
     font-size: 16px;
     counter-reset: item;
     line-height: 2.5rem;
+    padding-bottom: 2em;
 
     li {
         list-style-type: none;

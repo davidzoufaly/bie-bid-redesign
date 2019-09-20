@@ -78,8 +78,7 @@
       .wpcf7-list-item {
         display: block;
         input[type="checkbox"] {
-          width: 2.5rem;
-          height: 2.5rem;
+          display: inline;
         }
         .wpcf7-list-item-label {
           vertical-align: super;

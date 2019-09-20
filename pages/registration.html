@@ -20,11 +20,11 @@
         <div class="registrace-formular__row">
             <label  for="reg-postal-code">Postal Code (required)</label>
             [number* reg-postal-code class:animation-input id:reg-postal-code]
+            <p class="input-info">E.g 11122</p>
         </div>
 
         <div class="registrace-formular__row">
             <h2 class="h2--small h2--nobefore">Country (required)</h2>
-            <p>No schools/students whose official language is English shall participate.</p>
             [select* reg-countries "Afghanistan" "Akrotiri" "Albania" "Algeria" "American Samoa" "Andorra"
             "Angola" "Anguilla" "Antarctica" "Antigua and Barbuda" "Argentina" "Armenia" "Aruba" "Ashmore and
             Cartier Islands" "Australia" "Austria" "Azerbaijan" "Bahamas, The" "Bahrain" "Bangladesh" "Barbados"
@@ -75,14 +75,14 @@
     <fieldset>
         <legend>Details about teacher</legend>
         <p>The contact person should be either you or your colleague. All important information regarding the
-            content will be sent to the provided email adress.</p>
+            contest will be sent to the provided email address.</p>
         <div class="registrace-formular__row">
             <label  for="reg-first-name">First name (required)</label>
             [text* reg-first-name class:animation-input id:reg-first-name]
         </div>
         <div class="registrace-formular__row">
-            <label  for="reg-second-name">Second name (required)</label>
-            [text* reg-second-name class:animation-input id:reg-second-name]
+            <label  for="reg-last-name">Last name (required)</label>
+            [text* reg-last-name class:animation-input id:reg-last-name]
         </div>
         <div class="registrace-formular__row">
             <label  for="reg-email">Email Address (required)</label>
@@ -115,6 +115,7 @@
         </div>
     </fieldset>
     [hidden reg-school-id id:school-id]
+    [hidden reg-date id:reg-date]
     <div class="btn-wrap-center">
-        [submit class:btn class:btn--red "Send"]
+        [submit class:btn class:btn--red id:register-submit "Send"]
     </div>

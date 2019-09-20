@@ -1,4 +1,18 @@
 <?php
+//Remove comments in menu bar
+function remove_comments(){
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('comments');
+}
+add_action( 'wp_before_admin_bar_render', 'remove_comments' );
+
+// Removes comments from admin menu
+add_action( 'admin_menu', 'my_remove_admin_menus' );
+function my_remove_admin_menus() {
+    remove_menu_page( 'edit-comments.php' );
+}
+
+
 /* odpočet data */
 function dateDifference($differenceFormat = '%a' )
 {
