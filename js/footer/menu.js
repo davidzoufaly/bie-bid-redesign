@@ -13,6 +13,10 @@ const menuImg = document.getElementsByClassName('logo-img')[0];
 const menuItem = document.querySelectorAll('header .menu-item a');
 const subM = document.getElementsByClassName('arrow__up');
 
+/* bile menu na telefonu */ 
+if(window.innerWidth < 991) {
+    whiteNav();
+}
 
 
 /****************************\
@@ -21,13 +25,13 @@ const subM = document.getElementsByClassName('arrow__up');
 
 /* pri scrollu vola FCI scrollNav() */
 window.addEventListener('scroll', (e) => {
-    scrollNav(e.path[1].scrollY);
+    scrollNav(e.path[1].pageYOffset);
 })
 
 /* kdyz se klikne na 'menu-item-has-children' ukaz submenu */
+/* submenu listener, pokud ma deti je z nej schovany dropdown */
 const submenu = document.querySelectorAll('.sub-menu');
 window.addEventListener('click', (e) => {
-    /* submenu listener, pokud ma deti je z nej schovany dropdown */
     if(e.path[1].classList.contains('menu-item-has-children')) {
         dropDown(e);
     } else {
@@ -42,7 +46,7 @@ menu.addEventListener('mouseover', () => {
 
 /* kdyz kurzor odejde z menu dej ho zpet na transparent pokud je uzivatel uplne na hore a submeny schovej */
 menu.addEventListener('mouseleave', () => {
-    if(window.scrollY === 0) {
+    if(window.pageYOffset === 0) {
         transNav();
     }
     resetSubmenu(true);
@@ -54,8 +58,15 @@ menu.addEventListener('mouseleave', () => {
 \****************************/
 
 /* FCE pokud je uzivatel nahore bude menu trasparentni, pokud jinde bude bile*/
-function scrollNav(scrollY) {
-    scrollY === 0 ? transNav() : whiteNav();
+function scrollNav(position) {
+    if(position === 0) {
+        if(window.innerWidth >= 991) {
+            transNav();
+        }
+        
+    } else {
+        whiteNav();
+    }
 }
 
 /* FCE pro bilou navigaci --upravit :\\ */
@@ -122,38 +133,38 @@ function dropDownArrows() {
 
 /* FCE vysouva dropdowny  */
 function dropDown(event) {
-    
+        
     event.target.classList.toggle('sub-menu--revealed');
+    event.target.children[0].classList.toggle('arrow__up--animate');
     resetSubmenu(false);
     event.target.children[0].classList.toggle('arrow__up--blue');
-    
+
     
     let target = event.path[1].children[1];
 
-    if(window.screen.width >= 991) {
         if(target.style.maxHeight) {
             target.style.maxHeight = null;
+            
         } else {
             target.style.maxHeight = target.scrollHeight + 'px';
+            
         }
-
-    } else {
-        if(target.style.maxHeight) {
-            target.style.maxHeight = null;
-        } else {
-            target.style.maxHeight = target.scrollHeight + 'px';
-        }
-    }
 }
 
 /* FCE resetuje submeny zpatky */
 function resetSubmenu(kombo) {
+    // if (typeof optionalParam === 'undefined') {
+    //     optionalParam = 'default'; 
+    // } else {
+    //     optionalParam.classList.toggle('sub-menu--revealed');
+    // }
     let subMenus = document.getElementsByClassName('sub-menu');
 
     if(kombo) {
         for(let j = 0; j<subM.length; j++) {
             if(subM[j].classList.contains('arrow__up--blue')) {
-                subM[j].classList.remove('arrow__up--blue');
+                subM[j].classList.remove('arrow__up--blue', 'arrow__up--animate');
+
             }
         }
     }
@@ -166,4 +177,6 @@ function resetSubmenu(kombo) {
             el.classList.remove('sub-menu--revealed'); 
         }
     }
+
+    // return optionalParam;
 }

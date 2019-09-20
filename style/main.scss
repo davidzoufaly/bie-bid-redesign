@@ -1597,11 +1597,35 @@ label {
           margin: 0;
         }
 
+<<<<<<< HEAD
         &:focus {
           outline: none;
           border-bottom: 1px solid $color-red;
         }
       }
+=======
+            .select-style {
+                border: 1px solid #D25D54;
+                width: 120px;
+                border-radius: 3px;
+                overflow: hidden;
+                background: #fafafa ;
+                cursor: pointer;
+            
+                & select {
+                    padding: 5px 8px;
+                    width: 130%;
+                    border: none;
+                    box-shadow: none;
+                    background: transparent;
+                    background-image: none;
+                    -webkit-appearance: none;
+                }
+            
+                & select:focus {
+                    outline: 2px $color-red;
+                }
+>>>>>>> jakub
 
       .wpcf7-list-item {
         display: block;
@@ -1930,7 +1954,7 @@ label {
         padding: 0 1.6rem;
         position:fixed;
         top: 0;
-        background: transparent;
+        background: white;
         z-index: 12;            
         transition: all 250ms ease-in;
     
@@ -1939,6 +1963,13 @@ label {
 
             img { width: 150px; }
         }
+
+
+        // 20.9
+        label {
+            transform: none;
+        }
+        //
         ._show-menu {
             font-size: 15px;
             position: relative;
@@ -1969,6 +2000,10 @@ label {
                 left: -2rem;
             }
         }
+
+        @include lg {
+            background: transparent;
+        }
     }
         
 
@@ -1977,10 +2012,12 @@ label {
         visibility: hidden;
         z-index: -1;
 
+        &:checked + ._header-wrapper { background: $color-white}
         &:checked + ._header-wrapper + .nav { top:60px; transform:translateY(0); }
         &:checked + ._header-wrapper + .nav + .--mobile-dark-content { display: initial; }
         &:checked + ._header-wrapper ._show-menu {display: none;}
         &:checked + ._header-wrapper ._hide-menu {display: initial;}
+        
     }
 
     .nav {
@@ -2034,7 +2071,7 @@ label {
 
         .btn {
             font-size: 1.5rem;
-            width: 120px;
+            padding: 0 4rem;
             display: block;
             margin: 0 auto;
         }
@@ -2097,6 +2134,11 @@ label {
                 margin-bottom: 0.3rem;
                 transform: rotate(45deg);
             }
+
+            &--animate {
+                transform: rotate(-135deg) translateY(-5px) translateX(-5px);
+
+            }
         }
     }
 
@@ -2147,7 +2189,7 @@ label {
                 a {
                     width: auto;
                     display: block;
-                    padding: 0.5rem 1rem 0.5rem 3rem;
+                    padding: 1rem 1rem 1rem 3rem;
                     transition: background 300ms ease-out;
                     white-space: nowrap;
                     min-width: 140px;
@@ -2212,7 +2254,7 @@ label {
             .btn {
                 display: inline-block;
                 line-height: initial;
-                padding: .9rem 1.6rem;
+                padding: .9rem 1.6rem;  
                 width: initial;
             }
         }
@@ -2253,7 +2295,6 @@ label {
             padding: 4px;
             margin-left: .5rem;
             margin-bottom: 0.3rem;
-            transform: rotate(45deg);
         }
     }
 }
