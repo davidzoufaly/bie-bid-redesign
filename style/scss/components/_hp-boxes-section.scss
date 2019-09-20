@@ -94,32 +94,6 @@
       margin-top: 1.6rem;
       margin-bottom: -6rem;
       position: relative;
-
-      .play-button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100px;
-        height: 100px;
-        background: rgba(121, 195, 217, 0.8);
-        border: 1px solid white;
-        border-radius: 50px;
-        margin-right: -50%;
-        cursor: pointer;
-        &:before {
-          content: "";
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          margin-right: -50%;
-          margin-left: 4px;
-          transform: translate(-50%, -50%);
-          border-style: solid;
-          border-width: 15px 0 15px 30px;
-          border-color: transparent transparent transparent white;
-        }
-      }
     }
 
     @include lg {

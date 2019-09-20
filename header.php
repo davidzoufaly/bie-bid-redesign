@@ -11,11 +11,12 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="<?php bloginfo('description'); ?>">
-	
-	<script>
-            let dateAndTimeEventStart = "<?php echo get_field('cas_konani_udalosti', 'options')?>";
+    <meta name="description" content="<?php bloginfo('description'); ?>">
+    
+    <script>
+    let dateAndTimeEventStart = "<?php echo get_field('cas_konani_udalosti', 'options')?>";
     </script>
+
     <?php wp_head(); ?>
 </head>
 
@@ -46,10 +47,11 @@
             <!-- /logo -->
 
             <!-- nav -->
+            <?php $libi_se_group = get_field('libi_se_ti_soutez', 'options') ?>
 
             <nav class="nav" role="navigation">
                 <?php html5blank_nav(); ?>
-                <a class="btn btn--red" href="/registration">Registration</a>
+                <a class="btn btn--red" href="<? echo $libi_se_group['link_registrace'];?>">Registration</a>
             </nav>
 
             <div class="--mobile-dark-content">

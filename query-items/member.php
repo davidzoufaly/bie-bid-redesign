@@ -21,7 +21,9 @@ if (get_field('telefon_member')) {
 ?>
 
 <div class="osoba">
-    <div class="osoba__avatar" style="background-image: url('<?php the_field('foto_member')['url'] ?>')">
+    <div class="osoba-wrapper">
+            <img class="osoba__avatar" src="<?php the_field('foto_member')['url'] ?>" alt="<?php the_field('foto_member')['alt'] ?>" loading="lazy">
+            <div class="osoba__background"></div>
     </div>
     <p class="osoba__name"><?php the_title() ?></p>
     <?php echo $funkce ?>

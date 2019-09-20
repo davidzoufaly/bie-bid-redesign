@@ -90,7 +90,7 @@
         </div>
         <div class="registrace-formular__row">
             <label  for="reg-tel-number">Telephone Number (required)</label>
-            [text* reg-email class:animation-input id:reg-tel-number]
+            [text* reg-telephone class:animation-input id:reg-tel-number]
             <p class="input-info">Will be used in emergency only. E.g +420111222111</p>
         </div>
     </fieldset>
@@ -114,6 +114,7 @@
             [checkbox reg-school-type class:inp-cbx "Gymnázium" "SOU" "SOŠ" "Others"]
         </div>
     </fieldset>
+    [hidden reg-school-id id:school-id]
     <div class="btn-wrap-center">
         [submit class:btn class:btn--red "Send"]
     </div>

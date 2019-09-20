@@ -80,6 +80,7 @@ $color-blue-dark: #303e42;
 
 $color-gray-light: #f3f3f3;
 $color-gray: #2E2E2E;
+$color-gray-sec: #a9a9a9;
 $color-black: #000;
 
 $color-red: #d25d54;
@@ -478,32 +479,6 @@ ol {
       margin-top: 1.6rem;
       margin-bottom: -6rem;
       position: relative;
-
-      .play-button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100px;
-        height: 100px;
-        background: rgba(121, 195, 217, 0.8);
-        border: 1px solid white;
-        border-radius: 50px;
-        margin-right: -50%;
-        cursor: pointer;
-        &:before {
-          content: "";
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          margin-right: -50%;
-          margin-left: 4px;
-          transform: translate(-50%, -50%);
-          border-style: solid;
-          border-width: 15px 0 15px 30px;
-          border-color: transparent transparent transparent white;
-        }
-      }
     }
 
     @include lg {
@@ -1057,6 +1032,9 @@ label {
   max-width: 250px;
   text-align: center;
 
+  &-wrapper {
+    position: relative;
+  }
   &__avatar {
     position: relative;
     margin: 0 auto;
@@ -1065,18 +1043,19 @@ label {
     height: 105px;
     border-radius: 50%;
     background-size: contain;
-    &:before {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      width: 100%;
-      height: 100%;
-      transform: translateX(0.5rem);
-      bottom: 0px;
-      left: 0px;
-      background: $color-blue;
-      z-index: -1;
-    }
+    z-index: 2;
+  }
+  &__background {
+    position: absolute;
+    border-radius: 50%;
+    width: 105px;
+    height: 105px;
+    left: 50%;
+    top: 0px;
+    margin-left: 5px;
+    transform: translate(-50%);
+    background: $color-blue;
+    z-index: 1;
   }
 
   &__position {
@@ -1604,8 +1583,9 @@ label {
 
       input {
         width: 100%;
+        box-sizing: border-box;
         border: none;
-        border-bottom: 1px solid #a9a9a9;
+        border-bottom: 1px solid $color-gray-sec;
         padding-bottom: 1rem;
         margin-bottom: 2rem;
         font-size: 1.4rem;
@@ -1623,53 +1603,32 @@ label {
         }
       }
 
-      &--checkboxes label {
-        pointer-events: all !important;
-      }
-
-      .checkboxes-wrapper {
-        margin-left: 5rem;
-        div {
-          padding-bottom: 1rem;
+      .wpcf7-list-item {
+        display: block;
+        input[type="checkbox"] {
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+        .wpcf7-list-item-label {
+          vertical-align: super;
         }
       }
 
-      .select-style {
-        border: 1px solid #d25d54;
-        width: 200px;
+      select {
+        min-width: 400px;
+        max-width: 100%;
+        box-sizing: border-box;
         height: 40px;
-        border-radius: 0;
-        outline: none;
-        backgrounc-color: $color-white;
-        overflow: hidden;
-        background: #fafafa url("../img/icon-select.png") no-repeat 90% 50%;
-        cursor: pointer;
-
-        & select {
-          padding: 5px 8px;
-          width: 130%;
-          border: none;
-          box-shadow: none;
-          background: transparent;
-          background-image: none;
-          -webkit-appearance: none;
-        }
-
-        & select:focus {
+        font-size: 1.4rem;
+        border: 1px solid $color-gray-sec;
+        padding: 5px 8px;
+        background-color: $color-white;
+        font-family: $font;
+        &:focus {
           outline: 2px $color-red;
-        }
-
-        @include sm {
-          width: 150px;
+          border: 2px solid $color-red;
         }
       }
-
-      // input:focus ~ .label--mod, input:valid ~ .label--mod, textarea:focus ~ .label--mod, textarea:valid ~ .label--mod, select:focus ~ .label--mod, select:valid ~ .label--mod {
-      //     top: -12px;
-      //     color: $color-red;
-      //     font-size: 1.3rem;
-      //     font-family: $font-bold;
-      // }
     }
   }
 
@@ -1812,6 +1771,35 @@ th {
     border-bottom-color: $color-blue-medium;
 
 }
+.youtube .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: rgba(121, 195, 217, 0.8);
+    border: 1px solid white;
+    border-radius: 50px;
+    margin-right: -50%;
+    cursor: pointer;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      margin-left: 4px;
+      transform: translate(-50%, -50%);
+      border-style: solid;
+      border-width: 15px 0 15px 30px;
+      border-color: transparent transparent transparent white;
+    }
+  }
+
+  .youtube:hover .play-button {
+        background-color: $color-red;
+  }
 .footer {
     background: $color-gray;
     padding: 4rem 0 2.2rem 0;
@@ -2291,6 +2279,7 @@ label {
     }
     .page-subheader__title {
         background: rgba(255,255,255,0.8);
+        color: $color-blue;
         z-index: 2;
         position: relative;
         position: absolute;
