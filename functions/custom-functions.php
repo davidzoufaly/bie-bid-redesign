@@ -36,7 +36,7 @@ add_filter( 'the_content', 'insert_featured_image', 20 );
 
 function insert_featured_image( $content ) {
     $id = get_the_ID();
-    $content = preg_replace( "/<\/p>/", "<figure></p>" . get_the_post_thumbnail($id, 'post-thumbnail')."<figcaption class='content__img-popis'>".get_post(get_post_thumbnail_id($id))->post_content."</figcaption></figure>", $content, 1 );
+    $content = preg_replace( "/<\/p>/", "<figure>" . get_the_post_thumbnail($id, 'post-thumbnail')."<figcaption class='content__img-popis'>".get_post(get_post_thumbnail_id($id))->post_content."</figcaption></figure>", $content, 1 );
     return $content;
 }
 //

@@ -1,76 +1,78 @@
 .footer {
-    background: $color-gray;
-    padding: 4rem 0 2.2rem 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas: 'menu'
-                        'loga'
-                        'copy';
-    grid-gap: 1rem;
-    grid-row-gap: 4rem;
+  background: $color-gray;
+  padding: 4rem 0 2.2rem 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "menu"
+    "loga"
+    "copy";
+  grid-gap: 1rem;
+  grid-row-gap: 4rem;
+  justify-content: center;
+  color: $color-white;
+  text-align: center;
+
+  &__menu {
+    display: flex;
     justify-content: center;
-    color: $color-white;
-    text-align: center;
-
-    &__menu {
-        display: flex;
-        justify-content: center;
-        align-items: space-around;
-        font-size: 1.4rem;
-        grid-area: menu;
-        list-style-type: none;
-        li {
-            padding: 0 1rem;
-            &:before {
-                    content: none;
-            }
-        }
-        a {
-            text-decoration: none;
-            color: $color-white;
-            line-height: 2.4rem;
-            &:hover, 
-            &:focus {
-                color: $color-blue;
-            }
-        }
-
-        @include lg {
-            flex-flow: row nowrap;
-            margin-bottom: 0;
-            justify-content: space-around; 
-        }
+    align-items: space-around;
+    font-size: 1.4rem;
+    grid-area: menu;
+    list-style-type: none;
+    li {
+      padding: 0 1rem;
+      &:before {
+        content: none;
+      }
     }
-
-    &__loga-wrapper {
-        grid-area: loga;
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        @include lg {
-            flex-flow: row;
-        }
+    a {
+      text-decoration: none;
+      color: $color-white;
+      line-height: 2.4rem;
+      &:hover,
+      &:focus {
+        color: $color-blue;
+      }
     }
-
-    &__logo {
-        width: 120px;
-        padding: 0 2rem;
-        svg {
-            max-width: 100%;
-            height: auto;
-            fill: $color-white;
-        }
-    }
-
-    ._copy{
-        grid-area: copy;
-        p {font-size: 12px;}
-    }
-
 
     @include lg {
-        grid-template-columns: repeat(3, minmax(200px, 320px));
-        grid-template-areas: 'menu copy loga';
-
+      flex-flow: row nowrap;
+      margin-bottom: 0;
+      justify-content: space-around;
     }
+  }
+
+  &__loga-wrapper {
+    grid-area: loga;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    @include lg {
+      flex-flow: row;
+    }
+  }
+
+  &__logo {
+    width: 120px;
+    padding: 0 2rem;
+    svg {
+      max-width: 100%;
+      height: auto;
+      fill: $color-white;
+    }
+  }
+
+  ._copy {
+    grid-area: copy;
+    p {
+      font-size: 12px;
+      padding-bottom: 1em;
+    }
+  }
+
+  @include lg {
+    grid-template-columns: repeat(3, minmax(200px, 320px));
+    grid-template-areas: "menu copy loga";
+  }
 }

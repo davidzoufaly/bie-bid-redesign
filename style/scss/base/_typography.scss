@@ -83,7 +83,22 @@ strong {
 p {
     font-size: 16px;
     line-height: 1.6em;
-    padding-bottom: 2em;
+    padding-bottom: 1.2em;
+}
+
+a {
+    color: $color-blue;
+    text-decoration: underline;
+    &:hover {
+        text-decoration: none;
+    }
+    &:active, &:visited {
+        color: $color-blue;
+    }
+}
+
+li {
+    padding-bottom: 1rem;
 }
 
 ul {

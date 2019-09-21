@@ -22,7 +22,7 @@
         </div>
         <h3 class="h3--small h3--nobefore"><?php echo $pro_partnery['subtitle'] ?></h3>
         <p class="prispevek__text"><?php echo $pro_partnery['text'] ?></p>
-        <div><a class="btn btn--link btn--icon" href="<?php echo $pro_media['url_pro_media'] ?>"><span><?php _e('More information','bie')?></span><span class="icon-arrow_link"></span></a>
+        <div><a class="btn btn--link btn--icon" href="<?php echo $pro_partnery['url_pro_partnery'] ?>"><span><?php _e('More information','bie')?></span><span class="icon-arrow_link"></span></a>
         </div>
     </div>
 </div>

@@ -7,13 +7,13 @@ if (get_field('funkce_member')) {
 }
 
 if (get_field('email_member')) {
-    $email = '<p><a class="btn btn--link btn--line-height-low btn--small-text" href="mailto:'.get_field('email_member').'">'.get_field('email_member').'</a></p>';
+    $email = '<a class="btn btn--link btn--line-height-low btn--small-text" href="mailto:'.get_field('email_member').'">'.get_field('email_member').'</a>';
 } else {
     $email = null;
 }
 
 if (get_field('telefon_member')) {
-    $telefon = '<p><a class="btn btn--link btn--line-height-low btn--small-text" href="tel:'.str_replace(' ', '', get_field('telefon_member')).'">'.get_field('telefon_member').'</a></p>';
+    $telefon = '<a class="btn btn--link btn--line-height-low btn--small-text" href="tel:'.str_replace(' ', '', get_field('telefon_member')).'">'.get_field('telefon_member').'</a>';
 } else {
     $telefon = null;
 }
