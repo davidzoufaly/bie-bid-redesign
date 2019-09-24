@@ -52,31 +52,61 @@
     }
 
     ._buttons-row {
-        display: grid;
-        grid-template-columns: 200px;
-        grid-template-rows: repeat(3,1fr);
-        grid-template-areas: 'btn-red' 'btn-white' 'btn-link';
-        justify-content: center;
-        justify-items: stretch;
-        grid-gap: 18px;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin-top: 0rem;
+        margin-bottom: 2rem;
 
-        :nth-child(1) { grid-area: btn-red}
-        :nth-child(2) { grid-area: btn-white}
-        :nth-child(3) { grid-area: btn-link}
+        .btn {
+            max-width: 200px;
+            padding: 0 1.6rem;
+            margin-bottom: 1.8rem;
+
+            @include lg {
+                margin-bottom: 0;
+                margin-right: 2.5rem;
+            }
+
+            @include xl {
+                margin-right: 3.5rem;
+            }
+        }
+
+        .btn:last-child {
+            margin-bottom: 0;
+            @include lg {
+                margin-right: 0;
+            }
+        }
+
+        .btn--white {
+            order: 2;
+            @include lg {
+                order: 3;
+            }
+        }
+
+        .btn--red {
+            order: 1;
+            @include lg {
+                order: 2;
+            }
+        }
 
         .btn--link {
             color: $color-white;
+            order: 3;
+            @include lg {
+                order: 1;
+            }
         }
 
         @include lg {
             order: 1;
-            grid-template-columns: repeat(3,200px);
-            grid-template-rows: 1fr;
-            grid-template-areas: 'btn-link btn-red btn-white';
-            grid-gap: 25px;
+            flex-flow: row;
             justify-content: center;
+            align-items: baseline;
             margin-top: 3rem;
             margin-bottom: 3rem;
         }
@@ -84,7 +114,6 @@
         @include xl {
             margin-top: 5rem;
             margin-bottom: 5rem;
-            grid-gap: 35px;
         }
     }
 

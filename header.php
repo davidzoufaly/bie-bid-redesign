@@ -53,10 +53,10 @@
                 </div>
 
                 <label for="check" class="_show-menu">
-                    <span id="burger-icon" class="icon-burger_menu--white"></span>Menu
+                    <span id="burger-icon" class="icon-burger_menu icon-burger_menu--white"></span>Menu
                 </label>
                 <label for="check" class="_hide-menu">
-                    <span id="close-icon" class="icon-close_icon--white"></span>Menu
+                    <span id="close-icon" class="icon-close_icon icon-close_icon--white"></span>Menu
                 </label>
             </div>
             <!-- /logo -->
