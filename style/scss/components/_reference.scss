@@ -37,6 +37,9 @@
         justify-content: center;
         grid-gap: 3rem;
         font-size: 1.4rem;
+        &--module {
+            margin-bottom: 5rem;
+        }
 
         & ._box:not(:first-child) {
             display: none;
