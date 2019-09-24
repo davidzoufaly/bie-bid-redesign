@@ -51,6 +51,7 @@
         font-family: $font-light;
         font-style: italic;
         font-size: 1.2rem;
+        padding-bottom: 0;
       }
 
       input {
@@ -107,6 +108,7 @@
     padding: 0 4rem;
     border: 0;
     text-transform: uppercase;
+    outline: none;
   }
 }
 

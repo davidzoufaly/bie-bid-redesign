@@ -21,6 +21,7 @@
 .partneri {
   display: grid;
   grid-template-columns: 1fr;
+  margin-bottom: 2rem;
   grid-template-areas:
     "spol-org"
     "org"
@@ -133,13 +134,14 @@
     }
 
     &__loga {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+      grid-gap: 2rem;
+      align-items: center;
     }
 
     img {
-      width: 100px;
+      width: 125px;
     }
 
     @include lg {
@@ -157,10 +159,10 @@
 
   @include lg {
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr .5fr;
     grid-template-areas:
       "org org spol-org spol-org gen-part gen-part"
       "hl-part hl-part hl-part hl-part med-part med-part";
-    margin-top: 8rem;
+    margin-top: 6rem;
   }
 }
