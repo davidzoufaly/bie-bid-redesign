@@ -23,9 +23,14 @@ if(window.innerWidth < 991) {
     EVENTLISTENERY
 \****************************/
 
+/* eventlistener na resize */
+window.addEventListener('resize', () => {
+    scrollNav(window.pageYOffset);
+})
+
 /* pri scrollu vola FCI scrollNav() */
 window.addEventListener('scroll', (e) => {
-    scrollNav(e.path[1].pageYOffset);
+    scrollNav(window.pageYOffset);
 })
 
 /* kdyz se klikne na 'menu-item-has-children' ukaz submenu */
@@ -41,14 +46,20 @@ window.addEventListener('click', (e) => {
 
 /* kdyz je kurzor na menu zmen ho na bilo */
 menu.addEventListener('mouseover', () => {
-    whiteNav();
+    if(window.innerWidth >= 991) {
+        whiteNav();
+    }
+
 })
 
 /* kdyz kurzor odejde z menu dej ho zpet na transparent pokud je uzivatel uplne na hore a submeny schovej */
 menu.addEventListener('mouseleave', () => {
-    if(window.pageYOffset === 0) {
-        transNav();
+    if(window.innerWidth >= 991) {
+        if(window.pageYOffset === 0) {
+            transNav();
+        }
     }
+
     resetSubmenu(true);
 })
 
@@ -59,14 +70,16 @@ menu.addEventListener('mouseleave', () => {
 
 /* FCE pokud je uzivatel nahore bude menu trasparentni, pokud jinde bude bile*/
 function scrollNav(position) {
-    if(position === 0) {
-        if(window.innerWidth >= 991) {
+    if(window.innerWidth >=991) {
+        if(position === 0) {
             transNav();
+        } else {
+            whiteNav();
         }
-        
     } else {
         whiteNav();
     }
+
 }
 
 /* FCE pro bilou navigaci --upravit :\\ */
@@ -81,10 +94,12 @@ function whiteNav() {
     textHide.style.color = '#303e42';
     menuImg.setAttribute('src', `${window.location.protocol}//${window.location.host}/wp-content/themes/bie/img/czech-us_transparent.png`);
     
+    for(let i = 0; i< menuItem.length; i++) {
+        menuItem[i].style.color = '#303e42';
+    }
+
     if(window.screen.width >= 991) {
-        for(let i = 0; i< menuItem.length; i++) {
-            menuItem[i].style.color = '#303E42';
-        }
+
         for(let j = 0; j<subM.length; j++) {
             if(!subM[j].classList.contains('arrow__down--blue')) {
                 subM[j].classList.add('arrow__up--dark');
@@ -115,7 +130,8 @@ function transNav() {
                 subM[j].classList.remove('arrow__up--dark');
             }
         }
-    } else { menuMob.style.backgroundColor = 'transparent'; }
+        
+    } else {  menuMob.style.backgroundColor = 'transparent';}
 }
 
 
