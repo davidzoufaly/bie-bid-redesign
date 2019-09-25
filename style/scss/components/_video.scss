@@ -8,8 +8,13 @@
     background: rgba(121, 195, 217, 0.8);
     border: 1px solid white;
     border-radius: 50px;
-    margin-right: -50%;
     cursor: pointer;
+    animation-name: pulse;
+    animation-duration: 10s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+
     &:before {
       content: "";
       position: absolute;
@@ -27,3 +32,13 @@
   .youtube:hover .play-button {
         background-color: $color-red;
   }
+
+@keyframes pulse {
+  0% {transform: translate(-50%, -50%)}
+  90% {transform: translate(-50%, -50%);}
+  93% {transform: translate(-50%, -50%) scale(1.2); }
+  95% {transform: translate(-50%, -50%) scale(1)}
+  97% {transform: translate(-50%, -50%) scale(1.2); }
+  99% {transform: translate(-50%, -50%) scale(1)}
+  100% {transform: translate(-50%, -50%)}
+}

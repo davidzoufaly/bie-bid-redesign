@@ -1,4 +1,4 @@
-<div class="boxes-section__what-is">
+<div class="boxes-section__what-is animateScroll animateScroll--arrival-up">
     <div class="--flex-lg-helper">
         <?php $video_sekce = get_field('video_sekce_homepage'); ?>
         <?php if($video_sekce) : ?>

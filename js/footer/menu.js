@@ -99,13 +99,16 @@ function whiteNav() {
     }
 
     if(window.screen.width >= 991) {
-
+        menuMob.classList.remove('header--shadow');
         for(let j = 0; j<subM.length; j++) {
             if(!subM[j].classList.contains('arrow__down--blue')) {
                 subM[j].classList.add('arrow__up--dark');
             }
         }
-    } else { menuMob.style.backgroundColor = 'white'; } 
+    } else {
+        menuMob.style.backgroundColor = 'white';
+        menuMob.classList.add('header--shadow');
+    } 
 }
 
 /* FCE pro pruhlednou navigaci --upravit :\\ */
@@ -120,7 +123,9 @@ function transNav() {
     textHide.style.color = 'white';
     menuImg.setAttribute('src', `${window.location.protocol}//${window.location.host}/wp-content/themes/bie/img/czech-us_transparent_1.png`);
     
-    if(window.screen.width >= 991) {
+    if(window.screen.width >= 991) {        
+        menuMob.style.backgroundColor = 'transparent';
+        menuMob.classList.remove('header--shadow');
         for(let i = 0; i< menuItem.length; i++) {
             menuItem[i].style.color = 'white';
         }

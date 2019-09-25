@@ -125,11 +125,26 @@
 
   &__aktuality {
     grid-area: aktuality;
-    h4 a {
+    h3 a {
       color: $color-black;
-      text-decoration: underline;
+      text-decoration: none;
       &:hover {
-        text-decoration: none;
+        text-decoration: underline;
+      }
+    }
+
+    .prispevek__cover {
+      overflow: hidden;
+      & img {
+        transition: all 300ms ease-in-out;
+      }
+
+      &:before {
+
+      }
+
+      &:hover img {
+        transform: scale(1.1);
       }
     }
 

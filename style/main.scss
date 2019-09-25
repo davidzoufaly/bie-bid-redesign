@@ -93,6 +93,19 @@ $screen-lg-min: 991px;  //992
 $screen-xl-min: 1199px; //1200
 $screen-ex-min: 1399px; //1400
 $screen-uw-min: 1599px; //1600
+.animateScroll {
+    transition: all 450ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    &--arrival-up {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    &--animate {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 @font-face {
     font-family: 'BwMitga-Regular';
     src: url('../fonts/BwMitga/BwMitga-Regular.eot') format('embedded-opentype'),  url('../fonts/BwMitga/BwMitga-Regular.otf')  format('opentype'),
@@ -528,11 +541,26 @@ ol {
 
   &__aktuality {
     grid-area: aktuality;
-    h4 a {
+    h3 a {
       color: $color-black;
-      text-decoration: underline;
+      text-decoration: none;
       &:hover {
-        text-decoration: none;
+        text-decoration: underline;
+      }
+    }
+
+    .prispevek__cover {
+      overflow: hidden;
+      & img {
+        transition: all 300ms ease-in-out;
+      }
+
+      &:before {
+
+      }
+
+      &:hover img {
+        transform: scale(1.1);
       }
     }
 
@@ -687,6 +715,7 @@ ol {
         background-image: linear-gradient(135deg, white 0%, white 25%, rgba(255, 255, 255, 0.92) 100%),url("../img/pattern-bie.svg");
         background-size: 109%;
         padding: 3rem 3.6rem;
+        box-shadow: 0px 0px 4px rgba(0,0,0,.3);
         p {
             padding-bottom: 1rem;
         }
@@ -1437,11 +1466,16 @@ label {
   .btn {
     font-size: 12px;
     line-height: 2.5rem;
+
+    &.btn--link:hover .icon-arrow_link {
+      padding-left: 1.4rem;
+    }
   }
 
   .icon-arrow_link {
     padding-left: 1rem;
     font-size: 12px;
+    transition: all 300ms ease-in-out;
 
     &::before {
       color: $color-red;
@@ -1831,8 +1865,13 @@ th {
     background: rgba(121, 195, 217, 0.8);
     border: 1px solid white;
     border-radius: 50px;
-    margin-right: -50%;
     cursor: pointer;
+    animation-name: pulse;
+    animation-duration: 10s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+
     &:before {
       content: "";
       position: absolute;
@@ -1850,6 +1889,16 @@ th {
   .youtube:hover .play-button {
         background-color: $color-red;
   }
+
+@keyframes pulse {
+  0% {transform: translate(-50%, -50%)}
+  90% {transform: translate(-50%, -50%);}
+  93% {transform: translate(-50%, -50%) scale(1.2); }
+  95% {transform: translate(-50%, -50%) scale(1)}
+  97% {transform: translate(-50%, -50%) scale(1.2); }
+  99% {transform: translate(-50%, -50%) scale(1)}
+  100% {transform: translate(-50%, -50%)}
+}
 .footer {
   background: $color-gray;
   padding: 4rem 0 2.2rem 0;
@@ -1968,7 +2017,7 @@ label {
     transition: 0.2s;
 
     &--shadow {
-        box-shadow: 0px 10px 7px -7px rgba(0,0,0,0.22);
+        box-shadow: 0px 7px 8px -7px rgba(0,0,0,.22);
     }
     
     
@@ -2470,6 +2519,8 @@ label {
     position: relative;
 
     @include lg {
+        background-attachment: fixed !important;
+        background-position: 50% 0 !important;
         padding-bottom: 1rem;
         padding-top: 20rem;
     }
@@ -2484,6 +2535,7 @@ label {
         color: #29B7D2;
         width: 270px;
         text-transform: uppercase;
+        box-shadow: 0px 0px 4px rgba(0,0,0,.3);
 
         @include lg {
             font-size: 3.3rem;
@@ -2521,6 +2573,7 @@ label {
         align-items: center;
         margin-top: 0rem;
         margin-bottom: 2rem;
+        z-index: 1;
 
         .btn {
             max-width: 200px;
