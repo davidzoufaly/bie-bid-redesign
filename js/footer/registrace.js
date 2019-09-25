@@ -1,6 +1,5 @@
 const countrySelect = document.querySelector("#countries");
 const regionWrapper = document.querySelector(".region-wrapper");
-const regions = document.querySelectorAll(".region");
 
 const countriesWithRegion = [
   {
@@ -37,29 +36,29 @@ const countriesWithRegion = [
   }
 ];
 
-let showRegionSelect = (
-  selectedCountry,
-  countriesWithRegion,
-  wrapper,
-  regions
-) => {
+let showRegionSelect = (selectedCountry, countriesWithRegion, wrapper) => {
   return () => {
-    countriesWithRegion.filter(country => {
-      if (country.countryName === selectedCountry.value) {
-        wrapper.style.display = "block";
-        Array.from(regions).filter(region => {
-          if (region.classList.value.includes(`region--${country.countryID}`)) {
-            region.style.display = "block";
-          } else {
-              region.style.display = "none";
-          }
-        });
-      }
-    });
+    // výchozí bod, všechny selecty skryté
+    if (document.querySelector(`.region.show`)) {
+        document.querySelector(`.region.show`).classList.remove("show");
+    }
+    // filtruj array
+    let ourCountry = countriesWithRegion.filter(
+      country => country.countryName === selectedCountry.value
+    );
+    // pokud si našel aspoň jeden záznam
+    if (ourCountry.length > 0) {
+      wrapper.style.display = "block";
+      document
+        .querySelector(`.region--${ourCountry[0].countryID}`)
+        .classList.add("show");
+    } else {
+      wrapper.style.display = "none";
+    }
   };
 };
 
 countrySelect.addEventListener(
   "change",
-  showRegionSelect(countrySelect, countriesWithRegion, regionWrapper, regions)
+  showRegionSelect(countrySelect, countriesWithRegion, regionWrapper)
 );
