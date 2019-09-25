@@ -14,9 +14,9 @@
         text-align: center;
         position: relative;
         color: $color-white;
+        margin-bottom: 6rem;
         
-        @include lg { margin-bottom: 4rem; }
-        @include uw { margin-bottom: 6rem; }
+        @include lg { margin-bottom: 6rem; }
 
     }
 
