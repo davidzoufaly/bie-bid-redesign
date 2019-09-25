@@ -52,7 +52,15 @@ const regDate = document.querySelector("#reg-date");
 
 let today = new Date();
 let date = `${today.getDate()}.${(today.getMonth()+1)}.${today.getFullYear()}`;
-let time = `${today.getHours()}:${today.getMinutes()}`;
+
+let hours = () => {return today.getHours() < 10 ? `0${today.getHours()}` : today.getHours();
+}
+
+let minutes = () => {return today.getMinutes() < 10 ? `0${today.getMinutes()}` : today.getMinutes();
+}
+
+
+let time = `${hours()}:${minutes()}`;
 let dateTime = `${date} ${time}`;
 
 if (schoolIDInput) {
