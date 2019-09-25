@@ -58,7 +58,9 @@ let showRegionSelect = (selectedCountry, countriesWithRegion, wrapper) => {
   };
 };
 
-countrySelect.addEventListener(
-  "change",
-  showRegionSelect(countrySelect, countriesWithRegion, regionWrapper)
-);
+if (countrySelect) {
+    countrySelect.addEventListener(
+      "change",
+      showRegionSelect(countrySelect, countriesWithRegion, regionWrapper)
+    );
+}
