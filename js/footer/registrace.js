@@ -50,6 +50,8 @@ let showRegionSelect = (
         Array.from(regions).filter(region => {
           if (region.classList.value.includes(`region--${country.countryID}`)) {
             region.style.display = "block";
+          } else {
+              region.style.display = "none";
           }
         });
       }
