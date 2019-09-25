@@ -1717,8 +1717,14 @@ label {
         }
       }
     }
-    .region-wrapper, .region {
+    .region-wrapper {
       display: none;
+    }
+    .region {
+      display: none;
+      &.show {
+        display: block;
+      }
     }
   }
 
