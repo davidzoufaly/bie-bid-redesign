@@ -8,7 +8,7 @@
 class ScrollAppear {
     constructor(elementClass) {
         this.elements = document.getElementsByClassName(elementClass);
-        this.screenPos = window.innerHeight / 1.6;
+        this.screenPos = window.innerHeight / 1.25;
     }
 
     scrollListener() {
