@@ -2,7 +2,6 @@
 
 const countrySelect = document.querySelector("#countries");
 const regionWrapper = document.querySelector(".region-wrapper");
-
 const countriesWithRegion = [
   {
     countryName: "Czech Republic",
@@ -70,20 +69,31 @@ if (countrySelect) {
 /* TELEFON VALIDITA */
 const inputTel = document.querySelector("#reg-tel-number");
 const outputTel = document.querySelector("#reg-telephone");
+const submitButton = document.querySelector("#register-submit");
 
-function telValidnost(input, output) {
+let disableSubmit = () => {
+  submitButton.setAttribute('disabled', '');
+  submitButton.classList.add("disabled");
+};
+
+window.addEventListener('DOMContentLoaded', disableSubmit);
+
+function telValidnost(input, output, submit) {
   return () => {
     if(document.querySelector('#phone-valid')) {document.querySelector('#phone-valid').remove()};
-    let test = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/.test(input.value);
+    let test = /^[+]?[-\s\./0-9]{12,15}$/.test(input.value);
     if (test) {
       let phoneNumber = input.value;
-      phoneNumber.replace(/\s/g, "")
       let firstChar = phoneNumber.substr(0, 1);
-      output.value = firstChar !== "+" ? `+${phoneNumber}` : phoneNumber;
+      let finalPhone = firstChar !== "+" ? `+${phoneNumber}` : phoneNumber;
+      output.value = finalPhone.replace(/\s/g, "");
+      submit.removeAttribute('disabled', '');
+      submitButton.classList.remove("disabled");
     } else {
-      input.insertAdjacentHTML('afterend', '<span class="wpcf7-not-valid-tip" id="phone-valid">Invalid phone number syntax.</span>')
+      input.insertAdjacentHTML('afterend', '<span class="wpcf7-not-valid-tip" id="phone-valid">Invalid phone number syntax</span>');
+      disableSubmit();
     }
   };
 }
 
-inputTel.addEventListener("keyup", telValidnost(inputTel, outputTel));
+inputTel.addEventListener("keyup", telValidnost(inputTel, outputTel, submitButton));
