@@ -2047,14 +2047,21 @@ label {
     flex-wrap: wrap;
     &__section {
         box-sizing: border-box;
-        padding: 0 0 5rem 0;
+        padding: 0 0 2rem 0;
         width: 100%;
-        @include lg {
-            padding: 0 2rem 5rem 2rem;
-        }
-        &--half {
+        &.layout__section--half {
             @include lg {
                 width: 50%;
+            }
+            &:nth-child(odd) {
+                @include lg {
+                    padding-right: 2rem;
+                }
+            }
+            &:nth-child(even) {
+                @include lg {
+                    padding-left: 2rem;
+                }
             }
         }
     }
