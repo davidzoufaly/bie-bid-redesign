@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<main>
 <div class="page-subheader page404">
 	<div class="page404__img"></div>
     <h1 class="page-subheader__title"><?php _e('Page not found - Code error 404','bie') ?></h1>
@@ -11,5 +11,5 @@
         <a class="btn btn--blue" href="<?php echo home_url() ?>">Return home</a>
     </div>
 </section>
-
+</main>
 <?php get_footer(); ?>

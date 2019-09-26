@@ -1,8 +1,9 @@
 <fieldset>
         <legend>School details</legend>
         <p>Please, provide the details about your school.</p>
-        <p>The entered data will be used for <strong>generating certificates.</strong> Be careful and enter full school name (ex. Gymnazium Dasicka, OA Pelhrimov) and in the form, you would like it to appear on the certificate. Please note, that extra long school names will not look nice on it.</p>
-        <p>If your school is a combination of several schools and you would like the students to compete separately from Gymnazium and for example from Business Academy then register twice with different names and your students will compete with 2 different School ID which will be generated</p>
+        <p>The entered data will be used for <strong>generating certificates.</strong> Be careful and enter full school name (ex. Gymnasium Dasicka, OA Pelhrimov) and in the form, you would like it to appear on the certificate. Please note, that extra long school names will not look nice on it.</p>
+        <p>If your school is a combination of several schools and you would like the students to compete separately from Gymnasium and for example from Business Academy then register twice with different names and your students will compete with 2 different School ID which will be generated</p>
+        <p class="italic">Fields marked with * are required.</p>
         <div class="registrace-formular__row">
             <label  for="reg-school-name">School name *</label>
             [text* reg-school-name class:animation-input id:reg-school-name]
@@ -27,7 +28,7 @@
         <div class="registrace-formular__row">
             <h2 class="h2--small h2--nobefore">Type of school</h2>
             <p>You can choose one or more options at once</p>
-            [checkbox reg-school-type use_label_element class:inp-cbx "Gymnazium (incl. Lyceum and private Gymnazium)" "IB School (Schools or Colleges with subjects in English only)" "Business School (in Czechia Obchodni akademie)" "Hospitality School" "Vocational School (like SOU, SOU in Czechia - technical focus)" "Medical School"]
+            [checkbox reg-school-type use_label_element class:inp-cbx "Gymnasium (incl. Lyceum and private Gymnasium)" "IB School (Schools or Colleges with subjects in English only)" "Business School (in Czechia Obchodni akademie)" "Hospitality School" "Vocational School (like SOU, SOU in Czechia - technical focus)" "Medical School"]
         </div>
 
         <div class="registrace-formular__row">
@@ -93,7 +94,7 @@
             </div>
 
             <div class="region region--est">
-            [select reg-est-kraje class:select-style include_blank "Harju maakond" "Hiiu maakond" "Ida-Viru maakond" "Jõgeva maakond" "Järva maakond" "Lääne maakond" "Lääne-Viru maakond" "Põlva maakond" "Pärnu maakond" "Rapla maakond" "Saare maakond" "Tartu maakond" "Valga maakond" "Viljandi maakond "Võru maakond"]
+            [select reg-est-kraje class:select-style include_blank "Harju maakond" "Hiiu maakond" "Ida-Viru maakond" "Jõgeva maakond" "Järva maakond" "Lääne maakond" "Lääne-Viru maakond" "Põlva maakond" "Pärnu maakond" "Rapla maakond" "Saare maakond" "Tartu maakond" "Valga maakond" "Viljandi maakond" "Võru maakond"]
             </div>
 
             <div class="region region--slo">
@@ -140,9 +141,6 @@
             [text* reg-telephone class:animation-input id:reg-tel-number]
             <p class="input-info">Will be used in emergency only. E.g +420111222111</p>
         </div>
-    </fieldset>
-    <fieldset>
-            <p class="italic no-padding">Fields marked with * are required.</p>
     </fieldset>
     [hidden reg-school-id id:school-id]
     [hidden reg-date id:reg-date]
