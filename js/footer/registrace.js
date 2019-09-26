@@ -1,3 +1,5 @@
+/* REGIONY PRO VYBRANÉ ZEMĚ */
+
 const countrySelect = document.querySelector("#countries");
 const regionWrapper = document.querySelector(".region-wrapper");
 
@@ -40,7 +42,7 @@ let showRegionSelect = (selectedCountry, countriesWithRegion, wrapper) => {
   return () => {
     // výchozí bod, všechny selecty skryté
     if (document.querySelector(`.region.show`)) {
-        document.querySelector(`.region.show`).classList.remove("show");
+      document.querySelector(`.region.show`).classList.remove("show");
     }
     // filtruj array
     let ourCountry = countriesWithRegion.filter(
@@ -59,8 +61,29 @@ let showRegionSelect = (selectedCountry, countriesWithRegion, wrapper) => {
 };
 
 if (countrySelect) {
-    countrySelect.addEventListener(
-      "change",
-      showRegionSelect(countrySelect, countriesWithRegion, regionWrapper)
-    );
+  countrySelect.addEventListener(
+    "change",
+    showRegionSelect(countrySelect, countriesWithRegion, regionWrapper)
+  );
 }
+
+/* TELEFON VALIDITA */
+const inputTel = document.querySelector("#reg-tel-number");
+const outputTel = document.querySelector("#reg-telephone");
+
+function telValidnost(input, output) {
+  return () => {
+    if(document.querySelector('#phone-valid')) {document.querySelector('#phone-valid').remove()};
+    let test = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/.test(input.value);
+    if (test) {
+      let phoneNumber = input.value;
+      phoneNumber.replace(/\s/g, "")
+      let firstChar = phoneNumber.substr(0, 1);
+      output.value = firstChar !== "+" ? `+${phoneNumber}` : phoneNumber;
+    } else {
+      input.insertAdjacentHTML('afterend', '<span class="wpcf7-not-valid-tip" id="phone-valid">Invalid phone number syntax.</span>')
+    }
+  };
+}
+
+inputTel.addEventListener("keyup", telValidnost(inputTel, outputTel));
