@@ -2,7 +2,7 @@
     <div class="prispevek__cover">
         <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="prispevek__img">
-            <?php the_post_thumbnail(); // Fullsize image for the single post ?>
+            <?php the_post_thumbnail('', $atts = array( 'loading' => 'lazy' )); // Fullsize image for the single post ?>
         </a>
         <?php endif; ?>
     </div>

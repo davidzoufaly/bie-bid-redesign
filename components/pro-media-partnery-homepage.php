@@ -18,7 +18,7 @@
     <div class="prispevek">
         <div class="prispevek__cover">
             <img class="prispevek__img" src="<?php echo $pro_partnery['obrazek_partneri']['url']; ?>"
-                alt="<?php echo $pro_partnery['obrazek_partneri']['alt'] ?>"/>
+                alt="<?php echo $pro_partnery['obrazek_partneri']['alt'] ?>" loading="lazy"/>
         </div>
         <h3 class="h3--small h3--nobefore"><?php echo $pro_partnery['subtitle'] ?></h3>
         <p class="prispevek__text"><?php echo $pro_partnery['text'] ?></p>
