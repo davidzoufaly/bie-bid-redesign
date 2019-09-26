@@ -83,14 +83,13 @@ if (document.querySelector(".registrace")) {
       if (document.querySelector("#phone-valid")) {
         document.querySelector("#phone-valid").remove();
       }
-      let test = /^[+]?[-\s\./0-9]{12,15}$/.test(input.value);
+      let test = /^[+]?[-\s\./0-9]{10,15}$/.test(input.value);
       if (test) {
         let phoneNumber = input.value;
-        let firstChar = phoneNumber.substr(0, 1);
-        let finalPhone = firstChar !== "+" ? `+${phoneNumber}` : phoneNumber;
+        let finalPhone = phoneNumber.substr(0, 1) !== "+" ? `+${phoneNumber}` : phoneNumber;
         output.value = finalPhone.replace(/\s/g, "");
         submit.removeAttribute("disabled", "");
-        submitButton.classList.remove("disabled");
+        submitButton.classLst.remove("disabled");
       } else {
         input.insertAdjacentHTML(
           "afterend",
