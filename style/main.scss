@@ -1890,7 +1890,7 @@ table {
 table, th, td {
     border: 1px solid #E0E1E2;
     border-collapse: collapse;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
 }
 
 th, td {
@@ -2058,6 +2058,7 @@ label {
   flex-wrap: wrap;
   &__section {
     box-sizing: border-box;
+    overflow: auto;
     padding: 0 0 2rem 0;
     width: 100%;
     &.layout__section--half {
