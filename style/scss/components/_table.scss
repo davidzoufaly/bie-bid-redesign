@@ -27,6 +27,9 @@ th {
     border-left-color: $color-blue-medium;
     border-top-color: $color-blue-medium;
     border-bottom-color: $color-blue-medium;
+}
 
+tbody tr:hover {
+    background-color: $color-gray-light;
 }
 

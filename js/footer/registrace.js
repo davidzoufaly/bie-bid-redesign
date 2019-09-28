@@ -89,7 +89,7 @@ if (document.querySelector(".registrace")) {
         let finalPhone = phoneNumber.substr(0, 1) !== "+" ? `+${phoneNumber}` : phoneNumber;
         output.value = finalPhone.replace(/\s/g, "");
         submit.removeAttribute("disabled", "");
-        submitButton.classLst.remove("disabled");
+        submit.classList.remove("disabled");
       } else {
         input.insertAdjacentHTML(
           "afterend",

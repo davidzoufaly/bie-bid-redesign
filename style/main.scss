@@ -350,6 +350,7 @@ ol {
   &.btn--white {
     background: $color-white;
     color: $color-blue-medium;
+    padding: 0 2rem;
 
     &:hover,
     &:focus {
@@ -360,6 +361,7 @@ ol {
   &.btn--red {
     background: $color-red;
     color: #fefefe;
+    padding: 0 2rem;
 
     &:hover,
     &:focus {
@@ -370,6 +372,7 @@ ol {
   &.btn--blue {
     background: $color-blue-medium;
     color: $color-white;
+    padding: 0 2rem;
 
     &:hover,
     &:focus {
@@ -1328,7 +1331,7 @@ label {
     }
 
     h4 {
-      margin-top: 1rem;
+      margin-top: 3rem;
       margin-bottom: 1.8rem;
     }
 
@@ -1904,7 +1907,10 @@ th {
     border-left-color: $color-blue-medium;
     border-top-color: $color-blue-medium;
     border-bottom-color: $color-blue-medium;
+}
 
+tbody tr:hover {
+    background-color: $color-gray-light;
 }
 .youtube .play-button {
     position: absolute;
@@ -2047,28 +2053,50 @@ label {
 }
 
 .layout {
-    display: flex;
-    flex-wrap: wrap;
-    &__section {
-        box-sizing: border-box;
-        padding: 0 0 2rem 0;
-        width: 100%;
-        &.layout__section--half {
-            @include lg {
-                width: 50%;
-            }
-            &:nth-child(odd) {
-                @include lg {
-                    padding-right: 2rem;
-                }
-            }
-            &:nth-child(even) {
-                @include lg {
-                    padding-left: 2rem;
-                }
-            }
+  display: flex;
+  flex-wrap: wrap;
+  &__section {
+    box-sizing: border-box;
+    padding: 0 0 2rem 0;
+    width: 100%;
+    &.layout__section--half {
+      @include lg {
+        width: 50%;
+      }
+      &:nth-child(odd) {
+        @include lg {
+          padding-right: 2rem;
         }
+      }
+      &:nth-child(even) {
+        @include lg {
+          padding-left: 2rem;
+        }
+      }
     }
+  }
+}
+
+.buttons-row {
+  display: flex;
+  flex-direction: column;
+  @include sm {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  a {
+    margin: 0;
+    @include sm {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      &:first-child {
+        margin-left: 0rem;
+      }
+      &:last-child {
+        margin-right: 0rem;
+      }
+    }
+  }
 }
 .header {
     z-index: 18;
