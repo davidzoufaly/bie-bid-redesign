@@ -1880,6 +1880,7 @@ label {
 }
 table {
     width: 100%;
+    overflow: auto;
     caption {
         text-align: left;
         padding: 1.5rem 0;
@@ -2340,7 +2341,7 @@ label {
             max-height: 0;
             position: absolute;
             left: 50%;
-            transform: translate(-50%, 26px);
+            transform: translate(-50%, 29px);
             
 
             li {

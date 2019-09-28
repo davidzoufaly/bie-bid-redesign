@@ -38,6 +38,7 @@ window.addEventListener('scroll', (e) => {
 const submenu = document.querySelectorAll('.sub-menu');
 window.addEventListener('click', (e) => {
     if(e.path[1].classList.contains('menu-item-has-children')) {
+        e.preventDefault();
         dropDown(e);
     } else {
         resetSubmenu(true);
