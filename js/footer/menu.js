@@ -35,8 +35,25 @@ window.addEventListener("scroll", e => {
 /* kdyz se klikne na 'menu-item-has-children' ukaz submenu */
 /* submenu listener, pokud ma deti je z nej schovany dropdown */
 const submenu = document.querySelectorAll(".sub-menu");
+<<<<<<< HEAD
 
 
+=======
+window.addEventListener("click", e => {
+  if (
+    e.target.parentElement.classList.contains("menu-item-has-children") ||
+    e.target.parentElement.parentElement.classList.contains(
+      "menu-item-has-children"
+    )
+  ) {
+    e.preventDefault();
+    dropDown(e);
+  } else {
+    resetSubmenu(true);
+  }
+});
+
+>>>>>>> 271462520c69238eee7724b8b2622edee78f6d8f
 /* kdyz je kurzor na menu zmen ho na bilo */
 menu.addEventListener("mouseover", () => {
   if (window.innerWidth >= 991) {
@@ -52,7 +69,11 @@ menu.addEventListener("mouseleave", () => {
     }
   }
 
+<<<<<<< HEAD
   //resetSubmenu(false, 'e');
+=======
+  resetSubmenu(true);
+>>>>>>> 271462520c69238eee7724b8b2622edee78f6d8f
 });
 
 /****************************\
