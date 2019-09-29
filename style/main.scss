@@ -180,7 +180,7 @@ button {
 }
 
 .container {
-    width: 95%;
+    width: 90%;
     margin: 0 auto;
     @include sm {
         width: 80%;
@@ -189,10 +189,10 @@ button {
         width: 90%;
     }
     @include xl {
-        width: 70%;
+        width: 75%;
     }
     @include uw {
-        width: 60%;
+        width: 65%;
     }
 }
 h1 {
@@ -230,6 +230,7 @@ h2 {
     }
     &.h2--small {
         font-size: 20px;
+        margin-block-end: 2rem;
     }
     &.h2--uppercase {
         text-transform: uppercase;
@@ -250,8 +251,8 @@ h3 {
     margin-bottom: 1.8rem;
     &.h3--small {
         font-size: 16px;
-        margin-top: 1.4rem;
-        margin-bottom: 1.6rem;
+        margin-block-start: 1.4rem;
+        margin-block-end: 1.6rem;
     }
     &.h3--uppercase {
         text-transform: uppercase;
@@ -265,8 +266,8 @@ h3 {
 
 h4 {
     font-size: 16px;
-    margin-top: 1.4rem;
-    margin-bottom: 1.6rem;
+    margin-block-start: 1.4rem;
+    margin-block-end: 1.6rem;
 }
 
 .--bold {
@@ -2076,12 +2077,34 @@ label {
         }
       }
     }
+    h2 {
+      margin-block-end: 5rem;
+      &.h2--small {
+        margin-block-start: 1.6rem;
+        margin-block-end: 1.8rem;
+      }
+    }
+    h3 {
+      &.h3--small {
+        margin-block-start: 1.4rem;
+        margin-block-end: 1.6rem;
+      }
+      font-size: 30px;
+      margin-block-start: 5rem;
+      margin-block-end: 4rem;
+    }
+    h4 {
+      font-size: 26px;
+      margin-block-start: 4rem;
+      margin-block-end: 3rem;
+    }
   }
 }
 
 .buttons-row {
   display: flex;
   flex-direction: column;
+  margin-bottom: 2rem;
   @include sm {
     flex-direction: row;
     flex-wrap: wrap;

@@ -31,12 +31,34 @@
         }
       }
     }
+    h2 {
+      margin-block-end: 5rem;
+      &.h2--small {
+        margin-block-start: 1.6rem;
+        margin-block-end: 1.8rem;
+      }
+    }
+    h3 {
+      &.h3--small {
+        margin-block-start: 1.4rem;
+        margin-block-end: 1.6rem;
+      }
+      font-size: 30px;
+      margin-block-start: 5rem;
+      margin-block-end: 4rem;
+    }
+    h4 {
+      font-size: 26px;
+      margin-block-start: 4rem;
+      margin-block-end: 3rem;
+    }
   }
 }
 
 .buttons-row {
   display: flex;
   flex-direction: column;
+  margin-bottom: 2rem;
   @include sm {
     flex-direction: row;
     flex-wrap: wrap;
