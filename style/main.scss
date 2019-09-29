@@ -183,16 +183,16 @@ button {
     width: 95%;
     margin: 0 auto;
     @include sm {
-        width: 80%;
+        width: 85%;
     }
     @include md {
-        width: 90%;
+        width: 95%;
     }
     @include xl {
-        width: 70%;
+        width: 75%;
     }
     @include uw {
-        width: 60%;
+        width: 65%;
     }
 }
 h1 {
