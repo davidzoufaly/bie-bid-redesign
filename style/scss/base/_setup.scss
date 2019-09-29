@@ -24,10 +24,10 @@ button {
     width: 95%;
     margin: 0 auto;
     @include sm {
-        width: 85%;
+        width: 80%;
     }
     @include md {
-        width: 95%;
+        width: 90%;
     }
     @include xl {
         width: 75%;
