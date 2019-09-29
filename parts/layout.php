@@ -28,6 +28,9 @@ if(have_rows('master_content')) :
                         case "list":
                             require get_template_directory().'/layout/layout-list.php';
                         break;
+                        case "table":
+                            require get_template_directory().'/layout/layout-table.php';
+                        break;
                         case "textfield":
                             require get_template_directory().'/layout/layout-textfield.php';
                         break;
@@ -39,6 +42,9 @@ if(have_rows('master_content')) :
                         break;
                         case "gallery":
                             require get_template_directory().'/layout/layout-gallery.php';
+                        break;
+                        case "button_link":
+                        require get_template_directory().'/layout/layout-button.php';
                         break;
                         case "html":
                         require get_template_directory().'/layout/layout-html.php';

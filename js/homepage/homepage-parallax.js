@@ -12,14 +12,11 @@ function parallax() {
     if( window.innerWidth >= 991) {
         document.addEventListener('scroll', () => {
             let scroll = window.pageYOffset;
-            console.log(scroll);
 
             title.style.transform = 'translateY('+(scroll*0.3)+'px)';
             timer.style.transform = 'translateY('+(scroll*0.2)+'px)';
             boxes.style.transform = 'translateY('+(scroll*0.09)+'px)';
-            buttons.style.transform = 'translateY('+(-scroll*0.05)+'px)';
-            
-
+            buttons.style.transform = 'translateY('+(-scroll*0.02)+'px)';
         })
     } else {
         return false

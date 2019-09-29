@@ -1,4 +1,13 @@
 <?php
+// Disable REST API link tag
+remove_action('wp_head', 'rest_output_link_wp_head', 10);
+
+// Disable oEmbed Discovery Links
+remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
+
+// Disable REST API link in HTTP headers
+remove_action('template_redirect', 'rest_output_link_header', 11, 0);
+
 //Remove comments in menu bar
 function remove_comments(){
     global $wp_admin_bar;
@@ -30,6 +39,13 @@ function dateDifference($differenceFormat = '%a' )
 }
 
 /* konec odpočet data */
+
+// thumbnail lazy load attribute
+// add_filter('the_post_thumbnail', 'insert_lazy_att');
+
+// function insert_lazy_att() {
+// 	echo get_the_post_thumbnail($attr = array( 'aria-label' => 'lazy' ));
+// }
      
 //thumbnail po prvním odstavci novinky včetně popisku
 add_filter( 'the_content', 'insert_featured_image', 20 );

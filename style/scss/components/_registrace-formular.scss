@@ -11,6 +11,7 @@
 }
 
 .registrace-formular {
+
   fieldset {
     margin-bottom: 3rem;
     padding: 3rem;
@@ -31,6 +32,13 @@
       padding-bottom: 3rem;
       font-family: $font-light;
     }
+
+    p.no-padding {
+      padding-bottom: 0;
+      padding-right: 0;
+      padding-top: 0;
+      padding-left: 0;
+  } 
 
     h4 {
       font-family: $font;
@@ -76,12 +84,40 @@
         }
       }
 
-      .wpcf7-list-item {
+      span.wpcf7-list-item {
         display: block;
+        margin: 0 0 1rem 1rem;
         input[type="checkbox"] {
-          display: inline;
+          display: none;
         }
+        input[type="checkbox"]:checked + .wpcf7-list-item-label::after {
+          content: "\e910";
+        }
+
         .wpcf7-list-item-label {
+          padding-left: 3rem;
+          position: relative;
+          cursor: pointer;
+          &:before {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            vertical-align: middle;
+            width: 2rem;
+            height: 2rem;
+            border: 1px solid $color-black;
+            border-radius: 0.5rem;
+            left: 0px;
+          }
+          &:after {
+            content: none;
+            font-family: "icomoon";
+            color: $color-red;
+            font-size: 2.4rem;
+            position: absolute;
+            left: 0px;
+            bottom: 1px;
+          }
           vertical-align: super;
         }
       }
@@ -102,6 +138,15 @@
         }
       }
     }
+    .region-wrapper {
+      display: none;
+    }
+    .region {
+      display: none;
+      &.show {
+        display: block;
+      }
+    }
   }
 
   input[type="submit"] {
@@ -109,6 +154,9 @@
     border: 0;
     text-transform: uppercase;
     outline: none;
+    &.disabled {
+      background-color: $color-gray-sec;
+    }
   }
 }
 

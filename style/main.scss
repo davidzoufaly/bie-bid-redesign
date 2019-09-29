@@ -333,6 +333,10 @@ ol {
         content: counter(item) '.';
     }
 }
+
+.italic {
+    font-style: italic;
+}
 .btn {
   display: inline-block;
   text-align: center;
@@ -346,6 +350,7 @@ ol {
   &.btn--white {
     background: $color-white;
     color: $color-blue-medium;
+    padding: 0 2rem;
 
     &:hover,
     &:focus {
@@ -356,6 +361,7 @@ ol {
   &.btn--red {
     background: $color-red;
     color: #fefefe;
+    padding: 0 2rem;
 
     &:hover,
     &:focus {
@@ -366,6 +372,7 @@ ol {
   &.btn--blue {
     background: $color-blue-medium;
     color: $color-white;
+    padding: 0 2rem;
 
     &:hover,
     &:focus {
@@ -1324,7 +1331,7 @@ label {
     }
 
     h4 {
-      margin-top: 1rem;
+      margin-top: 3rem;
       margin-bottom: 1.8rem;
     }
 
@@ -1389,7 +1396,6 @@ label {
     grid-template-areas:
       "org org spol-org spol-org gen-part gen-part"
       "hl-part hl-part hl-part hl-part med-part med-part";
-    margin-top: 6rem;
   }
 }
 .prispevek {
@@ -1464,7 +1470,7 @@ label {
   }
 
   .btn {
-    font-size: 12px;
+    font-size: 11px;
     line-height: 2.5rem;
 
     &.btn--link:hover .icon-arrow_link {
@@ -1538,9 +1544,9 @@ label {
         text-align: center;
         position: relative;
         color: $color-white;
+        margin-bottom: 6rem;
         
-        @include lg { margin-bottom: 4rem; }
-        @include uw { margin-bottom: 6rem; }
+        @include lg { margin-bottom: 6rem; }
 
     }
 
@@ -1622,6 +1628,7 @@ label {
 }
 
 .registrace-formular {
+
   fieldset {
     margin-bottom: 3rem;
     padding: 3rem;
@@ -1642,6 +1649,13 @@ label {
       padding-bottom: 3rem;
       font-family: $font-light;
     }
+
+    p.no-padding {
+      padding-bottom: 0;
+      padding-right: 0;
+      padding-top: 0;
+      padding-left: 0;
+  } 
 
     h4 {
       font-family: $font;
@@ -1687,12 +1701,40 @@ label {
         }
       }
 
-      .wpcf7-list-item {
+      span.wpcf7-list-item {
         display: block;
+        margin: 0 0 1rem 1rem;
         input[type="checkbox"] {
-          display: inline;
+          display: none;
         }
+        input[type="checkbox"]:checked + .wpcf7-list-item-label::after {
+          content: "\e910";
+        }
+
         .wpcf7-list-item-label {
+          padding-left: 3rem;
+          position: relative;
+          cursor: pointer;
+          &:before {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            vertical-align: middle;
+            width: 2rem;
+            height: 2rem;
+            border: 1px solid $color-black;
+            border-radius: 0.5rem;
+            left: 0px;
+          }
+          &:after {
+            content: none;
+            font-family: "icomoon";
+            color: $color-red;
+            font-size: 2.4rem;
+            position: absolute;
+            left: 0px;
+            bottom: 1px;
+          }
           vertical-align: super;
         }
       }
@@ -1713,6 +1755,15 @@ label {
         }
       }
     }
+    .region-wrapper {
+      display: none;
+    }
+    .region {
+      display: none;
+      &.show {
+        display: block;
+      }
+    }
   }
 
   input[type="submit"] {
@@ -1720,6 +1771,9 @@ label {
     border: 0;
     text-transform: uppercase;
     outline: none;
+    &.disabled {
+      background-color: $color-gray-sec;
+    }
   }
 }
 
@@ -1826,6 +1880,7 @@ label {
 }
 table {
     width: 100%;
+    overflow: auto;
     caption {
         text-align: left;
         padding: 1.5rem 0;
@@ -1835,7 +1890,7 @@ table {
 table, th, td {
     border: 1px solid #E0E1E2;
     border-collapse: collapse;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
 }
 
 th, td {
@@ -1853,7 +1908,10 @@ th {
     border-left-color: $color-blue-medium;
     border-top-color: $color-blue-medium;
     border-bottom-color: $color-blue-medium;
+}
 
+tbody tr:hover {
+    background-color: $color-gray-light;
 }
 .youtube .play-button {
     position: absolute;
@@ -1996,21 +2054,51 @@ label {
 }
 
 .layout {
-    display: flex;
-    flex-wrap: wrap;
-    &__section {
-        box-sizing: border-box;
-        padding: 0 0 5rem 0;
-        width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  &__section {
+    box-sizing: border-box;
+    overflow: auto;
+    padding: 0 0 2rem 0;
+    width: 100%;
+    &.layout__section--half {
+      @include lg {
+        width: 50%;
+      }
+      &:nth-child(odd) {
         @include lg {
-            padding: 0 2rem 5rem 2rem;
+          padding-right: 2rem;
         }
-        &--half {
-            @include lg {
-                width: 50%;
-            }
+      }
+      &:nth-child(even) {
+        @include lg {
+          padding-left: 2rem;
         }
+      }
     }
+  }
+}
+
+.buttons-row {
+  display: flex;
+  flex-direction: column;
+  @include sm {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  a {
+    margin: 0;
+    @include sm {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      &:first-child {
+        margin-left: 0rem;
+      }
+      &:last-child {
+        margin-right: 0rem;
+      }
+    }
+  }
 }
 .header {
     z-index: 18;
@@ -2254,7 +2342,7 @@ label {
             max-height: 0;
             position: absolute;
             left: 50%;
-            transform: translate(-50%, 26px);
+            transform: translate(-50%, 29px);
             
 
             li {

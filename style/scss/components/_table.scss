@@ -1,5 +1,6 @@
 table {
     width: 100%;
+    overflow: auto;
     caption {
         text-align: left;
         padding: 1.5rem 0;
@@ -9,7 +10,7 @@ table {
 table, th, td {
     border: 1px solid #E0E1E2;
     border-collapse: collapse;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
 }
 
 th, td {
@@ -27,6 +28,9 @@ th {
     border-left-color: $color-blue-medium;
     border-top-color: $color-blue-medium;
     border-bottom-color: $color-blue-medium;
+}
 
+tbody tr:hover {
+    background-color: $color-gray-light;
 }
 

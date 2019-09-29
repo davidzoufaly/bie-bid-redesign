@@ -1,31 +1,39 @@
 <fieldset>
         <legend>School details</legend>
-        <p>Please, provide the details about your school needed for statistical and practical purposes such as
-            delivery of the contest certificate.</p>
+        <p>Please, provide the details about your school.</p>
+        <p>The entered data will be used for <strong>generating certificates.</strong> Be careful and enter full school name (ex. Gymnasium Dasicka, OA Pelhrimov) and in the form, you would like it to appear on the certificate. Please note, that extra long school names will not look nice on it.</p>
+        <p>If your school is a combination of several schools and you would like the students to compete separately from Gymnasium and for example from Business Academy then register twice with different names and your students will compete with 2 different School ID which will be generated</p>
+        <p class="italic">Fields marked with * are required.</p>
         <div class="registrace-formular__row">
-            <label  for="reg-school-name">School name</label>
+            <label  for="reg-school-name">School name *</label>
             [text* reg-school-name class:animation-input id:reg-school-name]
         </div>
 
         <div class="registrace-formular__row">
-            <label  for="reg-street-name">Street (required)</label>
+            <label  for="reg-street-name">Street *</label>
             [text* reg-street-name class:animation-input id:reg-street-name]
         </div>
 
         <div class="registrace-formular__row">
-            <label  for="reg-city">City (required)</label>
+            <label  for="reg-city">City *</label>
             [text* reg-city class:animation-input id:reg-city]
         </div>
 
         <div class="registrace-formular__row">
-            <label  for="reg-postal-code">Postal Code (required)</label>
+            <label  for="reg-postal-code">Postal Code *</label>
             [number* reg-postal-code class:animation-input id:reg-postal-code]
             <p class="input-info">E.g 11122</p>
         </div>
 
         <div class="registrace-formular__row">
-            <h2 class="h2--small h2--nobefore">Country (required)</h2>
-            [select* reg-countries "Afghanistan" "Akrotiri" "Albania" "Algeria" "American Samoa" "Andorra"
+            <h2 class="h2--small h2--nobefore">Type of school</h2>
+            <p>You can choose one or more options at once</p>
+            [checkbox reg-school-type use_label_element class:inp-cbx "Gymnasium (incl. Lyceum and private Gymnasium)" "IB School (Schools or Colleges with subjects in English only)" "Business School (in Czechia Obchodni akademie)" "Hospitality School" "Vocational School (like SOU, SOU in Czechia - technical focus)" "Medical School"]
+        </div>
+
+        <div class="registrace-formular__row">
+            <h2 class="h2--small h2--nobefore">Country *</h2>
+            [select* reg-countries id:countries include_blank "Afghanistan" "Akrotiri" "Albania" "Algeria" "American Samoa" "Andorra"
             "Angola" "Anguilla" "Antarctica" "Antigua and Barbuda" "Argentina" "Armenia" "Aruba" "Ashmore and
             Cartier Islands" "Australia" "Austria" "Azerbaijan" "Bahamas, The" "Bahrain" "Bangladesh" "Barbados"
             "Bassas da India" "Belarus" "Belgium" "Belize" "Benin" "Bermuda" "Bhutan" "Bolivia" "Bosnia and
@@ -62,6 +70,46 @@
             "Venezuela" "Vietnam" "Virgin Islands" "Wake Island" "Wallis and Futuna" "West Bank" "Western
             Sahara" "Yemen" "Zambia" "Zimbabwe"]
         </div>
+
+        <div class="registrace-formular__row region-wrapper">
+            <h2 class="h2--small h2--nobefore region--title">Region</h2>
+
+            <div class="region region--cz">
+                [select reg-cz-kraje class:select-style include_blank "Hlavní město Praha" "Jihočeský kraj" "Jihomoravský kraj"
+                "Karlovarský kraj" "Kraj Vysočina" "Královéhradecký kraj" "Liberecký kraj" "Moravskoslezský kraj"
+                "Olomoucký kraj" "Pardubický kraj" "Plzeňský kraj" "Středočeský kraj" "Ústecký kraj" "Zlínský kraj"]
+            </div>
+            
+            <div class="region region--sk">
+            [select reg-sk-kraje class:select-style include_blank "Bratislavský" "Banskobystrický" "Košický" "Nitranský"
+            "Prešovský""Trenčínský" "Trnavský" "Žilinský"]
+            </div>
+
+            <div class="region region--hr">
+            [select reg-hr-kraje class:select-style include_blank "Bjelovar-Bilogora" "Brod-Posavina" "Dubrovnik-Neretva" "Istria" "Karlovac" "Koprivnica-Križevci" "Krapina-Zagorje" "Lika-Senj" "Međimurje" "Osijek-Baranja" "Požega-Slavonia" "Primorje-Gorski Kotar" "Šibenik-Knin" "Sisak-Moslavina" "Split-Dalmatia" "Varaždin" "Virovitica-Podravina" "Vukovar-Syrmia" "Zadar" "Zagreb" "City of Zagreb"]
+            </div>
+
+            <div class="region region--lv">
+            [select reg-lv-kraje class:select-style include_blank "Kurzeme" "Zemgale" "Vidzeme" "Latgale" "Sēlija"]
+            </div>
+
+            <div class="region region--est">
+            [select reg-est-kraje class:select-style include_blank "Harju maakond" "Hiiu maakond" "Ida-Viru maakond" "Jõgeva maakond" "Järva maakond" "Lääne maakond" "Lääne-Viru maakond" "Põlva maakond" "Pärnu maakond" "Rapla maakond" "Saare maakond" "Tartu maakond" "Valga maakond" "Viljandi maakond" "Võru maakond"]
+            </div>
+
+            <div class="region region--slo">
+            [select reg-slo-kraje class:select-style include_blank                 "Goriška regija" "Gorenjska regija" "Regija jugovzhodna Slovenija" "Koroška regija" "Obalno-kraška regija" "Podravska regija" "Pomurska regija" "Posavska regija" "Primorsko-notranjska regija" "Savinjska regija" "Osrednjeslovenska regija" "Zasavska regija"]
+            </div>
+
+            <div class="region region--lt">
+            [select reg-lt-kraje class:select-style include_blank "Alytaus apskritis" "Kauno apskritis" "Klaipėdos apskritis" "Marijampolės apskritis" "Panevėžio apskritis" "Šiaulių apskritis" "Tauragės apskritis" "Telšių apskritis" "Utenos apskritis" "Vilniaus apskritis"]
+            </div>
+
+            <div class="region region--gre">
+            [select reg-gre-kraje class:select-style include_blank "Attica / Αττική" "Central Greece / Στερεά Ελλάδα" "Central Macedonia / Κεντρική Μακεδονία" "Crete / Κρήτη" "Eastern Macedonia and Thrace / Ανατολική Μακεδονία και Θράκη" "Epirus / Ήπειρος" "Ionian Islands / Ιόνια νησιά" "North Aegean / Βόρειο Αιγαίο" "Peloponnese / Πελοπόννησος" "South Aegean / Νότιο Αιγαίο" "Thessaly / Θεσσαλία" "Western Greece / Δυτική Ελλάδα" "Western Macedonia / Δυτική Μακεδονία"]
+            </div>
+        </div> 
+     
     </fieldset>
 
     <fieldset>
@@ -77,43 +125,24 @@
         <p>The contact person should be either you or your colleague. All important information regarding the
             contest will be sent to the provided email address.</p>
         <div class="registrace-formular__row">
-            <label  for="reg-first-name">First name (required)</label>
+            <label  for="reg-first-name">First name *</label>
             [text* reg-first-name class:animation-input id:reg-first-name]
         </div>
         <div class="registrace-formular__row">
-            <label  for="reg-last-name">Last name (required)</label>
+            <label  for="reg-last-name">Last name *</label>
             [text* reg-last-name class:animation-input id:reg-last-name]
         </div>
         <div class="registrace-formular__row">
-            <label  for="reg-email">Email Address (required)</label>
+            <label  for="reg-email">Email Address *</label>
             [email* reg-email class:animation-input id:reg-email]
         </div>
         <div class="registrace-formular__row">
-            <label  for="reg-tel-number">Telephone Number (required)</label>
-            [text* reg-telephone class:animation-input id:reg-tel-number]
-            <p class="input-info">Will be used in emergency only. E.g +420111222111</p>
+            <label for="reg-tel-number">Telephone Number *</label>
+            <span><input type="text" class="animation-input" id="reg-tel-number"/></span>
+            <p class="input-info">E.g +420111222111. Please, enter your cell phone, not landline. We will be sending SMS messages with important BIE updates and information.</p>
         </div>
     </fieldset>
-    <fieldset>
-        <legend>Additional section for Czech and Slovak participants</legend>
-        <p>Dear Czech and Slovak school teachers, please, provide us with information as asked below to be used for Czech and Slovak statistics</p>
-        <div class="registrace-formular__row">
-            <h2 class="h2--small h2--nobefore">Region of the Czech Republic</h2>
-            [select reg-cz-kraje class:select-style include_blank "Hlavní město Praha" "Jihočeský kraj" "Jihomoravský kraj"
-            "Karlovarský kraj" "Kraj Vysočina" "Královéhradecký kraj" "Liberecký kraj" "Moravskoslezský kraj"
-            "Olomoucký kraj" "Pardubický kraj" "Plzeňský kraj" "Středočeský kraj" "Ústecký kraj" "Zlínský kraj"]
-        </div>
-        <div class="registrace-formular__row">
-            <h2 class="h2--small h2--nobefore">Region of the Slovak Republic</h2>
-            [select reg-sk-kraje class:select-style include_blank class:select-style "Bratislavský" "Banskobystrický" "Košický" "Nitranský"
-            "Prešovský""Trenčínský" "Trnavský" "Žilinský"]
-        </div>
-        <div class="registrace-formular__row registrace-formular__row--checkboxes">
-            <h2 class="h2--small h2--nobefore">What type of school you are?</h2>
-            <p>You can choose one or more options at once</p>
-            [checkbox reg-school-type class:inp-cbx "Gymnázium" "SOU" "SOŠ" "Others"]
-        </div>
-    </fieldset>
+    [hidden reg-telephone id:reg-telephone]
     [hidden reg-school-id id:school-id]
     [hidden reg-date id:reg-date]
     <div class="btn-wrap-center">

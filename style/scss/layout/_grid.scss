@@ -9,19 +9,49 @@
 }
 
 .layout {
-    display: flex;
-    flex-wrap: wrap;
-    &__section {
-        box-sizing: border-box;
-        padding: 0 0 5rem 0;
-        width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  &__section {
+    box-sizing: border-box;
+    overflow: auto;
+    padding: 0 0 2rem 0;
+    width: 100%;
+    &.layout__section--half {
+      @include lg {
+        width: 50%;
+      }
+      &:nth-child(odd) {
         @include lg {
-            padding: 0 2rem 5rem 2rem;
+          padding-right: 2rem;
         }
-        &--half {
-            @include lg {
-                width: 50%;
-            }
+      }
+      &:nth-child(even) {
+        @include lg {
+          padding-left: 2rem;
         }
+      }
     }
+  }
+}
+
+.buttons-row {
+  display: flex;
+  flex-direction: column;
+  @include sm {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  a {
+    margin: 0;
+    @include sm {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      &:first-child {
+        margin-left: 0rem;
+      }
+      &:last-child {
+        margin-right: 0rem;
+      }
+    }
+  }
 }
