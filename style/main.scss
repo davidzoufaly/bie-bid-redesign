@@ -2079,13 +2079,24 @@ label {
     }
     h2 {
       margin-block-end: 5rem;
+      &.small {
+        margin-block-start: 0;
+        margin-block-end: 0;
+      }
     }
     h3 {
+      &.small {
+        margin-block-start: 0;
+        margin-block-end: 0;
+      }
       font-size: 30px;
       margin-block-start: 5rem;
       margin-block-end: 4rem;
     }
     h4 {
+      &.small {
+
+      }
       font-size: 26px;
       margin-block-start: 4rem;
       margin-block-end: 3rem;
