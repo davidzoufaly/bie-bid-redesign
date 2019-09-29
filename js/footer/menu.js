@@ -84,7 +84,7 @@ function whiteNav() {
   textHide.style.color = "#303e42";
   menuImg.setAttribute(
     "src",
-    `${window.location.protocol}//${window.location.host}/wp-content/themes/bie/img/czech-us_transparent.png`
+    `${window.location.protocol}//${window.location.host}/wp-content/themes/bie/img/logo_color.svg`
   );
 
   for (let i = 0; i < menuItem.length; i++) {
@@ -116,7 +116,7 @@ function transNav() {
   textHide.style.color = "white";
   menuImg.setAttribute(
     "src",
-    `${window.location.protocol}//${window.location.host}/wp-content/themes/bie/img/czech-us_transparent_1.png`
+    `${window.location.protocol}//${window.location.host}/wp-content/themes/bie/img/logo_white.svg`
   );
 
   if (window.screen.width >= 991) {
