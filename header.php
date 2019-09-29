@@ -62,7 +62,7 @@
                 <!-- logo -->
                 <div class="logo">
                     <a href="<?php echo home_url(); ?>">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/czech-us_transparent_1.png"
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/logo_white.svg"
                             alt="Logo Best In English" class="logo-img" loading="lazy">
                     </a>
                 </div>
