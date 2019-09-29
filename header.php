@@ -44,6 +44,7 @@
 
     <script>
     let dateAndTimeEventStart = "<?php echo get_field('cas_konani_udalosti', 'options')?>";
+    let currentTime = "<?php echo current_time('d.m.Y H:i:s')?>";
     </script>
 
     <?php wp_head(); ?>

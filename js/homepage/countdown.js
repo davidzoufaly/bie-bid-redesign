@@ -1,40 +1,50 @@
-function countDown() {
-    const startDay = parseInt(dateAndTimeEventStart.slice(0,2));
-    const startMonth = parseInt(dateAndTimeEventStart.slice(3,5));
-    const startYear = parseInt(dateAndTimeEventStart.slice(6,10));
-    const startTime = dateAndTimeEventStart.slice(11,19);
-    
-    // Set the date we're counting down to
-    let countDownDate = new Date(`${startYear}-${startMonth}-${startDay}T${startTime}`).getTime();
-    
-    // Update the count down every 1 second
-    var x = setInterval(function() {
-    
-      // Get todays date and time
-      var now = new Date().getTime();
-    
-      // Find the distance between now and the count down date
-      var distance = countDownDate - now;
-    
-      // Time calculations for days, hours, minutes and seconds
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-      // Display the result in the element with id="demo"
-            document.getElementById("days").innerHTML = days;
-            document.getElementById("hours").innerHTML = hours;
-            document.getElementById("minutes").innerHTML = minutes;
-            document.getElementById("seconds").innerHTML = seconds;
-    
-      // If the count down is finished, write some text 
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "0";
-      }
-    }, 1000);
-    document.querySelector('.js-timer').classList.add('js-timer--show');
+function parseDateTime(input) {
+  let day = input.slice(0, 2);
+  let month = input.slice(3, 5);
+  let year = input.slice(6, 10);
+  let time = input.slice(11, 19);
+
+  return new Date(
+    `${year}-${month}-${day}T${time}`
+  ).getTime();
 }
 
-document.addEventListener('DOMContentLoaded', countDown);
+function countDown(startDateTime, currentDateTime, outputElement) {
+  let distance = startDateTime - currentDateTime;
+
+  setInterval(odpocitej, 1000);
+
+  function odpocitej() {
+    let days = Math.floor(
+      distance / (1000 * 60 * 60 * 24)
+    );
+
+    let hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+
+    let minutes = Math.floor(
+      (distance % (1000 * 60 * 60)) / (1000 * 60)
+    );
+
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+    distance = distance - 1000;
+  }
+  document
+    .querySelector(`.${outputElement}`)
+    .classList.add(`${outputElement}--show`);
+}
+
+const timeNow = parseDateTime(currentTime);
+const eventStart = parseDateTime(dateAndTimeEventStart);
+
+document.addEventListener(
+  "DOMContentLoaded",
+  countDown(eventStart, timeNow, "js-timer")
+);
