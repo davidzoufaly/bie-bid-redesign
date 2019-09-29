@@ -12,7 +12,12 @@ function parseDateTime(input) {
 function countDown(startDateTime, currentDateTime, outputElement) {
   let distance = startDateTime - currentDateTime;
 
-  setInterval(odpocitej, 1000);
+  let interval = setInterval(odpocitej, 1000);
+  
+  if (distance < 0) {
+    clearInterval(interval);
+  }
+
 
   function odpocitej() {
     let days = Math.floor(
