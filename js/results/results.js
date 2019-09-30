@@ -39,6 +39,15 @@ const stringObject = {
   }
 };
 
+const DOMObjects = {
+    input: "input",
+    inputCounter: "char-counter",
+    wrongID: "wrong-id",
+    schoolWrapper: "school-wrapper",
+    tableWrapper: "table-wrapper",
+
+}
+
 /* přirazení propisu stringů podle aktuálního jazyku webu */
 const { en, cz } = stringObject;
 const currentLang = document.documentElement.lang;
@@ -115,33 +124,31 @@ function searching() {
   let charCount;
   const idOptimalLength = 8;
 
-  document.getElementById("input-id").addEventListener("input", () => {
-    searchingSchoolID = document.getElementById("input-id").value;
+  document.getElementById(DOMObjects.input).addEventListener("input", () => {
+    searchingSchoolID = document.getElementById(DOMObjects.input).value;
 
     charCount = idOptimalLength - searchingSchoolID.length;
 
     charCount < 0
-      ? (document.getElementById("output").innerHTML = appLang.str1)
-      : (document.getElementById(
-          "output"
-        ).innerHTML = `${appLang.str2} ${charCount}`);
+      ? (document.getElementById(DOMObjects.inputCounter).innerHTML = appLang.str1)
+      : (document.getElementById(DOMObjects.inputCounter).innerHTML = `${appLang.str2} ${charCount}`);
 
-    //reset table on page
-    while (wrapper.firstChild) {
-      wrapper.removeChild(wrapper.firstChild);
-    }
+
+    //TODO reset table on page
+    document.getElementById(DOMObjects.tableWrapper).innerHTML = "";
 
     if (searchingSchoolID.length === 8) {
-      document.getElementById("output").style.backgroundColor = "#95c255";
+      document.getElementById(DOMObjects.inputCounter).style.backgroundColor = "#95c255";
       hledejStudenty(searchingSchoolID);
       hledejSkoly(searchingSchoolID);
     } else {
       //reset 
-      document.getElementById("output").style.backgroundColor = "#de635a";
-      document.getElementById("wrong-id").textContent = "";
-      document.getElementById("wrong-id").style.display = "none";
-      document.querySelector(".school-container").classList.add("hide");
-      document.getElementById("school-wrapper").innerHTML = "";
+      document.getElementById(DOMObjects.inputCounter).style.backgroundColor = "#de635a";
+      document.getElementById(DOMObjects.wrongID).textContent = "";
+      document.getElementById(DOMObjects.wrongID).style.display = "none";
+      document.getElementById(DOMObjects.schoolWrapper).classList.add("hide");
+      document.getElementById(DOMObjects.tableWrapper).classList.add("hide");
+      document.getElementById(DOMObjects.schoolWrapper).innerHTML = "";
     }
   });
 }
@@ -152,13 +159,13 @@ function hledejSkoly(id) {
   );
 
   if (schoolById.length > 0) {
-    let filteredSchoolResult = `<strong>${appLang.str3}</strong> ${schoolById[0].schoolName}
-        <br> <strong>${appLang.str4}</strong> ${schoolById[0].placeWorld}
-        <br> <strong>${appLang.str5}</strong> ${schoolById[0].placeCountry}
-        <br> <strong>${appLang.str6}</strong> ${schoolById[0].placeRegion}
-        <br> <strong>${appLang.str7}</strong> ${schoolById[0].placeSchoolType}`;
-    document.getElementById("school-wrapper").innerHTML = filteredSchoolResult;
-    document.querySelector(".school-container").classList.remove("hide");
+    let filteredSchoolResult = `<p><strong>${appLang.str3}</strong> ${schoolById[0].schoolName}</p>
+        <p><strong>${appLang.str4}</strong> ${schoolById[0].placeWorld}</p>
+        <p><strong>${appLang.str5}</strong> ${schoolById[0].placeCountry}</p>
+        <p><strong>${appLang.str6}</strong> ${schoolById[0].placeRegion}</p>
+        <p><strong>${appLang.str7}</strong> ${schoolById[0].placeSchoolType}</p>`;
+    document.getElementById(DOMObjects.schoolWrapper).innerHTML = filteredSchoolResult;
+    document.getElementById(DOMObjects.schoolWrapper).classList.remove("hide");
   }
 }
 
@@ -169,17 +176,17 @@ function hledejStudenty(id) {
   );
 
   if (filtrovanaData.length === 0) {
-    document.getElementById("wrong-id").style.display = "block";
-    document.getElementById("wrong-id").textContent = appLang.str8;
+    document.getElementById(DOMObjects.wrongID).style.display = "block";
+    document.getElementById(DOMObjects.wrongID).textContent = appLang.str8;
   } else {
-    names = [];
-    lastNameInitials = [];
-    places = [];
-    placeCountry = [];
-    studentsPoints = [];
-    studentsTimeEnds = [];
-    age = [];
-    headings = [
+    let names = [];
+    let lastNameInitials = [];
+    let places = [];
+    let placeCountry = [];
+    let studentsPoints = [];
+    let studentsTimeEnds = [];
+    let age = [];
+    let headings = [
       appLang.str9,
       appLang.str10,
       appLang.str11,
@@ -189,7 +196,7 @@ function hledejStudenty(id) {
       appLang.str13
     ];
 
-    promenne = [
+    let promenne = [
       names,
       lastNameInitials,
       age,
@@ -214,12 +221,12 @@ function hledejStudenty(id) {
     const table = document.createElement("TABLE");
     const tableFirstRow = document.createElement("TR");
 
-    document.getElementById("wrapper").appendChild(tableContainer);
-    document.getElementById("wrapper").classList.remove("hide");
+    document.getElementById(DOMObjects.tableWrapper).appendChild(tableContainer);
+    document.getElementById(DOMObjects.tableWrapper).classList.remove("hide");
     tableContainer.appendChild(table);
     table.appendChild(tableFirstRow);
     if (filtrovanaData.length > 0) {
-      for (j = 0; j < headings.length; j++) {
+      for (let j = 0; j < headings.length; j++) {
         const tableHeading = document.createElement("TH");
         tableFirstRow.appendChild(tableHeading);
         tableHeading.innerHTML = headings[j];
