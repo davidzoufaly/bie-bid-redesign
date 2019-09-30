@@ -46,4 +46,4 @@ let countdownWrapper = (allSec, outputElement) => {
 
 const dateDiffSec = dateDiffToSec(phpDateDiff);
 
-countdownWrapper(dateDiffSec, "js-timer");
+document.addEventListener('DOMContentLoaded', countdownWrapper(dateDiffSec, "js-timer"));
