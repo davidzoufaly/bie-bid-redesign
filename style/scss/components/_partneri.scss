@@ -90,7 +90,7 @@
     padding: 0 3rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
 
     h3 {
       margin-top: 3.4rem;
@@ -110,7 +110,7 @@
       height: 50px;
       width: auto;
       img {
-        width: 200px;
+        height: 50px;
         margin: 0 auto;
         display: block;
       }
