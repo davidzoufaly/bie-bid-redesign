@@ -42,12 +42,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script>
-    let dateAndTimeEventStart = "<?php echo get_field('cas_konani_udalosti', 'options')?>";
-    let currentTime = "<?php echo current_time('d.m.Y H:i:s')?>";
-    </script>
 
     <?php wp_head(); ?>
+    <script>
+    let phpDateDiff = "<?php echo odpocetData() ?>"
+    </script>
 </head>
 
 <body <?php body_class(); ?>>

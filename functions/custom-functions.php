@@ -23,6 +23,13 @@ function my_remove_admin_menus() {
 
 
 /* odpočet data */
+function odpocetData() {
+	$datetime1 = new DateTime(current_time('d.m.Y H:i:s'));
+	$datetime2 = new DateTime(get_field('cas_konani_udalosti', 'options'));
+	$interval = $datetime1->diff($datetime2);
+	return $interval->format('%a-%h-%i-%s');
+}
+
 function dateDifference($differenceFormat = '%a' )
 {
 	$array = (explode('-',str_replace('.','-',substr(get_field('cas_konani_udalosti', 'options'), 0, -9))));
