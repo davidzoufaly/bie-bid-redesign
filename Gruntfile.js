@@ -16,6 +16,10 @@ module.exports = function(grunt) {
           homepage: {
             src: ["./js/homepage/*.js"],
             dest: "./js/scripts.homepage.min.js"
+          },
+          results: {
+            src: ["./js/results/*.js"],
+            dest: "./js/scripts.results.min.js"
           }
       },
       babel: {
@@ -29,7 +33,8 @@ module.exports = function(grunt) {
             // vlevo dest, vpravo source
             "./js/scripts.footer.min.js" : ["./js/scripts.footer.min.js"],
             "./js/scripts.header.min.js" : ["./js/scripts.header.min.js"],
-            "./js/scripts.homepage.min.js" : ["./js/scripts.homepage.min.js"]
+            "./js/scripts.homepage.min.js" : ["./js/scripts.homepage.min.js"],
+            "./js/scripts.results.min.js" : ["./js/scripts.results.min.js"]
           }
         }
       },
@@ -44,7 +49,8 @@ module.exports = function(grunt) {
             // vlevo dest, vpravo source
             "./js/scripts.footer.min.js" : "./js/scripts.footer.min.js",
             "./js/scripts.header.min.js" : "./js/scripts.header.min.js",
-            "./js/scripts.homepage.min.js" : "./js/scripts.homepage.min.js"
+            "./js/scripts.homepage.min.js" : "./js/scripts.homepage.min.js",
+            "./js/scripts.results.min.js" : "./js/scripts.results.min.js"
           }
         }
       },

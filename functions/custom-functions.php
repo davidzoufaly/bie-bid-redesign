@@ -34,7 +34,6 @@ function dateDifference($differenceFormat = '%a' )
 {
 	$array = (explode('-',str_replace('.','-',substr(get_field('cas_konani_udalosti', 'options'), 0, -9))));
 	$date_1 = $array[2].'-'.$array[1].'-'.$array[0];
-
 	$date_2 = get_the_time('Y-m-d');
 
     $datetime1 = date_create($date_1);
@@ -44,15 +43,16 @@ function dateDifference($differenceFormat = '%a' )
     
     return $interval->format($differenceFormat);
 }
-
 /* konec odpočet data */
 
+/* try to lazy load all thumbnail */
 // thumbnail lazy load attribute
 // add_filter('the_post_thumbnail', 'insert_lazy_att');
 
 // function insert_lazy_att() {
 // 	echo get_the_post_thumbnail($attr = array( 'aria-label' => 'lazy' ));
 // }
+/* konec try to lazy load all thumbnail */
      
 //thumbnail po prvním odstavci novinky včetně popisku
 add_filter( 'the_content', 'insert_featured_image', 20 );

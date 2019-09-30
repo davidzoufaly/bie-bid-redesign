@@ -1,5 +1,5 @@
 
-//accept date time format: d-h-m-s -> 60-13-48-50)
+//accepted date time format: d-h-m-s -> 60-13-48-50)
 function dateDiffToSec(input) {
     let timeDiff = input.split("-");
     let timeDaysInSec = parseInt(timeDiff[0]) * 24 * 60 * 60;
