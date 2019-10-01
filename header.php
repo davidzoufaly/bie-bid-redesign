@@ -45,7 +45,7 @@
 
     <?php wp_head(); ?>
     <script>
-    let phpDateDiff = "<?php echo odpocetData() ?>"
+    let phpDateDiff = "<?php echo odpocetData(current_time('d.m.Y H:i:s'), get_field('cas_konani_udalosti', 'options'), '%a-%h-%i-%s'); ?>"
     </script>
 </head>
 
@@ -80,7 +80,9 @@
 
             <nav class="nav" role="navigation">
                 <?php html5blank_nav(); ?>
-                <a class="btn btn--red" href="<?php echo $libi_se_group['link_registrace'];?>">Registration</a>
+                <?php if(get_field('zobrazit_registraci_v_headeru', 'options')): ?>
+                    <a class="btn btn--red" href="<?php echo $libi_se_group['link_registrace'];?>">Registration</a>
+                <?php endif; ?>
             </nav>
 
             <div class="--mobile-dark-content">

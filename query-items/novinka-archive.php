@@ -9,7 +9,7 @@
     <div class="card__content">
         <h2 class="h2--small h2--uppercase h2--nobefore prispevek__title"><a
                 href="<?php the_permalink(); ?>"><?php the_title() ?></a></h2>
-        <p class="card__date"><?php the_time('d.m.Y') ?> | <?php echo dateDifference()?></span>
+        <p class="card__date"><?php the_time('d.m.Y') ?> | <?php echo publikovanoDoVeletrhu();?></span>
             <?php _e('days until contest', 'bie') ?></p>
         <p class="card__text"><?php html5wp_excerpt('html5wp_index'); ?></p>
         <a class="btn btn--link btn--icon card__vice-info" href="<?php the_permalink() ?>"><span><?php _e('more information')?></span><span

@@ -21,38 +21,18 @@ function my_remove_admin_menus() {
     remove_menu_page( 'edit-comments.php' );
 }
 
-
 /* odpočet data */
-function odpocetData() {
-	$datetime1 = new DateTime(current_time('d.m.Y H:i:s'));
-	$datetime2 = new DateTime(get_field('cas_konani_udalosti', 'options'));
-	$interval = $datetime1->diff($datetime2);
-	return $interval->format('%a-%h-%i-%s');
+function odpocetData($currentDateTime, $targetDateTime, $dateFormat = "%a") {
+	$current = new DateTime($currentDateTime);
+	$target = new DateTime($targetDateTime);
+	$interval = $current->diff($target);
+	return $interval->format($dateFormat);
 }
 
-function dateDifference($differenceFormat = '%a' )
-{
-	$array = (explode('-',str_replace('.','-',substr(get_field('cas_konani_udalosti', 'options'), 0, -9))));
-	$date_1 = $array[2].'-'.$array[1].'-'.$array[0];
-	$date_2 = get_the_time('Y-m-d');
-
-    $datetime1 = date_create($date_1);
-    $datetime2 = date_create($date_2);
-    
-    $interval = date_diff($datetime1, $datetime2);
-    
-    return $interval->format($differenceFormat);
+function publikovanoDoVeletrhu() {
+	return odpocetData(get_the_time('d.m.Y H:i:s'), get_field('cas_konani_udalosti', 'options'));
 }
 /* konec odpočet data */
-
-/* try to lazy load all thumbnail */
-// thumbnail lazy load attribute
-// add_filter('the_post_thumbnail', 'insert_lazy_att');
-
-// function insert_lazy_att() {
-// 	echo get_the_post_thumbnail($attr = array( 'aria-label' => 'lazy' ));
-// }
-/* konec try to lazy load all thumbnail */
      
 //thumbnail po prvním odstavci novinky včetně popisku
 add_filter( 'the_content', 'insert_featured_image', 20 );
@@ -86,7 +66,6 @@ function wpassist_remove_block_library_css(){
     wp_dequeue_style( 'wp-block-library' );
 } 
 add_action( 'wp_enqueue_scripts', 'wpassist_remove_block_library_css' );
-
 
 // vypni novej editor od WP5
 add_filter('use_block_editor_for_post', '__return_false');
