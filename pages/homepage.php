@@ -1,4 +1,4 @@
-<?php /* Template Name: homepage */ ?>
+<?php /* Template Name: Homepage */ ?>
 <?php get_header(); ?>
 <main>
 <?php get_template_part('parts/subheader-homepage'); ?>

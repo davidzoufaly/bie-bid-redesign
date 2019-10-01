@@ -36,7 +36,6 @@ foreach ($terms as $term) {
         'orderby' => 'slug',
         'post_per_page' => $post_per_page,
         'tax_query' => array ( 
-            'relation' => 'AND',
             array(
                 'taxonomy' => 'partners_type',
                 'field' => 'slug',
@@ -46,7 +45,8 @@ foreach ($terms as $term) {
                 'taxonomy' => 'partners_location',
                 'field' => 'slug',
                 'terms' => $user_country_code,
-            )
+            ),
+            'relation' => 'AND',
         ),
     );
 
@@ -83,8 +83,6 @@ foreach ($terms as $term) {
                 }
             }
         }
-    }  else {
-            _e( 'Sorry, nothing to display.', 'bie' );
     } 
     wp_reset_query();
 }
