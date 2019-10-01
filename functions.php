@@ -5,9 +5,39 @@
 
 require_once 'functions/init.php';
 
-/*------------------------------------*\
-	Theme Support
-\*------------------------------------*/
+//remove block library
+function wpassist_remove_block_library_css(){
+    wp_dequeue_style( 'wp-block-library' );
+} 
+add_action( 'wp_enqueue_scripts', 'wpassist_remove_block_library_css' );
+
+// vypni novej editor od WP5
+add_filter('use_block_editor_for_post', '__return_false');
+
+// oprav registraci CPT
+flush_rewrite_rules( false );
+
+// Disable REST API link tag
+remove_action('wp_head', 'rest_output_link_wp_head', 10);
+
+// Disable oEmbed Discovery Links
+remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
+
+// Disable REST API link in HTTP headers
+remove_action('template_redirect', 'rest_output_link_header', 11, 0);
+
+//Remove comments in menu bar
+function remove_comments(){
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('comments');
+}
+add_action( 'wp_before_admin_bar_render', 'remove_comments' );
+
+// Removes comments from admin menu
+add_action( 'admin_menu', 'my_remove_admin_menus' );
+function my_remove_admin_menus() {
+    remove_menu_page( 'edit-comments.php' );
+}
 
 if (function_exists('add_theme_support'))
 {

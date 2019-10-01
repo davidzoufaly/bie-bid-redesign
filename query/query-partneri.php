@@ -1,4 +1,7 @@
 <?php 
+
+$user_country_code = ip_info("173.252.110.27", "Country Code");
+
 // vem všechny instance taxonomie partners_type, serad je podle slugu odspodu. (slugy zacinaji cisly od 1 do n)
 $terms = get_terms(array(
     'taxonomy' => 'partners_type',
@@ -33,11 +36,17 @@ foreach ($terms as $term) {
         'orderby' => 'slug',
         'post_per_page' => $post_per_page,
         'tax_query' => array ( 
+            'relation' => 'AND',
             array(
                 'taxonomy' => 'partners_type',
                 'field' => 'slug',
                 'terms' => $term->slug,
             ),
+            array(
+                'taxonomy' => 'partners_location',
+                'field' => 'slug',
+                'terms' => $user_country_code,
+            )
         ),
     );
 
