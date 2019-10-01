@@ -5,6 +5,7 @@
 
 require_once 'functions/init.php';
 
+
 //remove block library
 function wpassist_remove_block_library_css(){
     wp_dequeue_style( 'wp-block-library' );

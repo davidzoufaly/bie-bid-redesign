@@ -64,7 +64,6 @@ function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     }
     return $output;
 }
-
 /* end GEOLOCATION */
 
 /* odpočet data */
