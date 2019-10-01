@@ -12,7 +12,5 @@
         <p class="card__date"><?php the_time('d.m.Y') ?> | <?php echo publikovanoDoVeletrhu();?></span>
             <?php _e('days until contest', 'bie') ?></p>
         <p class="card__text"><?php html5wp_excerpt('html5wp_index'); ?></p>
-        <a class="btn btn--link btn--icon card__vice-info" href="<?php the_permalink() ?>"><span><?php _e('more information')?></span><span
-                class="icon-arrow_link"></span></a>
     </div>
 </div>
