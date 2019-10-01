@@ -115,6 +115,11 @@ function html5blank_conditional_scripts()
         wp_register_script('bie_results_scripts', get_template_directory_uri() . '/js/scripts.results.min.js', '' , '1.0.0', true); // Conditional script(s)
         wp_enqueue_script('bie_results_scripts'); // Enqueue it!
     }
+
+    if (is_page_template('pages/statistics.php')) {
+        wp_register_script('bie_graph_scripts', 'https://cdn.jsdelivr.net/npm/chart.js@2.8.0', '' , '1.0.0'); // Conditional script(s)
+        wp_enqueue_script('bie_graph_scripts'); // Enqueue it!
+    }
 }
 
 // Register HTML5 Blank Navigation

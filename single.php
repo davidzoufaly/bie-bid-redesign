@@ -1,4 +1,3 @@
-<?php /* Template Name: novinka */ ?>
 <?php get_header(); ?>
 
 <main role="main">
