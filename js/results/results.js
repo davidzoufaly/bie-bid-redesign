@@ -40,13 +40,12 @@ const stringObject = {
 };
 
 const DOMObjects = {
-    input: "input",
-    inputCounter: "char-counter",
-    wrongID: "wrong-id",
-    schoolWrapper: "school-wrapper",
-    tableWrapper: "table-wrapper",
-
-}
+  input: "input",
+  inputCounter: "char-counter",
+  wrongID: "wrong-id",
+  schoolWrapper: "school-wrapper",
+  tableWrapper: "table-wrapper"
+};
 
 /* přirazení propisu stringů podle aktuálního jazyku webu */
 const { en, cz } = stringObject;
@@ -86,6 +85,9 @@ window.addEventListener("DOMContentLoaded", () => {
           });
           return skola;
         }, {});
+    })
+    .catch(e => {
+      console.log(e);
     });
 
   fetch(studentsData)
@@ -112,6 +114,9 @@ window.addEventListener("DOMContentLoaded", () => {
           return skoly;
         }, {});
       searching();
+    })
+    .catch(e => {
+      console.log(e);
     });
 });
 
@@ -130,25 +135,24 @@ function searching() {
     charCount = idOptimalLength - searchingSchoolID.length;
 
     charCount < 0
-      ? (document.getElementById(DOMObjects.inputCounter).innerHTML = appLang.str1)
-      : (document.getElementById(DOMObjects.inputCounter).innerHTML = `${appLang.str2} ${charCount}`);
+      ? (document.getElementById(DOMObjects.inputCounter).innerHTML =
+          appLang.str1)
+      : (document.getElementById(
+          DOMObjects.inputCounter
+        ).innerHTML = `${appLang.str2} ${charCount}`);
 
-
-    //TODO reset table on page
-    document.getElementById(DOMObjects.tableWrapper).innerHTML = "";
+    //reset DOM
+    resets();
 
     if (searchingSchoolID.length === 8) {
-      document.getElementById(DOMObjects.inputCounter).style.backgroundColor = "#95c255";
+      document.getElementById(DOMObjects.inputCounter).style.backgroundColor =
+        "#95c255";
       hledejStudenty(searchingSchoolID);
       hledejSkoly(searchingSchoolID);
     } else {
-      //reset 
-      document.getElementById(DOMObjects.inputCounter).style.backgroundColor = "#de635a";
-      document.getElementById(DOMObjects.wrongID).textContent = "";
-      document.getElementById(DOMObjects.wrongID).style.display = "none";
-      document.getElementById(DOMObjects.schoolWrapper).classList.add("hide");
-      document.getElementById(DOMObjects.tableWrapper).classList.add("hide");
-      document.getElementById(DOMObjects.schoolWrapper).innerHTML = "";
+      //reset
+      document.getElementById(DOMObjects.inputCounter).style.backgroundColor =
+        "#de635a";
     }
   });
 }
@@ -164,7 +168,9 @@ function hledejSkoly(id) {
         <p><strong>${appLang.str5}</strong> ${schoolById[0].placeCountry}</p>
         <p><strong>${appLang.str6}</strong> ${schoolById[0].placeRegion}</p>
         <p><strong>${appLang.str7}</strong> ${schoolById[0].placeSchoolType}</p>`;
-    document.getElementById(DOMObjects.schoolWrapper).innerHTML = filteredSchoolResult;
+    document.getElementById(
+      DOMObjects.schoolWrapper
+    ).innerHTML = filteredSchoolResult;
     document.getElementById(DOMObjects.schoolWrapper).classList.remove("hide");
   }
 }
@@ -221,7 +227,9 @@ function hledejStudenty(id) {
     const table = document.createElement("TABLE");
     const tableFirstRow = document.createElement("TR");
 
-    document.getElementById(DOMObjects.tableWrapper).appendChild(tableContainer);
+    document
+      .getElementById(DOMObjects.tableWrapper)
+      .appendChild(tableContainer);
     document.getElementById(DOMObjects.tableWrapper).classList.remove("hide");
     tableContainer.appendChild(table);
     table.appendChild(tableFirstRow);
@@ -244,4 +252,14 @@ function hledejStudenty(id) {
       }
     }
   }
+}
+
+function resets() {
+      //resets
+      document.getElementById(DOMObjects.tableWrapper).innerHTML = "";
+      document.getElementById(DOMObjects.schoolWrapper).innerHTML = "";
+      document.getElementById(DOMObjects.wrongID).textContent = "";
+      document.getElementById(DOMObjects.wrongID).style.display = "none";
+      document.getElementById(DOMObjects.schoolWrapper).classList.add("hide");
+      document.getElementById(DOMObjects.tableWrapper).classList.add("hide");
 }
