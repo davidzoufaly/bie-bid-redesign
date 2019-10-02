@@ -62,23 +62,21 @@
     margin-top: 0rem;
     margin-bottom: 2rem;
     .btn--red {
-        order: -1;
+      order: -1;
     }
     @include lg {
-        margin-top: 5rem;
-        margin-bottom: 5rem;
-        order: 2;
-    }
-    @include md {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+      order: 2;
       flex-direction: row;
       flex-wrap: wrap;
       .btn--red {
         order: initial;
-    }
+      }
     }
     a {
       margin-bottom: 2rem;
-      @include md {
+      @include lg {
         margin-left: 1rem;
         margin-right: 1rem;
         margin-bottom: 0;
