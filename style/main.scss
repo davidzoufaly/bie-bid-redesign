@@ -2694,8 +2694,10 @@ label {
       }
     }
     a {
+      margin: 0 auto;
       margin-bottom: 2rem;
       @include lg {
+          margin: 0;
         margin-left: 1rem;
         margin-right: 1rem;
         margin-bottom: 0;
