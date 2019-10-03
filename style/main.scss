@@ -1477,11 +1477,14 @@ label {
   }
 }
 
-.card__thumbnail img, .prispevek__cover img {
-  transition: all 300ms ease-in-out;
+.card__thumbnail, .prispevek__cover, {
+  overflow: hidden;
+  img {
+    transition: all 300ms ease-in-out;
+  }
 }
 
-.card__thumbnail:hover img, .prispevek__cover:hover img {
+.card__thumbnail:hover img, .boxes-section__aktuality .prispevek__cover:hover img, .novinka-aktuality .prispevek__cover:hover img {
   transform: scale(1.1);
 }
 .ref-box {
@@ -2743,7 +2746,7 @@ label {
     
 
     .ref-box {
-        margin: 0.5rem;
+        margin: 0 2rem;
     }
 
     @include lg {
@@ -2763,7 +2766,6 @@ label {
         border-width: 0 4px 4px 0;
         display: inline-block;
         padding: 10px;
-        box-shadow: 3px 3px 3px -2px rgba(0,0,0,0.75);
         &--left {
             position: absolute;
             top: 50%;

@@ -89,10 +89,13 @@
   }
 }
 
-.card__thumbnail img, .prispevek__cover img {
-  transition: all 300ms ease-in-out;
+.card__thumbnail, .prispevek__cover, {
+  overflow: hidden;
+  img {
+    transition: all 300ms ease-in-out;
+  }
 }
 
-.card__thumbnail:hover img, .prispevek__cover:hover img {
+.card__thumbnail:hover img, .boxes-section__aktuality .prispevek__cover:hover img, .novinka-aktuality .prispevek__cover:hover img {
   transform: scale(1.1);
 }  
