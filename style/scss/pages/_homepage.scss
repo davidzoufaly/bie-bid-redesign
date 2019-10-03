@@ -146,4 +146,55 @@
     }
 }
 
+.reference ._grid-reference.siema {
+    position: relative;
+    display: inherit;
 
+    
+
+    .ref-box {
+        margin: 0.5rem;
+    }
+
+    @include lg {
+        display: grid;
+
+        .ref-box {
+            margin: 0;
+        } 
+    }
+}
+
+.reference {
+    position: relative;
+    .swiper-arrow {
+        z-index: 2;
+        border: solid $color-red;
+        border-width: 0 4px 4px 0;
+        display: inline-block;
+        padding: 10px;
+        box-shadow: 3px 3px 3px -2px rgba(0,0,0,0.75);
+        &--left {
+            position: absolute;
+            top: 50%;
+            left: 3%;
+            transform: translateY(-50%) rotate(135deg);
+        }
+        &--right {
+            position: absolute;
+            top: 50%;
+            right: 3%;
+            transform: translateY(-50%) rotate(-45deg);
+        }
+        &--disabled {
+            border: solid rgba(34,34,34,0.3);
+            border-width: 0 4px 4px 0;
+        }
+
+        @include lg {
+            display: none;
+        }
+
+    }
+
+}
