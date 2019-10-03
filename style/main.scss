@@ -2733,6 +2733,59 @@ label {
     z-index: 1;
   }
 }
+
+.reference ._grid-reference.siema {
+    position: relative;
+    display: inherit;
+
+    
+
+    .ref-box {
+        margin: 0.5rem;
+    }
+
+    @include lg {
+        display: grid;
+
+        .ref-box {
+            margin: 0;
+        } 
+    }
+}
+
+.reference {
+    position: relative;
+    .swiper-arrow {
+        z-index: 2;
+        border: solid $color-red;
+        border-width: 0 4px 4px 0;
+        display: inline-block;
+        padding: 10px;
+        box-shadow: 3px 3px 3px -2px rgba(0,0,0,0.75);
+        &--left {
+            position: absolute;
+            top: 50%;
+            left: 3%;
+            transform: translateY(-50%) rotate(135deg);
+        }
+        &--right {
+            position: absolute;
+            top: 50%;
+            right: 3%;
+            transform: translateY(-50%) rotate(-45deg);
+        }
+        &--disabled {
+            border: solid rgba(34,34,34,0.3);
+            border-width: 0 4px 4px 0;
+        }
+
+        @include lg {
+            display: none;
+        }
+
+    }
+
+}
 .results {
   .top-wrapper {
     width: 500px;
@@ -2764,12 +2817,6 @@ label {
     text-transform: none;
   }
 
-<<<<<<< HEAD
-        .btn {
-            width: 200px;
-            padding: 0 1.6rem;
-            margin-bottom: 1.8rem;
-=======
   .results__instruction span {
     text-transform: uppercase;
     display: block;
@@ -2777,7 +2824,6 @@ label {
     padding-bottom: 1em;
     padding-top: 1em;
   }
->>>>>>> dbbeb82fd065e60eb4c1b180dff4e38f869f9236
 
   .char-counter {
     padding: 10px;
@@ -2854,57 +2900,4 @@ label {
   //     background-color: #da463f;
   //     color: white;
   // }
-}
-
-.reference ._grid-reference.siema {
-    position: relative;
-    display: inherit;
-
-    
-
-    .ref-box {
-        margin: 0.5rem;
-    }
-
-    @include lg {
-        display: grid;
-
-        .ref-box {
-            margin: 0;
-        } 
-    }
-}
-
-.reference {
-    position: relative;
-    .swiper-arrow {
-        z-index: 2;
-        border: solid $color-red;
-        border-width: 0 4px 4px 0;
-        display: inline-block;
-        padding: 10px;
-        box-shadow: 3px 3px 3px -2px rgba(0,0,0,0.75);
-        &--left {
-            position: absolute;
-            top: 50%;
-            left: 3%;
-            transform: translateY(-50%) rotate(135deg);
-        }
-        &--right {
-            position: absolute;
-            top: 50%;
-            right: 3%;
-            transform: translateY(-50%) rotate(-45deg);
-        }
-        &--disabled {
-            border: solid rgba(34,34,34,0.3);
-            border-width: 0 4px 4px 0;
-        }
-
-        @include lg {
-            display: none;
-        }
-
-    }
-
 }
