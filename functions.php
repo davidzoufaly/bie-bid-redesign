@@ -5,9 +5,40 @@
 
 require_once 'functions/init.php';
 
-/*------------------------------------*\
-	Theme Support
-\*------------------------------------*/
+
+//remove block library
+function wpassist_remove_block_library_css(){
+    wp_dequeue_style( 'wp-block-library' );
+} 
+add_action( 'wp_enqueue_scripts', 'wpassist_remove_block_library_css' );
+
+// vypni novej editor od WP5
+add_filter('use_block_editor_for_post', '__return_false');
+
+// oprav registraci CPT
+flush_rewrite_rules( false );
+
+// Disable REST API link tag
+remove_action('wp_head', 'rest_output_link_wp_head', 10);
+
+// Disable oEmbed Discovery Links
+remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
+
+// Disable REST API link in HTTP headers
+remove_action('template_redirect', 'rest_output_link_header', 11, 0);
+
+//Remove comments in menu bar
+function remove_comments(){
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('comments');
+}
+add_action( 'wp_before_admin_bar_render', 'remove_comments' );
+
+// Removes comments from admin menu
+add_action( 'admin_menu', 'my_remove_admin_menus' );
+function my_remove_admin_menus() {
+    remove_menu_page( 'edit-comments.php' );
+}
 
 if (function_exists('add_theme_support'))
 {
@@ -83,10 +114,10 @@ function html5blank_nav_footer()
 
 function html5blank_header_scripts()
 {
-    if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-        wp_register_script('zb_scripts', get_template_directory_uri() . '/js/scripts.header.min.js', '', '1.0.0'); // Custom scripts
-        wp_enqueue_script('zb_scripts'); // Enqueue it!
-    }
+    // if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
+    //     wp_register_script('zb_scripts', get_template_directory_uri() . '/js/scripts.header.min.js', '', '1.0.0'); // Custom scripts
+    //     wp_enqueue_script('zb_scripts'); // Enqueue it!
+    // }
 }
 
 function html5blank_footer_scripts()
@@ -107,8 +138,18 @@ function html5blank_styles()
 function html5blank_conditional_scripts()
 {
     if (is_page('!!!Homepage')) {
-        wp_register_script('bie_homepage_scripts', get_template_directory_uri() . '/js/scripts.homepage.min.js', '' , '1.0.0', true); // Conditional script(s)
+        wp_register_script('bie_homepage_scripts', get_template_directory_uri() . '/js/scripts.homepage.min.js', '' , '1.0.0', true);
         wp_enqueue_script('bie_homepage_scripts'); // Enqueue it!
+    }
+
+    if (is_page_template('pages/results.php')) {
+        wp_register_script('bie_results_scripts', get_template_directory_uri() . '/js/scripts.results.min.js', '' , '1.0.0', true);
+        wp_enqueue_script('bie_results_scripts'); // Enqueue it!
+    }
+
+    if (is_page_template('pages/statistics.php')) {
+        wp_register_script('bie_graph_scripts', 'https://cdn.jsdelivr.net/npm/chart.js@2.8.0', '' , '1.0.0');
+        wp_enqueue_script('bie_graph_scripts'); // Enqueue it!
     }
 }
 

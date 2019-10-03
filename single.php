@@ -1,4 +1,3 @@
-<?php /* Template Name: novinka */ ?>
 <?php get_header(); ?>
 
 <main role="main">
@@ -18,7 +17,7 @@
                 <h1 class="novinka-subheader__title"><?php the_title(); ?></h1>
                 <div class="novinka-subheader__info">
                     <p><span class="novinka-subheader__info__date"><?php the_time('d.m.Y') ?></span>|<span
-                        id="js-dny-soutez"><?php echo dateDifference()?></span> <?php _e('days until contest', 'bie') ?></p>
+                        id="js-dny-soutez"><?php echo publikovanoDoVeletrhu(); ?></span> <?php _e('days until contest', 'bie') ?></p>
                 </div>
             </div>
             <div class="novinka-body">

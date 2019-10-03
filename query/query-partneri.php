@@ -1,4 +1,7 @@
 <?php 
+
+$user_country_code = ip_info("Visitor", "Country Code");
+
 // vem všechny instance taxonomie partners_type, serad je podle slugu odspodu. (slugy zacinaji cisly od 1 do n)
 $terms = get_terms(array(
     'taxonomy' => 'partners_type',
@@ -38,6 +41,12 @@ foreach ($terms as $term) {
                 'field' => 'slug',
                 'terms' => $term->slug,
             ),
+            array(
+                'taxonomy' => 'partners_location',
+                'field' => 'slug',
+                'terms' => $user_country_code,
+            ),
+            'relation' => 'AND',
         ),
     );
 
@@ -74,8 +83,6 @@ foreach ($terms as $term) {
                 }
             }
         }
-    }  else {
-            _e( 'Sorry, nothing to display.', 'bie' );
     } 
     wp_reset_query();
 }

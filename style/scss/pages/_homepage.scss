@@ -1,150 +1,120 @@
 /*-- subheader --*/
 
 .subheader-homepage {
-    padding: 10rem 0;
-    padding-bottom: 5rem;
-    position: relative;
+  padding: 10rem 0;
+  padding-bottom: 5rem;
+  position: relative;
+
+  @include lg {
+    background-attachment: fixed !important;
+    background-position: 50% 0 !important;
+    padding-bottom: 1rem;
+    padding-top: 20rem;
+  }
+
+  &__title {
+    font-family: $font-bold;
+    font-size: 2.3rem;
+    text-align: center;
+    padding: 1.2rem 0.8rem;
+    margin: 0 auto;
+    background: $color-white-lighter;
+    color: #29b7d2;
+    width: 270px;
+    text-transform: uppercase;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
 
     @include lg {
-        background-attachment: fixed !important;
-        background-position: 50% 0 !important;
-        padding-bottom: 1rem;
-        padding-top: 20rem;
+      font-size: 3.3rem;
+      width: 390px;
+      padding: 1.2rem 1rem;
     }
 
-    &__title {
-        font-family: $font-bold;
-        font-size: 2.3rem;
-        text-align: center;
-        padding: 1.2rem .8rem;
-        margin: 0 auto;
-        background: $color-white-lighter;
-        color: #29B7D2;
-        width: 270px;
-        text-transform: uppercase;
-        box-shadow: 0px 0px 4px rgba(0,0,0,.3);
-
-        @include lg {
-            font-size: 3.3rem;
-            width: 390px;
-            padding: 1.2rem 1rem;
-        }
-
-        @include xl {
-            font-size: 4.3rem;
-            width: 500px;
-        }
-
-        @include uw {
-            font-size: 5rem;
-            width: 580px;
-        }
-        
-        &--red {
-            color: $color-red;
-        }
-
-        &--light {
-            font-family: $font-light;
-        }
-    }
-    
-    .--order-swap {
-        display: flex;
-        flex-flow: column nowrap;
+    @include xl {
+      font-size: 4.3rem;
+      width: 500px;
     }
 
-    ._buttons-row {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        margin-top: 0rem;
-        margin-bottom: 2rem;
-        z-index: 1;
-
-        .btn {
-            max-width: 200px;
-            padding: 0 1.6rem;
-            margin-bottom: 1.8rem;
-
-            @include lg {
-                margin-bottom: 0;
-                margin-right: 2.5rem;
-            }
-
-            @include xl {
-                margin-right: 3.5rem;
-            }
-        }
-
-        .btn:last-child {
-            margin-bottom: 0;
-            @include lg {
-                margin-right: 0;
-            }
-        }
-
-        .btn--white {
-            order: 2;
-            @include lg {
-                order: 3;
-            }
-        }
-
-        .btn--red {
-            order: 1;
-            @include lg {
-                order: 2;
-            }
-        }
-
-        .btn--link {
-            color: $color-white;
-            order: 3;
-            @include lg {
-                order: 1;
-            }
-        }
-
-        @include lg {
-            order: 1;
-            flex-flow: row;
-            justify-content: center;
-            align-items: baseline;
-            margin-top: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        @include xl {
-            margin-top: 5rem;
-            margin-bottom: 5rem;
-        }
+    @include uw {
+      font-size: 5rem;
+      width: 580px;
     }
 
-    &:after {
-        content: "";
-        width: 1px;
-        height: 2.6rem;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 0;
-        background: $color-blue-light;
-        z-index: 1;
+    &--red {
+      color: $color-red;
     }
 
-    &:before {
-        content: "";
-        width: 1px;
-        height: 1.5rem;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -15px;
-        background: $color-blue;
-        z-index: 1;
+    &--light {
+      font-family: $font-light;
     }
+  }
+
+  .--order-swap {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  ._buttons-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+    margin-top: 0rem;
+    margin-bottom: 2rem;
+    .btn--red {
+      order: -1;
+    }
+    @include lg {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+      order: 2;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .btn--red {
+        order: initial;
+      }
+    }
+    a {
+      margin-bottom: 2rem;
+      @include lg {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-bottom: 0;
+        &:first-child {
+          margin-left: 0rem;
+        }
+        &:last-child {
+          margin-right: 0rem;
+        }
+      }
+    }
+  }
+
+  &:after {
+    content: "";
+    width: 1px;
+    height: 2.6rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    background: $color-blue-light;
+    z-index: 1;
+  }
+
+  &:before {
+    content: "";
+    width: 1px;
+    height: 1.5rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+    background: $color-blue;
+    z-index: 1;
+  }
 }
+<<<<<<< HEAD
 
 .reference ._grid-reference.siema {
     position: relative;
@@ -198,3 +168,5 @@
     }
 
 }
+=======
+>>>>>>> dbbeb82fd065e60eb4c1b180dff4e38f869f9236
