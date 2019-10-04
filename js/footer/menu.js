@@ -8,7 +8,7 @@ const textShow = document.getElementsByClassName("_show-menu")[0];
 const textHide = document.getElementsByClassName("_hide-menu")[0];
 const burger = document.getElementById("burger-icon");
 const close = document.getElementById("close-icon");
-const menuImg = document.getElementsByClassName("logo-img")[0];
+const menuImg = document.getElementsByClassName("logo__img")[0];
 const menuItem = document.querySelectorAll("header .menu-item a");
 const subM = document.getElementsByClassName("arrow__up");
 
@@ -82,10 +82,7 @@ function whiteNav() {
   burger.classList.add("icon-burger_menu--dark");
   textShow.style.color = "#303e42";
   textHide.style.color = "#303e42";
-  menuImg.setAttribute(
-    "src",
-    `${window.location.protocol}//${window.location.host}/wp-content/themes/bie/img/logo_color.svg`
-  );
+  menuImg.classList.add("logo__img--color");
 
   for (let i = 0; i < menuItem.length; i++) {
     menuItem[i].style.color = "#303e42";
@@ -114,11 +111,7 @@ function transNav() {
   burger.classList.add("icon-burger_menu--white");
   textShow.style.color = "white";
   textHide.style.color = "white";
-  menuImg.setAttribute(
-    "src",
-    `${window.location.protocol}//${window.location.host}/wp-content/themes/bie/img/logo_white.svg`
-  );
-
+  menuImg.classList.remove("logo__img--color");
   if (window.screen.width >= 991) {
     menuMob.style.backgroundColor = "transparent";
     menuMob.classList.remove("header--shadow");

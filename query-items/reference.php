@@ -6,7 +6,7 @@ get_field('foto_reference') ? $foto_reference = get_field('foto_reference') : $f
 
 <div class="ref-box">
     <div class="ref-box__avatar">
-        <img src="<?php echo $foto_reference['url'] ?>" alt="<?php echo $foto_reference['alt'] ?>" loading="lazy"/>
+        <img loading="lazy" src="<?php echo $foto_reference['url'] ?>" alt="<?php echo $foto_reference['alt'] ?>"/>
     </div>
     <p class="ref-box__text ref-box__name --bold"><?php the_field('jmeno_reference')?></p>
     <p class="ref-box__text ref-box__school"><?php the_field('nazev_skoly_reference') ?></p>
