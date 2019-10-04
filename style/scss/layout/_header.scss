@@ -23,7 +23,10 @@
     .logo {
       position: relative;
       &__img {
-        width: 200px;
+        width: 160px;
+        @include xl {
+            width: 200px;
+        }
         .st0 {
           fill: #ffffff;
           fill-opacity: 0;
