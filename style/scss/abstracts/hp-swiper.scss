@@ -1,0 +1,15 @@
+.reference .siema > div {
+    display: flex;
+    @include lg {
+        display: initial;
+    }
+    & > div {
+        float: none;
+        & .ref-box {
+            height: 100%;
+            @include lg {
+                height: initial;
+            }
+        }
+    }
+}

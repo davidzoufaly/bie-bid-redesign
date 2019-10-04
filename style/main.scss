@@ -106,6 +106,21 @@ $screen-uw-min: 1599px; //1600
         opacity: 1;
     }
 }
+.reference .siema > div {
+    display: flex;
+    @include lg {
+        display: initial;
+    }
+    & > div {
+        float: none;
+        & .ref-box {
+            height: 100%;
+            @include lg {
+                height: initial;
+            }
+        }
+    }
+}
 @font-face {
     font-family: 'BwMitga-Regular';
     src: url('../fonts/BwMitga/BwMitga-Regular.eot') format('embedded-opentype'),  url('../fonts/BwMitga/BwMitga-Regular.otf')  format('opentype'),
