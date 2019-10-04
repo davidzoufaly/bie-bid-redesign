@@ -23,7 +23,7 @@ foreach ($terms as $term) {
             $style = "secondary";
             break;
         case '5_medialni-partner':
-            $post_per_page = 2;
+            $post_per_page = 5;
             $style = "secondary";
             break;
         default: null;
@@ -34,7 +34,7 @@ foreach ($terms as $term) {
         'post_type' => 'partners',
         'order' => 'DSC',
         'orderby' => 'slug',
-        'post_per_page' => $post_per_page,
+        'posts_per_page' => $post_per_page,
         'tax_query' => array ( 
             array(
                 'taxonomy' => 'partners_type',
