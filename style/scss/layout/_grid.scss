@@ -11,6 +11,9 @@
 .layout {
   display: flex;
   flex-wrap: wrap;
+  &__list {
+    display: flex;
+  }
   &__section {
     box-sizing: border-box;
     overflow: auto;
