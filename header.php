@@ -60,7 +60,7 @@
             <div class="_header-wrapper">
                 <!-- logo -->
                 <div class="logo">
-                    <a href="<?php echo home_url(); ?>">
+                    <a href="<?php echo home_url(); ?>" aria-label="Logo Best In English">
                         <div class="logo__img">
                             <?php get_template_part('/img/logo-header'); ?>
                         </div>
