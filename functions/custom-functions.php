@@ -172,8 +172,8 @@ function remove_accents_alternative($text) {
 function change_to_id($from) {
     $s = remove_accents_alternative($from);
     $new_s = strtolower($s);
-    $new_ss = str_replace(" ","-", $new_s);
-
-    return $new_ss;
+    $new_ss = str_replace(".","", $new_s);
+    $new_sss = str_replace(" ","-", $new_ss);
+    return $new_sss;
 }
 ?>
