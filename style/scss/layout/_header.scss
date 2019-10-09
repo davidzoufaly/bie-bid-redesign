@@ -118,6 +118,32 @@
     }
   }
 
+  @media screen and (max-width: $screen-lg-min) {
+    .nav {
+      bottom: 0vh;
+      height: 70vh;
+      justify-content: space-evenly;
+      ul {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        li {
+          margin-bottom: 0;
+          padding-bottom: 0;
+          ul.sub-menu {
+            li {
+              margin-top: 1rem;
+              a {
+                padding: 1rem 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  } 
+
   .nav {
     display: flex;
     flex-flow: column;
