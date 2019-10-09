@@ -1,8 +1,6 @@
 <?php 
         wp_register_script('bie_swiper', get_template_directory_uri() . '/js/swiper/swiper.min.js', '' , '1.0.0', true);
         wp_enqueue_script('bie_swiper'); // Enqueue it!
-        
-        add_action('init', 'bie_swiper');
 ?>
 
 <?php $reference_group = get_field('reference_modul', 'options'); ?>
