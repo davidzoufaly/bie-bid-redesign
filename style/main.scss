@@ -1717,7 +1717,10 @@ label {
 
       span.wpcf7-list-item {
         display: block;
-        margin: 0 0 1rem 1rem;
+        margin: 0 2rem 2rem 0;
+        @include md {
+          margin: 0 0 2rem 2rem;
+        }
         input[type="checkbox"] {
           display: none;
         }
