@@ -8,7 +8,7 @@
 <section class="page-404">
     <div class="page-404__text">
         <h2><?php _e("We can't seem to find the page you're looking for.", "bie") ?></h2>
-        <a class="btn btn--blue" href="<?php echo home_url() ?>">Return home</a>
+        <a class="btn btn--blue" href="<?php echo home_url() ?>"><?php _e('Return home', 'bie') ?></a>
     </div>
 </section>
 </main>
