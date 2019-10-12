@@ -531,8 +531,13 @@ ol {
       height: auto;
       margin: 0 auto;
       margin-top: 1.6rem;
-      margin-bottom: -6rem;
       position: relative;
+      .youtube-wrapper {
+        margin-bottom: 10px;
+        @include lg {
+          margin-bottom: 30px;
+        }
+      }
     }
 
     @include lg {
@@ -557,6 +562,7 @@ ol {
           width: 120%;
           right: -6.8rem;
           top: -6rem;
+          margin-bottom: -6rem;
         }
       }
     }
@@ -1750,7 +1756,7 @@ label {
             font-size: 2.4rem;
             position: absolute;
             left: 0px;
-            bottom: 1px;
+            top: -8px;
           }
           vertical-align: super;
         }
@@ -2416,9 +2422,13 @@ label {
   .sub-menu {
     background: darken($color-blue-light, 5);
     text-align: left;
-    max-height: 0;
     overflow: hidden;
     transition: all 100ms ease-out;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    height: 0;
+    transform: translateY(-100%);
 
     li {
       display: block;
@@ -2445,10 +2455,9 @@ label {
     }
 
     @include lg {
-      max-height: 0;
       position: absolute;
       left: 50%;
-      transform: translate(-50%, 29px);
+      transform: translate(-50%, 29px) translateY(-100%);
 
       li {
         background: darken($color-blue-light, 5);
@@ -2466,6 +2475,18 @@ label {
           min-width: 140px;
         }
       }
+    }
+
+    &--active {
+      z-index: initial;
+      visibility: initial;
+      transform: translateY(0%);
+      height: initial;
+      opacity: 1;
+      @include lg {
+        transform: translate(-50%, 29px) translateY(0%);
+      }
+
     }
 
     &--revealed {
@@ -2789,11 +2810,13 @@ label {
     a {
       margin: 0 auto;
       margin-bottom: 2rem;
+      width: 200px;
       @include lg {
-          margin: 0;
+        margin: 0;
         margin-left: 1rem;
         margin-right: 1rem;
         margin-bottom: 0;
+        width: initial;
         &:first-child {
           margin-left: 0rem;
         }

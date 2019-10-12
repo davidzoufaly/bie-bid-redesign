@@ -92,8 +92,13 @@
       height: auto;
       margin: 0 auto;
       margin-top: 1.6rem;
-      margin-bottom: -6rem;
       position: relative;
+      .youtube-wrapper {
+        margin-bottom: 10px;
+        @include lg {
+          margin-bottom: 30px;
+        }
+      }
     }
 
     @include lg {
@@ -118,6 +123,7 @@
           width: 120%;
           right: -6.8rem;
           top: -6rem;
+          margin-bottom: -6rem;
         }
       }
     }

@@ -269,9 +269,13 @@
   .sub-menu {
     background: darken($color-blue-light, 5);
     text-align: left;
-    max-height: 0;
     overflow: hidden;
     transition: all 100ms ease-out;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    height: 0;
+    transform: translateY(-100%);
 
     li {
       display: block;
@@ -298,10 +302,9 @@
     }
 
     @include lg {
-      max-height: 0;
       position: absolute;
       left: 50%;
-      transform: translate(-50%, 29px);
+      transform: translate(-50%, 29px) translateY(-100%);
 
       li {
         background: darken($color-blue-light, 5);
@@ -319,6 +322,18 @@
           min-width: 140px;
         }
       }
+    }
+
+    &--active {
+      z-index: initial;
+      visibility: initial;
+      transform: translateY(0%);
+      height: initial;
+      opacity: 1;
+      @include lg {
+        transform: translate(-50%, 29px) translateY(0%);
+      }
+
     }
 
     &--revealed {

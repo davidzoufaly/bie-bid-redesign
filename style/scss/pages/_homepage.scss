@@ -77,11 +77,13 @@
     a {
       margin: 0 auto;
       margin-bottom: 2rem;
+      width: 200px;
       @include lg {
-          margin: 0;
+        margin: 0;
         margin-left: 1rem;
         margin-right: 1rem;
         margin-bottom: 0;
+        width: initial;
         &:first-child {
           margin-left: 0rem;
         }

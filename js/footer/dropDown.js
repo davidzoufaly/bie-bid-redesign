@@ -40,18 +40,20 @@ class DropDown {
         this.a.classList.toggle("sub-menu--revealed");
         this.arrow.classList.toggle("arrow__up--animate");
         this.arrow.classList.toggle("arrow__up--blue");
-        if (this.subMenu.style.maxHeight) {
-            this.subMenu.style.maxHeight = null;
-        } else {
-          this.subMenu.style.maxHeight = this.subMenu.scrollHeight + "px";
-        }
+        this.subMenu.classList.toggle('sub-menu--active');
+        // if (this.subMenu.style.maxHeight) {
+        //     this.subMenu.style.maxHeight = null;
+        // } else {
+        //   this.subMenu.style.maxHeight = this.subMenu.scrollHeight + "px";
+        // }
     }
 
     reset() {
         this.a.classList.remove("sub-menu--revealed");
         this.arrow.classList.remove("arrow__up--animate");
         this.arrow.classList.remove("arrow__up--blue");
-        this.subMenu.style.maxHeight = null;
+        this.subMenu.classList.remove('sub-menu--active');
+        //this.subMenu.style.maxHeight = null;
         
     }
 
