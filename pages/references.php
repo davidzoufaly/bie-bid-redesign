@@ -9,7 +9,6 @@
         <div class="_grid-reference">
             <?php get_template_part('query/query-reference-reference') ?>
         </div>
-        </div>
     </section>
 </main>
 <?php get_template_part('modules/module-libi-se') ?>

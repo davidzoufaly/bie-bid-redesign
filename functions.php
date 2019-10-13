@@ -224,6 +224,19 @@ function html5wp_pagination()
     ));
 }
 
+//  Bie Custom Pagination
+function customPagination($paged = '', $max_page = '') 
+{
+
+    echo paginate_links( array(
+        'total' => $max_page,
+        'prev_next' => false,
+        'prev_text'  => false,
+        'next_text'  => false,
+        'mid_size' => 2,
+    ) );
+}
+
 // Custom Excerpts
 function html5wp_index($length) // Create 20 Word Callback for Index page Excerpts, call using html5wp_excerpt('html5wp_index');
 {
