@@ -1214,12 +1214,12 @@ label {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    margin-top: 1rem;
+    padding: 1rem 0;
     @include lg {
-        margin-top: 2rem;
+        padding: 2rem 0;
     }
     @include uw {
-        margin-top: 3rem;
+        padding: 3rem 0;
     }
 
 
@@ -1572,6 +1572,7 @@ label {
     &--page {
         background-image: none;
         background-color: $color-blue-light;
+        padding-bottom: 0;
     }
 
     h2 {

@@ -3,7 +3,7 @@
 $currentPage = ( get_query_var('paged') ) ? get_query_var('paged') : 1; 
 $args = array(
     'post_type' => 'references',
-    'posts_per_page' => 3,
+    'posts_per_page' => 9,
     'orderby' => 'date',
     'order' => 'DSC',
     'paged' => $currentPage
