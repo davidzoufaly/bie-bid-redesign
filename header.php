@@ -5,6 +5,11 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
 
+    <link href="<?php echo get_template_directory_uri()?>/fonts/BwMitga/BwMitga-Bold.woff" rel="preload" as="font" crossorigin="anonymous">
+    <link href="<?php echo get_template_directory_uri()?>/fonts/BwMitga/BwMitga-Regular.woff" rel="preload" as="font" crossorigin="anonymous">
+    <link href="<?php echo get_template_directory_uri()?>/fonts/BwMitga/BwMitga-Light.woff" rel="preload" as="font" crossorigin="anonymous">
+    <link href="<?php echo get_template_directory_uri()?>/fonts/Open_Sans/OpenSans-Bold.ttf" rel="preload" as="font" crossorigin="anonymous">
+
     <link href="https://www.google-analytics.com" rel="preconnect">
     <link href="https://www.czech-us.cz" rel="preconnect">
 
