@@ -1,0 +1,125 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #FAFAFA;
+    font: 12pt "Tahoma";
+}
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.invoice-page-wrapper {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    width: 210mm;
+    min-height: 297mm;
+    border: 1px #D3D3D3 solid;
+    margin: 10mm auto;
+}
+.invoice-page {
+    width: 100%;
+    height: 100%;
+    padding: 20mm;
+}
+.invoice-subpage {
+    padding: .5cm;
+    height: 257mm;
+}
+
+.invoice {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas:
+        "title title"
+        "logo meta"
+        "from to"
+        "description description"
+        "amount amount";
+}
+
+.invoice__title {
+    grid-area: title;
+    text-align: center;
+}
+
+.invoice__meta {
+    font-size: 0.8rem;
+    grid-area: meta;
+    justify-self: flex-end;
+}
+
+.invoice__meta p {
+    margin-block-end: 0.3rem;
+    margin-block-start: 0.3rem;
+}
+
+.invoice__logo {
+    grid-area: logo;
+}
+
+.invoice__logo svg {
+    width: 200px;
+}
+
+.invoice__bill-to {
+    grid-area: to;
+}
+
+.invoice__bill-from {
+    grid-area: from;
+}
+
+.invoice__description {
+    grid-area: description;
+}
+
+.invoice__description table {
+    width: 100%;
+    line-height: 2rem;
+}
+
+.invoice__description th {
+    text-transform: uppercase;
+    background-color: #FAFAFA;
+    text-align: left;
+    padding-left: 0.5rem;
+}
+
+.invoice__total-amount {
+    grid-area: amount;
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+    html, body {
+        width: 210mm;
+        height: 297mm;        
+    }
+    .invoice-page-wrapper {
+        margin: 0;
+        border: initial;
+        border-radius: initial;
+        width: initial;
+        min-height: initial;
+        box-shadow: initial;
+        background: initial;
+        page-break-after: always;
+    }
+    .invoice-page {
+        margin: 0;
+        border: initial;
+        border-radius: initial;
+        width: initial;
+        min-height: initial;
+        box-shadow: initial;
+        background: initial;
+        page-break-after: always;
+    }
+}

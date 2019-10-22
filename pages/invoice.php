@@ -1,3 +1,6 @@
+<? /* Template Name: Invoice */ ?>
+
+<?php get_template_part('/components/invoice-header'); ?>
 
 <?php
 // POST FROM FORM
@@ -28,13 +31,13 @@ $username = "bestinenglis4165";
 $password = "EwRsrWJLSU";
 $dbname = "bestinenglish2028";
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+$conn->set_charset("utf8");
 
 $get_invoice_number = "SELECT number FROM invoice_number WHERE id = 1";
 
@@ -44,105 +47,88 @@ $invoice_number = mysqli_fetch_assoc($result)["number"];
 $sql_update_number = "UPDATE invoice_number SET number = $invoice_number + 1 WHERE id = 1";
 $result2 = mysqli_query($conn, $sql_update_number);
 
-$sql_save_invoice = "INSERT INTO invoices VALUES ($invoice_number, '$school_id', '$school_street', '$school_city', '$school_code', '$school_country', '$payment_currency', '$date')";
+$sql_save_invoice = "INSERT INTO invoices VALUES ($invoice_number, '$school_id', '$school_name','$school_street', '$school_city', '$school_code', '$school_country', '$payment_currency', '$date')";
 $result3 = mysqli_query($conn, $sql_save_invoice);
 
 mysqli_close($conn);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="./style.css" type="text/css" rel="stylesheet"/>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-    <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-</head>
 <body>
-<div class="book">
-    <div class="page-wrapper">
-        <div class="page">
-            <div class="subpage invoice">
-                <h1 class="invoice__title">Invoice</h1>
+    <div class="invoice-page-wrapper">
+        <div class="invoice-page">
+            <div class="invoice-subpage invoice">
+                <h1 class="invoice__title"><?php _e('Invoice', 'BIE') ?></h1>
                 <div class="invoice__meta">
-                    <p>Number: <?php echo $invoice_number ?></p>
-                    <p>Date: <?php echo $date ?></p>
-                    <p>ID: <?php echo $school_id ?></p>    
+                    <p><?php _e('Number:', 'bie'); ?> <?php echo $invoice_number ?></p>
+                    <p><?php _e('Date:', 'bie'); ?> <?php echo $date ?></p>
+                    <p><?php _e('ID:', 'bie'); ?> <?php echo $school_id ?></p>
                 </div>
 
                 <div class="invoice__logo">
-                    <img src="logo.svg" />
+                    <img src="<?php echo get_template_directory_uri() ?>/img/logocz.svg" />
                 </div>
 
                 <div class="invoice__bill-from">
-                    <h2>Bill from:</h2>
-                    <p>Czech-us Studium v zahraničí s.r.o.</p>
-                    <p>Vodičkova 791/41</p>
-                    <p>11000</p>
-                    <p>Prague, Czech Republic</p>
+                    <h2><?php _e('Bill from:', 'bie')?></h2>
+                    <p><?php _e('Czech-us Studium v zahraničí s.r.o.', 'bie')?></p>
+                    <p><?php _e('Vodičkova 791/41') ?></p>
+                    <p><?php _e('11000', 'bie')?></p>
+                    <p><?php _e('Prague, Czech Republic', 'bie') ?></p>
                 </div>
 
                 <div class="invoice__bill-to">
-                    <h2>Bill to:</h2>
+                    <h2><?php _e('Bill to:', 'bie') ?></h2>
                     <p><?php echo $school_name ?></p>
                     <p><?php echo $school_street ?></p>
                     <p><?php echo $school_city ?></p>
                     <p><?php echo $school_code ?></p>
                     <p><?php echo $school_country ?></p>
                 </div>
-                
+
                 <div class="invoice__description">
                     <table>
                         <thead>
                             <tr>
                                 <th>
-                                    item
+                                    <?php _e('item', 'bie') ?>
                                 </th>
                                 <th>
-                                    amount
+                                    <?php _e('amount', 'bie') ?>
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>
-                                    Best In English 2019
-                                    license fee
+                                   <?php _e('Best In English 2019 license fee', 'bie') ?>
                                 </td>
                                 <td>
-                                    <?php 
-                                    echo $total_amount
-                                    ?>
+                                    <?php echo $total_amount; ?>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    </div>
-                    <div class="invoice__total-amount">
-                        <h2>Payment information:</h2>
-                        <p><strong>Amount:</strong> <?php echo $total_amount ?></p>
-                        <p><?php echo $bank_account ?></p>
-                        <p><strong>Reference number:</strong> <?php echo $invoice_number ?></p>
-                    </div>
                 </div>
-            </div>    
+                <div class="invoice__total-amount">
+                    <h2><?php _e('Payment information:', 'bie') ?></h2>
+                    <p><strong><?php _e('Amount:', 'bie') ?></strong> <?php echo $total_amount ?></p>
+                    <p><?php echo $bank_account ?></p>
+                    <p><strong><?php _e('Reference number:', 'bie') ?></strong> <?php echo $invoice_number ?></p>
+                </div>
+            </div>
         </div>
     </div>
-</div>  
-<script>
-(function CreatePDFfromHTML() {
-    html2canvas($(".page")[0]).then(function (canvas) {
-        var imgData = canvas.toDataURL("image/jpeg", 1.0);
-        var pdf = new jsPDF();
-        pdf.addImage(imgData, 'JPG', 0, 0);
+    </div>
+    <script>
+    window.addEventListener("DOMContentLoaded", function CreatePDFfromHTML() {
+        html2canvas($(".invoice-page")[0]).then(function(canvas) {
+            var imgData = canvas.toDataURL("image/jpeg", 1.0);
+            var pdf = new jsPDF();
+            pdf.addImage(imgData, 'JPG', 0, 0);
 
-        pdf.save("BIE-invoice-<?php echo $invoice_number ?>.pdf");
+            pdf.save("BIE-invoice-<?php echo $invoice_number ?>.pdf");
+        });
     });
-})();
-</script>
+    </script>
 </body>
 </html>

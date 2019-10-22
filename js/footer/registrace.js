@@ -1,5 +1,5 @@
 /* REGIONY PRO VYBRANÉ ZEMĚ */
-if (document.querySelector(".registrace")) {
+if (window.location.href.includes("/register")) {
   const countrySelect = document.querySelector("#countries");
   const regionWrapper = document.querySelector(".region-wrapper");
   const countriesWithRegion = [
