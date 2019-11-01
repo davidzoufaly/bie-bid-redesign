@@ -1674,7 +1674,7 @@ label {
 
     legend {
       box-shadow: 4px 4px 14px -4px rgba(0, 0, 0, 0.15);
-      background: #d25d54;
+      background: $color-blue;
       color: white;
       padding: 1rem 2rem;
       font-size: 2rem;
@@ -2166,6 +2166,17 @@ label {
     }
   }
 }
+
+.flex-75 {
+  display: flex;
+  width: 75px;
+  margin-bottom: 2rem;
+}
+
+.triple-column-between {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
 .header {
   z-index: 18;
   transition: 0.2s;
@@ -2611,7 +2622,35 @@ label {
     }
   }
 }
+.mb-1 {
+  margin-bottom: 1rem;
+}
 
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
+.mb-4 {
+  margin-bottom: 4rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.column-gap > * {
+  margin: 0 1rem;
+  &:first-child {
+      margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
 
 .page404 {
     position: relative;
@@ -2919,8 +2958,31 @@ label {
 
 }
 .registrace-formular .invoice-form__amount {
-    padding-top: 3rem;
     padding-bottom: 0;
+}
+
+.invoice-form__radio-wrapper {
+    .invoice-form__radio-item {
+        label {
+            font-size: 1.7rem;
+            padding-right: 1rem;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.registrace-formular fieldset p#amount-hook {
+    font-size: 1.8rem;
+}
+
+.icon-rotate {
+    transform: rotate(180deg);
+    padding-right: 1rem;
+    margin: auto 0;
+    span:before {
+        color: $color-red;
+        font-size: 1.5rem;
+    }
 }
 .results {
   .top-wrapper {

@@ -19,13 +19,18 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$school_query = "SELECT * FROM invoices WHERE invoice_id = $invoice_number";
-$school_result = mysqli_query($conn, $school_query);
-$school_data = mysqli_fetch_assoc($school_result);
+$conn->set_charset("utf8");
+
+$stmt = $conn->prepare("SELECT * FROM invoices WHERE invoice_id = ?");
+$stmt->bind_param("i", $invoice_number);
+$stmt->execute();
+$school_data = $stmt->get_result()->fetch_assoc();
+$stmt->close();
 
 mysqli_close($conn);
 
 $school_id = $school_data["school_id"];
+$school_vat = $school_data["school_vat"];
 $school_name = $school_data["school_name"];
 $school_street = $school_data["school_street"];
 $school_city = $school_data["school_city"];
@@ -58,7 +63,7 @@ function Header() {
 
     // Logo
     $this->SetY(15);
-    $this->Image('../../img/logo-cz-invoice.png',25,15,50);
+    $this->Image('../../img/czech-us_transparent.png',25,15,55);
     $this->Cell(120);
     $this->SetFont('Roboto','',8);
     $this->Cell(40,5,'Inv number: '.$invoice_number, 0,2,'L');
@@ -72,6 +77,7 @@ function Main() {
     global $school_code;
     global $school_city;
     global $school_country;
+    global $school_vat;
     global $total_amount;
     global $bank_account;
     global $invoice_number;
@@ -91,15 +97,18 @@ function Main() {
     $this->Cell(40, 10,iconv('UTF-8', 'ISO-8859-2', 'Czech-us Studium v zahraničí s.r.o.'),0,0,'L');
     $this->Cell(40);
     $this->MultiCell(0, 10,iconv('UTF-8', 'ISO-8859-2', $school_name),0,'L');
-    $this->Cell(40, 10,'Vodickova 791/41',0,0,'L');
+    $this->Cell(40, 10,'CZ02419386',0,0,'L');
+    $this->Cell(40);
+    $this->Cell(0, 10,$school_vat,0,1,'L');
+    $this->Cell(40, 10,iconv('UTF-8', 'ISO-8859-2','Vodičkova 791/41'),0,0,'L');
     $this->Cell(40);
     $this->Cell(0, 10,iconv('UTF-8', 'ISO-8859-2', $school_street),0,1,'L');
     $this->Cell(40, 10,'11000',0,0,'L');
     $this->Cell(40);
-    $this->Cell(0, 10,iconv('UTF-8', 'ISO-8859-2', $school_code),0,1,'L');
+    $this->Cell(0, 10,$school_code,0,1,'L');
     $this->Cell(40, 10,'Prague',0,0,'L');
     $this->Cell(40);
-    $this->Cell(0, 10,iconv('UTF-8', 'ISO-8859-2', $school_city),0,1,'L');
+    $this->Cell(0, 10,iconv('UTF-8', 'ISO-8859-2',$school_city),0,1,'L');
     $this->Cell(40, 10,'Czech Repbublic',0,0,'L');
     $this->Cell(40);
     $this->Cell(0, 10,iconv('UTF-8', 'ISO-8859-2', $school_country),0,1,'L');
@@ -110,11 +119,11 @@ function Main() {
     $this->Cell(50,10,'AMOUNT',0,0,'L', true);
     $this->Ln(12);
     $this->SetFillColor(0);
-    $this->Cell(110,10,'Best In English 2019 licence fee',0,0,'L');
+    $this->Cell(110,10,'Best In English 2019 license fee',0,0,'L');
     $this->Cell(50,10,$total_amount,0,1,'L');
     $this->Ln(5);
     // IF REF ID -> ALREADY PAID 
-    if (isset($_GET['ref_id'])) {
+    if (isset($_GET['trans_id'])) {
         $this->SetFont('Arial', 'b', 25);
         $this->SetTextColor(255,0,0);
         $this->SetDrawColor(255,0,0);
@@ -154,7 +163,7 @@ $pdf->AddFont('Roboto','','Roboto-Regular.php');
 $pdf->SetMargins(25, 25, 25);
 $pdf->AddPage();
 $pdf->Main();
-$pdf->Output();
+$pdf->Output('I', 'invoice-bie-'.$invoice_number.'.pdf',true);
 
 ?>
 

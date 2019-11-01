@@ -80,3 +80,14 @@
     }
   }
 }
+
+.flex-75 {
+  display: flex;
+  width: 75px;
+  margin-bottom: 2rem;
+}
+
+.triple-column-between {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}

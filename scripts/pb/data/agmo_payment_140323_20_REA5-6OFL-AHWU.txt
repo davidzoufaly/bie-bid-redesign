@@ -1,0 +1,1 @@
+{"test":true,"price":35,"curr":"EUR","status":"PAID","fee":"unknown"}

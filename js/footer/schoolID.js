@@ -63,7 +63,7 @@ let minutes = () => {return today.getMinutes() < 10 ? `0${today.getMinutes()}` 
 let time = `${hours()}:${minutes()}`;
 let dateTime = `${date} ${time}`;
 
-if (schoolIDInput) {
+if (window.location.href.includes("/register")) {
   document.querySelector(
     "#register-submit"
   ).addEventListener('click', () => {

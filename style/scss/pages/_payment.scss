@@ -1,4 +1,27 @@
 .registrace-formular .invoice-form__amount {
-    padding-top: 3rem;
     padding-bottom: 0;
+}
+
+.invoice-form__radio-wrapper {
+    .invoice-form__radio-item {
+        label {
+            font-size: 1.7rem;
+            padding-right: 1rem;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.registrace-formular fieldset p#amount-hook {
+    font-size: 1.8rem;
+}
+
+.icon-rotate {
+    transform: rotate(180deg);
+    padding-right: 1rem;
+    margin: auto 0;
+    span:before {
+        color: $color-red;
+        font-size: 1.5rem;
+    }
 }

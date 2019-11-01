@@ -34,7 +34,7 @@ module.exports = function(grunt) {
             "./js/scripts.footer.min.js" : ["./js/scripts.footer.min.js"],
             "./js/scripts.header.min.js" : ["./js/scripts.header.min.js"],
             "./js/scripts.homepage.min.js" : ["./js/scripts.homepage.min.js"],
-            "./js/scripts.results.min.js" : ["./js/scripts.results.min.js"]
+            "./js/scripts.results.min.js" : ["./js/scripts.results.min.js"],
           }
         }
       },
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
             "./js/scripts.footer.min.js" : "./js/scripts.footer.min.js",
             "./js/scripts.header.min.js" : "./js/scripts.header.min.js",
             "./js/scripts.homepage.min.js" : "./js/scripts.homepage.min.js",
-            "./js/scripts.results.min.js" : "./js/scripts.results.min.js"
+            "./js/scripts.results.min.js" : "./js/scripts.results.min.js",
           }
         }
       },
