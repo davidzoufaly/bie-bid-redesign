@@ -23,6 +23,7 @@ class ScrollAppear {
         }
       }
     });
+    return this;
   }
 
   isInViewport() {
@@ -37,16 +38,13 @@ class ScrollAppear {
         }
       }
     }) 
+    return this;
   }
 
 }
 
-let scrollEvent = new ScrollAppear("animateScroll--arrival-up");
-scrollEvent.isInViewport();
-scrollEvent.scrollListener();
+new ScrollAppear("animateScroll--arrival-up").isInViewport().scrollListener();
 
 window.addEventListener("resize", () => {
-  let scrollEvent = new ScrollAppear("animateScroll--arrival-up");
-  scrollEvent.isInViewport();
-  scrollEvent.scrollListener();
+  new ScrollAppear("animateScroll--arrival-up").isInViewport().scrollListener();
 });
