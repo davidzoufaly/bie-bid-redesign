@@ -8,6 +8,7 @@
         $dbname = "bestinenglish2028";
         
         $conn = new mysqli($servername, $username, $password, $dbname);
+        $conn->set_charset("utf8");
         $query = ("SELECT * FROM `invoices`");
         $header = $conn->query($query);
         $body = $conn->query($query);
