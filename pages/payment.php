@@ -31,7 +31,7 @@ const templateUrl = "<?php echo get_template_directory_uri()?>";
                         <p class="invoice-form__required-text"><?php _e('All fields are required', 'bie') ?></p>
                         <legend class="invoice-form__legend"><?php _e('School information', 'bie') ?></legend>
                         <div class="invoice-form__input-wrapper registrace-formular__row">
-                            <label for="school-id" name="school_id"><?php _e('School ID', 'bie');?></label>
+                            <label for="school-id" name="school_id"><?php _e('School ID from registration', 'bie');?></label>
                             <span><input type="text" id="school-id" name="school_id" class="animation-input"/></span>
                         </div>
                         <div class="invoice-form__input-wrapper registrace-formular__row">
@@ -39,23 +39,23 @@ const templateUrl = "<?php echo get_template_directory_uri()?>";
                             <span><input type="text" id="school-name" name="school_name" class="animation-input"/></span>
                         </div>
                         <div class="invoice-form__input-wrapper registrace-formular__row">
-                            <label for="school-vat"><?php _e('VAT number', 'bie') ?></label>
+                            <label for="school-vat"><?php _e('School VAT number', 'bie') ?></label>
                             <span><input type="text" id="school-vat" name="school_vat" class="animation-input"/></span>
                         </div>
                         <div class="invoice-form__input-wrapper registrace-formular__row">
-                            <label for="school-street"><?php _e('Street', 'bie') ?></label>
+                            <label for="school-street"><?php _e('School street', 'bie') ?></label>
                             <span><input type="text" id="school-street" name="school_street" class="animation-input"/></span>
                         </div>
                         <div class="invoice-form__input-wrapper registrace-formular__row">
-                            <label for="school-city"><?php _e('City', 'bie') ?></label>
+                            <label for="school-city"><?php _e('School city', 'bie') ?></label>
                                 <span><input type="text" id="school-city" name="school_city" class="animation-input"/></span>
                         </div>
                         <div class="invoice-form__input-wrapper registrace-formular__row">
-                            <label for="school-code"><?php _e('Postal Code', 'bie') ?></label>
+                            <label for="school-code"><?php _e('School postal code', 'bie') ?></label>
                             <span><input type="text" id="school-code" name="school_code" class="animation-input"/></span>
                         </div>
                         <div class="invoice-form__input-wrapper registrace-formular__row">
-                            <h2 class="h2--small h2--nobefore" for="country"><?php _e('Country', 'BIE') ?></h2>
+                            <h2 class="h2--small h2--nobefore" for="country"><?php _e('School country', 'BIE') ?></h2>
                             <select id="country" name="school_country">
                                 <option value="">---</option>
                                 <option value="AF">Afghanistan</option>
