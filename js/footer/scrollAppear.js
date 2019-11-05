@@ -5,6 +5,7 @@
 
 */
 
+
 class ScrollAppear {
   constructor(elementClass) {
     this.elements = document.getElementsByClassName(elementClass);

@@ -12,17 +12,15 @@ const menuImg = document.getElementsByClassName("logo__img")[0];
 const kbLogo = document.getElementsByClassName("kb")[0];
 const menuItem = document.querySelectorAll("header .menu-item a");
 const subM = document.getElementsByClassName("arrow__up");
-let kb = document.getElementById('logo-kb');
+const kb = document.getElementById('logo-kb');
+let windowWidth = window.innerWidth;
 /* bile menu na telefonu */
 
 if (window.innerWidth < 991) {
-  if(window.innerWidth < 991) {
-    let kb = document.getElementById('logo-kb');
-    kb.parentNode.removeChild(kb);
-  } else {
-    menu.insertBefore(kb,menu.children[2]);
-  }
+  kb.parentNode.removeChild(kb);
   whiteNav();
+} else {
+  menu.insertBefore(kb,menu.children[2]);
 }
 
 /****************************\
@@ -32,8 +30,8 @@ if (window.innerWidth < 991) {
 /* eventlistener na resize */
 window.addEventListener("resize", () => {
   // schovani kb loga v menu kdyz na tel
-  if(window.innerWidth < 991 && kb.parentNode !== null) {
-    kb.parentNode.removeChild(kb);
+  if(window.innerWidth < 991) {
+    kb.parentNode !== null ? kb.parentNode.removeChild(kb): false;
   } else {
     menu.insertBefore(kb,menu.children[2]);
   }
