@@ -47,6 +47,8 @@
         }
       }
 
+
+
       img {
         width: 160px;
       }
@@ -92,6 +94,46 @@
 
     @include lg {
       background: transparent;
+    }
+  }
+
+  .kb {
+    font-size: 9px;
+    font-family: $font-light;
+    a {
+      color: $color-white;
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &__logo {
+      width: 40px;
+      margin: 0 auto;
+      margin-top: 0.25rem;
+      @include xl {
+          width: 60px;
+      }
+      .cls-1 {
+        fill: #ffffff;
+      }
+      .cls-2 {
+        fill: #fff;
+      }
+    }
+    &--color {
+      .kb__logo {
+        .cls-1 {
+          fill:#cb0133 ;
+        }
+        .cls-2 {
+          fill:#010101 ;
+        }
+      }
+      a {
+        color: $color-blue;
+      }
     }
   }
 

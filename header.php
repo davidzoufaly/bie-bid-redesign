@@ -79,7 +79,19 @@
                     <span id="close-icon" class="icon-close_icon icon-close_icon--white"></span>Menu
                 </label>
             </div>
+
+            <!-- logo KB -->
+            <div id="logo-kb"class="kb">
+                <a id="logo-kb"class="kb" href="https://www.kb.cz/cs/obcane/ucty/pro-studenty-rozcestnik/studentsky-ucet-g2?utm_id=43864&utm_medium=cpc&utm_source=google&utm_campaign=g2~g2_brand&utm_content=search&utm_term=g2&gclid=EAIaIQobChMIt7bOtK3Q5QIVhuJ3Ch34eQoBEAAYASAAEgL-zvD_BwE" aria-label="Logo KB">
+                    MAIN PARTNER
+                    <div class="kb__logo">
+                        <?php get_template_part('/img/logo-header-KB'); ?>
+                    </div>
+                </a>
+            </div>
             <!-- /logo -->
+
+          
 
             <!-- nav -->
             <?php $libi_se_group = get_field('libi_se_ti_soutez', 'options') ?>
@@ -89,6 +101,7 @@
                 <?php if(get_field('zobrazit_registraci_v_headeru', 'options')): ?>
                     <a class="btn btn--red" href="<?php echo $libi_se_group['link_registrace'];?>">Registration</a>
                 <?php endif; ?>
+
             </nav>
 
             <div class="--mobile-dark-content">
