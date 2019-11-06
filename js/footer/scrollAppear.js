@@ -35,7 +35,6 @@ class ScrollAppear {
         elementsPos.push(this.elements[i].getBoundingClientRect().top);
         if (elementsPos[i] < window.innerHeight) {
           this.elements[i].classList.remove(this.cls);
-          console.log('true');
         } 
       }
     }) 
