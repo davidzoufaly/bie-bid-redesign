@@ -10,6 +10,7 @@ class ScrollAppear {
   constructor(elementClass) {
     this.elements = document.getElementsByClassName(elementClass);
     this.screenPos = window.innerHeight / 1.15;
+    this.cls = elementClass;
   }
 
   scrollListener() {
@@ -33,7 +34,8 @@ class ScrollAppear {
       for (let i = 0; i < this.elements.length; i++) {
         elementsPos.push(this.elements[i].getBoundingClientRect().top);
         if (elementsPos[i] < window.innerHeight) {
-          this.elements[i].classList.remove(elementClass);
+          this.elements[i].classList.remove(this.cls);
+          console.log('true');
         } 
       }
     }) 
