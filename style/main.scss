@@ -2201,6 +2201,7 @@ label {
 
     .logo {
       position: relative;
+      display: flex;
       &__img {
         width: 160px;
         @include xl {
@@ -2278,8 +2279,8 @@ label {
 
   .kb {
     font-size: 9px;
-    font-family: $font-light;
-    margin-bottom: 1rem;
+    font-family: $font-light; 
+    margin-left: 3rem;
     a {
       color: $color-white;
       text-decoration: none;
@@ -2291,7 +2292,7 @@ label {
     &__logo {
       width: 40px;
       margin: 0 auto;
-      margin-top: 0.25rem;
+      margin-top: 0.5rem;
       @include xl {
           width: 60px;
       }

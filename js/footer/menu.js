@@ -12,6 +12,7 @@ const menuImg = document.getElementsByClassName("logo__img")[0];
 const kbLogo = document.getElementsByClassName("kb")[0];
 const menuItem = document.querySelectorAll("header .menu-item a");
 const subM = document.getElementsByClassName("arrow__up");
+const logo = document.getElementsByClassName('logo')[0];
 const kb = document.getElementById('logo-kb');
 let windowWidth = window.innerWidth;
 /* bile menu na telefonu */
@@ -20,7 +21,7 @@ if (window.innerWidth < 991) {
   kb.parentNode.removeChild(kb);
   whiteNav();
 } else {
-  menu.insertBefore(kb,menu.children[2]);
+  
 }
 
 /****************************\
@@ -33,7 +34,7 @@ window.addEventListener("resize", () => {
   if(window.innerWidth < 991) {
     kb.parentNode !== null ? kb.parentNode.removeChild(kb): false;
   } else {
-    menu.insertBefore(kb,menu.children[2]);
+    logo.appendChild(kb);
   }
 
   scrollNav(window.pageYOffset);

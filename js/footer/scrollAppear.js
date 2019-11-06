@@ -33,10 +33,8 @@ class ScrollAppear {
       for (let i = 0; i < this.elements.length; i++) {
         elementsPos.push(this.elements[i].getBoundingClientRect().top);
         if (elementsPos[i] < window.innerHeight) {
-          this.elements[i].classList.add("animateScroll--animate");
-        } else {
-          this.elements[i].classList.remove("animateScroll--animate");
-        }
+          this.elements[i].classList.remove(elementClass);
+        } 
       }
     }) 
     return this;

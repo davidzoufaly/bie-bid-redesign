@@ -70,6 +70,15 @@
                             <?php get_template_part('/img/logo-header'); ?>
                         </div>
                     </a>
+                    <div id="logo-kb" class="kb">
+                        <a href="https://www.kb.cz/cs/obcane/ucty/pro-studenty-rozcestnik/studentsky-ucet-g2?utm_id=43864&utm_medium=cpc&utm_source=google&utm_campaign=g2~g2_brand&utm_content=search&utm_term=g2&gclid=EAIaIQobChMIt7bOtK3Q5QIVhuJ3Ch34eQoBEAAYASAAEgL-zvD_BwE" aria-label="Logo KB">
+                            MAIN PARTNER
+                            <div class="kb__logo">
+                                <?php get_template_part('/img/logo-header-KB'); ?>
+                            </div>
+                        </a>
+                    </div>
+
                 </div>
 
                 <label for="check" class="_show-menu">
@@ -81,14 +90,7 @@
             </div>
 
             <!-- logo KB -->
-            <div id="logo-kb"class="kb">
-                <a id="logo-kb"class="kb" href="https://www.kb.cz/cs/obcane/ucty/pro-studenty-rozcestnik/studentsky-ucet-g2?utm_id=43864&utm_medium=cpc&utm_source=google&utm_campaign=g2~g2_brand&utm_content=search&utm_term=g2&gclid=EAIaIQobChMIt7bOtK3Q5QIVhuJ3Ch34eQoBEAAYASAAEgL-zvD_BwE" aria-label="Logo KB">
-                    MAIN PARTNER
-                    <div class="kb__logo">
-                        <?php get_template_part('/img/logo-header-KB'); ?>
-                    </div>
-                </a>
-            </div>
+
             <!-- /logo -->
 
           
