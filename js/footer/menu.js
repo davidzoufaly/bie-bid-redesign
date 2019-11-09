@@ -9,11 +9,11 @@ const textHide = document.getElementsByClassName("_hide-menu")[0];
 const burger = document.getElementById("burger-icon");
 const close = document.getElementById("close-icon");
 const menuImg = document.getElementsByClassName("logo__img")[0];
-const kbLogo = document.getElementsByClassName("kb")[0];
 const menuItem = document.querySelectorAll("header .menu-item a");
 const subM = document.getElementsByClassName("arrow__up");
 const logo = document.getElementsByClassName('logo')[0];
 const kb = document.getElementById('logo-kb');
+const kbLogo = document.getElementsByClassName("kb")[0];
 let windowWidth = window.innerWidth;
 /* bile menu na telefonu */
 
@@ -31,9 +31,9 @@ if (window.innerWidth < 991) {
 /* eventlistener na resize */
 window.addEventListener("resize", () => {
   // schovani kb loga v menu kdyz na tel
-  if(window.innerWidth < 991) {
+  if(window.innerWidth < 991 && kb !== null) {
     kb.parentNode !== null ? kb.parentNode.removeChild(kb): false;
-  } else {
+  } else if(kb !== null) {
     logo.appendChild(kb);
   }
 
@@ -97,7 +97,7 @@ function whiteNav() {
   textShow.style.color = "#303e42";
   textHide.style.color = "#303e42";
   menuImg.classList.add("logo__img--color");
-  kbLogo.classList.add("kb--color");
+  kbLogo === undefined ? false : kbLogo.classList.add("kb--color");
 
   for (let i = 0; i < menuItem.length; i++) {
     menuItem[i].style.color = "#303e42";
@@ -127,7 +127,7 @@ function transNav() {
   textShow.style.color = "white";
   textHide.style.color = "white";
   menuImg.classList.remove("logo__img--color");
-  kbLogo.classList.remove("kb--color");
+  kbLogo === undefined ? false : kbLogo.classList.remove("kb--color");
   if (window.screen.width >= 991) {
     menuMob.style.backgroundColor = "transparent";
     menuMob.classList.remove("header--shadow");
