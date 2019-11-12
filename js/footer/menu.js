@@ -18,7 +18,7 @@ let windowWidth = window.innerWidth;
 /* bile menu na telefonu */
 
 if (window.innerWidth < 991) {
-  kb.parentNode.removeChild(kb);
+  //kb.parentNode.removeChild(kb);
   whiteNav();
 } else {
   
@@ -32,7 +32,7 @@ if (window.innerWidth < 991) {
 window.addEventListener("resize", () => {
   // schovani kb loga v menu kdyz na tel
   if(window.innerWidth < 991 && kb !== null) {
-    kb.parentNode !== null ? kb.parentNode.removeChild(kb): false;
+    // kb.parentNode !== null ? kb.parentNode.removeChild(kb): false;
   } else if(kb !== null) {
     logo.appendChild(kb);
   }

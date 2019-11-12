@@ -2203,7 +2203,10 @@ label {
       position: relative;
       display: flex;
       &__img {
-        width: 160px;
+        width: 120px;
+        @include rwd(460) {
+          width: 160px;
+        }
         @include xl {
             width: 200px;
         }
@@ -2302,14 +2305,20 @@ label {
       .cls-2 {
         fill: #fff;
       }
+      .cls-3 {
+        opacity: 0;
+      }
     }
     &--color {
       .kb__logo {
         .cls-1 {
-          fill:#cb0133 ;
+          fill:#cc0033 ;
         }
         .cls-2 {
-          fill:#010101 ;
+          fill:#000000 ;
+        }
+        .cls-3 {
+          fill: #fff;
         }
       }
       a {

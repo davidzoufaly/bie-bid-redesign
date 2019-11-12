@@ -65,25 +65,24 @@
             <div class="_header-wrapper">
                 <!-- logo -->
                 <div class="logo">
-                    <a href="<?php echo home_url(); ?>" aria-label="Logo Best In English">
+                    <a href="<?php echo home_url(); ?>" aria-label="Logo Best In English" style="align-self:flex-end;">
                         <div class="logo__img">
                             <?php get_template_part('/img/logo-header'); ?>
                         </div>
                     </a>
                     <?php 
-                        $user_country_code = ip_info("Visitor", "Country Code");
-                        if($user_country_code === "CZ" || $user_country_code === "SK") {
-                        ?>
+                        // $user_country_code = ip_info("Visitor", "Country Code");
+                        // if($user_country_code === "CZ" || $user_country_code === "SK") {
+                        // ?>
                             <div id="logo-kb" class="kb">
                                 <a href="https://www.kb.cz/cs/obcane/ucty/pro-studenty-rozcestnik/studentsky-ucet-g2?utm_id=43864&utm_medium=cpc&utm_source=google&utm_campaign=g2~g2_brand&utm_content=search&utm_term=g2&gclid=EAIaIQobChMIt7bOtK3Q5QIVhuJ3Ch34eQoBEAAYASAAEgL-zvD_BwE" aria-label="Logo KB">
-                                    GENERAL PARTNER
                                     <div class="kb__logo">
                                         <?php get_template_part('/img/logo-header-KB'); ?>
                                     </div>
                                 </a>
                             </div>
                         <?php
-                        } 
+                        //} 
                     ?>
 
 
