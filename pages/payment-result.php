@@ -41,7 +41,6 @@
                     echo '<p class="text-center mb-1">Thank you for the payment. Please download your invoice using the button below.</p>';
                     echo '<div class="btn-wrap-center column-gap">';
                     echo '<a href="'.get_template_directory_uri().'/scripts/pb/invoice.php?invoice_number='.$invoice_number.'&trans_id='.$trans_id.'" target="_blank" class="btn btn--red">'.__('invoice','bie').'</a>';
-                    echo '<a href="/" class="btn btn--blue">'.__('Homepage','bie').'</a>';
                     echo '</div>';
                 } else if ($status === "PENDING") {
                     echo '<h2 class="h2--nobefore mb-4 text-center">'.__('Cannot validate your payment','bie').'</h2>';
@@ -60,7 +59,7 @@
                 }
             }
             catch (Exception $e) {
-                echo '<h2 class="h2--nobefore mb-4 text-center">'.__('Error. Cannot check the payment status','bie').'</h2>';
+                echo '<h2 class="h2--nobefore mb-4 text-center">'.__('Error. Cannot check the payment status: '.$e,'bie').'</h2>';
                 echo '<div class="btn-wrap-center column-gap">';
                 echo '<a href="/" class="btn btn--blue">'.__('Homepage','bie').'</a>';
                 echo '<a href="/payment" class="btn btn--blue">'.__('Try again','bie').'</a>';

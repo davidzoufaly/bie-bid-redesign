@@ -10,8 +10,6 @@ $user_country_code === "RS" ||
 $user_country_code === "BA" ||
 $user_country_code === "ME"
     ? $payment_duty = false : $payment_duty = true;
-
-
 ?>
 
 <script>
@@ -26,33 +24,39 @@ const templateUrl = "<?php echo get_template_directory_uri()?>";
         <?php if($payment_duty) : ?>
         <div class="registrace">
             <div class="registrace-formular container">
-                <form method="POST" action="<?php echo get_template_directory_uri() ?>/scripts/pb/payment.php" class="invoice-form">
+                <form method="POST" action="<?php echo get_template_directory_uri() ?>/scripts/pb/payment.php"
+                    class="invoice-form">
                     <fieldset class="invoice-form__fieldset invoice-form__fieldset--school-info">
                         <p class="invoice-form__required-text"><?php _e('All fields are required', 'bie') ?></p>
                         <legend class="invoice-form__legend"><?php _e('School information', 'bie') ?></legend>
                         <div class="invoice-form__input-wrapper registrace-formular__row">
-                            <label for="school-id" name="school_id"><?php _e('School ID from registration', 'bie');?></label>
-                            <span><input type="text" id="school-id" name="school_id" class="animation-input"/></span>
+                            <label for="school-id"
+                                name="school_id"><?php _e('School ID from registration', 'bie');?></label>
+                            <span><input type="text" id="school-id" name="school_id" class="animation-input" /></span>
                         </div>
                         <div class="invoice-form__input-wrapper registrace-formular__row">
                             <label for="school-name"><?php _e('School name','bie') ?></label>
-                            <span><input type="text" id="school-name" name="school_name" class="animation-input"/></span>
+                            <span><input type="text" id="school-name" name="school_name"
+                                    class="animation-input" /></span>
                         </div>
                         <div class="invoice-form__input-wrapper registrace-formular__row">
                             <label for="school-vat"><?php _e('School VAT number', 'bie') ?></label>
-                            <span><input type="text" id="school-vat" name="school_vat" class="animation-input"/></span>
+                            <span><input type="text" id="school-vat" name="school_vat" class="animation-input" /></span>
                         </div>
                         <div class="invoice-form__input-wrapper registrace-formular__row">
                             <label for="school-street"><?php _e('School street', 'bie') ?></label>
-                            <span><input type="text" id="school-street" name="school_street" class="animation-input"/></span>
+                            <span><input type="text" id="school-street" name="school_street"
+                                    class="animation-input" /></span>
                         </div>
                         <div class="invoice-form__input-wrapper registrace-formular__row">
                             <label for="school-city"><?php _e('School city', 'bie') ?></label>
-                                <span><input type="text" id="school-city" name="school_city" class="animation-input"/></span>
+                            <span><input type="text" id="school-city" name="school_city"
+                                    class="animation-input" /></span>
                         </div>
                         <div class="invoice-form__input-wrapper registrace-formular__row">
                             <label for="school-code"><?php _e('School postal code', 'bie') ?></label>
-                            <span><input type="text" id="school-code" name="school_code" class="animation-input"/></span>
+                            <span><input type="text" id="school-code" name="school_code"
+                                    class="animation-input" /></span>
                         </div>
                         <div class="invoice-form__input-wrapper registrace-formular__row">
                             <h2 class="h2--small h2--nobefore" for="country"><?php _e('School country', 'BIE') ?></h2>
@@ -311,7 +315,8 @@ const templateUrl = "<?php echo get_template_directory_uri()?>";
                             <p id="ctx--not-filled"></p>
                         </div>
                         <div class="btn-wrap-center">
-                        <button type="button" class="btn btn--red" onclick="saveData()"><?php _e('Continue', 'bie') ?></button>
+                            <button type="button" class="btn btn--red"
+                                onclick="saveData()"><?php _e('Continue', 'bie') ?></button>
                         </div>
                     </fieldset>
                     <fieldset class="invoice-form__fieldset invoice-form__fieldset--payment" style="display: none">
@@ -323,8 +328,9 @@ const templateUrl = "<?php echo get_template_directory_uri()?>";
                             <button type="button" class="btn btn--link btn--icon"><?php _e('Back', 'bie')?></button>
                         </div>
                         <p id="amount-hook"></p>
-                        <div class="invoice-form__pay-now invoice-form__input-wrapper registrace-formular__row" style="display: none">
-                            <h2 class="h2--small h2--nobefore"><?php _e('Pay now?', 'bie')?></h2>
+                        <div class="invoice-form__pay-now invoice-form__input-wrapper registrace-formular__row"
+                            style="display: none">
+                            <h2 class="h2--nobefore"><?php _e('Pay now?', 'bie')?></h2>
                             <div class="invoice-form__radio-wrapper">
                                 <div class="invoice-form__radio-item">
                                     <label for="pay-now-yes"><?php _e('yes', 'bie')?></label>
@@ -333,57 +339,70 @@ const templateUrl = "<?php echo get_template_directory_uri()?>";
                                 <div class="invoice-form__radio-item">
                                     <label for="pay-now-no"><?php _e('no', 'bie')?></label>
                                     <input type="radio" name="pay-now" value="no" id="pay-now-no">
-                                </div>                                
-                            </div>
-                            <div class="invoice-form__bank invoice-form__input-wrapper registrace-formular__row" style="display: none">
-                                <h2 class="h2--small h2--nobefore"><?php _e('Select your bank', 'bie')?></h2>
-                                <div class="invoice-form__input-wrapper registrace-formular__row">
-                                    <select name="method" class="bank-select" required>
-                                        <option value="">---</option>
-                                        <option class="sk" value="BANK_SK_PB">Poštovná Banka</option>
-                                        <option class="sk" value="BANK_SK_SP">Slovenská spořiteľňa SK</option>
-                                        <option class="sk" value="BANK_SK_TB">Tatra Banka</option>
-                                        <option class="sk" value="BANK_SK_VUB">VÚB Banka</option>
-                                        <option class="sk" value="BANK_SK_OTHER">Other</option>
-                                        <option class="cz" value="BANK_CZ_CS_P">Česká spořitelna</option>
-                                        <option class="cz" value="BANK_CZ_KB">Komerční Banka</option>
-                                        <option class="cz" value="BANK_CZ_MB_P">mBank</option>
-                                        <option class="cz" value="BANK_CZ_RB">Raiffeisen Bank</option>
-                                        <option class="cz" value="BANK_CZ_CSOB">ČSOB</option>
-                                        <option class="cz" value="BANK_CZ_EB">Equa Bank</option>
-                                        <option class="cz" value="BANK_CZ_GE_2">MONETA Money Bank</option>
-                                        <option class="cz" value="BANK_CZ_PS">era</option>
-                                        <option class="cz" value="BANK_CZ_VB_2">Sberbank CZ</option>
-                                        <option class="cz" value="BANK_CZ_UC">UniCredit Bank</option>
-                                        <option class="cz" value="BANK_CZ_FB_P">Fio Banka</option>
-                                        <option class="cz" value="BANK_CZ_OTHER"><?php _e('Other', 'bie') ?></option>
-                                    </select>
                                 </div>
-                                <input type="hidden" name="payment_currency" id="payment-currency" value=""/>
-                                <input type="hidden" name="invoice_number" id="invoice_number" value=""/>
+                            </div>
+                            <div class="invoice-form__payment-method invoice-form__radio-wrapper" style="display: none">
+                                <h2 class="h2--nobefore"><?php _e('Payment method', 'bie')?></h2>
+                                <div class="invoice-form__radio-item">
+                                    <label for="pay-method__credit-card"><?php _e('Credit card', 'bie')?></label>
+                                    <input type="radio" name="pay-method" value="credit-card" id="pay-method__credit-card">
+                                </div>
+                                <div class="invoice-form__radio-item">
+                                    <label for="pay-method__bank-transfer"><?php _e('Bank transfer', 'bie')?></label>
+                                    <input type="radio" name="pay-method" value="bank-transfer" id="pay-method__bank-transfer">
+                                </div>
+                                <div class="invoice-form__bank invoice-form__input-wrapper registrace-formular__row" style="display: none">
+                                    <h2 class="h2--nobefore"><?php _e('Select your bank', 'bie')?></h2>
+                                    <div class="invoice-form__input-wrapper registrace-formular__row">
+                                        <select name="method" class="bank-select">
+                                            <option value="">---</option>
+                                            <option class="sk" value="BANK_SK_PB">Poštovná Banka</option>
+                                            <option class="sk" value="BANK_SK_SP">Slovenská spořiteľňa SK</option>
+                                            <option class="sk" value="BANK_SK_TB">Tatra Banka</option>
+                                            <option class="sk" value="BANK_SK_VUB">VÚB Banka</option>
+                                            <option class="cz" value="BANK_CZ_CS_P">Česká spořitelna</option>
+                                            <option class="cz" value="BANK_CZ_KB">Komerční Banka</option>
+                                            <option class="cz" value="BANK_CZ_MB_P">mBank</option>
+                                            <option class="cz" value="BANK_CZ_RB">Raiffeisen Bank</option>
+                                            <option class="cz" value="BANK_CZ_CSOB">ČSOB</option>
+                                            <option class="cz" value="BANK_CZ_EB">Equa Bank</option>
+                                            <option class="cz" value="BANK_CZ_GE_2">MONETA Money Bank</option>
+                                            <option class="cz" value="BANK_CZ_PS">era</option>
+                                            <option class="cz" value="BANK_CZ_VB_2">Sberbank CZ</option>
+                                            <option class="cz" value="BANK_CZ_UC">UniCredit Bank</option>
+                                            <option class="cz" value="BANK_CZ_FB_P">Fio Banka</option>
+                                        </select>
+                                    </div>
+                                    <input type="hidden" name="payment_currency" id="payment-currency" value="" />
+                                    <input type="hidden" name="invoice_number" id="invoice_number" value="" />
+                                </div>
+                            </div>
+                            <div class="invoice-form__submit" style="display: none;">
                                 <div class="btn-wrap-center">
-                                    <button type="submit" class="btn btn--red" name="pay_submit"><?php _e('Proceed payment', 'bie')?></button>
+                                    <button type="submit" class="btn btn--red"
+                                        name="pay_submit"><?php _e('Proceed payment', 'bie')?></button>
                                 </div>
                             </div>
                         </div>
-                        <div class="invoice-form__generate-invoice" style="">
+                        <div class="invoice-form__generate-invoice" style="display: none;">
                             <div class="btn-wrap-center">
-                                <button type="button" class="btn btn--red" onclick="generateInvoice()" name="generate   invoice"><?php _e('Invoice', 'bie')?></button>
+                                <button type="button" class="btn btn--red" onclick="generateInvoice()"
+                                    name="generate   invoice"><?php _e('Invoice', 'bie')?></button>
                             </div>
                         </div>
                     </fieldset>
                 </form>
-                </div>
             </div>
-            <?php else: ?>
-            <div class="container py-5">
-                <h2 class="text-center h2--no-before"><?php _e('Your country does not have to pay license fee', 'bie')?></h2>
-            </div>
-            <?php endif; ?> 
+        </div>
+        <?php else: ?>
+        <div class="container py-5">
+            <h2 class="text-center h2--no-before"><?php _e('Your country does not have to pay license fee', 'bie')?>
+            </h2>
+        </div>
+        <?php endif; ?>
     </section>
 </main>
 <?php get_template_part('modules/module-reference') ?>
 <?php get_template_part('modules/module-libi-se') ?>
 <?php get_template_part('modules/module-kontakt') ?>
 <?php get_footer(); ?>
-

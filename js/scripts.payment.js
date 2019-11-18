@@ -11,7 +11,7 @@ const schoolCode = document.querySelector("#school-code");
 const schoolCountry = document.querySelector("#country");
 const paymentCurrency = document.querySelector("#payment-currency");
 
-let dataState = {};
+let dataState;
 
 async function saveData() {
   if (
@@ -55,13 +55,16 @@ async function saveData() {
       });
       const data = await res.json();
       invoice_number = await data.invoiceNumber;
+      const err = await data.error;
+      // console.log(err);
 
       document.querySelector(
         "#invoice_number"
       ).value = await data.invoiceNumber;
     }
   } else {
-    document.querySelector("#ctx--not-filled").textContent = "Fill all inputs!";
+    document.querySelector("#ctx--not-filled").textContent =
+      "Fill all inputs please.";
   }
 }
 
@@ -93,21 +96,17 @@ const radioYes = document.querySelector("#pay-now-yes");
 const radioNo = document.querySelector("#pay-now-no");
 
 country.addEventListener("change", event => {
-  if (event.target.value === "CZ" || event.target.value === "SK") {
-    document.querySelector(".invoice-form__generate-invoice").style.display =
-      "none";
-    document.querySelector(".invoice-form__pay-now").style.display = "block";
-    document.querySelector("#amount-hook").textContent = `Total value: ${
-      event.target.value === "CZ" ? "900CZK" : "35EUR"
-    }`;
-    document.querySelector("#payment-currency").value =
-      event.target.value === "CZ" ? "CZK" : "EUR";
-  } else {
-    document.querySelector("#amount-hook").textContent = `Total value: 35EUR`;
-    document.querySelector(".invoice-form__generate-invoice").style.display =
-      "block";
-    document.querySelector("#payment-currency").value = "EUR";
-  }
+  document.querySelector(".invoice-form__payment-method").style.display = "none";
+  document.querySelector(".bank-select").removeAttribute("required", "");
+  document.querySelector(".bank-select").selectedIndex = 0;
+  document.getElementsByName('pay-now').forEach(e => e.checked = false)
+  document.querySelector(".invoice-form__submit").style.display = "none";
+  document.querySelector(".invoice-form__pay-now").style.display = "block";
+  document.querySelector("#amount-hook").textContent = `Total value: ${
+    event.target.value === "CZ" ? "900CZK" : "35EUR"
+  }`;
+  document.querySelector("#payment-currency").value =
+    event.target.value === "CZ" ? "CZK" : "EUR";
 });
 
 radioYes
@@ -116,17 +115,12 @@ radioYes
         document.querySelector(
           ".invoice-form__generate-invoice"
         ).style.display = "none";
-        document.querySelector(".invoice-form__bank").style.display = "block";
-        if (schoolCountry.value === "CZ") {
-          Array.from(document.querySelectorAll(".sk")).forEach(
-            el => (el.style.display = "none")
-          );
-        } else {
-          Array.from(document.querySelectorAll(".cz")).forEach(
-            el => (el.style.display = "none")
-          );
+        schoolCountry.value === "CZ" || schoolCountry.value === "SK"
+          ? document.querySelector(".invoice-form__payment-method").style.display =
+          "block"
+          : document.querySelector(".invoice-form__submit").style.display =
+          "block";
         }
-      }
     })
   : null;
 
@@ -136,7 +130,46 @@ radioNo
         document.querySelector(
           ".invoice-form__generate-invoice"
         ).style.display = "block";
-        document.querySelector(".invoice-form__bank").style.display = "none";
+        document.querySelector(".invoice-form__payment-method").style.display =
+          "none";
+        document.querySelector(".invoice-form__submit").style.display =
+          "none";
       }
     })
   : null;
+
+  // BANK METHOD
+  const radioCard = document.querySelector("#pay-method__credit-card");
+  const radioBank = document.querySelector("#pay-method__bank-transfer");
+  radioCard
+    ? radioCard.addEventListener("change", event => {
+        if (event.target.checked) {
+          document.querySelector(".invoice-form__submit").style.display =
+            "block";
+          document.querySelector(".invoice-form__bank").style.display = "none";
+          document
+            .querySelector(".bank-select")
+            .removeAttribute("required", "");
+        }
+      })
+    : null;
+
+  radioBank
+    ? radioBank.addEventListener("change", event => {
+        if (event.target.checked) {
+          if (schoolCountry.value === "CZ") {
+            Array.from(document.querySelectorAll(".sk")).forEach(
+              el => (el.style.display = "none")
+            );
+          } else {
+            Array.from(document.querySelectorAll(".cz")).forEach(
+              el => (el.style.display = "none")
+            );
+          }
+          document.querySelector(".bank-select").setAttribute("required", "");
+          document.querySelector(".invoice-form__bank").style.display = "block";
+          document.querySelector(".invoice-form__submit").style.display =
+            "block";
+        }
+      })
+    : null;

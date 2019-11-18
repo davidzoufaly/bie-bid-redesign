@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+$err = error_reporting(E_ALL);
 
 //POST FROM FORM
 $arr = json_decode(file_get_contents('php://input'), true);
@@ -18,10 +18,14 @@ $payment_currency = $arr["payment_currency"];
 $trans_id = "";
 
 // DB INVOICE NUMBER
+// $servername = "localhost";
+// $username = "bestinenglis4165";
+// $password = "EwRsrWJLSU";
+// $dbname = "bestinenglish202x8";
 $servername = "localhost";
-$username = "bestinenglis4165";
-$password = "EwRsrWJLSU";
-$dbname = "bestinenglish2028";
+$username = "root";
+$password = "root";
+$dbname = "bie_invoice";
 
 $date = date('Y-m-d');
 $id = 1;
@@ -60,7 +64,7 @@ mysqli_close($conn);
 header('Content-Type: application/json');
 $response = array(
     'invoiceNumber' => $invoice_number,
-    'error' => error_reporting(E_ALL),
+    'error' => $err,
     );
 echo json_encode($response);
 ?>

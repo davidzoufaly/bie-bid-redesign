@@ -8,16 +8,22 @@ require_once dirname(__FILE__).'/common.php';
 try {
     $currency = $_POST["payment_currency"];
     $currency === "CZK" ? $price = 900 : $price = 35;
-    $country = $_POST["school_country"];
     $invoice_number = $_POST["invoice_number"];
     $currency === "CZK" ? $lang = "cs" : $lang = "en";
+
+    if(!empty($_POST['method'])) {       
+        $method = $_POST['method'];
+    } else {
+        $method = "CARD_CZ_BS";
+    }
+    // "CARD_CZ_BS" 
 
     // prepare payment parameters
     $refId = $paymentsDatabase->createNextRefId();
 
      // create new payment transaction
      $paymentsProtocol->createTransaction(
-         $country,           // country
+         'ALL',                 // country
          $price,             // price
          $currency,          // currency
          $invoice_number,     // label
@@ -25,7 +31,7 @@ try {
          NULL,               // payerId
          'STANDARD',         // vatPL
          'PHYSICAL',         // category
-         $_POST['method'],   // method
+         $method,   // method
          '',
          isset($_POST['email']) ? $_POST['email'] : '',
          '',
@@ -45,10 +51,14 @@ try {
     );
 
     // save trans ID to invoice DB
+    // $servername = "localhost";
+    // $username = "bestinenglis4165";
+    // $password = "EwRsrWJLSU";
+    // $dbname = "bestinenglish2028";
     $servername = "localhost";
-    $username = "bestinenglis4165";
-    $password = "EwRsrWJLSU";
-    $dbname = "bestinenglish2028";
+    $username = "root";
+    $password = "root";
+    $dbname = "bie_invoice";
     
     $conn = new mysqli($servername, $username, $password, $dbname);
     

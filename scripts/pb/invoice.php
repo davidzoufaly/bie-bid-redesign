@@ -6,10 +6,14 @@ error_reporting(E_ALL);
 $invoice_number = $_GET['invoice_number'];
 
 // DB 
+// $servername = "localhost";
+// $username = "bestinenglis4165";
+// $password = "EwRsrWJLSU";
+// $dbname = "bestinenglish2028";
 $servername = "localhost";
-$username = "bestinenglis4165";
-$password = "EwRsrWJLSU";
-$dbname = "bestinenglish2028";
+$username = "root";
+$password = "root";
+$dbname = "bie_invoice";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
