@@ -51,14 +51,14 @@ try {
     );
 
     // save trans ID to invoice DB
-    // $servername = "localhost";
-    // $username = "bestinenglis4165";
-    // $password = "EwRsrWJLSU";
-    // $dbname = "bestinenglish2028";
     $servername = "localhost";
-    $username = "root";
-    $password = "root";
-    $dbname = "bie_invoice";
+    $username = "bestinenglis4165";
+    $password = "EwRsrWJLSU";
+    $dbname = "bestinenglish2028";
+    // $servername = "localhost";
+    // $username = "root";
+    // $password = "root";
+    // $dbname = "bie_invoice";
     
     $conn = new mysqli($servername, $username, $password, $dbname);
     
