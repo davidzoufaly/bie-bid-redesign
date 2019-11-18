@@ -22,8 +22,12 @@
 
     .logo {
       position: relative;
+      display: flex;
       &__img {
-        width: 160px;
+        width: 120px;
+        @include rwd(460) {
+          width: 160px;
+        }
         @include xl {
             width: 200px;
         }
@@ -46,6 +50,8 @@
           }
         }
       }
+
+
 
       img {
         width: 160px;
@@ -92,6 +98,53 @@
 
     @include lg {
       background: transparent;
+    }
+  }
+
+  .kb {
+    font-size: 9px;
+    font-family: $font-light; 
+    margin-left: 3rem;
+    a {
+      color: $color-white;
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &__logo {
+      width: 40px;
+      margin: 0 auto;
+      margin-top: 0.5rem;
+      @include xl {
+          width: 60px;
+      }
+      .cls-1 {
+        fill: #ffffff;
+      }
+      .cls-2 {
+        fill: #fff;
+      }
+      .cls-3 {
+        opacity: 0;
+      }
+    }
+    &--color {
+      .kb__logo {
+        .cls-1 {
+          fill:#cc0033 ;
+        }
+        .cls-2 {
+          fill:#000000 ;
+        }
+        .cls-3 {
+          fill: #fff;
+        }
+      }
+      a {
+        color: $color-blue;
+      }
     }
   }
 
