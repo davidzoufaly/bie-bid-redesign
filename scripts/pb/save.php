@@ -18,14 +18,14 @@ $payment_currency = $arr["payment_currency"];
 $trans_id = "";
 
 // DB INVOICE NUMBER
-// $servername = "localhost";
-// $username = "bestinenglis4165";
-// $password = "EwRsrWJLSU";
-// $dbname = "bestinenglish202x8";
 $servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "bie_invoice";
+$username = "bestinenglis4165";
+$password = "EwRsrWJLSU";
+$dbname = "bestinenglish2028";
+// $servername = "localhost";
+// $username = "root";
+// $password = "root";
+// $dbname = "bie_invoice";
 
 $date = date('Y-m-d');
 $id = 1;
