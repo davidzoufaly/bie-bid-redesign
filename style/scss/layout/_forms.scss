@@ -6,4 +6,58 @@ label {
     transition: 0.2s;
     color: $color-black;
     transform-origin: top left;
+    cursor: text;
   }
+
+.radio-wrapper {
+  cursor: pointer;
+}
+
+.radio-button--hidden {
+  display: none;
+}
+
+.radio-button--hidden:checked ~ .radio-button:before {
+  background-color: $color-red;
+  border: 1px solid $color-red;
+  transform: scale(.7);
+}
+
+.radio-wrapper:hover .radio-button:after,
+.radio-wrapper:focus .radio-button:after
+{
+  background-color: $color-gray-light;
+}
+
+.invoice-form__radio-item {
+  margin-bottom: 2rem;
+}
+
+.radio-button {
+  position: relative;
+  cursor: pointer;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    right: -25px;
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: .3s;
+    z-index: 2;
+  }
+  
+    &:after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    right: -28px;
+    height: 18px;
+    border-radius: 10px;
+    border: 1px solid $color-blue;
+    z-index: 1;
+  }
+}                                    

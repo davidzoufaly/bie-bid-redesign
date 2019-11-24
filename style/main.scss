@@ -89,7 +89,7 @@ $color-red: #d25d54;
 $screen-xs-min: 319px;  //320
 $screen-sm-min: 575px;  //576
 $screen-md-min: 767px;  //768
-$screen-lg-min: 991px;  //992
+$screen-lg-min: 1015px;  //1015
 $screen-xl-min: 1199px; //1200
 $screen-ex-min: 1399px; //1400
 $screen-uw-min: 1599px; //1600
@@ -411,8 +411,7 @@ ol {
     &:hover {
       text-decoration: none;
     }
-    &:hover span,
-    &:focus span {
+    &:hover span {
       color: darken($color-red, 10%);
       text-decoration: underline;
     }
@@ -426,6 +425,10 @@ ol {
   &.btn--small-text {
     font-size: 14px;
     text-transform: lowercase;
+  }
+  &.btn--disabled,
+  &.btn--disabled:hover {
+    background-color: $color-gray-sec;
   }
 }
 
@@ -490,6 +493,11 @@ ol {
       padding: 3rem 3.6rem;
       background: $color-white;
     }
+  }
+
+  .parmed {
+    text-transform: uppercase;
+    color: $color-black;
   }
 
   .prispevek {
@@ -572,9 +580,9 @@ ol {
     grid-area: aktuality;
     h3 a {
       color: $color-black;
-      text-decoration: none;
+      text-decoration: underline;
       &:hover {
-        text-decoration: underline;
+        text-decoration: none;
       }
     }
 
@@ -1214,7 +1222,7 @@ label {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    padding: 1rem 0;
+    padding: 2rem 0;
     @include lg {
         padding: 2rem 0;
     }
@@ -2021,6 +2029,7 @@ tbody tr:hover {
     font-size: 1.4rem;
     grid-area: menu;
     list-style-type: none;
+    padding-bottom: 0;
     li {
       padding: 0 1rem;
       &:before {
@@ -2048,7 +2057,7 @@ tbody tr:hover {
     grid-area: loga;
     display: flex;
     flex-flow: column;
-    align-items: center;
+    align-items: flex-start;
     @include lg {
       flex-flow: row;
     }
@@ -2084,7 +2093,61 @@ label {
     transition: 0.2s;
     color: $color-black;
     transform-origin: top left;
+    cursor: text;
   }
+
+.radio-wrapper {
+  cursor: pointer;
+}
+
+.radio-button--hidden {
+  display: none;
+}
+
+.radio-button--hidden:checked ~ .radio-button:before {
+  background-color: $color-red;
+  border: 1px solid $color-red;
+  transform: scale(.7);
+}
+
+.radio-wrapper:hover .radio-button:after,
+.radio-wrapper:focus .radio-button:after
+{
+  background-color: $color-gray-light;
+}
+
+.invoice-form__radio-item {
+  margin-bottom: 2rem;
+}
+
+.radio-button {
+  position: relative;
+  cursor: pointer;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    right: -25px;
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: .3s;
+    z-index: 2;
+  }
+  
+    &:after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    right: -28px;
+    height: 18px;
+    border-radius: 10px;
+    border: 1px solid $color-blue;
+    z-index: 1;
+  }
+}
 .flex-center {
   display: flex;
   justify-content: center;
@@ -2124,6 +2187,7 @@ label {
     h2 {
       margin-block-end: 5rem;
       &.h2--small {
+        fonz-size: 30px;
         margin-block-start: 1.6rem;
         margin-block-end: 1.8rem;
       }
@@ -2133,6 +2197,7 @@ label {
       margin-block-start: 5rem;
       margin-block-end: 4rem;
       &.h3--small {
+        font-size: 26px;
         margin-block-start: 1.4rem;
         margin-block-end: 1.6rem;
       }
@@ -2351,7 +2416,7 @@ label {
     }
   }
 
-  @media screen and (max-width: $screen-lg-min) {
+  @media screen and (max-width: calc($screen-lg-min - 1px)) {
     .nav {
       bottom: 0vh;
       height: 70vh;
@@ -2686,6 +2751,10 @@ label {
 
 .mb-3 {
   margin-bottom: 3rem;
+}
+
+.mt-3 {
+  margin-top: 3rem;
 }
 
 .mb-4 {

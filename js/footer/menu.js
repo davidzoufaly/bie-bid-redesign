@@ -17,7 +17,9 @@ const kbLogo = document.getElementsByClassName("kb")[0];
 let windowWidth = window.innerWidth;
 /* bile menu na telefonu */
 
-if (window.innerWidth < 991) {
+const mobilMenuBreakingPoint = 1015;
+
+if (window.innerWidth < mobilMenuBreakingPoint) {
   //kb.parentNode.removeChild(kb);
   whiteNav();
 } else {
@@ -31,7 +33,7 @@ if (window.innerWidth < 991) {
 /* eventlistener na resize */
 window.addEventListener("resize", () => {
   // schovani kb loga v menu kdyz na tel
-  if(window.innerWidth < 991 && kb !== null) {
+  if(window.innerWidth < mobilMenuBreakingPoint && kb !== null) {
     // kb.parentNode !== null ? kb.parentNode.removeChild(kb): false;
   } else if(kb !== null) {
     logo.appendChild(kb);
@@ -53,14 +55,14 @@ const submenu = document.querySelectorAll(".sub-menu");
 
 /* kdyz je kurzor na menu zmen ho na bilo */
 menu.addEventListener("mouseover", () => {
-  if (window.innerWidth >= 991) {
+  if (window.innerWidth >= mobilMenuBreakingPoint) {
     whiteNav();
   }
 });
 
 /* kdyz kurzor odejde z menu dej ho zpet na transparent pokud je uzivatel uplne na hore a submeny schovej */
 menu.addEventListener("mouseleave", () => {
-  if (window.innerWidth >= 991) {
+  if (window.innerWidth >= mobilMenuBreakingPoint) {
     if (window.pageYOffset === 0) {
       transNav();
     }
@@ -75,7 +77,7 @@ menu.addEventListener("mouseleave", () => {
 
 /* FCE pokud je uzivatel nahore bude menu trasparentni, pokud jinde bude bile*/
 function scrollNav(position) {
-  if (window.innerWidth >= 991) {
+  if (window.innerWidth >= mobilMenuBreakingPoint) {
     if (position === 0) {
       transNav();
     } else {
@@ -103,7 +105,7 @@ function whiteNav() {
     menuItem[i].style.color = "#303e42";
   }
 
-  if (window.screen.width >= 991) {
+  if (window.screen.width >= mobilMenuBreakingPoint) {
     menuMob.classList.remove("header--shadow");
     for (let j = 0; j < subM.length; j++) {
       if (!subM[j].classList.contains("arrow__down--blue")) {
@@ -128,7 +130,7 @@ function transNav() {
   textHide.style.color = "white";
   menuImg.classList.remove("logo__img--color");
   kbLogo === undefined ? false : kbLogo.classList.remove("kb--color");
-  if (window.screen.width >= 991) {
+  if (window.screen.width >= mobilMenuBreakingPoint) {
     menuMob.style.backgroundColor = "transparent";
     menuMob.classList.remove("header--shadow");
     for (let i = 0; i < menuItem.length; i++) {

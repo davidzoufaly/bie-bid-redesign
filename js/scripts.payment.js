@@ -1,5 +1,19 @@
+window.addEventListener('keydown', (event) => {
+  if(event.keyCode === 13) {
+    event.preventDefault();
+    return false;
+  }
+})
+
+document.querySelector('#proceed-payment').addEventListener('click', (event) => {
+  event.target.setAttribute('disabled','');
+  event.target.classList.add('btn--disabled');
+  event.target.style.cursor = "wait";
+})
+
 // global invoice var filled by saved data repsonse
 let invoice_number;
+let dataState;
 
 // form selectors
 const schoolId = document.querySelector("#school-id");
@@ -10,8 +24,6 @@ const schoolCity = document.querySelector("#school-city");
 const schoolCode = document.querySelector("#school-code");
 const schoolCountry = document.querySelector("#country");
 const paymentCurrency = document.querySelector("#payment-currency");
-
-let dataState;
 
 async function saveData() {
   if (
@@ -40,7 +52,8 @@ async function saveData() {
       school_code: schoolCode.value,
       school_country_code: schoolCountry.value,
       school_country: schoolCountry.options[schoolCountry.selectedIndex].text,
-      payment_currency: paymentCurrency.value
+      payment_currency: paymentCurrency.value,
+      invoice_number
     };
 
     if (JSON.stringify(formData) !== JSON.stringify(dataState)) {
@@ -67,6 +80,10 @@ async function saveData() {
       "Fill all inputs please.";
   }
 }
+document.querySelector('#save-data').addEventListener('click', saveData);
+document.querySelector('#save-data').addEventListener('keydown', (event) => {
+  event.keyCode === 13 && saveData();
+});
 
 const goBack = () => {
   document.querySelector(".invoice-form__fieldset--payment").style.display =
@@ -74,6 +91,11 @@ const goBack = () => {
   document.querySelector(".invoice-form__fieldset--school-info").style.display =
     "block";
 };
+
+document.querySelector('#go-back').addEventListener('click', goBack);
+document.querySelector('#go-back').addEventListener('keydown', (event) => {
+  event.keyCode === 13 && goBack();
+});
 
 const generateInvoice = () => {
   //redirect to invoice script
@@ -89,6 +111,10 @@ const generateInvoice = () => {
   // show thank you message
   window.location.pathname = "/";
 };
+document.querySelector('#generate-invoice').addEventListener('click', generateInvoice);
+document.querySelector('#generate-invoice').addEventListener('keydown', (event) => {
+  event.keyCode === 13 && generateInvoice();
+});
 
 // PAY NOW OR LATER -> FORM
 const country = document.querySelector("#country");
@@ -110,17 +136,17 @@ country.addEventListener("change", event => {
     event.target.value === "CZ" ? "CZK" : "EUR";
 
   if (schoolCountry.value === "CZ") {
-    Array.from(document.querySelectorAll(".sk")).forEach(
+    document.querySelectorAll(".sk").forEach(
       el => (el.style.display = "none")
     );
-    Array.from(document.querySelectorAll(".cz")).forEach(
+    document.querySelectorAll(".cz").forEach(
       el => (el.style.display = "block")
     );
   } else {
-    Array.from(document.querySelectorAll(".sk")).forEach(
+    document.querySelectorAll(".sk").forEach(
       el => (el.style.display = "block")
     );
-    Array.from(document.querySelectorAll(".cz")).forEach(
+    document.querySelectorAll(".cz").forEach(
       el => (el.style.display = "none")
     );
   }

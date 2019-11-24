@@ -171,7 +171,7 @@
     }
   }
 
-  @media screen and (max-width: $screen-lg-min) {
+  @media screen and (max-width: calc($screen-lg-min - 1px)) {
     .nav {
       bottom: 0vh;
       height: 70vh;

@@ -10,23 +10,34 @@
     <section>
         <div class="container py-5">
         <?php
+            $trans_id = $_GET['id'];
+
             try {
                 // get transaction status from my database
                 $status = $paymentsDatabase->getTransactionStatus(
-                    $_GET['id'],   // transId
+                    $trans_id,   // transId
                     $_GET['refId'] // refId
                 );
 
-                if ($status === "PAID") {
                     // save ref ID to invoice DB
                     $servername = "localhost";
                     $username = "bestinenglis4165";
                     $password = "EwRsrWJLSU";
                     $dbname = "bestinenglish2028";
-                
+                    
                     $conn = new mysqli($servername, $username, $password, $dbname);
 
-                    $trans_id = $_GET['id'];
+                    $stmt = $conn->prepare("UPDATE `invoices` SET `transaction_status` = ? WHERE `trans_id` = ?");
+                    $stmt->bind_param("ss", $status, $trans_id);
+                    $stmt->execute();
+                    $result = $stmt->get_result()->fetch_assoc();
+                    $stmt->close();
+                    
+                    mysqli_close($conn);
+
+                if ($status === "PAID") {
+                
+                    $conn = new mysqli($servername, $username, $password, $dbname);
 
                     $stmt = $conn->prepare("SELECT `invoice_id` FROM `invoices` WHERE `trans_id`=?");
                     $stmt->bind_param("s", $trans_id);
