@@ -113,7 +113,8 @@
             <nav class="nav" role="navigation">
                 <?php html5blank_nav(); ?>
                 <?php if(get_field('zobrazit_registraci_v_headeru', 'options')): ?>
-                <a class="btn btn--red" href="<?php echo $libi_se_group['link_registrace'];?>">Registration</a>
+                <!-- registrace shutdown -->
+                <!--<a class="btn btn--red" href="<?//php echo $libi_se_group['link_registrace'];?>">Registration</a>-->
                 <?php endif; ?>
 
             </nav>
