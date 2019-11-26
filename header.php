@@ -115,6 +115,9 @@
                 <?php if(get_field('zobrazit_registraci_v_headeru', 'options')): ?>
                 <!-- registrace shutdown -->
                 <!--<a class="btn btn--red" href="<?//php echo $libi_se_group['link_registrace'];?>">Registration</a>-->
+
+                <!-- test 2019 -->
+                <a class="btn btn--red" href="https://test2019.bestinenglish.org">test 2019</a>
                 <?php endif; ?>
 
             </nav>
