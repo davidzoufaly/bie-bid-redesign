@@ -95,6 +95,7 @@
 
             <nav class="nav" role="navigation">
                 <?php html5blank_nav(); ?>
+<<<<<<< HEAD
                 <?php if (get_field('reg_test_none_radio', 'options') === "reg") : ?>
                     <a class="btn btn--red" href="<?php echo $libi_se_group['link_registrace']; ?>"><?php _e('Registration', 'bie') ?></a>
                 <?php elseif (get_field('reg_test_none_radio', 'options') === "test") : ?>
@@ -106,6 +107,17 @@
                                                                         }
                                                                         ?>">test <?php echo date('Y') ?></a>
                 <?php endif; ?>
+=======
+                <?php if(get_field('zobrazit_registraci_v_headeru', 'options')): ?>
+                <!-- registrace shutdown -->
+                <!--<a class="btn btn--red" href="<?//php echo $libi_se_group['link_registrace'];?>">Registration</a>-->
+
+                <!-- test 2019 -->
+                
+                <?php endif; ?>
+                <a class="btn btn--red" href="https://test2019.bestinenglish.org">test 2019</a>
+
+>>>>>>> a2e750e2de8eafd134845ea3418c913c287bc898
             </nav>
             <div class="--mobile-dark-content">
 
