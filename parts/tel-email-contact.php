@@ -7,7 +7,9 @@
                 echo "<ul>";
                 while(have_rows('telefonni_cisla_contact')) : the_row();
                     if (get_sub_field('cislo_conctact')) :
-                        $telefon = '<li><a class="btn btn--link btn--line-height-low btn--small-text" href="tel:'.str_replace(' ', '', get_sub_field('cislo_conctact')).'">'.get_sub_field('cislo_conctact').'</a></li>';
+                        $telefon = '<li><a class="btn btn--link btn--line-height-low btn--small-text" href="tel:'.str_replace(' ', '', get_sub_field('cislo_conctact')).'">'.get_sub_field('cislo_conctact').'</a>
+                        <span>'.get_sub_field('popis_contact').'</span>
+                        </li>';
                     else :
                         $telefon = null;
                     endif; 

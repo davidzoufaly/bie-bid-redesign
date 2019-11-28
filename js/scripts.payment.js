@@ -6,9 +6,11 @@ window.addEventListener('keydown', (event) => {
 })
 
 document.querySelector('#proceed-payment').addEventListener('click', (event) => {
-  event.target.setAttribute('disabled','');
-  event.target.classList.add('btn--disabled');
-  event.target.style.cursor = "wait";
+  setTimeout(() => {
+    event.target.setAttribute('disabled','');
+    event.target.classList.add('btn--disabled');
+    event.target.style.cursor = "wait";
+  }, 10)
 })
 
 // global invoice var filled by saved data repsonse
@@ -69,7 +71,7 @@ async function saveData() {
       const data = await res.json();
       invoice_number = await data.invoiceNumber;
       const err = await data.error;
-      console.log(err);
+      // console.log(err);
 
       document.querySelector(
         "#invoice_number"

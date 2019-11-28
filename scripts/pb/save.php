@@ -1,6 +1,6 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
 $err = error_reporting(E_ALL);
 
 //POST FROM FORM
@@ -19,17 +19,15 @@ $invoice_number = $arr["invoice_number"];
 $trans_id = "";
 $payment_status = "";
 
-echo $school_name;
-
 // DB INVOICE NUMBER
-// $servername = "localhost";
-// $username = "bestinenglis4165";
-// $password = "EwRsrWJLSU";
-// $dbname = "bestinenglish2028";
 $servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "bie_invoice";
+$username = "bestinenglis4165";
+$password = "EwRsrWJLSU";
+$dbname = "bestinenglish2028";
+// $servername = "localhost";
+// $username = "root";
+// $password = "root";
+// $dbname = "bie_invoice";
 
 $payment_due_date = date("Y-m-d", strtotime("+1 week"));
 $date = date('Y-m-d');
@@ -63,6 +61,13 @@ if (empty($invoice_number)) {
     $stmt->bind_param("isssssssssssss", $invoice_number, $trans_id, $school_vat, $school_id, $school_name, $school_street, $school_city, $school_code, $school_country_code, $school_country, $payment_currency, $date, $payment_due_date, $payment_status);
     $stmt->execute();
     $stmt->close();
+
+    header('Content-Type: application/json');
+    $response = array(
+        'invoiceNumber' => $invoice_number,
+        'error' => $err,
+    );
+    echo json_encode($response);
 } else {
     $stmt = $conn->prepare("UPDATE `invoices` SET `school_vat` = ?, `school_id` = ?, `school_name` = ?, `school_street` = ?, `school_city` = ?, `school_code` = ?, `school_country_code` = ?, `school_country` = ?, `payment_currency` = ?, `invoice_date` = ?, `payment_due_date` = ? WHERE `invoice_id` = ?");
     $stmt->bind_param("sssssssssssi", $school_vat, $school_id, $school_name, $school_street, $school_city, $school_code, $school_country_code, $school_country, $payment_currency, $date, $payment_due_date, $invoice_number);
@@ -71,10 +76,3 @@ if (empty($invoice_number)) {
 }
 
 mysqli_close($conn);
-
-header('Content-Type: application/json');
-$response = array(
-    'invoiceNumber' => $invoice_number,
-    'error' => $err,
-);
-echo json_encode($response);
