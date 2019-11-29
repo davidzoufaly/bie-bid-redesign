@@ -3,13 +3,8 @@
 
 <?php
 $user_country_code = ip_info("Visitor", "Country Code");
-
-$user_country_code === "BG" ||
-    $user_country_code === "UA" ||
-    $user_country_code === "RS" ||
-    $user_country_code === "BA" ||
-    $user_country_code === "ME"
-    ? $payment_duty = false : $payment_duty = true;
+$fee_free = ["BG", "UA", "RS", "BA", "ME"];
+$payment_duty = in_array($user_country_code, $fee_free);
 ?>
 
 <script>
@@ -21,7 +16,7 @@ $user_country_code === "BG" ||
         <h1 class="page-subheader__title"><?php the_title() ?></h1>
     </div>
     <section>
-        <?php if ($payment_duty) : ?>
+        <?php if (!$payment_duty) : ?>
             <div class="registrace">
             <div class="flex-center">
                 <p><?php _e('Already did this step? You can re-generate your invoice ', 'bie') ?><a href="<?php echo get_site_url() ?>/invoice-re-generation/"><?php _e('here', 'bie') ?></a>.</p>
@@ -53,7 +48,7 @@ $user_country_code === "BG" ||
                             </div>
                             <div class="invoice-form__input-wrapper registrace-formular__row">
                                 <label for="school-code"><?php _e('School postal code', 'bie') ?></label>
-                                <span><input type="text" id="school-code" name="school_code" class="animation-input" /></span>
+                                <span><input type="number" id="school-code" name="school_code" class="animation-input" /></span>
                             </div>
                             <div class="invoice-form__input-wrapper registrace-formular__row">
                                 <h2 class="h2--small h2--nobefore" for="country"><?php _e('School country', 'BIE') ?></h2>

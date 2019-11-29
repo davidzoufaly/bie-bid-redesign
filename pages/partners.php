@@ -10,7 +10,7 @@
             <div class="flex-center">
                 <p><?php the_field('partneri_text') ?></p>
             </div>
-            <div class="partneri">
+            <div class="partneri partneri--partners">
                 <?php get_template_part('query/query-partneri') ?>
             </div>
         </div>

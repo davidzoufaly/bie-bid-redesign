@@ -1,5 +1,4 @@
 <?php 
-
 $user_country_code = ip_info("Visitor", "Country Code");
 
 // vem všechny instance taxonomie partners_type, serad je podle slugu odspodu. (slugy zacinaji cisly od 1 do n)
@@ -46,15 +45,13 @@ foreach ($terms as $term) {
                 'field' => 'slug',
                 'terms' => $user_country_code,
             ),
-            'relation' => 'AND',
+            'relation' => 'OR',
         ),
     );
 
     $query = new WP_Query($args);
 
-    // pomocny iterator
     $i = 0;
-
 
     if($query->have_posts()) {
         while($query->have_posts()) {
@@ -68,18 +65,30 @@ foreach ($terms as $term) {
                 if ($i === 1) {
                     // prvni iterace
                     echo '<div class="hl-partneri">';
-                    echo '<h4>'.$term->name.'</h4>';
+                    echo '<h3>'.$term->name.'</h3>';
                     echo '<div class="hl-partneri__loga">';
-                    require get_template_directory().'/query-items/partner-secondary.php';
+                    if(is_page_template('pages/partners.php')) {
+                        require get_template_directory().'/query-items/partner-secondary-partners.php';
+                    } else { 
+                        require get_template_directory().'/query-items/partner-secondary.php';
+                    }
                 } else if ($i === ($query->post_count)) {
                     // posledni iterace
-                    require get_template_directory().'/query-items/partner-secondary.php';
+                    if(is_page_template('pages/partners.php')) {
+                        require get_template_directory().'/query-items/partner-secondary-partners.php';
+                    } else { 
+                        require get_template_directory().'/query-items/partner-secondary.php';
+                    }
                     echo '</div>';
                     echo '</div>';
                     $i = 0;
                 } else {
                     // iterace uprostred array
-                    require get_template_directory().'/query-items/partner-secondary.php';
+                    if(is_page_template('pages/partners.php')) {
+                        require get_template_directory().'/query-items/partner-secondary-partners.php';
+                    } else { 
+                        require get_template_directory().'/query-items/partner-secondary.php';
+                    }
                 }
             }
         }
