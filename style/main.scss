@@ -330,13 +330,19 @@ ul {
 }
 
 ol {
+    &.lower-alpha {
+        li {
+           &:before {
+               content: counter(item, lower-alpha) ')';
+           }
+        }
+    }
     font-size: 16px;
     counter-reset: item;
     line-height: 2.5rem;
     padding-bottom: 2em;
 
     li {
-        list-style-type: none;
         counter-increment: item;
     }
 
@@ -1388,7 +1394,8 @@ label {
   .hl-partneri {
     padding: 3rem 3rem;
 
-    h4 {
+    h3 {
+      text-align: left;
       margin-bottom: 2.5rem;
       text-transform: uppercase;
     }
@@ -1420,6 +1427,11 @@ label {
   }
 
   &.partneri--partners .hl-partneri {
+
+    h3 {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
 
     h4 {
       text-transform: initial;
@@ -2355,8 +2367,6 @@ label {
         }
       }
 
-
-
       img {
         width: 160px;
       }
@@ -2526,6 +2536,7 @@ label {
       text-align: center;
       display: block;
       margin-bottom: 0;
+      padding-bottom: 0;
       position: relative;
       transition: all 250ms ease-out;
 

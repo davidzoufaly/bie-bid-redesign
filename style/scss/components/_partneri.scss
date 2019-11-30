@@ -126,7 +126,8 @@
   .hl-partneri {
     padding: 3rem 3rem;
 
-    h4 {
+    h3 {
+      text-align: left;
       margin-bottom: 2.5rem;
       text-transform: uppercase;
     }
@@ -158,6 +159,11 @@
   }
 
   &.partneri--partners .hl-partneri {
+
+    h3 {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
 
     h4 {
       text-transform: initial;
