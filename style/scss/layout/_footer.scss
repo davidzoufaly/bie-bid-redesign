@@ -47,10 +47,11 @@
   &__loga-wrapper {
     grid-area: loga;
     display: flex;
+    align-items: center;
     flex-flow: column;
-    align-items: flex-start;
     @include lg {
       flex-flow: row;
+      align-items: flex-start;
     }
   }
 
