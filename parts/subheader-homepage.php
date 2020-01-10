@@ -4,8 +4,10 @@
     <section class="subheader-homepage" style="background: radial-gradient(circle, rgba(94,197,220,0.52) 0%, #5ec5dc 100%),url(<?php the_field('subheader_background')['url'] ?>); background-size: cover;
     background-position: bottom;">
         <div class="container">
-            <h1 class="subheader-homepage__title"><?php _e('BEST', 'bie') ?> <span class="subheader-homepage__title--red subheader-homepage__title--light"><?php _e('IN', 'bie') ?></span>
-                <?php the_field('jazyk_souteze', 'options') ?> <span class="subheader-homepage__title--light"><?php echo date('Y'); ?></span></h1>
+                <span class="subheader-homepage__title"><h1><?php _e('BEST', 'bie') ?> <span class="subheader-homepage__title--red subheader-homepage__title--light"><?php _e('IN', 'bie') ?></span>
+                <?php the_field('jazyk_souteze', 'options') ?>&nbsp;</h1><span class="subheader-homepage__title--light"><?php echo date('Y'); ?></span></span>   
+           
+
             <?php if ($odpocet) : ?>
                 <div class="js-timer">
                     <div class="js-timer__box">

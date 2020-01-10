@@ -2998,17 +2998,23 @@ label {
   }
 
   &__title {
+    font-family: "BwMitga-Bold";
+    background: $color-white-lighter;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
     font-family: $font-bold;
     font-size: 2.3rem;
     text-align: center;
     padding: 1.2rem 0.8rem;
     margin: 0 auto;
-    margin-bottom: 5rem;
-    background: $color-white-lighter;
+    margin-bottom: 5rem;    
     color: #29b7d2;
     width: 270px;
     text-transform: uppercase;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+    display: block;
+
+    h1 {
+      display: inline-block;
+    }
 
     @include lg {
       font-size: 3.3rem;
@@ -3018,12 +3024,12 @@ label {
 
     @include xl {
       font-size: 4.3rem;
-      width: 500px;
+      width: 600px;
     }
 
     @include uw {
       font-size: 5rem;
-      width: 580px;
+      width: 700px;
     }
 
     &--red {
