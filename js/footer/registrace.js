@@ -37,8 +37,7 @@ if (document.querySelector("H1").textContent === "Registration") {
     }
   ];
 
-  const showRegionSelect = (selectedCountry, countriesWithRegion, wrapper) => {
-    return () => {
+  const showRegionSelect = (selectedCountry, countriesWithRegion, wrapper) => {    
       // výchozí bod, všechny selecty skryté
       if (document.querySelector(`.region.show`)) {
         document.querySelector(`.region.show`).classList.remove("show");
@@ -55,8 +54,7 @@ if (document.querySelector("H1").textContent === "Registration") {
           .classList.add("show");
       } else {
         wrapper.style.display = "none";
-      }
-    };
+      }    
   };
 
   const setPaymentDuty = selCountry => {
