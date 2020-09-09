@@ -319,40 +319,38 @@ $payment_duty = in_array($user_country_code, $fee_free);
                                 <button type="button" class="btn btn--link btn--icon"><?php _e('Back', 'bie') ?></button>
                             </div>
                             <p id="amount-hook"></p>
-        <!-- disable online payment method 
                             <div class="invoice-form__pay-now invoice-form__input-wrapper registrace-formular__row" style="display: none">
-                                <h2 class="h2--nobefore"><?php //_e('Pay now?', 'bie') ?></h2>
+                                <h2 class="h2--nobefore"><?php _e('Pay now?', 'bie') ?></h2>
                                 <div class="invoice-form__radio-wrapper" role="radiogroup">
                                     <div class="invoice-form__radio-item" role="radio">
-                                        <label for="pay-now-yes" class="radio-wrapper" tabindex="0" role="radio"><?php //_e('yes', 'bie') ?>
+                                        <label for="pay-now-yes" class="radio-wrapper" tabindex="0" role="radio"><?php _e('yes', 'bie') ?>
                                              <input type="radio" tabindex="-1" name="pay-now" value="yes" class="radio-button--hidden" id="pay-now-yes">
                                             <span class="radio-button"></span>
                                         </label>
                                     </div>
                                     <div class="invoice-form__radio-item" role="radio">
-                                        <label for="pay-now-no" class="radio-wrapper" tabindex="0" role="radio"><?php //_e('no', 'bie') ?>
+                                        <label for="pay-now-no" class="radio-wrapper" tabindex="0" role="radio"><?php _e('no', 'bie') ?>
                                              <input type="radio" tabindex="-1" name="pay-now" value="no" class="radio-button--hidden" id="pay-now-no">
                                             <span class="radio-button"></span>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="invoice-form__payment-method invoice-form__radio-wrapper" style="display: none">
-                                    <h2 class="h2--nobefore mt-3"><?php //_e('Payment method', 'bie') ?></h2>
+                                    <h2 class="h2--nobefore mt-3"><?php _e('Payment method', 'bie') ?></h2>
                                     <div class="invoice-form__radio-item">
                                         <label for="pay-method__credit-card" class="radio-wrapper" tabindex="0"><?php //_e('Credit card', 'bie') ?>
                                              <input type="radio" tabindex="-1" name="pay-method" class="radio-button--hidden" value="credit-card" id="pay-method__credit-card">
                                             <span class="radio-button"></span>
                                         </label>
                                     </div>
-                                    
                                     <div class="invoice-form__radio-item">
-                                        <label for="pay-method__bank-transfer" class="radio-wrapper"><?php //_e('Bank transfer', 'bie') ?>
+                                        <label for="pay-method__bank-transfer" class="radio-wrapper"><?php _e('Bank transfer', 'bie') ?>
                                              <input type="radio" tabindex="-1" name="pay-method" value="bank-transfer" class="radio-button--hidden" id="pay-method__bank-transfer">
                                             <span class="radio-button"></span>
                                         </label>
                                     </div>
                                     <div class="invoice-form__bank invoice-form__input-wrapper registrace-formular__row" style="display: none">
-                                        <h2 class="h2--nobefore mt-3"><?php //_e('Select your bank', 'bie') ?></h2>
+                                        <h2 class="h2--nobefore mt-3"><?php _e('Select your bank', 'bie') ?></h2>
                                         <div class="invoice-form__input-wrapper registrace-formular__row">
                                             <select name="method" class="bank-select">
                                                 <option value="">---</option>
@@ -379,12 +377,11 @@ $payment_duty = in_array($user_country_code, $fee_free);
                                 </div>
                                 <div class="invoice-form__submit" style="display: none;">
                                     <div class="btn-wrap-center">
-                                        <button type="submit" class="btn btn--red" id="proceed-payment" name="pay_submit"><?php //_e('Proceed payment', 'bie') ?></button>
+                                        <button type="submit" class="btn btn--red" id="proceed-payment" name="pay_submit"><?php _e('Proceed payment', 'bie') ?></button>
                                     </div>
                                 </div>
                             </div>
-        -->
-                            <div class="invoice-form__generate-invoice">
+                            <div class="invoice-form__generate-invoice" style="display: none;">
                                 <div class="btn-wrap-center">
                                     <button type="button" class="btn btn--red" id="generate-invoice" name="generate_invoice"><?php _e('Invoice', 'bie') ?></button>
                                 </div>

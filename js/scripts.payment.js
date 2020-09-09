@@ -211,3 +211,6 @@ radioBank
       }
     })
   : null;
+
+document.querySelector('.invoice-form__payment-method').style.display = "none";
+document.querySelector('invoice-form__generate-invoice').style.display = "block";
