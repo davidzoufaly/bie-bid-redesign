@@ -175,7 +175,7 @@ class PDF extends tFPDF
         $this->Cell(30, 10, $strings[$lang]['amount'], 0, 0, 'L', true);
         $this->Ln(12);
         $this->SetFillColor(0);
-        $this->Cell(130, 8, 'Best In English 2019 ' . $strings[$lang]['license_fee'], 0, 0, 'L');
+        $this->Cell(130, 8, 'Best In English 2020 ' . $strings[$lang]['license_fee'], 0, 0, 'L');
         $this->Cell(20, 8, $strings[$lang]['total_amount'], 0, 1, 'L');
         if ($lang === "en") {
             $this->Cell(130, 8, $strings[$lang]['tax'], 0, 1, 'L');
