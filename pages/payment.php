@@ -338,7 +338,7 @@ $payment_duty = in_array($user_country_code, $fee_free);
                                 <div class="invoice-form__payment-method invoice-form__radio-wrapper" style="display: none">
                                     <h2 class="h2--nobefore mt-3"><?php _e('Payment method', 'bie') ?></h2>
                                     <div class="invoice-form__radio-item">
-                                        <label for="pay-method__credit-card" class="radio-wrapper" tabindex="0"><?php //_e('Credit card', 'bie') ?>
+                                        <label for="pay-method__credit-card" class="radio-wrapper" tabindex="0"><?php _e('Credit card', 'bie') ?>
                                              <input type="radio" tabindex="-1" name="pay-method" class="radio-button--hidden" value="credit-card" id="pay-method__credit-card">
                                             <span class="radio-button"></span>
                                         </label>
