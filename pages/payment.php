@@ -25,33 +25,33 @@ $payment_duty = in_array($user_country_code, $fee_free);
                     <form eethod="POST" action="<?php echo get_template_directory_uri() ?>/scripts/pb/payment.php" class="invoice-form">
                         <fieldset class="invoice-form__fieldset invoice-form__fieldset--school-info" tabindex="-1">
                             <p class="invoice-form__required-text"><?php _e('All fields are required', 'bie') ?></p>
-                            <legend class="invoice-form__legend"><?php _e('School information', 'bie') ?></legend>
+                            <legend class="invoice-form__legend"><?php _e('Payer\'s information', 'bie') ?></legend>
                             <div class="invoice-form__input-wrapper registrace-formular__row">
                                 <label for="school-id" name="school_id"><?php _e('School ID from registration', 'bie'); ?></label>
                                 <span><input type="text" id="school-id" name="school_id" class="animation-input" /></span>
                             </div>
                             <div class="invoice-form__input-wrapper registrace-formular__row">
-                                <label for="school-name"><?php _e('School name', 'bie') ?></label>
+                                <label for="school-name"><?php _e('Payer\'s name', 'bie') ?></label>
                                 <span><input type="text" id="school-name" name="school_name" class="animation-input" /></span>
                             </div>
                             <div class="invoice-form__input-wrapper registrace-formular__row">
-                                <label for="school-vat"><?php _e('School VAT number', 'bie') ?></label>
+                                <label for="school-vat"><?php _e('Payer\'s VAT number (if you don´t have a VAT=value added tax number, please, enter N/A)', 'bie') ?></label>
                                 <span><input type="text" id="school-vat" name="school_vat" class="animation-input" /></span>
                             </div>
                             <div class="invoice-form__input-wrapper registrace-formular__row">
-                                <label for="school-street"><?php _e('School street', 'bie') ?></label>
+                                <label for="school-street"><?php _e('Payer\'s street', 'bie') ?></label>
                                 <span><input type="text" id="school-street" name="school_street" class="animation-input" /></span>
                             </div>
                             <div class="invoice-form__input-wrapper registrace-formular__row">
-                                <label for="school-city"><?php _e('School city', 'bie') ?></label>
+                                <label for="school-city"><?php _e('Payer\'s city', 'bie') ?></label>
                                 <span><input type="text" id="school-city" name="school_city" class="animation-input" /></span>
                             </div>
                             <div class="invoice-form__input-wrapper registrace-formular__row">
-                                <label for="school-code"><?php _e('School postal code', 'bie') ?></label>
+                                <label for="school-code"><?php _e('Payer\'s postal code', 'bie') ?></label>
                                 <span><input type="number" id="school-code" name="school_code" class="animation-input" /></span>
                             </div>
                             <div class="invoice-form__input-wrapper registrace-formular__row">
-                                <h2 class="h2--small h2--nobefore" for="country"><?php _e('School country', 'BIE') ?></h2>
+                                <h2 class="h2--small h2--nobefore" for="country"><?php _e('Payer\'s country', 'BIE') ?></h2>
                                 <select id="country" name="school_country">
                                     <option value="">---</option>
                                     <option value="AF">Afghanistan</option>
