@@ -22,7 +22,7 @@ $payment_duty = in_array($user_country_code, $fee_free);
                 <p><?php _e('Already did this step? You can re-generate your invoice ', 'bie') ?><a href="<?php echo get_site_url() ?>/invoice-re-generation/"><?php _e('here', 'bie') ?></a>.</p>
             </div>
                 <div class="registrace-formular container">
-                    <form eethod="POST" action="<?php echo get_template_directory_uri() ?>/scripts/pb/payment.php" class="invoice-form">
+                    <form method="POST" action="<?php echo get_template_directory_uri() ?>/scripts/pb/payment.php" class="invoice-form">
                         <fieldset class="invoice-form__fieldset invoice-form__fieldset--school-info" tabindex="-1">
                             <p class="invoice-form__required-text"><?php _e('All fields are required', 'bie') ?></p>
                             <legend class="invoice-form__legend"><?php _e('Payer\'s information', 'bie') ?></legend>
