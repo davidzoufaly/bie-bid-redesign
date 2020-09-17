@@ -3,7 +3,7 @@
 
 <?php
 $user_country_code = ip_info("Visitor", "Country Code");
-$fee_free = ["BG", "UA", "RS", "BA", "ME"];
+$fee_free = []; //["BG", "UA", "RS", "BA", "ME"];
 $payment_duty = in_array($user_country_code, $fee_free);
 ?>
 
