@@ -8,6 +8,6 @@
             href="<?php echo $libi_se_group['link_registrace'] ?>"><?php _e('register','bie') ?></a>
     <?php endif; ?>
         <a class="btn btn--link"
-            href="<?php echo $libi_se_group['link_stan_se_partnerem']?>"><?php _e('become partner') ?></a>
+            href="<?php echo $libi_se_group['link_stan_se_partnerem']?>"><?php _e('become a partner') ?></a>
     </div>
 </div>
