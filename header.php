@@ -54,7 +54,6 @@
 
         <!-- header -->
         <header class="header clear" role="banner">
-            <input class="checkbox" type="checkbox" id="check">
             <div class="_header-wrapper">
                 <!-- logo -->
                 <div class="logo">
@@ -80,13 +79,14 @@
 
 
                 </div>
+                <a href="#my-menu" class="btn btn--menu btn--menu--mobile"><span class="icon-burger_menu icon-burger_menu--white" ></span>Menu</a>
 
-                <label for="check" class="_show-menu">
+                <!-- <label for="check" class="_show-menu">
                     <span id="burger-icon" class="icon-burger_menu icon-burger_menu--white"></span>Menu
                 </label>
                 <label for="check" class="_hide-menu">
                     <span id="close-icon" class="icon-close_icon icon-close_icon--white"></span>Menu
-                </label>
+                </label> -->
             </div>
 
             <!-- logo KB -->
@@ -97,22 +97,30 @@
             <?php $libi_se_group = get_field('libi_se_ti_soutez', 'options') ?>
 
             <nav class="nav" role="navigation">
-                <?php html5blank_nav(); ?>
-                <?php if (get_field('reg_test_none_radio', 'options') === "reg") : ?>
-                    <a class="btn btn--red" href="<?php echo $libi_se_group['link_registrace']; ?>"><?php _e('Registration', 'bie') ?></a>
-                <?php elseif (get_field('reg_test_none_radio', 'options') === "test") : ?>
-                    <a class="btn btn--red" target="_blank" href="<?php
-                                                                        if (get_field('test_url', 'options')) {
-                                                                            the_field('test_url', 'options');
-                                                                        } else {
-                                                                            echo 'https://test' . date('Y') . '.' . $_SERVER['SERVER_NAME'];
-                                                                        }
-                                                                        ?>">test <?php echo date('Y') ?></a>
-                <?php endif; ?>
-            </nav>
-            <div class="--mobile-dark-content">
+                <?php //html5blank_nav(); ?>
+                <span id="competition-buttons">               
+                    <?php if (get_field('reg_test_none_radio', 'options') === "reg") : ?>
+                        <a class="btn btn--white" href="<?php echo $libi_se_group['link_payment']; ?>"><?php _e('Payment', 'bie') ?></a>
+                        <a class="btn btn--red" href="<?php echo $libi_se_group['link_registrace']; ?>"><?php _e('Registration', 'bie') ?></a>
+                    <?php elseif (get_field('reg_test_none_radio', 'options') === "test") : ?>
+                        <a class="btn btn--red" target="_blank" href="<?php
+                                                                            if (get_field('test_url', 'options')) {
+                                                                                the_field('test_url', 'options');
+                                                                            } else {
+                                                                                echo 'https://test' . date('Y') . '.' . $_SERVER['SERVER_NAME'];
+                                                                            }
+                                                                            ?>">test <?php echo date('Y') ?></a>
+                    <?php  endif; ?>
+                </span>
+                <a href="#my-menu" class="btn btn--menu"><span class="icon-burger_menu icon-burger_menu--white" ></span>Menu</a>
+                <nav id="my-menu">
+                    <?php html5blank_nav(); ?>
+                </nav>
 
-            </div>
+                
+            </nav>
             <!-- /nav -->
         </header>
         <!-- /header -->
+
+        

@@ -63,6 +63,7 @@ if (function_exists('add_theme_support'))
     Functions
 \*------------------------------------*/
 
+
 // HTML5 Blank navigation
 function html5blank_nav()
 {
@@ -112,6 +113,7 @@ function html5blank_nav_footer()
 	);
 }
 
+
 function html5blank_header_scripts()
 {
     // if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
@@ -132,6 +134,7 @@ function html5blank_footer_scripts()
 function html5blank_styles()
 {
     wp_enqueue_style('global-stylesheet', get_template_directory_uri() . '/style.css', array(), false); // Enqueue it!
+
 }
 
 // Load HTML5 Blank conditional scripts

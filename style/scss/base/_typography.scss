@@ -108,13 +108,13 @@ ul {
     line-height: 2.5rem;
     padding-bottom: 2em;
 
-    & li:before {
-        content: '\2022';
-        color: $color-blue-medium;
-        display: inline-block;
-        width: 1rem;
-        padding-right: 0.75rem;
-    }
+    // & li:before {
+    //     content: '\2022';
+    //     color: $color-blue-medium;
+    //     display: inline-block;
+    //     width: 1rem;
+    //     padding-right: 0.75rem;
+    // }
 }
 
 ol {
