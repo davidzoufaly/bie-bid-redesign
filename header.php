@@ -97,7 +97,13 @@
             <?php $libi_se_group = get_field('libi_se_ti_soutez', 'options') ?>
 
             <nav class="nav" role="navigation">
-                <?php //html5blank_nav(); ?>
+                <div id="desktop-menu">
+                    <?php html5blank_nav(); ?>
+                </div>
+                <span id="competition-buttons">
+                <a class="btn btn--white" href="<?php echo $libi_se_group['link_payment']; ?>"><?php _e('Payment', 'bie') ?></a>
+                <a class="btn btn--red" href="<?php echo $libi_se_group['link_registrace']; ?>"><?php _e('Registration', 'bie') ?></a>
+                </span>
                 <span id="competition-buttons">               
                     <?php if (get_field('reg_test_none_radio', 'options') === "reg") : ?>
                         <a class="btn btn--white" href="<?php echo $libi_se_group['link_payment']; ?>"><?php _e('Payment', 'bie') ?></a>
@@ -112,10 +118,10 @@
                                                                             ?>">test <?php echo date('Y') ?></a>
                     <?php  endif; ?>
                 </span>
-                <a href="#my-menu" class="btn btn--menu"><span class="icon-burger_menu icon-burger_menu--white" ></span>Menu</a>
-                <nav id="my-menu">
+                <a href="#my-menu" id="mobile-menu-btn" class="btn btn--menu"><span class="icon-burger_menu icon-burger_menu--white" ></span>Menu</a>
+                <div id="my-menu">
                     <?php html5blank_nav(); ?>
-                </nav>
+                </div>                
 
                 
             </nav>
