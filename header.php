@@ -100,10 +100,6 @@
                 <div id="desktop-menu">
                     <?php html5blank_nav(); ?>
                 </div>
-                <span id="competition-buttons">
-                <a class="btn btn--white" href="<?php echo $libi_se_group['link_payment']; ?>"><?php _e('Payment', 'bie') ?></a>
-                <a class="btn btn--red" href="<?php echo $libi_se_group['link_registrace']; ?>"><?php _e('Registration', 'bie') ?></a>
-                </span>
                 <span id="competition-buttons">               
                     <?php if (get_field('reg_test_none_radio', 'options') === "reg") : ?>
                         <a class="btn btn--white" href="<?php echo $libi_se_group['link_payment']; ?>"><?php _e('Payment', 'bie') ?></a>
