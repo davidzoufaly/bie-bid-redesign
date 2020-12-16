@@ -13,7 +13,7 @@ $desc=array (
 );
 $up=-63;
 $ut=44;
-$ttffile='/Users/davidzoufaly/code/mamp/bie/wp-content/themes/bie/scripts/pb/tfpdf/font/unifont/./DejaVuSansCondensed.ttf';
+$ttffile='/home/users/srvtravel/bestinenglish.org/web/wp-content/themes/bie/scripts/pb/tfpdf/font/unifont/./DejaVuSansCondensed.ttf';
 $originalsize=680264;
 $fontkey='dejavu';
 ?>
